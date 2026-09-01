@@ -43,6 +43,16 @@ Public Class frmRegister
         Me.MaximizeBox = False
         Me.BackColor = colorBackground
 
+        ' ===== Pet Paw Image =====
+        Dim picPet As New PictureBox()
+
+        picPet.Image = Image.FromFile("E:\File\Start_Here_Mac.app\Sem 4\VB\Project\Pet Care and Services Management System\pet1.png")
+        picPet.SizeMode = PictureBoxSizeMode.Zoom
+        picPet.Size = New Size(50, 50)
+        picPet.Location = New Point(385, 15)
+
+        Me.Controls.Add(picPet)
+
         ' 標題
         Dim lblTitle As New Label()
         lblTitle.Text = "CREATE AN ACCOUNT"

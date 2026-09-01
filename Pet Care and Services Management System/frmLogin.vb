@@ -182,9 +182,10 @@ Public Class frmLogin
                             MessageBox.Show($"Welcome, {CurrentUserName}!", "Login Successful",
                                              MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                            ' TODO: 打開你的主選單表單，例如：
-                            ' Dim mainMenu As New frmMainMenu()
-                            ' mainMenu.Show()
+                            If CurrentUserRole = "Employee" Then
+                                Dim employeeForm As New frmEmployeeDashboard()
+                                employeeForm.Show()
+                            End If
                             Me.Hide()
                         Else
                             MessageBox.Show("Invalid username or password.", "Login Failed",
