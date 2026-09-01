@@ -26,7 +26,33 @@ Partial Class frmEmployeeDashboard
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmEmployeeDashboard))
         Label1 = New Label()
         pnlMain = New Panel()
+        pnlSummaryCards = New Panel()
+        tlpSummaryCards = New TableLayoutPanel()
+        pnlAppointments = New Panel()
+        picAppointment = New PictureBox()
+        lblAppointmentSubtitle = New Label()
+        lblAppointmentCount = New Label()
+        lblAppointmentTitle = New Label()
+        pnlCustomers = New Panel()
+        picCustomer = New PictureBox()
+        lblCustomerSubtitle = New Label()
+        lblCustomerCount = New Label()
+        lblCustomerTitle = New Label()
+        pnlPets = New Panel()
+        picPets = New PictureBox()
+        lblPetSubtitle = New Label()
+        lblPetCount = New Label()
+        lblPetTitle = New Label()
+        pnlOrders = New Panel()
+        picOrder = New PictureBox()
+        lblOrderSubtitle = New Label()
+        lblOrderCount = New Label()
+        lblOrderTitle = New Label()
         pnlQuickActions = New Panel()
+        PictureBox15 = New PictureBox()
+        PictureBox14 = New PictureBox()
+        PictureBox13 = New PictureBox()
+        PictureBox12 = New PictureBox()
         btnAddService = New Button()
         btnAddPet = New Button()
         btnAddCustomer = New Button()
@@ -35,22 +61,6 @@ Partial Class frmEmployeeDashboard
         pnlRecentAppointments = New Panel()
         dgvRecentAppointments = New DataGridView()
         lblRecentTitle = New Label()
-        pnlCustomers = New Panel()
-        lblCustomerSubtitle = New Label()
-        lblCustomerCount = New Label()
-        lblCustomerTitle = New Label()
-        pnlOrders = New Panel()
-        lblOrderSubtitle = New Label()
-        lblOrderCount = New Label()
-        lblOrderTitle = New Label()
-        pnlAppointments = New Panel()
-        lblAppointmentSubtitle = New Label()
-        lblAppointmentCount = New Label()
-        lblAppointmentTitle = New Label()
-        pnlPets = New Panel()
-        lblPetSubtitle = New Label()
-        lblPetCount = New Label()
-        lblPetTitle = New Label()
         pnlWelcome = New Panel()
         picPets2 = New PictureBox()
         lblWelcomeBack = New Label()
@@ -64,6 +74,17 @@ Partial Class frmEmployeeDashboard
         picPaw = New PictureBox()
         lblDashboardTitle = New Label()
         pnlSidebar = New Panel()
+        PictureBox11 = New PictureBox()
+        PictureBox10 = New PictureBox()
+        PictureBox9 = New PictureBox()
+        PictureBox8 = New PictureBox()
+        PictureBox7 = New PictureBox()
+        PictureBox6 = New PictureBox()
+        PictureBox5 = New PictureBox()
+        PictureBox4 = New PictureBox()
+        PictureBox3 = New PictureBox()
+        PictureBox2 = New PictureBox()
+        PictureBox1 = New PictureBox()
         btnLogout = New Button()
         btnProducts = New Button()
         btnMembership = New Button()
@@ -84,60 +105,43 @@ Partial Class frmEmployeeDashboard
         picLogo = New PictureBox()
         lblSidebarSubtitle = New Label()
         lblSidebarTitle = New Label()
-        picCustomer = New PictureBox()
-        picPets = New PictureBox()
-        picAppointment = New PictureBox()
-        picOrder = New PictureBox()
-        PictureBox1 = New PictureBox()
-        PictureBox2 = New PictureBox()
-        PictureBox3 = New PictureBox()
-        PictureBox4 = New PictureBox()
-        PictureBox5 = New PictureBox()
-        PictureBox6 = New PictureBox()
-        PictureBox7 = New PictureBox()
-        PictureBox8 = New PictureBox()
-        PictureBox9 = New PictureBox()
-        PictureBox10 = New PictureBox()
-        PictureBox11 = New PictureBox()
-        PictureBox12 = New PictureBox()
-        PictureBox13 = New PictureBox()
-        PictureBox14 = New PictureBox()
-        PictureBox15 = New PictureBox()
         lblDescription = New Label()
         pnlMain.SuspendLayout()
+        pnlSummaryCards.SuspendLayout()
+        tlpSummaryCards.SuspendLayout()
+        pnlAppointments.SuspendLayout()
+        CType(picAppointment, ComponentModel.ISupportInitialize).BeginInit()
+        pnlCustomers.SuspendLayout()
+        CType(picCustomer, ComponentModel.ISupportInitialize).BeginInit()
+        pnlPets.SuspendLayout()
+        CType(picPets, ComponentModel.ISupportInitialize).BeginInit()
+        pnlOrders.SuspendLayout()
+        CType(picOrder, ComponentModel.ISupportInitialize).BeginInit()
         pnlQuickActions.SuspendLayout()
+        CType(PictureBox15, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox14, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox13, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox12, ComponentModel.ISupportInitialize).BeginInit()
         pnlRecentAppointments.SuspendLayout()
         CType(dgvRecentAppointments, ComponentModel.ISupportInitialize).BeginInit()
-        pnlCustomers.SuspendLayout()
-        pnlOrders.SuspendLayout()
-        pnlAppointments.SuspendLayout()
-        pnlPets.SuspendLayout()
         pnlWelcome.SuspendLayout()
         CType(picPets2, ComponentModel.ISupportInitialize).BeginInit()
         pnlTopBar.SuspendLayout()
         CType(picEmployee, ComponentModel.ISupportInitialize).BeginInit()
         CType(picPaw, ComponentModel.ISupportInitialize).BeginInit()
         pnlSidebar.SuspendLayout()
-        CType(picLogo, ComponentModel.ISupportInitialize).BeginInit()
-        CType(picCustomer, ComponentModel.ISupportInitialize).BeginInit()
-        CType(picPets, ComponentModel.ISupportInitialize).BeginInit()
-        CType(picAppointment, ComponentModel.ISupportInitialize).BeginInit()
-        CType(picOrder, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox10, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox11, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox12, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox13, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox14, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox15, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox10, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(picLogo, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' lblDescription
@@ -163,13 +167,9 @@ Partial Class frmEmployeeDashboard
         ' pnlMain
         ' 
         pnlMain.BackColor = Color.FromArgb(CByte(250), CByte(240), CByte(222))
-        pnlMain.BorderStyle = BorderStyle.FixedSingle
+        pnlMain.Controls.Add(pnlSummaryCards)
         pnlMain.Controls.Add(pnlQuickActions)
         pnlMain.Controls.Add(pnlRecentAppointments)
-        pnlMain.Controls.Add(pnlCustomers)
-        pnlMain.Controls.Add(pnlOrders)
-        pnlMain.Controls.Add(pnlAppointments)
-        pnlMain.Controls.Add(pnlPets)
         pnlMain.Controls.Add(pnlWelcome)
         pnlMain.Controls.Add(pnlTopBar)
         pnlMain.Controls.Add(pnlSidebar)
@@ -179,8 +179,254 @@ Partial Class frmEmployeeDashboard
         pnlMain.Size = New Size(1382, 873)
         pnlMain.TabIndex = 1
         ' 
+        ' pnlSummaryCards
+        ' 
+        pnlSummaryCards.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        pnlSummaryCards.Controls.Add(tlpSummaryCards)
+        pnlSummaryCards.Location = New Point(298, 278)
+        pnlSummaryCards.Name = "pnlSummaryCards"
+        pnlSummaryCards.Size = New Size(1072, 163)
+        pnlSummaryCards.TabIndex = 15
+        ' 
+        ' tlpSummaryCards
+        ' 
+        tlpSummaryCards.ColumnCount = 4
+        tlpSummaryCards.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
+        tlpSummaryCards.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
+        tlpSummaryCards.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
+        tlpSummaryCards.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
+        tlpSummaryCards.Controls.Add(pnlAppointments, 2, 0)
+        tlpSummaryCards.Controls.Add(pnlCustomers, 0, 0)
+        tlpSummaryCards.Controls.Add(pnlPets, 1, 0)
+        tlpSummaryCards.Controls.Add(pnlOrders, 3, 0)
+        tlpSummaryCards.Dock = DockStyle.Fill
+        tlpSummaryCards.Location = New Point(0, 0)
+        tlpSummaryCards.Name = "tlpSummaryCards"
+        tlpSummaryCards.RowCount = 1
+        tlpSummaryCards.RowStyles.Add(New RowStyle(SizeType.Percent, 100F))
+        tlpSummaryCards.Size = New Size(1072, 163)
+        tlpSummaryCards.TabIndex = 16
+        ' 
+        ' pnlAppointments
+        ' 
+        pnlAppointments.BackColor = Color.FromArgb(CByte(255), CByte(247), CByte(229))
+        pnlAppointments.Controls.Add(picAppointment)
+        pnlAppointments.Controls.Add(lblAppointmentSubtitle)
+        pnlAppointments.Controls.Add(lblAppointmentCount)
+        pnlAppointments.Controls.Add(lblAppointmentTitle)
+        pnlAppointments.Dock = DockStyle.Fill
+        pnlAppointments.Location = New Point(541, 5)
+        pnlAppointments.Margin = New Padding(5)
+        pnlAppointments.Name = "pnlAppointments"
+        pnlAppointments.Size = New Size(258, 153)
+        pnlAppointments.TabIndex = 11
+        ' 
+        ' picAppointment
+        ' 
+        picAppointment.Image = CType(resources.GetObject("picAppointment.Image"), Image)
+        picAppointment.Location = New Point(0, 38)
+        picAppointment.Name = "picAppointment"
+        picAppointment.Size = New Size(90, 90)
+        picAppointment.SizeMode = PictureBoxSizeMode.Zoom
+        picAppointment.TabIndex = 13
+        picAppointment.TabStop = False
+        ' 
+        ' lblAppointmentSubtitle
+        ' 
+        lblAppointmentSubtitle.AutoSize = True
+        lblAppointmentSubtitle.Location = New Point(91, 113)
+        lblAppointmentSubtitle.Name = "lblAppointmentSubtitle"
+        lblAppointmentSubtitle.Size = New Size(156, 20)
+        lblAppointmentSubtitle.TabIndex = 10
+        lblAppointmentSubtitle.Text = "Today's Appointments"
+        ' 
+        ' lblAppointmentCount
+        ' 
+        lblAppointmentCount.AutoSize = True
+        lblAppointmentCount.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblAppointmentCount.Location = New Point(96, 58)
+        lblAppointmentCount.Name = "lblAppointmentCount"
+        lblAppointmentCount.Size = New Size(32, 38)
+        lblAppointmentCount.TabIndex = 9
+        lblAppointmentCount.Text = "0"
+        ' 
+        ' lblAppointmentTitle
+        ' 
+        lblAppointmentTitle.AutoSize = True
+        lblAppointmentTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblAppointmentTitle.ForeColor = Color.DarkKhaki
+        lblAppointmentTitle.Location = New Point(96, 16)
+        lblAppointmentTitle.Name = "lblAppointmentTitle"
+        lblAppointmentTitle.Size = New Size(146, 28)
+        lblAppointmentTitle.TabIndex = 8
+        lblAppointmentTitle.Text = "Appointments"
+        ' 
+        ' pnlCustomers
+        ' 
+        pnlCustomers.BackColor = Color.FromArgb(CByte(244), CByte(248), CByte(232))
+        pnlCustomers.Controls.Add(picCustomer)
+        pnlCustomers.Controls.Add(lblCustomerSubtitle)
+        pnlCustomers.Controls.Add(lblCustomerCount)
+        pnlCustomers.Controls.Add(lblCustomerTitle)
+        pnlCustomers.Dock = DockStyle.Fill
+        pnlCustomers.Location = New Point(5, 5)
+        pnlCustomers.Margin = New Padding(5)
+        pnlCustomers.Name = "pnlCustomers"
+        pnlCustomers.Padding = New Padding(5)
+        pnlCustomers.Size = New Size(258, 153)
+        pnlCustomers.TabIndex = 7
+        ' 
+        ' picCustomer
+        ' 
+        picCustomer.Image = CType(resources.GetObject("picCustomer.Image"), Image)
+        picCustomer.Location = New Point(3, 41)
+        picCustomer.Name = "picCustomer"
+        picCustomer.Size = New Size(90, 90)
+        picCustomer.SizeMode = PictureBoxSizeMode.Zoom
+        picCustomer.TabIndex = 11
+        picCustomer.TabStop = False
+        ' 
+        ' lblCustomerSubtitle
+        ' 
+        lblCustomerSubtitle.AutoSize = True
+        lblCustomerSubtitle.Location = New Point(109, 116)
+        lblCustomerSubtitle.Name = "lblCustomerSubtitle"
+        lblCustomerSubtitle.Size = New Size(115, 20)
+        lblCustomerSubtitle.TabIndex = 10
+        lblCustomerSubtitle.Text = "Total Customers"
+        ' 
+        ' lblCustomerCount
+        ' 
+        lblCustomerCount.AutoSize = True
+        lblCustomerCount.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblCustomerCount.Location = New Point(109, 61)
+        lblCustomerCount.Name = "lblCustomerCount"
+        lblCustomerCount.Size = New Size(32, 38)
+        lblCustomerCount.TabIndex = 9
+        lblCustomerCount.Text = "0"
+        ' 
+        ' lblCustomerTitle
+        ' 
+        lblCustomerTitle.AutoSize = True
+        lblCustomerTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblCustomerTitle.ForeColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
+        lblCustomerTitle.Location = New Point(109, 19)
+        lblCustomerTitle.Name = "lblCustomerTitle"
+        lblCustomerTitle.Size = New Size(111, 28)
+        lblCustomerTitle.TabIndex = 8
+        lblCustomerTitle.Text = "Customers"
+        ' 
+        ' pnlPets
+        ' 
+        pnlPets.BackColor = Color.FromArgb(CByte(240), CByte(245), CByte(252))
+        pnlPets.Controls.Add(picPets)
+        pnlPets.Controls.Add(lblPetSubtitle)
+        pnlPets.Controls.Add(lblPetCount)
+        pnlPets.Controls.Add(lblPetTitle)
+        pnlPets.Dock = DockStyle.Fill
+        pnlPets.Location = New Point(273, 5)
+        pnlPets.Margin = New Padding(5)
+        pnlPets.Name = "pnlPets"
+        pnlPets.Size = New Size(258, 153)
+        pnlPets.TabIndex = 11
+        ' 
+        ' picPets
+        ' 
+        picPets.Image = CType(resources.GetObject("picPets.Image"), Image)
+        picPets.Location = New Point(8, 41)
+        picPets.Name = "picPets"
+        picPets.Size = New Size(90, 90)
+        picPets.SizeMode = PictureBoxSizeMode.Zoom
+        picPets.TabIndex = 12
+        picPets.TabStop = False
+        ' 
+        ' lblPetSubtitle
+        ' 
+        lblPetSubtitle.AutoSize = True
+        lblPetSubtitle.Location = New Point(104, 111)
+        lblPetSubtitle.Name = "lblPetSubtitle"
+        lblPetSubtitle.Size = New Size(72, 20)
+        lblPetSubtitle.TabIndex = 10
+        lblPetSubtitle.Text = "Total Pets"
+        ' 
+        ' lblPetCount
+        ' 
+        lblPetCount.AutoSize = True
+        lblPetCount.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblPetCount.Location = New Point(104, 56)
+        lblPetCount.Name = "lblPetCount"
+        lblPetCount.Size = New Size(32, 38)
+        lblPetCount.TabIndex = 9
+        lblPetCount.Text = "0"
+        ' 
+        ' lblPetTitle
+        ' 
+        lblPetTitle.AutoSize = True
+        lblPetTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblPetTitle.ForeColor = Color.RoyalBlue
+        lblPetTitle.Location = New Point(104, 14)
+        lblPetTitle.Name = "lblPetTitle"
+        lblPetTitle.Size = New Size(51, 28)
+        lblPetTitle.TabIndex = 8
+        lblPetTitle.Text = "Pets"
+        ' 
+        ' pnlOrders
+        ' 
+        pnlOrders.BackColor = Color.FromArgb(CByte(248), CByte(240), CByte(248))
+        pnlOrders.Controls.Add(picOrder)
+        pnlOrders.Controls.Add(lblOrderSubtitle)
+        pnlOrders.Controls.Add(lblOrderCount)
+        pnlOrders.Controls.Add(lblOrderTitle)
+        pnlOrders.Dock = DockStyle.Fill
+        pnlOrders.Location = New Point(809, 5)
+        pnlOrders.Margin = New Padding(5)
+        pnlOrders.Name = "pnlOrders"
+        pnlOrders.Size = New Size(258, 153)
+        pnlOrders.TabIndex = 12
+        ' 
+        ' picOrder
+        ' 
+        picOrder.Image = CType(resources.GetObject("picOrder.Image"), Image)
+        picOrder.Location = New Point(8, 41)
+        picOrder.Name = "picOrder"
+        picOrder.Size = New Size(90, 90)
+        picOrder.SizeMode = PictureBoxSizeMode.Zoom
+        picOrder.TabIndex = 14
+        picOrder.TabStop = False
+        ' 
+        ' lblOrderSubtitle
+        ' 
+        lblOrderSubtitle.AutoSize = True
+        lblOrderSubtitle.Location = New Point(104, 111)
+        lblOrderSubtitle.Name = "lblOrderSubtitle"
+        lblOrderSubtitle.Size = New Size(110, 20)
+        lblOrderSubtitle.TabIndex = 10
+        lblOrderSubtitle.Text = "Pending Orders"
+        ' 
+        ' lblOrderCount
+        ' 
+        lblOrderCount.AutoSize = True
+        lblOrderCount.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblOrderCount.Location = New Point(104, 56)
+        lblOrderCount.Name = "lblOrderCount"
+        lblOrderCount.Size = New Size(32, 38)
+        lblOrderCount.TabIndex = 9
+        lblOrderCount.Text = "0"
+        ' 
+        ' lblOrderTitle
+        ' 
+        lblOrderTitle.AutoSize = True
+        lblOrderTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblOrderTitle.ForeColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
+        lblOrderTitle.Location = New Point(104, 14)
+        lblOrderTitle.Name = "lblOrderTitle"
+        lblOrderTitle.Size = New Size(75, 28)
+        lblOrderTitle.TabIndex = 8
+        lblOrderTitle.Text = "Orders"
+        ' 
         ' pnlQuickActions
         ' 
+        pnlQuickActions.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         pnlQuickActions.BackColor = Color.Cornsilk
         pnlQuickActions.BorderStyle = BorderStyle.FixedSingle
         pnlQuickActions.Controls.Add(PictureBox15)
@@ -196,6 +442,46 @@ Partial Class frmEmployeeDashboard
         pnlQuickActions.Name = "pnlQuickActions"
         pnlQuickActions.Size = New Size(291, 395)
         pnlQuickActions.TabIndex = 14
+        ' 
+        ' PictureBox15
+        ' 
+        PictureBox15.Image = CType(resources.GetObject("PictureBox15.Image"), Image)
+        PictureBox15.Location = New Point(5, 311)
+        PictureBox15.Name = "PictureBox15"
+        PictureBox15.Size = New Size(44, 44)
+        PictureBox15.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox15.TabIndex = 8
+        PictureBox15.TabStop = False
+        ' 
+        ' PictureBox14
+        ' 
+        PictureBox14.Image = CType(resources.GetObject("PictureBox14.Image"), Image)
+        PictureBox14.Location = New Point(5, 233)
+        PictureBox14.Name = "PictureBox14"
+        PictureBox14.Size = New Size(44, 44)
+        PictureBox14.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox14.TabIndex = 7
+        PictureBox14.TabStop = False
+        ' 
+        ' PictureBox13
+        ' 
+        PictureBox13.Image = CType(resources.GetObject("PictureBox13.Image"), Image)
+        PictureBox13.Location = New Point(5, 155)
+        PictureBox13.Name = "PictureBox13"
+        PictureBox13.Size = New Size(44, 44)
+        PictureBox13.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox13.TabIndex = 6
+        PictureBox13.TabStop = False
+        ' 
+        ' PictureBox12
+        ' 
+        PictureBox12.Image = CType(resources.GetObject("PictureBox12.Image"), Image)
+        PictureBox12.Location = New Point(5, 79)
+        PictureBox12.Name = "PictureBox12"
+        PictureBox12.Size = New Size(44, 44)
+        PictureBox12.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox12.TabIndex = 5
+        PictureBox12.TabStop = False
         ' 
         ' btnAddService
         ' 
@@ -258,19 +544,21 @@ Partial Class frmEmployeeDashboard
         ' 
         ' pnlRecentAppointments
         ' 
+        pnlRecentAppointments.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         pnlRecentAppointments.BackColor = Color.Bisque
         pnlRecentAppointments.BorderStyle = BorderStyle.FixedSingle
         pnlRecentAppointments.Controls.Add(dgvRecentAppointments)
         pnlRecentAppointments.Controls.Add(lblRecentTitle)
         pnlRecentAppointments.Location = New Point(315, 465)
         pnlRecentAppointments.Name = "pnlRecentAppointments"
-        pnlRecentAppointments.Size = New Size(746, 395)
+        pnlRecentAppointments.Size = New Size(748, 397)
         pnlRecentAppointments.TabIndex = 13
         ' 
         ' dgvRecentAppointments
         ' 
         dgvRecentAppointments.AllowUserToAddRows = False
         dgvRecentAppointments.AllowUserToDeleteRows = False
+        dgvRecentAppointments.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         dgvRecentAppointments.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         dgvRecentAppointments.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         dgvRecentAppointments.Location = New Point(26, 60)
@@ -280,7 +568,7 @@ Partial Class frmEmployeeDashboard
         dgvRecentAppointments.RowHeadersVisible = False
         dgvRecentAppointments.RowHeadersWidth = 51
         dgvRecentAppointments.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        dgvRecentAppointments.Size = New Size(693, 318)
+        dgvRecentAppointments.Size = New Size(695, 320)
         dgvRecentAppointments.TabIndex = 1
         ' 
         ' lblRecentTitle
@@ -293,191 +581,26 @@ Partial Class frmEmployeeDashboard
         lblRecentTitle.TabIndex = 0
         lblRecentTitle.Text = "📅  Recent Appointments"
         ' 
-        ' pnlCustomers
-        ' 
-        pnlCustomers.BackColor = Color.FromArgb(CByte(244), CByte(248), CByte(232))
-        pnlCustomers.Controls.Add(picCustomer)
-        pnlCustomers.Controls.Add(lblCustomerSubtitle)
-        pnlCustomers.Controls.Add(lblCustomerCount)
-        pnlCustomers.Controls.Add(lblCustomerTitle)
-        pnlCustomers.Location = New Point(317, 291)
-        pnlCustomers.Name = "pnlCustomers"
-        pnlCustomers.Size = New Size(234, 150)
-        pnlCustomers.TabIndex = 7
-        ' 
-        ' lblCustomerSubtitle
-        ' 
-        lblCustomerSubtitle.AutoSize = True
-        lblCustomerSubtitle.Location = New Point(104, 111)
-        lblCustomerSubtitle.Name = "lblCustomerSubtitle"
-        lblCustomerSubtitle.Size = New Size(115, 20)
-        lblCustomerSubtitle.TabIndex = 10
-        lblCustomerSubtitle.Text = "Total Customers"
-        ' 
-        ' lblCustomerCount
-        ' 
-        lblCustomerCount.AutoSize = True
-        lblCustomerCount.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblCustomerCount.Location = New Point(104, 56)
-        lblCustomerCount.Name = "lblCustomerCount"
-        lblCustomerCount.Size = New Size(32, 38)
-        lblCustomerCount.TabIndex = 9
-        lblCustomerCount.Text = "0"
-        ' 
-        ' lblCustomerTitle
-        ' 
-        lblCustomerTitle.AutoSize = True
-        lblCustomerTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblCustomerTitle.ForeColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
-        lblCustomerTitle.Location = New Point(104, 14)
-        lblCustomerTitle.Name = "lblCustomerTitle"
-        lblCustomerTitle.Size = New Size(111, 28)
-        lblCustomerTitle.TabIndex = 8
-        lblCustomerTitle.Text = "Customers"
-        ' 
-        ' pnlOrders
-        ' 
-        pnlOrders.BackColor = Color.FromArgb(CByte(248), CByte(240), CByte(248))
-        pnlOrders.Controls.Add(picOrder)
-        pnlOrders.Controls.Add(lblOrderSubtitle)
-        pnlOrders.Controls.Add(lblOrderCount)
-        pnlOrders.Controls.Add(lblOrderTitle)
-        pnlOrders.Location = New Point(1135, 291)
-        pnlOrders.Name = "pnlOrders"
-        pnlOrders.Size = New Size(234, 150)
-        pnlOrders.TabIndex = 12
-        ' 
-        ' lblOrderSubtitle
-        ' 
-        lblOrderSubtitle.AutoSize = True
-        lblOrderSubtitle.Location = New Point(104, 111)
-        lblOrderSubtitle.Name = "lblOrderSubtitle"
-        lblOrderSubtitle.Size = New Size(110, 20)
-        lblOrderSubtitle.TabIndex = 10
-        lblOrderSubtitle.Text = "Pending Orders"
-        ' 
-        ' lblOrderCount
-        ' 
-        lblOrderCount.AutoSize = True
-        lblOrderCount.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblOrderCount.Location = New Point(104, 56)
-        lblOrderCount.Name = "lblOrderCount"
-        lblOrderCount.Size = New Size(32, 38)
-        lblOrderCount.TabIndex = 9
-        lblOrderCount.Text = "0"
-        ' 
-        ' lblOrderTitle
-        ' 
-        lblOrderTitle.AutoSize = True
-        lblOrderTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblOrderTitle.ForeColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
-        lblOrderTitle.Location = New Point(104, 14)
-        lblOrderTitle.Name = "lblOrderTitle"
-        lblOrderTitle.Size = New Size(75, 28)
-        lblOrderTitle.TabIndex = 8
-        lblOrderTitle.Text = "Orders"
-        ' 
-        ' pnlAppointments
-        ' 
-        pnlAppointments.BackColor = Color.FromArgb(CByte(255), CByte(247), CByte(229))
-        pnlAppointments.Controls.Add(picAppointment)
-        pnlAppointments.Controls.Add(lblAppointmentSubtitle)
-        pnlAppointments.Controls.Add(lblAppointmentCount)
-        pnlAppointments.Controls.Add(lblAppointmentTitle)
-        pnlAppointments.Location = New Point(849, 291)
-        pnlAppointments.Name = "pnlAppointments"
-        pnlAppointments.Size = New Size(264, 150)
-        pnlAppointments.TabIndex = 11
-        ' 
-        ' lblAppointmentSubtitle
-        ' 
-        lblAppointmentSubtitle.AutoSize = True
-        lblAppointmentSubtitle.Location = New Point(104, 111)
-        lblAppointmentSubtitle.Name = "lblAppointmentSubtitle"
-        lblAppointmentSubtitle.Size = New Size(156, 20)
-        lblAppointmentSubtitle.TabIndex = 10
-        lblAppointmentSubtitle.Text = "Today's Appointments"
-        ' 
-        ' lblAppointmentCount
-        ' 
-        lblAppointmentCount.AutoSize = True
-        lblAppointmentCount.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblAppointmentCount.Location = New Point(104, 56)
-        lblAppointmentCount.Name = "lblAppointmentCount"
-        lblAppointmentCount.Size = New Size(32, 38)
-        lblAppointmentCount.TabIndex = 9
-        lblAppointmentCount.Text = "0"
-        ' 
-        ' lblAppointmentTitle
-        ' 
-        lblAppointmentTitle.AutoSize = True
-        lblAppointmentTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblAppointmentTitle.ForeColor = Color.DarkKhaki
-        lblAppointmentTitle.Location = New Point(104, 14)
-        lblAppointmentTitle.Name = "lblAppointmentTitle"
-        lblAppointmentTitle.Size = New Size(146, 28)
-        lblAppointmentTitle.TabIndex = 8
-        lblAppointmentTitle.Text = "Appointments"
-        ' 
-        ' pnlPets
-        ' 
-        pnlPets.BackColor = Color.FromArgb(CByte(240), CByte(245), CByte(252))
-        pnlPets.Controls.Add(picPets)
-        pnlPets.Controls.Add(lblPetSubtitle)
-        pnlPets.Controls.Add(lblPetCount)
-        pnlPets.Controls.Add(lblPetTitle)
-        pnlPets.Location = New Point(582, 291)
-        pnlPets.Name = "pnlPets"
-        pnlPets.Size = New Size(223, 150)
-        pnlPets.TabIndex = 11
-        ' 
-        ' lblPetSubtitle
-        ' 
-        lblPetSubtitle.AutoSize = True
-        lblPetSubtitle.Location = New Point(104, 111)
-        lblPetSubtitle.Name = "lblPetSubtitle"
-        lblPetSubtitle.Size = New Size(72, 20)
-        lblPetSubtitle.TabIndex = 10
-        lblPetSubtitle.Text = "Total Pets"
-        ' 
-        ' lblPetCount
-        ' 
-        lblPetCount.AutoSize = True
-        lblPetCount.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblPetCount.Location = New Point(104, 56)
-        lblPetCount.Name = "lblPetCount"
-        lblPetCount.Size = New Size(32, 38)
-        lblPetCount.TabIndex = 9
-        lblPetCount.Text = "0"
-        ' 
-        ' lblPetTitle
-        ' 
-        lblPetTitle.AutoSize = True
-        lblPetTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblPetTitle.ForeColor = Color.RoyalBlue
-        lblPetTitle.Location = New Point(104, 14)
-        lblPetTitle.Name = "lblPetTitle"
-        lblPetTitle.Size = New Size(51, 28)
-        lblPetTitle.TabIndex = 8
-        lblPetTitle.Text = "Pets"
-        ' 
         ' pnlWelcome
         ' 
+        pnlWelcome.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         pnlWelcome.BackColor = Color.FromArgb(CByte(252), CByte(235), CByte(213))
         pnlWelcome.Controls.Add(picPets2)
         pnlWelcome.Controls.Add(lblDescription)
         pnlWelcome.Controls.Add(lblWelcomeBack)
-        pnlWelcome.Location = New Point(313, 101)
+        pnlWelcome.Location = New Point(314, 102)
+        pnlWelcome.Margin = New Padding(0)
         pnlWelcome.Name = "pnlWelcome"
-        pnlWelcome.Size = New Size(1056, 158)
+        pnlWelcome.Size = New Size(1055, 164)
         pnlWelcome.TabIndex = 5
         ' 
         ' picPets2
         ' 
+        picPets2.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         picPets2.BackColor = Color.Transparent
         picPets2.ErrorImage = Nothing
         picPets2.Image = CType(resources.GetObject("picPets2.Image"), Image)
-        picPets2.Location = New Point(401, 0)
+        picPets2.Location = New Point(400, 0)
         picPets2.Name = "picPets2"
         picPets2.Size = New Size(655, 168)
         picPets2.SizeMode = PictureBoxSizeMode.Zoom
@@ -509,15 +632,16 @@ Partial Class frmEmployeeDashboard
         pnlTopBar.Dock = DockStyle.Top
         pnlTopBar.Location = New Point(280, 0)
         pnlTopBar.Name = "pnlTopBar"
-        pnlTopBar.Size = New Size(1100, 77)
+        pnlTopBar.Size = New Size(1102, 108)
         pnlTopBar.TabIndex = 4
         ' 
         ' btnDropdown
         ' 
+        btnDropdown.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnDropdown.FlatAppearance.BorderSize = 0
         btnDropdown.FlatStyle = FlatStyle.Flat
         btnDropdown.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        btnDropdown.Location = New Point(1065, 31)
+        btnDropdown.Location = New Point(1067, 31)
         btnDropdown.Name = "btnDropdown"
         btnDropdown.Size = New Size(35, 35)
         btnDropdown.TabIndex = 5
@@ -526,11 +650,12 @@ Partial Class frmEmployeeDashboard
         ' 
         ' lblEmployee
         ' 
+        lblEmployee.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         lblEmployee.AutoEllipsis = True
         lblEmployee.AutoSize = True
         lblEmployee.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblEmployee.ForeColor = Color.FromArgb(CByte(61), CByte(40), CByte(27))
-        lblEmployee.Location = New Point(952, 35)
+        lblEmployee.Location = New Point(954, 35)
         lblEmployee.Name = "lblEmployee"
         lblEmployee.Size = New Size(118, 31)
         lblEmployee.TabIndex = 6
@@ -550,11 +675,12 @@ Partial Class frmEmployeeDashboard
         ' 
         ' lblWelcome
         ' 
+        lblWelcome.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         lblWelcome.AutoEllipsis = True
         lblWelcome.AutoSize = True
         lblWelcome.Font = New Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         lblWelcome.ForeColor = Color.FromArgb(CByte(107), CByte(98), CByte(91))
-        lblWelcome.Location = New Point(952, 12)
+        lblWelcome.Location = New Point(954, 12)
         lblWelcome.Name = "lblWelcome"
         lblWelcome.Size = New Size(84, 23)
         lblWelcome.TabIndex = 5
@@ -562,8 +688,9 @@ Partial Class frmEmployeeDashboard
         ' 
         ' picEmployee
         ' 
+        picEmployee.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         picEmployee.Image = CType(resources.GetObject("picEmployee.Image"), Image)
-        picEmployee.Location = New Point(881, 5)
+        picEmployee.Location = New Point(883, 5)
         picEmployee.Name = "picEmployee"
         picEmployee.Size = New Size(65, 65)
         picEmployee.SizeMode = PictureBoxSizeMode.Zoom
@@ -572,10 +699,11 @@ Partial Class frmEmployeeDashboard
         ' 
         ' btnNotification
         ' 
+        btnNotification.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnNotification.FlatAppearance.BorderSize = 0
         btnNotification.FlatStyle = FlatStyle.Flat
         btnNotification.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        btnNotification.Location = New Point(812, 12)
+        btnNotification.Location = New Point(814, 12)
         btnNotification.Name = "btnNotification"
         btnNotification.Size = New Size(54, 45)
         btnNotification.TabIndex = 4
@@ -639,8 +767,118 @@ Partial Class frmEmployeeDashboard
         pnlSidebar.Dock = DockStyle.Left
         pnlSidebar.Location = New Point(0, 0)
         pnlSidebar.Name = "pnlSidebar"
-        pnlSidebar.Size = New Size(280, 871)
+        pnlSidebar.Size = New Size(280, 873)
         pnlSidebar.TabIndex = 0
+        ' 
+        ' PictureBox11
+        ' 
+        PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), Image)
+        PictureBox11.Location = New Point(8, 735)
+        PictureBox11.Name = "PictureBox11"
+        PictureBox11.Size = New Size(43, 40)
+        PictureBox11.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox11.TabIndex = 38
+        PictureBox11.TabStop = False
+        ' 
+        ' PictureBox10
+        ' 
+        PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), Image)
+        PictureBox10.Location = New Point(8, 689)
+        PictureBox10.Name = "PictureBox10"
+        PictureBox10.Size = New Size(43, 40)
+        PictureBox10.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox10.TabIndex = 37
+        PictureBox10.TabStop = False
+        ' 
+        ' PictureBox9
+        ' 
+        PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), Image)
+        PictureBox9.Location = New Point(8, 611)
+        PictureBox9.Name = "PictureBox9"
+        PictureBox9.Size = New Size(43, 40)
+        PictureBox9.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox9.TabIndex = 36
+        PictureBox9.TabStop = False
+        ' 
+        ' PictureBox8
+        ' 
+        PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), Image)
+        PictureBox8.Location = New Point(8, 565)
+        PictureBox8.Name = "PictureBox8"
+        PictureBox8.Size = New Size(43, 40)
+        PictureBox8.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox8.TabIndex = 35
+        PictureBox8.TabStop = False
+        ' 
+        ' PictureBox7
+        ' 
+        PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), Image)
+        PictureBox7.Location = New Point(8, 490)
+        PictureBox7.Name = "PictureBox7"
+        PictureBox7.Size = New Size(43, 40)
+        PictureBox7.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox7.TabIndex = 34
+        PictureBox7.TabStop = False
+        ' 
+        ' PictureBox6
+        ' 
+        PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), Image)
+        PictureBox6.Location = New Point(8, 444)
+        PictureBox6.Name = "PictureBox6"
+        PictureBox6.Size = New Size(43, 40)
+        PictureBox6.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox6.TabIndex = 33
+        PictureBox6.TabStop = False
+        ' 
+        ' PictureBox5
+        ' 
+        PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
+        PictureBox5.Location = New Point(8, 370)
+        PictureBox5.Name = "PictureBox5"
+        PictureBox5.Size = New Size(43, 40)
+        PictureBox5.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox5.TabIndex = 32
+        PictureBox5.TabStop = False
+        ' 
+        ' PictureBox4
+        ' 
+        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
+        PictureBox4.Location = New Point(8, 324)
+        PictureBox4.Name = "PictureBox4"
+        PictureBox4.Size = New Size(43, 40)
+        PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox4.TabIndex = 31
+        PictureBox4.TabStop = False
+        ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
+        PictureBox3.Location = New Point(8, 278)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(43, 40)
+        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox3.TabIndex = 30
+        PictureBox3.TabStop = False
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(8, 232)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(43, 40)
+        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox2.TabIndex = 29
+        PictureBox2.TabStop = False
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(8, 188)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(43, 40)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox1.TabIndex = 28
+        PictureBox1.TabStop = False
         ' 
         ' btnLogout
         ' 
@@ -890,200 +1128,9 @@ Partial Class frmEmployeeDashboard
         lblSidebarTitle.Text = "PET CARE " & vbCrLf & "AND SERVICES"
         lblSidebarTitle.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' picCustomer
-        ' 
-        picCustomer.Image = CType(resources.GetObject("picCustomer.Image"), Image)
-        picCustomer.Location = New Point(3, 41)
-        picCustomer.Name = "picCustomer"
-        picCustomer.Size = New Size(90, 90)
-        picCustomer.SizeMode = PictureBoxSizeMode.Zoom
-        picCustomer.TabIndex = 11
-        picCustomer.TabStop = False
-        ' 
-        ' picPets
-        ' 
-        picPets.Image = CType(resources.GetObject("picPets.Image"), Image)
-        picPets.Location = New Point(8, 41)
-        picPets.Name = "picPets"
-        picPets.Size = New Size(90, 90)
-        picPets.SizeMode = PictureBoxSizeMode.Zoom
-        picPets.TabIndex = 12
-        picPets.TabStop = False
-        ' 
-        ' picAppointment
-        ' 
-        picAppointment.Image = CType(resources.GetObject("picAppointment.Image"), Image)
-        picAppointment.Location = New Point(8, 41)
-        picAppointment.Name = "picAppointment"
-        picAppointment.Size = New Size(90, 90)
-        picAppointment.SizeMode = PictureBoxSizeMode.Zoom
-        picAppointment.TabIndex = 13
-        picAppointment.TabStop = False
-        ' 
-        ' picOrder
-        ' 
-        picOrder.Image = CType(resources.GetObject("picOrder.Image"), Image)
-        picOrder.Location = New Point(8, 41)
-        picOrder.Name = "picOrder"
-        picOrder.Size = New Size(90, 90)
-        picOrder.SizeMode = PictureBoxSizeMode.Zoom
-        picOrder.TabIndex = 14
-        picOrder.TabStop = False
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(8, 188)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(43, 40)
-        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox1.TabIndex = 28
-        PictureBox1.TabStop = False
-        ' 
-        ' PictureBox2
-        ' 
-        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(8, 232)
-        PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(43, 40)
-        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox2.TabIndex = 29
-        PictureBox2.TabStop = False
-        ' 
-        ' PictureBox3
-        ' 
-        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
-        PictureBox3.Location = New Point(8, 278)
-        PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(43, 40)
-        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox3.TabIndex = 30
-        PictureBox3.TabStop = False
-        ' 
-        ' PictureBox4
-        ' 
-        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
-        PictureBox4.Location = New Point(8, 324)
-        PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(43, 40)
-        PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox4.TabIndex = 31
-        PictureBox4.TabStop = False
-        ' 
-        ' PictureBox5
-        ' 
-        PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
-        PictureBox5.Location = New Point(8, 370)
-        PictureBox5.Name = "PictureBox5"
-        PictureBox5.Size = New Size(43, 40)
-        PictureBox5.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox5.TabIndex = 32
-        PictureBox5.TabStop = False
-        ' 
-        ' PictureBox6
-        ' 
-        PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), Image)
-        PictureBox6.Location = New Point(8, 444)
-        PictureBox6.Name = "PictureBox6"
-        PictureBox6.Size = New Size(43, 40)
-        PictureBox6.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox6.TabIndex = 33
-        PictureBox6.TabStop = False
-        ' 
-        ' PictureBox7
-        ' 
-        PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), Image)
-        PictureBox7.Location = New Point(8, 490)
-        PictureBox7.Name = "PictureBox7"
-        PictureBox7.Size = New Size(43, 40)
-        PictureBox7.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox7.TabIndex = 34
-        PictureBox7.TabStop = False
-        ' 
-        ' PictureBox8
-        ' 
-        PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), Image)
-        PictureBox8.Location = New Point(8, 565)
-        PictureBox8.Name = "PictureBox8"
-        PictureBox8.Size = New Size(43, 40)
-        PictureBox8.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox8.TabIndex = 35
-        PictureBox8.TabStop = False
-        ' 
-        ' PictureBox9
-        ' 
-        PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), Image)
-        PictureBox9.Location = New Point(8, 611)
-        PictureBox9.Name = "PictureBox9"
-        PictureBox9.Size = New Size(43, 40)
-        PictureBox9.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox9.TabIndex = 36
-        PictureBox9.TabStop = False
-        ' 
-        ' PictureBox10
-        ' 
-        PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), Image)
-        PictureBox10.Location = New Point(8, 689)
-        PictureBox10.Name = "PictureBox10"
-        PictureBox10.Size = New Size(43, 40)
-        PictureBox10.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox10.TabIndex = 37
-        PictureBox10.TabStop = False
-        ' 
-        ' PictureBox11
-        ' 
-        PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), Image)
-        PictureBox11.Location = New Point(8, 735)
-        PictureBox11.Name = "PictureBox11"
-        PictureBox11.Size = New Size(43, 40)
-        PictureBox11.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox11.TabIndex = 38
-        PictureBox11.TabStop = False
-        ' 
-        ' PictureBox12
-        ' 
-        PictureBox12.Image = CType(resources.GetObject("PictureBox12.Image"), Image)
-        PictureBox12.Location = New Point(5, 79)
-        PictureBox12.Name = "PictureBox12"
-        PictureBox12.Size = New Size(44, 44)
-        PictureBox12.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox12.TabIndex = 5
-        PictureBox12.TabStop = False
-        ' 
-        ' PictureBox13
-        ' 
-        PictureBox13.Image = CType(resources.GetObject("PictureBox13.Image"), Image)
-        PictureBox13.Location = New Point(5, 155)
-        PictureBox13.Name = "PictureBox13"
-        PictureBox13.Size = New Size(44, 44)
-        PictureBox13.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox13.TabIndex = 6
-        PictureBox13.TabStop = False
-        ' 
-        ' PictureBox14
-        ' 
-        PictureBox14.Image = CType(resources.GetObject("PictureBox14.Image"), Image)
-        PictureBox14.Location = New Point(5, 233)
-        PictureBox14.Name = "PictureBox14"
-        PictureBox14.Size = New Size(44, 44)
-        PictureBox14.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox14.TabIndex = 7
-        PictureBox14.TabStop = False
-        ' 
-        ' PictureBox15
-        ' 
-        PictureBox15.Image = CType(resources.GetObject("PictureBox15.Image"), Image)
-        PictureBox15.Location = New Point(5, 311)
-        PictureBox15.Name = "PictureBox15"
-        PictureBox15.Size = New Size(44, 44)
-        PictureBox15.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox15.TabIndex = 8
-        PictureBox15.TabStop = False
-        ' 
         ' frmEmployeeDashboard
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
-        AutoScaleMode = AutoScaleMode.Font
+        AutoScaleMode = AutoScaleMode.None
         BackColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
         ClientSize = New Size(1382, 873)
         Controls.Add(pnlMain)
@@ -1092,19 +1139,29 @@ Partial Class frmEmployeeDashboard
         StartPosition = FormStartPosition.CenterScreen
         Text = "Pet Care and Services Management System"
         pnlMain.ResumeLayout(False)
+        pnlSummaryCards.ResumeLayout(False)
+        tlpSummaryCards.ResumeLayout(False)
+        pnlAppointments.ResumeLayout(False)
+        pnlAppointments.PerformLayout()
+        CType(picAppointment, ComponentModel.ISupportInitialize).EndInit()
+        pnlCustomers.ResumeLayout(False)
+        pnlCustomers.PerformLayout()
+        CType(picCustomer, ComponentModel.ISupportInitialize).EndInit()
+        pnlPets.ResumeLayout(False)
+        pnlPets.PerformLayout()
+        CType(picPets, ComponentModel.ISupportInitialize).EndInit()
+        pnlOrders.ResumeLayout(False)
+        pnlOrders.PerformLayout()
+        CType(picOrder, ComponentModel.ISupportInitialize).EndInit()
         pnlQuickActions.ResumeLayout(False)
         pnlQuickActions.PerformLayout()
+        CType(PictureBox15, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox14, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox13, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox12, ComponentModel.ISupportInitialize).EndInit()
         pnlRecentAppointments.ResumeLayout(False)
         pnlRecentAppointments.PerformLayout()
         CType(dgvRecentAppointments, ComponentModel.ISupportInitialize).EndInit()
-        pnlCustomers.ResumeLayout(False)
-        pnlCustomers.PerformLayout()
-        pnlOrders.ResumeLayout(False)
-        pnlOrders.PerformLayout()
-        pnlAppointments.ResumeLayout(False)
-        pnlAppointments.PerformLayout()
-        pnlPets.ResumeLayout(False)
-        pnlPets.PerformLayout()
         pnlWelcome.ResumeLayout(False)
         pnlWelcome.PerformLayout()
         CType(picPets2, ComponentModel.ISupportInitialize).EndInit()
@@ -1114,26 +1171,18 @@ Partial Class frmEmployeeDashboard
         CType(picPaw, ComponentModel.ISupportInitialize).EndInit()
         pnlSidebar.ResumeLayout(False)
         pnlSidebar.PerformLayout()
-        CType(picLogo, ComponentModel.ISupportInitialize).EndInit()
-        CType(picCustomer, ComponentModel.ISupportInitialize).EndInit()
-        CType(picPets, ComponentModel.ISupportInitialize).EndInit()
-        CType(picAppointment, ComponentModel.ISupportInitialize).EndInit()
-        CType(picOrder, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox10, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox11, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox12, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox13, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox14, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox15, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox10, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(picLogo, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -1221,4 +1270,6 @@ Partial Class frmEmployeeDashboard
     Friend WithEvents PictureBox14 As PictureBox
     Friend WithEvents PictureBox13 As PictureBox
     Friend WithEvents PictureBox12 As PictureBox
+    Friend WithEvents tlpSummaryCards As TableLayoutPanel
+    Friend WithEvents pnlSummaryCards As Panel
 End Class
