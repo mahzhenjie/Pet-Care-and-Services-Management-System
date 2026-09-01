@@ -22,6 +22,7 @@ Public Class frmRegister
     Private WithEvents btnRegister As New Button()
     Private WithEvents btnClear As New Button()
     Private WithEvents lnkBackToLogin As New LinkLabel()
+    Private WithEvents chkShowPassword As New CheckBox()
 
     Private ReadOnly colorBackground As Color = Color.FromArgb(245, 230, 209)
     Private ReadOnly colorHeader As Color = Color.FromArgb(139, 58, 27)
@@ -37,7 +38,7 @@ Public Class frmRegister
 
         Me.Text = "Register - Pet Care and Services Management System"
         Me.StartPosition = FormStartPosition.CenterScreen
-        Me.Size = New Size(480, 620)
+        Me.Size = New Size(480, 680)
         Me.FormBorderStyle = FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.BackColor = colorBackground
@@ -61,12 +62,28 @@ Public Class frmRegister
         Dim yPos As Integer = 85
         Dim gap As Integer = 65
 
-        AddField("Full Name", txtFullName, yPos) : yPos += gap
-        AddField("Username", txtUsername, yPos) : yPos += gap
-        AddField("Email", txtEmail, yPos) : yPos += gap
-        AddField("Phone Number", txtPhone, yPos) : yPos += gap
-        AddField("Password", txtPassword, yPos, isPassword:=True) : yPos += gap
-        AddField("Confirm Password", txtConfirmPassword, yPos, isPassword:=True) : yPos += gap + 15
+        AddField("Full Name", txtFullName, yPos)
+        yPos = yPos + gap
+        AddField("Username", txtUsername, yPos)
+        yPos = yPos + gap
+        AddField("Email", txtEmail, yPos)
+        yPos = yPos + gap
+        AddField("Phone Number", txtPhone, yPos)
+        yPos = yPos + gap
+        AddField("Password", txtPassword, yPos, isPassword:=True)
+        yPos = yPos + gap
+        AddField("Confirm Password", txtConfirmPassword, yPos, isPassword:=True)
+        yPos = yPos + gap
+
+        ' Show Password
+        chkShowPassword.Text = "Show Password"
+        chkShowPassword.Font = New Font("Segoe UI", 9)
+        chkShowPassword.ForeColor = colorDarkBrown
+        chkShowPassword.AutoSize = True
+        chkShowPassword.Location = New Point(80, yPos - 5)
+        Me.Controls.Add(chkShowPassword)
+
+        yPos = yPos + 30
 
         ' Register 按鈕
         btnRegister.Text = "Register"
@@ -91,7 +108,7 @@ Public Class frmRegister
         btnClear.Location = New Point(235, yPos)
         Me.Controls.Add(btnClear)
 
-        yPos += 60
+        yPos = yPos + 60
 
         ' Back to Login 連結
         Dim lblHaveAccount As New Label()
@@ -263,6 +280,17 @@ Public Class frmRegister
         End Try
     End Sub
 
+    Private Sub chkShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPassword.CheckedChanged
+
+        If chkShowPassword.Checked Then
+            txtPassword.PasswordChar = ControlChars.NullChar
+            txtConfirmPassword.PasswordChar = ControlChars.NullChar
+        Else
+            txtPassword.PasswordChar = "*"c
+            txtConfirmPassword.PasswordChar = "*"c
+        End If
+
+    End Sub
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         txtFullName.Clear()
         txtUsername.Clear()

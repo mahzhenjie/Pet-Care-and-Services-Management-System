@@ -16,6 +16,7 @@ Public Class frmLogin
     Private WithEvents txtPassword As New TextBox()
     Private WithEvents btnLogin As New Button()
     Private WithEvents lnkRegister As New LinkLabel()
+    Private WithEvents chkShowPassword As New CheckBox()
 
     Private ReadOnly colorBackground As Color = Color.FromArgb(245, 230, 209)
     Private ReadOnly colorHeader As Color = Color.FromArgb(139, 58, 27)
@@ -31,7 +32,7 @@ Public Class frmLogin
 
         Me.Text = "Login - Pet Care and Services Management System"
         Me.StartPosition = FormStartPosition.CenterScreen
-        Me.Size = New Size(480, 470)
+        Me.Size = New Size(480, 500)
         Me.FormBorderStyle = FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.BackColor = colorBackground
@@ -103,6 +104,14 @@ Public Class frmLogin
         txtPassword.PasswordChar = "*"c
         Me.Controls.Add(txtPassword)
 
+        ' Show Password
+        chkShowPassword.Text = "Show Password"
+        chkShowPassword.Font = New Font("Segoe UI", 9)
+        chkShowPassword.ForeColor = colorDarkBrown
+        chkShowPassword.AutoSize = True
+        chkShowPassword.Location = New Point(80, 285)
+        Me.Controls.Add(chkShowPassword)
+
         ' Login 按鈕
         btnLogin.Text = "Login"
         btnLogin.Font = New Font("Segoe UI", 11, FontStyle.Bold)
@@ -111,7 +120,7 @@ Public Class frmLogin
         btnLogin.FlatStyle = FlatStyle.Flat
         btnLogin.FlatAppearance.BorderSize = 0
         btnLogin.Size = New Size(300, 40)
-        btnLogin.Location = New Point(80, 300)
+        btnLogin.Location = New Point(80, 320)
         Me.Controls.Add(btnLogin)
 
         ' Register 連結
@@ -120,20 +129,29 @@ Public Class frmLogin
         lblNoAccount.Font = New Font("Segoe UI", 9)
         lblNoAccount.ForeColor = colorDarkBrown
         lblNoAccount.AutoSize = True
-        lblNoAccount.Location = New Point(115, 365)
+        lblNoAccount.Location = New Point(115, 385)
         Me.Controls.Add(lblNoAccount)
 
         lnkRegister.Text = "Register here"
         lnkRegister.Font = New Font("Segoe UI", 9, FontStyle.Bold)
         lnkRegister.LinkColor = colorHeader
         lnkRegister.AutoSize = True
-        lnkRegister.Location = New Point(255, 365)
+        lnkRegister.Location = New Point(255, 385)
         Me.Controls.Add(lnkRegister)
 
         Me.AcceptButton = btnLogin
         Me.ResumeLayout(False)
     End Sub
 
+    Private Sub chkShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPassword.CheckedChanged
+
+        If chkShowPassword.Checked Then
+            txtPassword.PasswordChar = ControlChars.NullChar
+        Else
+            txtPassword.PasswordChar = "*"c
+        End If
+
+    End Sub
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Dim uname As String = txtUsername.Text.Trim()
         Dim pword As String = txtPassword.Text
