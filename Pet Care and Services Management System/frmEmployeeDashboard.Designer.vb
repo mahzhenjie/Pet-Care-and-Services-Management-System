@@ -440,7 +440,7 @@ Partial Class frmEmployeeDashboard
         pnlQuickActions.Controls.Add(lblQuickActions)
         pnlQuickActions.Location = New Point(1067, 465)
         pnlQuickActions.Name = "pnlQuickActions"
-        pnlQuickActions.Size = New Size(291, 395)
+        pnlQuickActions.Size = New Size(298, 395)
         pnlQuickActions.TabIndex = 14
         ' 
         ' PictureBox15
@@ -641,7 +641,7 @@ Partial Class frmEmployeeDashboard
         btnDropdown.FlatAppearance.BorderSize = 0
         btnDropdown.FlatStyle = FlatStyle.Flat
         btnDropdown.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        btnDropdown.Location = New Point(1067, 31)
+        btnDropdown.Location = New Point(1064, 31)
         btnDropdown.Name = "btnDropdown"
         btnDropdown.Size = New Size(35, 35)
         btnDropdown.TabIndex = 5
