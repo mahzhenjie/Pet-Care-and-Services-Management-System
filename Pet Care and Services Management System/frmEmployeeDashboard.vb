@@ -128,4 +128,98 @@ Public Class frmEmployeeDashboard
                 MessageBoxIcon.Error)
         End Try
     End Sub
+
+    Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
+        Me.Show()
+    End Sub
+
+    Private Sub btnCustomers_Click(sender As Object, e As EventArgs) Handles btnCustomers.Click
+        Dim frm As New frmCustomer()
+        frm.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnPets_Click(sender As Object, e As EventArgs) Handles btnPets.Click
+        Dim frm As New frmPet()
+        frm.Show()
+        Me.Hide()
+    End Sub
+
+
+    Private Sub btnBookings_Click(sender As Object, e As EventArgs) Handles btnBookings.Click
+        Dim frm As New frmGroomingBooking()
+        frm.Show()
+        Me.Hide()
+    End Sub
+
+
+    Private Sub btnOrders_Click(sender As Object, e As EventArgs) Handles btnOrders.Click
+        Dim frm As New frmOrder()
+        frm.Show()
+        Me.Hide()
+    End Sub
+
+
+    Private Sub btnPayments_Click(sender As Object, e As EventArgs) Handles btnPayments.Click
+        Dim frm As New frmPayment()
+        frm.Show()
+        Me.Hide()
+    End Sub
+
+
+    Private Sub btnGroomingServices_Click(sender As Object, e As EventArgs) Handles btnGroomingServices.Click
+        Dim frm As New frmGrommingServices()
+        frm.Show()
+        Me.Hide()
+    End Sub
+
+
+    Private Sub btnBoardingServices_Click(sender As Object, e As EventArgs) Handles btnBoardingServices.Click
+        Dim frm As New frmBoardingServices()
+        frm.Show()
+        Me.Hide()
+    End Sub
+
+
+    Private Sub btnBoardingRooms_Click(sender As Object, e As EventArgs) Handles btnBoardingRooms.Click
+        Dim frm As New frmBoardingRoom()
+        frm.Show()
+        Me.Hide()
+    End Sub
+
+
+    Private Sub btnBoardingVideos_Click(sender As Object, e As EventArgs) Handles btnBoardingVideos.Click
+        Dim frm As New frmPetVideos()
+        frm.Show()
+        Me.Hide()
+    End Sub
+
+
+    Private Sub btnProducts_Click(sender As Object, e As EventArgs) Handles btnProducts.Click
+        Dim frm As New frmProduct()
+        frm.Show()
+        Me.Hide()
+    End Sub
+
+
+    Private Sub btnMembership_Click(sender As Object, e As EventArgs) Handles btnMembership.Click
+        Dim frm As New frmMembership()
+        frm.Show()
+        Me.Hide()
+    End Sub
+
+
+    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+        Dim result As DialogResult
+        result = MessageBox.Show(
+            "Are you sure you want to logout?",
+            "Logout",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question
+        )
+
+        If result = DialogResult.Yes Then
+            Application.Exit()
+        End If
+    End Sub
 End Class

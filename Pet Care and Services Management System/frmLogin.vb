@@ -2,11 +2,6 @@ Imports System.Windows.Forms
 Imports System.Drawing
 Imports MySql.Data.MySqlClient
 
-' ============================================================
-' frmLogin.vb — 第二步：Login Form
-' 選擇身分 (Customer / Employee) + 輸入 Username / Password
-' 沒有帳號時可以連到 frmRegister
-' ============================================================
 Public Class frmLogin
     Inherits Form
 
@@ -53,7 +48,7 @@ Public Class frmLogin
         pnlLine.Location = New Point(30, 72)
         Me.Controls.Add(pnlLine)
 
-        ' Login As 群組
+        ' Login
         Dim grpRole As New GroupBox()
         grpRole.Text = "Login As"
         grpRole.ForeColor = colorDarkBrown
@@ -210,5 +205,4 @@ Public Class frmLogin
     Private Sub frmLogin_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         Application.Exit()
     End Sub
-
 End Class

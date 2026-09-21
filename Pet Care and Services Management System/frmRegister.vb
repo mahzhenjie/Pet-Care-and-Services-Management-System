@@ -3,13 +3,6 @@ Imports System.Drawing
 Imports MySql.Data.MySqlClient
 Imports System.Text.RegularExpressions
 
-' ============================================================
-' frmRegister.vb — Register Form (新客戶註冊)
-' 欄位：FullName, Username, Email, Phone, Password, Confirm Password
-' 按鈕：Register / Clear
-' 底下有 "Already have an account? Back to Login" 連結
-' 註冊只開放給 Customer；Employee 帳號通常由管理員後台建立
-' ============================================================
 Public Class frmRegister
     Inherits Form
 
