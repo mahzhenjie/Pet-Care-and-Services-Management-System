@@ -223,7 +223,4 @@ Public Class frmEmployeeDashboard
         End If
     End Sub
 
-    Private Sub lblDashboardTitle_Click(sender As Object, e As EventArgs) Handles lblDashboardTitle.Click
-
-    End Sub
 End Class

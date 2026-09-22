@@ -16,6 +16,9 @@
     <Compile Update="frmAddProduct.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmCustomerDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmEditCustomer.vb">
       <SubType>Form</SubType>
     </Compile>
