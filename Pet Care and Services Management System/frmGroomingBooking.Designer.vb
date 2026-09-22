@@ -36,6 +36,7 @@ Partial Class frmGroomingBooking
         btnRefresh = New Button()
         txtSearch = New TextBox()
         lblTitle = New Label()
+        btnGoBackDashboard = New Button()
         pnlGroomingBooking.SuspendLayout()
         CType(dgvGroomingBooking, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -43,6 +44,7 @@ Partial Class frmGroomingBooking
         ' pnlGroomingBooking
         ' 
         pnlGroomingBooking.BackColor = Color.FromArgb(CByte(232), CByte(216), CByte(194))
+        pnlGroomingBooking.Controls.Add(btnGoBackDashboard)
         pnlGroomingBooking.Controls.Add(dgvGroomingBooking)
         pnlGroomingBooking.Controls.Add(btnAddGroomingBooking)
         pnlGroomingBooking.Controls.Add(btnRefresh)
@@ -170,6 +172,19 @@ Partial Class frmGroomingBooking
         lblTitle.TabIndex = 0
         lblTitle.Text = "Grooming Booking Management"
         ' 
+        ' btnGoBackDashboard
+        ' 
+        btnGoBackDashboard.BackColor = Color.SaddleBrown
+        btnGoBackDashboard.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnGoBackDashboard.ForeColor = Color.WhiteSmoke
+        btnGoBackDashboard.Location = New Point(441, 80)
+        btnGoBackDashboard.Margin = New Padding(3, 4, 3, 4)
+        btnGoBackDashboard.Name = "btnGoBackDashboard"
+        btnGoBackDashboard.Size = New Size(156, 34)
+        btnGoBackDashboard.TabIndex = 8
+        btnGoBackDashboard.Text = "Dashboard"
+        btnGoBackDashboard.UseVisualStyleBackColor = False
+        ' 
         ' frmGroomingBooking
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -200,4 +215,5 @@ Partial Class frmGroomingBooking
     Friend WithEvents colStatus As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colEdit As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents colDelete As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents btnGoBackDashboard As Button
 End Class

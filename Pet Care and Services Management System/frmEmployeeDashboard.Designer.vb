@@ -652,7 +652,7 @@ Partial Class frmEmployeeDashboard
         pnlTopBar.Dock = DockStyle.Top
         pnlTopBar.Location = New Point(280, 0)
         pnlTopBar.Name = "pnlTopBar"
-        pnlTopBar.Size = New Size(1102, 108)
+        pnlTopBar.Size = New Size(1102, 124)
         pnlTopBar.TabIndex = 4
         ' 
         ' btnDropdown
@@ -685,8 +685,8 @@ Partial Class frmEmployeeDashboard
         ' 
         btnMenu.FlatAppearance.BorderSize = 0
         btnMenu.FlatStyle = FlatStyle.Flat
-        btnMenu.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        btnMenu.Location = New Point(6, 50)
+        btnMenu.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnMenu.Location = New Point(12, 50)
         btnMenu.Name = "btnMenu"
         btnMenu.Size = New Size(54, 45)
         btnMenu.TabIndex = 2
@@ -733,7 +733,7 @@ Partial Class frmEmployeeDashboard
         ' picPaw
         ' 
         picPaw.Image = CType(resources.GetObject("picPaw.Image"), Image)
-        picPaw.Location = New Point(580, 31)
+        picPaw.Location = New Point(628, 35)
         picPaw.Name = "picPaw"
         picPaw.Size = New Size(63, 69)
         picPaw.SizeMode = PictureBoxSizeMode.Zoom
@@ -743,10 +743,10 @@ Partial Class frmEmployeeDashboard
         ' lblDashboardTitle
         ' 
         lblDashboardTitle.AutoSize = True
-        lblDashboardTitle.Font = New Font("Georgia", 22.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblDashboardTitle.Font = New Font("Georgia", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblDashboardTitle.Location = New Point(63, 50)
         lblDashboardTitle.Name = "lblDashboardTitle"
-        lblDashboardTitle.Size = New Size(519, 43)
+        lblDashboardTitle.Size = New Size(559, 46)
         lblDashboardTitle.TabIndex = 1
         lblDashboardTitle.Text = "EMPLOYEE DASHBOARD"
         ' 
@@ -1168,13 +1168,13 @@ Partial Class frmEmployeeDashboard
         ' LogoutToolStripMenuItem
         ' 
         LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        LogoutToolStripMenuItem.Size = New Size(139, 26)
+        LogoutToolStripMenuItem.Size = New Size(224, 26)
         LogoutToolStripMenuItem.Text = "Logout"
         ' 
         ' ExitToolStripMenuItem
         ' 
         ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        ExitToolStripMenuItem.Size = New Size(139, 26)
+        ExitToolStripMenuItem.Size = New Size(224, 26)
         ExitToolStripMenuItem.Text = "Exit"
         ' 
         ' ManagementToolStripMenuItem
@@ -1224,13 +1224,13 @@ Partial Class frmEmployeeDashboard
         ' GroomingServicesToolStripMenuItem
         ' 
         GroomingServicesToolStripMenuItem.Name = "GroomingServicesToolStripMenuItem"
-        GroomingServicesToolStripMenuItem.Size = New Size(216, 26)
+        GroomingServicesToolStripMenuItem.Size = New Size(224, 26)
         GroomingServicesToolStripMenuItem.Text = "Grooming Services"
         ' 
         ' BoardingServicesToolStripMenuItem
         ' 
         BoardingServicesToolStripMenuItem.Name = "BoardingServicesToolStripMenuItem"
-        BoardingServicesToolStripMenuItem.Size = New Size(216, 26)
+        BoardingServicesToolStripMenuItem.Size = New Size(224, 26)
         BoardingServicesToolStripMenuItem.Text = "Boarding Services"
         ' 
         ' ViewToolStripMenuItem

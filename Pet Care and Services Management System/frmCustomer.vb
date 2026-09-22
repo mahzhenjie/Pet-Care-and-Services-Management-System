@@ -3,8 +3,7 @@
 Public Class frmCustomer
 
     ' DATABASE CONNECTION
-    Private connectionString As String =
-        "Server=localhost;Database=pet_care_and_services_management_system;Uid=root;Pwd=;"
+    Private connectionString As String = "Server=localhost;Database=pet_care_and_services_management_system;Uid=root;Pwd=;"
 
     ' FORM LOAD
     Private Sub frmCustomer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
