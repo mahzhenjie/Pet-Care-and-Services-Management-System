@@ -13,6 +13,9 @@
     <Compile Update="frmAddPet.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmAddProduct.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmEditCustomer.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -28,10 +31,19 @@
     <Compile Update="frmEditGroomingBooking.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmEditMembership.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmEditOrderDetail.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmEditPayment.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmEditPet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmEditProduct.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmGroomingServices.vb">

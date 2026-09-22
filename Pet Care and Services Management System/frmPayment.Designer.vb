@@ -26,7 +26,6 @@ Partial Class frmPayment
         cboMethod = New ComboBox()
         cboStatus = New ComboBox()
         txtSearch = New TextBox()
-        btnAddPayment = New Button()
         btnRefresh = New Button()
         dgvPayment = New DataGridView()
         colPaymentID = New DataGridViewTextBoxColumn()
@@ -39,6 +38,7 @@ Partial Class frmPayment
         colEdit = New DataGridViewButtonColumn()
         colDelete = New DataGridViewButtonColumn()
         lblTitle = New Label()
+        btnGoBackDashboard = New Button()
         pnlPayment.SuspendLayout()
         CType(dgvPayment, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -46,10 +46,10 @@ Partial Class frmPayment
         ' pnlPayment
         ' 
         pnlPayment.BackColor = Color.FromArgb(CByte(232), CByte(216), CByte(194))
+        pnlPayment.Controls.Add(btnGoBackDashboard)
         pnlPayment.Controls.Add(cboMethod)
         pnlPayment.Controls.Add(cboStatus)
         pnlPayment.Controls.Add(txtSearch)
-        pnlPayment.Controls.Add(btnAddPayment)
         pnlPayment.Controls.Add(btnRefresh)
         pnlPayment.Controls.Add(dgvPayment)
         pnlPayment.Controls.Add(lblTitle)
@@ -63,7 +63,7 @@ Partial Class frmPayment
         ' cboMethod
         ' 
         cboMethod.FormattingEnabled = True
-        cboMethod.Location = New Point(520, 84)
+        cboMethod.Location = New Point(520, 83)
         cboMethod.Margin = New Padding(3, 4, 3, 4)
         cboMethod.Name = "cboMethod"
         cboMethod.Size = New Size(87, 28)
@@ -73,7 +73,7 @@ Partial Class frmPayment
         ' cboStatus
         ' 
         cboStatus.FormattingEnabled = True
-        cboStatus.Location = New Point(428, 84)
+        cboStatus.Location = New Point(428, 83)
         cboStatus.Margin = New Padding(3, 4, 3, 4)
         cboStatus.Name = "cboStatus"
         cboStatus.Size = New Size(87, 28)
@@ -87,22 +87,9 @@ Partial Class frmPayment
         txtSearch.Location = New Point(24, 80)
         txtSearch.Margin = New Padding(3, 4, 3, 4)
         txtSearch.Name = "txtSearch"
-        txtSearch.Size = New Size(398, 27)
+        txtSearch.Size = New Size(379, 27)
         txtSearch.TabIndex = 7
-        txtSearch.Text = "Search customer..."
-        ' 
-        ' btnAddPayment
-        ' 
-        btnAddPayment.BackColor = Color.SaddleBrown
-        btnAddPayment.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        btnAddPayment.ForeColor = Color.WhiteSmoke
-        btnAddPayment.Location = New Point(613, 80)
-        btnAddPayment.Margin = New Padding(3, 4, 3, 4)
-        btnAddPayment.Name = "btnAddPayment"
-        btnAddPayment.Size = New Size(137, 34)
-        btnAddPayment.TabIndex = 6
-        btnAddPayment.Text = "+Add Pet"
-        btnAddPayment.UseVisualStyleBackColor = False
+        txtSearch.Text = "Search payment..."
         ' 
         ' btnRefresh
         ' 
@@ -136,14 +123,14 @@ Partial Class frmPayment
         ' 
         ' colPaymentID
         ' 
-        colPaymentID.FillWeight = 135.0F
+        colPaymentID.FillWeight = 135F
         colPaymentID.HeaderText = "Payment ID"
         colPaymentID.MinimumWidth = 6
         colPaymentID.Name = "colPaymentID"
         ' 
         ' colCustomerID
         ' 
-        colCustomerID.FillWeight = 135.0F
+        colCustomerID.FillWeight = 135F
         colCustomerID.HeaderText = "CustomerID"
         colCustomerID.MinimumWidth = 6
         colCustomerID.Name = "colCustomerID"
@@ -156,7 +143,7 @@ Partial Class frmPayment
         ' 
         ' colAmount
         ' 
-        colAmount.FillWeight = 90.0F
+        colAmount.FillWeight = 90F
         colAmount.HeaderText = "Amount"
         colAmount.MinimumWidth = 6
         colAmount.Name = "colAmount"
@@ -175,7 +162,7 @@ Partial Class frmPayment
         ' 
         ' colPaymentStatus
         ' 
-        colPaymentStatus.FillWeight = 150.0F
+        colPaymentStatus.FillWeight = 150F
         colPaymentStatus.HeaderText = "Payment Status"
         colPaymentStatus.MinimumWidth = 6
         colPaymentStatus.Name = "colPaymentStatus"
@@ -203,9 +190,22 @@ Partial Class frmPayment
         lblTitle.TabIndex = 0
         lblTitle.Text = "Payment Management"
         ' 
+        ' btnGoBackDashboard
+        ' 
+        btnGoBackDashboard.BackColor = Color.SaddleBrown
+        btnGoBackDashboard.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnGoBackDashboard.ForeColor = Color.WhiteSmoke
+        btnGoBackDashboard.Location = New Point(613, 80)
+        btnGoBackDashboard.Margin = New Padding(3, 4, 3, 4)
+        btnGoBackDashboard.Name = "btnGoBackDashboard"
+        btnGoBackDashboard.Size = New Size(137, 34)
+        btnGoBackDashboard.TabIndex = 15
+        btnGoBackDashboard.Text = "Dashboard"
+        btnGoBackDashboard.UseVisualStyleBackColor = False
+        ' 
         ' frmPayment
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(942, 754)
         Controls.Add(pnlPayment)
@@ -221,7 +221,6 @@ Partial Class frmPayment
 
     Friend WithEvents pnlPayment As System.Windows.Forms.Panel
     Friend WithEvents txtSearch As System.Windows.Forms.TextBox
-    Friend WithEvents btnAddPayment As System.Windows.Forms.Button
     Friend WithEvents btnRefresh As System.Windows.Forms.Button
     Friend WithEvents dgvPayment As System.Windows.Forms.DataGridView
     Friend WithEvents lblTitle As System.Windows.Forms.Label
@@ -236,5 +235,6 @@ Partial Class frmPayment
     Friend WithEvents colDelete As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents cboMethod As System.Windows.Forms.ComboBox
     Friend WithEvents cboStatus As System.Windows.Forms.ComboBox
+    Friend WithEvents btnGoBackDashboard As Button
 
 End Class

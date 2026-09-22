@@ -37,6 +37,7 @@ Partial Class frmMembership
         btnRefresh = New Button()
         txtSearch = New TextBox()
         lblTitle = New Label()
+        btnGoBackDashboard = New Button()
         pnlMembership.SuspendLayout()
         CType(dgvMembership, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -44,6 +45,7 @@ Partial Class frmMembership
         ' pnlMembership
         ' 
         pnlMembership.BackColor = Color.FromArgb(CByte(232), CByte(216), CByte(194))
+        pnlMembership.Controls.Add(btnGoBackDashboard)
         pnlMembership.Controls.Add(cboType)
         pnlMembership.Controls.Add(cboStatus)
         pnlMembership.Controls.Add(dgvMembership)
@@ -60,7 +62,7 @@ Partial Class frmMembership
         ' cboType
         ' 
         cboType.FormattingEnabled = True
-        cboType.Location = New Point(571, 84)
+        cboType.Location = New Point(385, 83)
         cboType.Margin = New Padding(3, 4, 3, 4)
         cboType.Name = "cboType"
         cboType.Size = New Size(87, 28)
@@ -70,7 +72,7 @@ Partial Class frmMembership
         ' cboStatus
         ' 
         cboStatus.FormattingEnabled = True
-        cboStatus.Location = New Point(664, 84)
+        cboStatus.Location = New Point(488, 83)
         cboStatus.Margin = New Padding(3, 4, 3, 4)
         cboStatus.Name = "cboStatus"
         cboStatus.Size = New Size(87, 28)
@@ -164,7 +166,7 @@ Partial Class frmMembership
         txtSearch.Location = New Point(24, 80)
         txtSearch.Margin = New Padding(3, 4, 3, 4)
         txtSearch.Name = "txtSearch"
-        txtSearch.Size = New Size(398, 27)
+        txtSearch.Size = New Size(326, 27)
         txtSearch.TabIndex = 1
         txtSearch.Text = "Search booking..."
         txtSearch.UseWaitCursor = True
@@ -178,6 +180,19 @@ Partial Class frmMembership
         lblTitle.Size = New Size(386, 34)
         lblTitle.TabIndex = 0
         lblTitle.Text = "Membership Management"
+        ' 
+        ' btnGoBackDashboard
+        ' 
+        btnGoBackDashboard.BackColor = Color.SaddleBrown
+        btnGoBackDashboard.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnGoBackDashboard.ForeColor = Color.WhiteSmoke
+        btnGoBackDashboard.Location = New Point(614, 80)
+        btnGoBackDashboard.Margin = New Padding(3, 4, 3, 4)
+        btnGoBackDashboard.Name = "btnGoBackDashboard"
+        btnGoBackDashboard.Size = New Size(137, 34)
+        btnGoBackDashboard.TabIndex = 17
+        btnGoBackDashboard.Text = "Dashboard"
+        btnGoBackDashboard.UseVisualStyleBackColor = False
         ' 
         ' frmMembership
         ' 
@@ -210,4 +225,5 @@ Partial Class frmMembership
     Friend WithEvents colDelete As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents cboType As System.Windows.Forms.ComboBox
     Friend WithEvents cboStatus As System.Windows.Forms.ComboBox
+    Friend WithEvents btnGoBackDashboard As Button
 End Class

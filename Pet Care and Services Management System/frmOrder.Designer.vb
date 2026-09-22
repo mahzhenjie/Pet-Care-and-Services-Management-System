@@ -51,7 +51,7 @@ Partial Class frmOrder
         pnlOrder.Controls.Add(btnRefresh)
         pnlOrder.Controls.Add(txtSearch)
         pnlOrder.Controls.Add(lblTitle)
-        pnlOrder.Enabled = False
+        pnlOrder.Enabled = True
         pnlOrder.ForeColor = Color.SaddleBrown
         pnlOrder.Location = New Point(12, 15)
         pnlOrder.Margin = New Padding(3, 4, 3, 4)
