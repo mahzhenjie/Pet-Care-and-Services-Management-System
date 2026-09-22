@@ -36,6 +36,7 @@ Partial Class frmOrderDetail
         btnRefresh = New Button()
         txtSearch = New TextBox()
         lblTitle = New Label()
+        btnGoBackDashboard = New Button()
         pnlOrderDetail.SuspendLayout()
         CType(dgvOrderDetail, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -43,6 +44,7 @@ Partial Class frmOrderDetail
         ' pnlOrderDetail
         ' 
         pnlOrderDetail.BackColor = Color.FromArgb(CByte(232), CByte(216), CByte(194))
+        pnlOrderDetail.Controls.Add(btnGoBackDashboard)
         pnlOrderDetail.Controls.Add(dgvOrderDetail)
         pnlOrderDetail.Controls.Add(btnAddOrderDetail)
         pnlOrderDetail.Controls.Add(btnRefresh)
@@ -173,6 +175,19 @@ Partial Class frmOrderDetail
         lblTitle.TabIndex = 0
         lblTitle.Text = "Order Detail Management"
         ' 
+        ' btnGoBackDashboard
+        ' 
+        btnGoBackDashboard.BackColor = Color.SaddleBrown
+        btnGoBackDashboard.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnGoBackDashboard.ForeColor = Color.WhiteSmoke
+        btnGoBackDashboard.Location = New Point(450, 80)
+        btnGoBackDashboard.Margin = New Padding(3, 4, 3, 4)
+        btnGoBackDashboard.Name = "btnGoBackDashboard"
+        btnGoBackDashboard.Size = New Size(137, 34)
+        btnGoBackDashboard.TabIndex = 8
+        btnGoBackDashboard.Text = "Dashboard"
+        btnGoBackDashboard.UseVisualStyleBackColor = False
+        ' 
         ' frmOrderDetail
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -203,4 +218,5 @@ Partial Class frmOrderDetail
     Friend WithEvents colSubtotal As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colEdit As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents colDelete As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents btnGoBackDashboard As Button
 End Class

@@ -22,180 +22,213 @@ Partial Class frmProduct
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.pnlProduct = New System.Windows.Forms.Panel()
-        Me.dgvProduct = New System.Windows.Forms.DataGridView()
-        Me.btnAddProduct = New System.Windows.Forms.Button()
-        Me.btnRefresh = New System.Windows.Forms.Button()
-        Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.lblTitle = New System.Windows.Forms.Label()
-        Me.colProductID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colProductName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colCategory = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colDescription = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colPrice = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colStockQuantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colEdit = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.colDelete = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.cboCategory = New System.Windows.Forms.ComboBox()
-        Me.pnlProduct.SuspendLayout()
-        CType(Me.dgvProduct, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
-        '
-        'pnlProduct
-        '
-        Me.pnlProduct.BackColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(194, Byte), Integer))
-        Me.pnlProduct.Controls.Add(Me.cboCategory)
-        Me.pnlProduct.Controls.Add(Me.dgvProduct)
-        Me.pnlProduct.Controls.Add(Me.btnAddProduct)
-        Me.pnlProduct.Controls.Add(Me.btnRefresh)
-        Me.pnlProduct.Controls.Add(Me.txtSearch)
-        Me.pnlProduct.Controls.Add(Me.lblTitle)
-        Me.pnlProduct.ForeColor = System.Drawing.Color.SaddleBrown
-        Me.pnlProduct.Location = New System.Drawing.Point(12, 12)
-        Me.pnlProduct.Name = "pnlProduct"
-        Me.pnlProduct.Size = New System.Drawing.Size(920, 580)
-        Me.pnlProduct.TabIndex = 3
-        '
-        'dgvProduct
-        '
-        Me.dgvProduct.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(227, Byte), Integer))
-        Me.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProduct.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {
-            Me.colProductID,
-            Me.colProductName,
-            Me.colCategory,
-            Me.colDescription,
-            Me.colPrice,
-            Me.colStockQuantity,
-            Me.colEdit,
-            Me.colDelete
-        })
-        Me.dgvProduct.GridColor = System.Drawing.Color.Sienna
-        Me.dgvProduct.Location = New System.Drawing.Point(24, 97)
-        Me.dgvProduct.Name = "dgvProduct"
-        Me.dgvProduct.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvProduct.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.dgvProduct.RowTemplate.Height = 24
-        Me.dgvProduct.Size = New System.Drawing.Size(868, 455)
-        Me.dgvProduct.TabIndex = 7
-        '
-        'btnAddProduct
-        '
-        Me.btnAddProduct.BackColor = System.Drawing.Color.SaddleBrown
-        Me.btnAddProduct.Font = New System.Drawing.Font("Lucida Sans Unicode", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddProduct.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnAddProduct.Location = New System.Drawing.Point(736, 67)
-        Me.btnAddProduct.Name = "btnAddProduct"
-        Me.btnAddProduct.Size = New System.Drawing.Size(156, 27)
-        Me.btnAddProduct.TabIndex = 6
-        Me.btnAddProduct.Text = "+Product"
-        Me.btnAddProduct.UseVisualStyleBackColor = False
-        '
-        'btnRefresh
-        '
-        Me.btnRefresh.BackColor = System.Drawing.Color.SaddleBrown
-        Me.btnRefresh.Font = New System.Drawing.Font("Lucida Sans Unicode", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRefresh.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnRefresh.Location = New System.Drawing.Point(593, 67)
-        Me.btnRefresh.Name = "btnRefresh"
-        Me.btnRefresh.Size = New System.Drawing.Size(137, 27)
-        Me.btnRefresh.TabIndex = 3
-        Me.btnRefresh.Text = "Refresh"
-        Me.btnRefresh.UseVisualStyleBackColor = False
-        '
-        'txtSearch
-        '
-        Me.txtSearch.Font = New System.Drawing.Font("Lucida Sans Unicode", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.ForeColor = System.Drawing.Color.Sienna
-        Me.txtSearch.Location = New System.Drawing.Point(24, 64)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(398, 27)
-        Me.txtSearch.TabIndex = 1
-        Me.txtSearch.Text = "Search product..."
-        Me.txtSearch.UseWaitCursor = True
-        '
-        'lblTitle
-        '
-        Me.lblTitle.AutoSize = True
-        Me.lblTitle.Font = New System.Drawing.Font("Lucida Sans Unicode", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitle.Location = New System.Drawing.Point(20, 15)
-        Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(317, 34)
-        Me.lblTitle.TabIndex = 0
-        Me.lblTitle.Text = "Product Management"
-        '
-        'colProductID
-        '
-        Me.colProductID.FillWeight = 135.0!
-        Me.colProductID.HeaderText = "Product ID"
-        Me.colProductID.Name = "colProductID"
-        Me.colProductID.Width = 135
-        '
-        'colProductName
-        '
-        Me.colProductName.HeaderText = "Product Name"
-        Me.colProductName.Name = "colProductName"
-        '
-        'colCategory
-        '
-        Me.colCategory.FillWeight = 85.0!
-        Me.colCategory.HeaderText = "Category"
-        Me.colCategory.Name = "colCategory"
-        Me.colCategory.Width = 85
-        '
-        'colDescription
-        '
-        Me.colDescription.FillWeight = 200.0!
-        Me.colDescription.HeaderText = "Description"
-        Me.colDescription.Name = "colDescription"
-        Me.colDescription.Width = 200
-        '
-        'colPrice
-        '
-        Me.colPrice.HeaderText = "Price"
-        Me.colPrice.Name = "colPrice"
-        '
-        'colStockQuantity
-        '
-        Me.colStockQuantity.FillWeight = 85.0!
-        Me.colStockQuantity.HeaderText = "Stock Quantity"
-        Me.colStockQuantity.Name = "colStockQuantity"
-        Me.colStockQuantity.Width = 85
-        '
-        'colEdit
-        '
-        Me.colEdit.HeaderText = "Edit"
-        Me.colEdit.Name = "colEdit"
-        Me.colEdit.Width = 60
-        '
-        'colDelete
-        '
-        Me.colDelete.HeaderText = "Delete"
-        Me.colDelete.Name = "colDelete"
-        Me.colDelete.Text = "[Delete]"
-        Me.colDelete.Width = 60
-        '
-        'cboCategory
-        '
-        Me.cboCategory.FormattingEnabled = True
-        Me.cboCategory.Location = New System.Drawing.Point(500, 67)
-        Me.cboCategory.Name = "cboCategory"
-        Me.cboCategory.Size = New System.Drawing.Size(87, 24)
-        Me.cboCategory.TabIndex = 12
-        Me.cboCategory.Text = "Category"
-        '
-        'frmProduct
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(942, 603)
-        Me.Controls.Add(Me.pnlProduct)
-        Me.Name = "frmProduct"
-        Me.Text = "Porduct"
-        Me.pnlProduct.ResumeLayout(False)
-        Me.pnlProduct.PerformLayout()
-        CType(Me.dgvProduct, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
+        pnlProduct = New Panel()
+        cboCategory = New ComboBox()
+        dgvProduct = New DataGridView()
+        colProductID = New DataGridViewTextBoxColumn()
+        colProductName = New DataGridViewTextBoxColumn()
+        colCategory = New DataGridViewTextBoxColumn()
+        colDescription = New DataGridViewTextBoxColumn()
+        colPrice = New DataGridViewTextBoxColumn()
+        colStockQuantity = New DataGridViewTextBoxColumn()
+        colPhoto = New DataGridViewImageColumn()
+        colEdit = New DataGridViewButtonColumn()
+        colDelete = New DataGridViewButtonColumn()
+        btnAddProduct = New Button()
+        btnRefresh = New Button()
+        txtSearch = New TextBox()
+        lblTitle = New Label()
+        btnGoBackDashboard = New Button()
+        pnlProduct.SuspendLayout()
+        CType(dgvProduct, ComponentModel.ISupportInitialize).BeginInit()
+        SuspendLayout()
+        ' 
+        ' pnlProduct
+        ' 
+        pnlProduct.BackColor = Color.FromArgb(CByte(232), CByte(216), CByte(194))
+        pnlProduct.Controls.Add(btnGoBackDashboard)
+        pnlProduct.Controls.Add(cboCategory)
+        pnlProduct.Controls.Add(dgvProduct)
+        pnlProduct.Controls.Add(btnAddProduct)
+        pnlProduct.Controls.Add(btnRefresh)
+        pnlProduct.Controls.Add(txtSearch)
+        pnlProduct.Controls.Add(lblTitle)
+        pnlProduct.ForeColor = Color.SaddleBrown
+        pnlProduct.Location = New Point(12, 15)
+        pnlProduct.Margin = New Padding(3, 4, 3, 4)
+        pnlProduct.Name = "pnlProduct"
+        pnlProduct.Size = New Size(920, 725)
+        pnlProduct.TabIndex = 3
+        ' 
+        ' cboCategory
+        ' 
+        cboCategory.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        cboCategory.ForeColor = Color.Sienna
+        cboCategory.FormattingEnabled = True
+        cboCategory.Location = New Point(369, 87)
+        cboCategory.Margin = New Padding(3, 4, 3, 4)
+        cboCategory.Name = "cboCategory"
+        cboCategory.Size = New Size(87, 28)
+        cboCategory.TabIndex = 12
+        cboCategory.Text = "Category"
+        ' 
+        ' dgvProduct
+        ' 
+        dgvProduct.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgvProduct.BackgroundColor = Color.FromArgb(CByte(244), CByte(239), CByte(227))
+        dgvProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        dgvProduct.Columns.AddRange(New DataGridViewColumn() {colProductID, colProductName, colCategory, colDescription, colPrice, colStockQuantity, colPhoto, colEdit, colDelete})
+        dgvProduct.GridColor = Color.Sienna
+        dgvProduct.Location = New Point(24, 121)
+        dgvProduct.Margin = New Padding(3, 4, 3, 4)
+        dgvProduct.Name = "dgvProduct"
+        dgvProduct.RightToLeft = RightToLeft.No
+        dgvProduct.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
+        dgvProduct.RowHeadersWidth = 51
+        dgvProduct.RowTemplate.Height = 80
+        dgvProduct.Size = New Size(868, 569)
+        dgvProduct.TabIndex = 7
+        ' 
+        ' colProductID
+        ' 
+        colProductID.FillWeight = 100.0F
+        colProductID.HeaderText = "Product ID"
+        colProductID.MinimumWidth = 6
+        colProductID.Name = "colProductID"
+        ' 
+        ' colProductName
+        ' 
+        colProductName.FillWeight = 125.0F
+        colProductName.HeaderText = "Product Name"
+        colProductName.MinimumWidth = 6
+        colProductName.Name = "colProductName"
+        ' 
+        ' colCategory
+        ' 
+        colCategory.FillWeight = 85.0F
+        colCategory.HeaderText = "Category"
+        colCategory.MinimumWidth = 6
+        colCategory.Name = "colCategory"
+        ' 
+        ' colDescription
+        ' 
+        colDescription.FillWeight = 180.0F
+        colDescription.HeaderText = "Description"
+        colDescription.MinimumWidth = 6
+        colDescription.Name = "colDescription"
+        ' 
+        ' colPrice
+        ' 
+        colPrice.FillWeight = 80.0F
+        colPrice.HeaderText = "Price"
+        colPrice.MinimumWidth = 6
+        colPrice.Name = "colPrice"
+        ' 
+        ' colStockQuantity
+        ' 
+        colStockQuantity.FillWeight = 90.0F
+        colStockQuantity.HeaderText = "Stock Quantity"
+        colStockQuantity.MinimumWidth = 6
+        colStockQuantity.Name = "colStockQuantity"
+        ' 
+        ' colPhoto
+        ' 
+        colPhoto.FillWeight = 100.0F
+        colPhoto.HeaderText = "Photo"
+        colPhoto.ImageLayout = DataGridViewImageCellLayout.Zoom
+        colPhoto.MinimumWidth = 6
+        colPhoto.Name = "colPhoto"
+        ' 
+        ' colEdit
+        ' 
+        colEdit.FillWeight = 70.0F
+        colEdit.HeaderText = "Edit"
+        colEdit.MinimumWidth = 6
+        colEdit.Name = "colEdit"
+        colEdit.Text = "[Edit]"
+        ' 
+        ' colDelete
+        ' 
+        colDelete.FillWeight = 70.0F
+        colDelete.HeaderText = "Delete"
+        colDelete.MinimumWidth = 6
+        colDelete.Name = "colDelete"
+        colDelete.Text = "[Delete]"
+        ' 
+        ' btnAddProduct
+        ' 
+        btnAddProduct.BackColor = Color.SaddleBrown
+        btnAddProduct.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnAddProduct.ForeColor = Color.WhiteSmoke
+        btnAddProduct.Location = New Point(748, 84)
+        btnAddProduct.Margin = New Padding(3, 4, 3, 4)
+        btnAddProduct.Name = "btnAddProduct"
+        btnAddProduct.Size = New Size(144, 34)
+        btnAddProduct.TabIndex = 6
+        btnAddProduct.Text = "+Product"
+        btnAddProduct.UseVisualStyleBackColor = False
+        ' 
+        ' btnRefresh
+        ' 
+        btnRefresh.BackColor = Color.SaddleBrown
+        btnRefresh.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnRefresh.ForeColor = Color.WhiteSmoke
+        btnRefresh.Location = New Point(605, 84)
+        btnRefresh.Margin = New Padding(3, 4, 3, 4)
+        btnRefresh.Name = "btnRefresh"
+        btnRefresh.Size = New Size(137, 34)
+        btnRefresh.TabIndex = 3
+        btnRefresh.Text = "Refresh"
+        btnRefresh.UseVisualStyleBackColor = False
+        ' 
+        ' txtSearch
+        ' 
+        txtSearch.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtSearch.ForeColor = Color.Sienna
+        txtSearch.Location = New Point(24, 80)
+        txtSearch.Margin = New Padding(3, 4, 3, 4)
+        txtSearch.Name = "txtSearch"
+        txtSearch.Size = New Size(313, 27)
+        txtSearch.TabIndex = 1
+        txtSearch.Text = "Search product..."
+        txtSearch.UseWaitCursor = True
+        ' 
+        ' lblTitle
+        ' 
+        lblTitle.AutoSize = True
+        lblTitle.Font = New Font("Lucida Sans Unicode", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTitle.Location = New Point(20, 19)
+        lblTitle.Name = "lblTitle"
+        lblTitle.Size = New Size(317, 34)
+        lblTitle.TabIndex = 0
+        lblTitle.Text = "Product Management"
+        ' 
+        ' btnGoBackDashboard
+        ' 
+        btnGoBackDashboard.BackColor = Color.SaddleBrown
+        btnGoBackDashboard.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnGoBackDashboard.ForeColor = Color.WhiteSmoke
+        btnGoBackDashboard.Location = New Point(462, 85)
+        btnGoBackDashboard.Margin = New Padding(3, 4, 3, 4)
+        btnGoBackDashboard.Name = "btnGoBackDashboard"
+        btnGoBackDashboard.Size = New Size(137, 34)
+        btnGoBackDashboard.TabIndex = 13
+        btnGoBackDashboard.Text = "Dashboard"
+        btnGoBackDashboard.UseVisualStyleBackColor = False
+        ' 
+        ' frmProduct
+        ' 
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(942, 754)
+        Controls.Add(pnlProduct)
+        Margin = New Padding(3, 4, 3, 4)
+        Name = "frmProduct"
+        Text = "Product"
+        pnlProduct.ResumeLayout(False)
+        pnlProduct.PerformLayout()
+        CType(dgvProduct, ComponentModel.ISupportInitialize).EndInit()
+        ResumeLayout(False)
 
     End Sub
 
@@ -211,8 +244,10 @@ Partial Class frmProduct
     Friend WithEvents colDescription As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colPrice As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colStockQuantity As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colPhoto As System.Windows.Forms.DataGridViewImageColumn
     Friend WithEvents colEdit As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents colDelete As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents cboCategory As System.Windows.Forms.ComboBox
+    Friend WithEvents btnGoBackDashboard As Button
 
 End Class

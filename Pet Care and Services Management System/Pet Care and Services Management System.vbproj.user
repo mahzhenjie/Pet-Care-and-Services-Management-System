@@ -4,6 +4,12 @@
     <Compile Update="frmAddGroomingBooking.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmAddOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmAddOrderDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmAddPet.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -20,6 +26,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmEditGroomingBooking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmEditOrderDetail.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmEditPet.vb">

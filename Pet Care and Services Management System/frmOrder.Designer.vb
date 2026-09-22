@@ -36,6 +36,7 @@ Partial Class frmOrder
         btnRefresh = New Button()
         txtSearch = New TextBox()
         lblTitle = New Label()
+        btnGoBackDashboard = New Button()
         pnlOrder.SuspendLayout()
         CType(dgvOrder, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -43,6 +44,7 @@ Partial Class frmOrder
         ' pnlOrder
         ' 
         pnlOrder.BackColor = Color.FromArgb(CByte(232), CByte(216), CByte(194))
+        pnlOrder.Controls.Add(btnGoBackDashboard)
         pnlOrder.Controls.Add(cboOrderStatus)
         pnlOrder.Controls.Add(btnAddOrder)
         pnlOrder.Controls.Add(dgvOrder)
@@ -60,7 +62,7 @@ Partial Class frmOrder
         ' cboOrderStatus
         ' 
         cboOrderStatus.FormattingEnabled = True
-        cboOrderStatus.Location = New Point(469, 80)
+        cboOrderStatus.Location = New Point(326, 83)
         cboOrderStatus.Margin = New Padding(3, 4, 3, 4)
         cboOrderStatus.Name = "cboOrderStatus"
         cboOrderStatus.Size = New Size(137, 28)
@@ -164,7 +166,7 @@ Partial Class frmOrder
         txtSearch.Location = New Point(24, 80)
         txtSearch.Margin = New Padding(3, 4, 3, 4)
         txtSearch.Name = "txtSearch"
-        txtSearch.Size = New Size(398, 27)
+        txtSearch.Size = New Size(296, 27)
         txtSearch.TabIndex = 1
         txtSearch.Text = "Search order..."
         txtSearch.UseWaitCursor = True
@@ -178,6 +180,19 @@ Partial Class frmOrder
         lblTitle.Size = New Size(291, 34)
         lblTitle.TabIndex = 0
         lblTitle.Text = "Order Management"
+        ' 
+        ' btnGoBackDashboard
+        ' 
+        btnGoBackDashboard.BackColor = Color.SaddleBrown
+        btnGoBackDashboard.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnGoBackDashboard.ForeColor = Color.WhiteSmoke
+        btnGoBackDashboard.Location = New Point(469, 80)
+        btnGoBackDashboard.Margin = New Padding(3, 4, 3, 4)
+        btnGoBackDashboard.Name = "btnGoBackDashboard"
+        btnGoBackDashboard.Size = New Size(137, 34)
+        btnGoBackDashboard.TabIndex = 11
+        btnGoBackDashboard.Text = "Dashboard"
+        btnGoBackDashboard.UseVisualStyleBackColor = False
         ' 
         ' frmOrder
         ' 
@@ -209,5 +224,6 @@ Partial Class frmOrder
     Friend WithEvents colView As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents colDelete As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents cboOrderStatus As System.Windows.Forms.ComboBox
+    Friend WithEvents btnGoBackDashboard As Button
 
 End Class
