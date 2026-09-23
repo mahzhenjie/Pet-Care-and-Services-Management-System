@@ -1168,13 +1168,13 @@ Partial Class frmEmployeeDashboard
         ' LogoutToolStripMenuItem
         ' 
         LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        LogoutToolStripMenuItem.Size = New Size(224, 26)
+        LogoutToolStripMenuItem.Size = New Size(139, 26)
         LogoutToolStripMenuItem.Text = "Logout"
         ' 
         ' ExitToolStripMenuItem
         ' 
         ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        ExitToolStripMenuItem.Size = New Size(224, 26)
+        ExitToolStripMenuItem.Size = New Size(139, 26)
         ExitToolStripMenuItem.Text = "Exit"
         ' 
         ' ManagementToolStripMenuItem
@@ -1224,13 +1224,13 @@ Partial Class frmEmployeeDashboard
         ' GroomingServicesToolStripMenuItem
         ' 
         GroomingServicesToolStripMenuItem.Name = "GroomingServicesToolStripMenuItem"
-        GroomingServicesToolStripMenuItem.Size = New Size(224, 26)
+        GroomingServicesToolStripMenuItem.Size = New Size(216, 26)
         GroomingServicesToolStripMenuItem.Text = "Grooming Services"
         ' 
         ' BoardingServicesToolStripMenuItem
         ' 
         BoardingServicesToolStripMenuItem.Name = "BoardingServicesToolStripMenuItem"
-        BoardingServicesToolStripMenuItem.Size = New Size(224, 26)
+        BoardingServicesToolStripMenuItem.Size = New Size(216, 26)
         BoardingServicesToolStripMenuItem.Text = "Boarding Services"
         ' 
         ' ViewToolStripMenuItem
@@ -1262,13 +1262,13 @@ Partial Class frmEmployeeDashboard
         ' AboutToolStripMenuItem
         ' 
         AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        AboutToolStripMenuItem.Size = New Size(164, 26)
+        AboutToolStripMenuItem.Size = New Size(224, 26)
         AboutToolStripMenuItem.Text = "About "
         ' 
         ' UserGuideToolStripMenuItem
         ' 
         UserGuideToolStripMenuItem.Name = "UserGuideToolStripMenuItem"
-        UserGuideToolStripMenuItem.Size = New Size(164, 26)
+        UserGuideToolStripMenuItem.Size = New Size(224, 26)
         UserGuideToolStripMenuItem.Text = "User Guide"
         ' 
         ' frmEmployeeDashboard

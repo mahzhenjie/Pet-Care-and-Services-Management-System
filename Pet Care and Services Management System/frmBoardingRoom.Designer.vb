@@ -103,6 +103,7 @@ Partial Class frmBoardingRoom
         lblDescription8 = New Label()
         btnEdit8 = New Button()
         btnDelete8 = New Button()
+        btnGoBackDashboard = New Button()
         pnlMain.SuspendLayout()
         flpRooms.SuspendLayout()
         pnlRoom1.SuspendLayout()
@@ -126,6 +127,7 @@ Partial Class frmBoardingRoom
         ' pnlMain
         ' 
         pnlMain.BackColor = Color.FromArgb(CByte(247), CByte(232), CByte(213))
+        pnlMain.Controls.Add(btnGoBackDashboard)
         pnlMain.Controls.Add(lblTitle)
         pnlMain.Controls.Add(lblSubtitle)
         pnlMain.Controls.Add(txtSearch)
@@ -142,7 +144,7 @@ Partial Class frmBoardingRoom
         ' lblTitle
         ' 
         lblTitle.AutoSize = True
-        lblTitle.Font = New Font("Segoe UI", 24.0F, FontStyle.Bold)
+        lblTitle.Font = New Font("Segoe UI", 24F, FontStyle.Bold)
         lblTitle.ForeColor = Color.FromArgb(CByte(105), CByte(55), CByte(25))
         lblTitle.Location = New Point(55, 35)
         lblTitle.Name = "lblTitle"
@@ -153,7 +155,7 @@ Partial Class frmBoardingRoom
         ' lblSubtitle
         ' 
         lblSubtitle.AutoSize = True
-        lblSubtitle.Font = New Font("Segoe UI", 11.0F)
+        lblSubtitle.Font = New Font("Segoe UI", 11F)
         lblSubtitle.ForeColor = Color.FromArgb(CByte(125), CByte(85), CByte(55))
         lblSubtitle.Location = New Point(58, 82)
         lblSubtitle.Name = "lblSubtitle"
@@ -163,7 +165,7 @@ Partial Class frmBoardingRoom
         ' 
         ' txtSearch
         ' 
-        txtSearch.Font = New Font("Segoe UI", 11.0F)
+        txtSearch.Font = New Font("Segoe UI", 11F)
         txtSearch.Location = New Point(55, 125)
         txtSearch.Name = "txtSearch"
         txtSearch.Size = New Size(500, 32)
@@ -173,7 +175,7 @@ Partial Class frmBoardingRoom
         ' cboStatus
         ' 
         cboStatus.DropDownStyle = ComboBoxStyle.DropDownList
-        cboStatus.Font = New Font("Segoe UI", 10.0F)
+        cboStatus.Font = New Font("Segoe UI", 10F)
         cboStatus.FormattingEnabled = True
         cboStatus.Items.AddRange(New Object() {"All Status", "Available", "Occupied"})
         cboStatus.Location = New Point(575, 123)
@@ -186,9 +188,9 @@ Partial Class frmBoardingRoom
         btnRefresh.BackColor = Color.FromArgb(CByte(143), CByte(91), CByte(51))
         btnRefresh.FlatAppearance.BorderSize = 0
         btnRefresh.FlatStyle = FlatStyle.Flat
-        btnRefresh.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnRefresh.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnRefresh.ForeColor = Color.White
-        btnRefresh.Location = New Point(765, 120)
+        btnRefresh.Location = New Point(1010, 119)
         btnRefresh.Name = "btnRefresh"
         btnRefresh.Size = New Size(140, 35)
         btnRefresh.TabIndex = 4
@@ -200,9 +202,9 @@ Partial Class frmBoardingRoom
         btnAddRoom.BackColor = Color.FromArgb(CByte(139), CByte(78), CByte(28))
         btnAddRoom.FlatAppearance.BorderSize = 0
         btnAddRoom.FlatStyle = FlatStyle.Flat
-        btnAddRoom.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnAddRoom.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnAddRoom.ForeColor = Color.White
-        btnAddRoom.Location = New Point(925, 120)
+        btnAddRoom.Location = New Point(1170, 119)
         btnAddRoom.Name = "btnAddRoom"
         btnAddRoom.Size = New Size(170, 35)
         btnAddRoom.TabIndex = 5
@@ -221,6 +223,7 @@ Partial Class frmBoardingRoom
         flpRooms.Controls.Add(pnlRoom6)
         flpRooms.Controls.Add(pnlRoom7)
         flpRooms.Controls.Add(pnlRoom8)
+        flpRooms.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         flpRooms.Location = New Point(55, 175)
         flpRooms.Name = "flpRooms"
         flpRooms.Size = New Size(1320, 620)
@@ -257,7 +260,7 @@ Partial Class frmBoardingRoom
         ' lblStatus1
         ' 
         lblStatus1.BackColor = Color.FromArgb(CByte(76), CByte(175), CByte(80))
-        lblStatus1.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        lblStatus1.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         lblStatus1.ForeColor = Color.White
         lblStatus1.Location = New Point(20, 20)
         lblStatus1.Name = "lblStatus1"
@@ -269,7 +272,7 @@ Partial Class frmBoardingRoom
         ' lblRoomID1
         ' 
         lblRoomID1.AutoSize = True
-        lblRoomID1.Font = New Font("Segoe UI", 15.0F, FontStyle.Bold)
+        lblRoomID1.Font = New Font("Segoe UI", 15F, FontStyle.Bold)
         lblRoomID1.ForeColor = Color.FromArgb(CByte(105), CByte(55), CByte(25))
         lblRoomID1.Location = New Point(15, 135)
         lblRoomID1.Name = "lblRoomID1"
@@ -371,7 +374,7 @@ Partial Class frmBoardingRoom
         ' lblRoomID2
         ' 
         lblRoomID2.AutoSize = True
-        lblRoomID2.Font = New Font("Segoe UI", 15.0F, FontStyle.Bold)
+        lblRoomID2.Font = New Font("Segoe UI", 15F, FontStyle.Bold)
         lblRoomID2.ForeColor = Color.FromArgb(CByte(105), CByte(55), CByte(25))
         lblRoomID2.Location = New Point(15, 135)
         lblRoomID2.Name = "lblRoomID2"
@@ -473,7 +476,7 @@ Partial Class frmBoardingRoom
         ' lblRoomID3
         ' 
         lblRoomID3.AutoSize = True
-        lblRoomID3.Font = New Font("Segoe UI", 15.0F, FontStyle.Bold)
+        lblRoomID3.Font = New Font("Segoe UI", 15F, FontStyle.Bold)
         lblRoomID3.ForeColor = Color.FromArgb(CByte(105), CByte(55), CByte(25))
         lblRoomID3.Location = New Point(15, 135)
         lblRoomID3.Name = "lblRoomID3"
@@ -575,7 +578,7 @@ Partial Class frmBoardingRoom
         ' lblRoomID4
         ' 
         lblRoomID4.AutoSize = True
-        lblRoomID4.Font = New Font("Segoe UI", 15.0F, FontStyle.Bold)
+        lblRoomID4.Font = New Font("Segoe UI", 15F, FontStyle.Bold)
         lblRoomID4.ForeColor = Color.FromArgb(CByte(105), CByte(55), CByte(25))
         lblRoomID4.Location = New Point(15, 135)
         lblRoomID4.Name = "lblRoomID4"
@@ -677,7 +680,7 @@ Partial Class frmBoardingRoom
         ' lblRoomID5
         ' 
         lblRoomID5.AutoSize = True
-        lblRoomID5.Font = New Font("Segoe UI", 15.0F, FontStyle.Bold)
+        lblRoomID5.Font = New Font("Segoe UI", 15F, FontStyle.Bold)
         lblRoomID5.ForeColor = Color.FromArgb(CByte(105), CByte(55), CByte(25))
         lblRoomID5.Location = New Point(15, 135)
         lblRoomID5.Name = "lblRoomID5"
@@ -779,7 +782,7 @@ Partial Class frmBoardingRoom
         ' lblRoomID6
         ' 
         lblRoomID6.AutoSize = True
-        lblRoomID6.Font = New Font("Segoe UI", 15.0F, FontStyle.Bold)
+        lblRoomID6.Font = New Font("Segoe UI", 15F, FontStyle.Bold)
         lblRoomID6.ForeColor = Color.FromArgb(CByte(105), CByte(55), CByte(25))
         lblRoomID6.Location = New Point(15, 135)
         lblRoomID6.Name = "lblRoomID6"
@@ -881,7 +884,7 @@ Partial Class frmBoardingRoom
         ' lblRoomID7
         ' 
         lblRoomID7.AutoSize = True
-        lblRoomID7.Font = New Font("Segoe UI", 15.0F, FontStyle.Bold)
+        lblRoomID7.Font = New Font("Segoe UI", 15F, FontStyle.Bold)
         lblRoomID7.ForeColor = Color.FromArgb(CByte(105), CByte(55), CByte(25))
         lblRoomID7.Location = New Point(15, 135)
         lblRoomID7.Name = "lblRoomID7"
@@ -983,7 +986,7 @@ Partial Class frmBoardingRoom
         ' lblRoomID8
         ' 
         lblRoomID8.AutoSize = True
-        lblRoomID8.Font = New Font("Segoe UI", 15.0F, FontStyle.Bold)
+        lblRoomID8.Font = New Font("Segoe UI", 15F, FontStyle.Bold)
         lblRoomID8.ForeColor = Color.FromArgb(CByte(105), CByte(55), CByte(25))
         lblRoomID8.Location = New Point(15, 135)
         lblRoomID8.Name = "lblRoomID8"
@@ -1043,9 +1046,23 @@ Partial Class frmBoardingRoom
         btnDelete8.Text = "Delete"
         btnDelete8.UseVisualStyleBackColor = False
         ' 
+        ' btnGoBackDashboard
+        ' 
+        btnGoBackDashboard.BackColor = Color.FromArgb(CByte(139), CByte(78), CByte(28))
+        btnGoBackDashboard.FlatAppearance.BorderSize = 0
+        btnGoBackDashboard.FlatStyle = FlatStyle.Flat
+        btnGoBackDashboard.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
+        btnGoBackDashboard.ForeColor = Color.White
+        btnGoBackDashboard.Location = New Point(825, 119)
+        btnGoBackDashboard.Name = "btnGoBackDashboard"
+        btnGoBackDashboard.Size = New Size(170, 35)
+        btnGoBackDashboard.TabIndex = 7
+        btnGoBackDashboard.Text = "Dashboard"
+        btnGoBackDashboard.UseVisualStyleBackColor = False
+        ' 
         ' frmBoardingRoom
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1400, 850)
         Controls.Add(pnlMain)
@@ -1171,5 +1188,6 @@ Partial Class frmBoardingRoom
     Friend WithEvents lblDescription8 As Label
     Friend WithEvents btnEdit8 As Button
     Friend WithEvents btnDelete8 As Button
+    Friend WithEvents btnGoBackDashboard As Button
 
 End Class

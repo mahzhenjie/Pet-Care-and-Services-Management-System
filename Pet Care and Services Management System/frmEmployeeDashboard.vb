@@ -223,7 +223,9 @@ Public Class frmEmployeeDashboard
         End If
     End Sub
 
-    Private Sub lblDashboardTitle_Click(sender As Object, e As EventArgs) Handles lblDashboardTitle.Click
-
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        Using aboutForm As New frmAbout()
+            aboutForm.ShowDialog()
+        End Using
     End Sub
 End Class
