@@ -1262,13 +1262,13 @@ Partial Class frmEmployeeDashboard
         ' AboutToolStripMenuItem
         ' 
         AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        AboutToolStripMenuItem.Size = New Size(224, 26)
+        AboutToolStripMenuItem.Size = New Size(164, 26)
         AboutToolStripMenuItem.Text = "About "
         ' 
         ' UserGuideToolStripMenuItem
         ' 
         UserGuideToolStripMenuItem.Name = "UserGuideToolStripMenuItem"
-        UserGuideToolStripMenuItem.Size = New Size(224, 26)
+        UserGuideToolStripMenuItem.Size = New Size(164, 26)
         UserGuideToolStripMenuItem.Text = "User Guide"
         ' 
         ' frmEmployeeDashboard

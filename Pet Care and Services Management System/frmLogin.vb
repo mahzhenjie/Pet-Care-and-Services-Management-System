@@ -32,7 +32,7 @@ Public Class frmLogin
         Me.MaximizeBox = False
         Me.BackColor = colorBackground
 
-        ' 標題
+        ' Title
         Dim lblTitle As New Label()
         lblTitle.Text = "PET CARE AND SERVICES" & vbCrLf & "MANAGEMENT SYSTEM"
         lblTitle.Font = New Font("Georgia", 15, FontStyle.Bold)
@@ -107,7 +107,7 @@ Public Class frmLogin
         chkShowPassword.Location = New Point(80, 285)
         Me.Controls.Add(chkShowPassword)
 
-        ' Login 按鈕
+        ' Login
         btnLogin.Text = "Login"
         btnLogin.Font = New Font("Segoe UI", 11, FontStyle.Bold)
         btnLogin.BackColor = colorDarkBrown
@@ -118,7 +118,7 @@ Public Class frmLogin
         btnLogin.Location = New Point(80, 320)
         Me.Controls.Add(btnLogin)
 
-        ' Register 連結
+        ' Register
         Dim lblNoAccount As New Label()
         lblNoAccount.Text = "Don't have an account?"
         lblNoAccount.Font = New Font("Segoe UI", 9)
@@ -135,9 +135,11 @@ Public Class frmLogin
         Me.Controls.Add(lnkRegister)
 
         Me.AcceptButton = btnLogin
+
         Me.ResumeLayout(False)
     End Sub
 
+    ' SHOW / HIDE PASSWORD
     Private Sub chkShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPassword.CheckedChanged
 
         If chkShowPassword.Checked Then
@@ -147,6 +149,8 @@ Public Class frmLogin
         End If
 
     End Sub
+
+    ' LOGIN
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Dim uname As String = txtUsername.Text.Trim()
         Dim pword As String = txtPassword.Text
@@ -163,12 +167,15 @@ Public Class frmLogin
         Try
             Using conn As MySqlConnection = GetConnection()
                 conn.Open()
-                Dim sql As String =
-                    $"SELECT {idColumn}, FullName FROM {tableName} WHERE Username = @u AND Password = @p"
+
+                Dim sql As String = $"SELECT {idColumn}, FullName FROM {tableName} WHERE Username = @u AND Password = @p"
+
                 Using cmd As New MySqlCommand(sql, conn)
                     cmd.Parameters.AddWithValue("@u", uname)
                     cmd.Parameters.AddWithValue("@p", pword)
+
                     Using reader As MySqlDataReader = cmd.ExecuteReader()
+
                         If reader.Read() Then
                             CurrentUserID = Convert.ToInt32(reader(idColumn))
                             CurrentUserName = reader("FullName").ToString()
@@ -177,32 +184,44 @@ Public Class frmLogin
                             MessageBox.Show($"Welcome, {CurrentUserName}!", "Login Successful",
                                              MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+                            ' OPEN EMPLOYEE DASHBOARD
                             If CurrentUserRole = "Employee" Then
                                 Dim employeeForm As New frmEmployeeDashboard()
                                 employeeForm.Show()
+
+                                ' OPEN CUSTOMER DASHBOARD
+                            ElseIf CurrentUserRole = "Customer" Then
+                                Dim customerForm As New frmCustomerDashboard()
+                                customerForm.Show()
                             End If
+
                             Me.Hide()
+
                         Else
                             MessageBox.Show("Invalid username or password.", "Login Failed",
                                              MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
+
                     End Using
                 End Using
             End Using
+
         Catch ex As Exception
             MessageBox.Show("Database connection error: " & ex.Message, "Error",
                              MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
-    Private Sub lnkRegister_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) _
-        Handles lnkRegister.LinkClicked
+    ' OPEN REGISTER FORM
+    Private Sub lnkRegister_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkRegister.LinkClicked
         Dim registerForm As New frmRegister()
         registerForm.Show()
         Me.Hide()
     End Sub
 
+    ' CLOSE APPLICATION
     Private Sub frmLogin_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         Application.Exit()
     End Sub
+
 End Class

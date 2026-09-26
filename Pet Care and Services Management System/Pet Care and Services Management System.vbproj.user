@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
   <ItemGroup>
     <Compile Update="frmAbout.vb">
       <SubType>Form</SubType>
@@ -7,7 +8,13 @@
     <Compile Update="frmAddBoardingRoom.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmAddCustomers.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmAddGroomingBooking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmAddGroomingService.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmAddOrder.vb">
@@ -19,16 +26,10 @@
     <Compile Update="frmAddPet.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmAddPetVideo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmAddProduct.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="frmEditBoardingRoom.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="frmEditCustomer.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="frmAddCustomers.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmBoardingRoom.vb">
@@ -37,7 +38,22 @@
     <Compile Update="frmBoardingServices.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmCustomerDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmEditBoardingRoom.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmEditCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmEditGroomingBooking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmEditGroomingService.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmEditMembership.vb">
@@ -55,28 +71,25 @@
     <Compile Update="frmEditProduct.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmEmployeeDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmGroomingBooking.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmGroomingServices.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmPetVideos.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="frmProduct.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="frmCustomer.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="frmOrderDetail.vb">
+    <Compile Update="frmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmMembership.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmEmployeeDashboard.vb">
+    <Compile Update="frmOrder.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmLogin.vb">
+    <Compile Update="frmOrderDetail.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmPayment.vb">
@@ -85,16 +98,19 @@
     <Compile Update="frmPet.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmPetVideos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmProduct.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmRegister.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmSplash.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="frmGroomingBooking.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="frmOrder.vb">
+    <Compile Update="frmVideoView.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

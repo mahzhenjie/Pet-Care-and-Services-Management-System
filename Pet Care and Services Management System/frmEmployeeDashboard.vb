@@ -228,4 +228,5 @@ Public Class frmEmployeeDashboard
             aboutForm.ShowDialog()
         End Using
     End Sub
+
 End Class
