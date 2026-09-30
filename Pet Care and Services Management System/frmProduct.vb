@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.IO
+Imports System.Drawing
 
 Public Class frmProduct
 
@@ -52,17 +53,7 @@ Public Class frmProduct
                         dgvProduct.Rows.Clear()
 
                         While reader.Read()
-                            Dim photo As Image = Nothing
-
-                            If Not IsDBNull(reader("Photo")) Then
-                                Dim photoBytes() As Byte = CType(reader("Photo"), Byte())
-
-                                If photoBytes.Length > 0 Then
-                                    Using ms As New MemoryStream(photoBytes)
-                                        photo = Image.FromStream(ms)
-                                    End Using
-                                End If
-                            End If
+                            Dim photo As Image = LoadProductImage(reader("Photo"))
 
                             Dim rowIndex As Integer = dgvProduct.Rows.Add(
                                 reader("ProductID").ToString(),
@@ -88,6 +79,30 @@ Public Class frmProduct
             MessageBox.Show("Error loading product: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
+    ' LOAD PRODUCT IMAGE
+    Private Function LoadProductImage(photoData As Object) As Image
+        Try
+            If photoData Is Nothing OrElse IsDBNull(photoData) Then
+                Return Nothing
+            End If
+
+            Dim photoBytes() As Byte = CType(photoData, Byte())
+
+            If photoBytes Is Nothing OrElse photoBytes.Length = 0 Then
+                Return Nothing
+            End If
+
+            Using ms As New MemoryStream(photoBytes)
+                Using tempImage As Image = Image.FromStream(ms)
+                    Return New Bitmap(tempImage)
+                End Using
+            End Using
+
+        Catch
+            Return Nothing
+        End Try
+    End Function
 
     ' ADD PRODUCT
     Private Sub btnAddProduct_Click(sender As Object, e As EventArgs) Handles btnAddProduct.Click
@@ -146,17 +161,7 @@ Public Class frmProduct
                         dgvProduct.Rows.Clear()
 
                         While reader.Read()
-                            Dim photo As Image = Nothing
-
-                            If Not IsDBNull(reader("Photo")) Then
-                                Dim photoBytes() As Byte = CType(reader("Photo"), Byte())
-
-                                If photoBytes.Length > 0 Then
-                                    Using ms As New MemoryStream(photoBytes)
-                                        photo = Image.FromStream(ms)
-                                    End Using
-                                End If
-                            End If
+                            Dim photo As Image = LoadProductImage(reader("Photo"))
 
                             Dim rowIndex As Integer = dgvProduct.Rows.Add(
                                 reader("ProductID").ToString(),

@@ -184,7 +184,7 @@ Partial Class frmBoardingRoom
         pnlRoom1.Location = New Point(15, 15)
         pnlRoom1.Margin = New Padding(10)
         pnlRoom1.Name = "pnlRoom1"
-        pnlRoom1.Size = New Size(330, 390)
+        pnlRoom1.Size = New Size(330, 410)
         pnlRoom1.TabIndex = 0
         '
         ' picRoom1
@@ -248,9 +248,9 @@ Partial Class frmBoardingRoom
         lblDescription1.AutoEllipsis = True
         lblDescription1.Font = New Font("Segoe UI", 9.0F)
         lblDescription1.ForeColor = Color.DimGray
-        lblDescription1.Location = New Point(15, 296)
+        lblDescription1.Location = New Point(15, 300)
         lblDescription1.Name = "lblDescription1"
-        lblDescription1.Size = New Size(298, 38)
+        lblDescription1.Size = New Size(298, 45)
         lblDescription1.TabIndex = 5
         lblDescription1.Text = "Comfortable boarding room for pets."
         '
@@ -261,7 +261,7 @@ Partial Class frmBoardingRoom
         btnEdit1.FlatStyle = FlatStyle.Flat
         btnEdit1.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         btnEdit1.ForeColor = Color.WhiteSmoke
-        btnEdit1.Location = New Point(15, 345)
+        btnEdit1.Location = New Point(15, 365)
         btnEdit1.Name = "btnEdit1"
         btnEdit1.Size = New Size(140, 30)
         btnEdit1.TabIndex = 6
@@ -275,7 +275,7 @@ Partial Class frmBoardingRoom
         btnDelete1.FlatStyle = FlatStyle.Flat
         btnDelete1.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         btnDelete1.ForeColor = Color.WhiteSmoke
-        btnDelete1.Location = New Point(173, 345)
+        btnDelete1.Location = New Point(173, 365)
         btnDelete1.Name = "btnDelete1"
         btnDelete1.Size = New Size(140, 30)
         btnDelete1.TabIndex = 7
@@ -296,7 +296,7 @@ Partial Class frmBoardingRoom
         pnlRoom2.Location = New Point(365, 15)
         pnlRoom2.Margin = New Padding(10)
         pnlRoom2.Name = "pnlRoom2"
-        pnlRoom2.Size = New Size(330, 390)
+        pnlRoom2.Size = New Size(330, 410)
         pnlRoom2.TabIndex = 1
         '
         ' picRoom2
@@ -360,9 +360,9 @@ Partial Class frmBoardingRoom
         lblDescription2.AutoEllipsis = True
         lblDescription2.Font = New Font("Segoe UI", 9.0F)
         lblDescription2.ForeColor = Color.DimGray
-        lblDescription2.Location = New Point(15, 296)
+        lblDescription2.Location = New Point(15, 300)
         lblDescription2.Name = "lblDescription2"
-        lblDescription2.Size = New Size(298, 38)
+        lblDescription2.Size = New Size(298, 45)
         lblDescription2.TabIndex = 5
         lblDescription2.Text = "Comfortable boarding room for pets."
         '
@@ -373,7 +373,7 @@ Partial Class frmBoardingRoom
         btnEdit2.FlatStyle = FlatStyle.Flat
         btnEdit2.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         btnEdit2.ForeColor = Color.WhiteSmoke
-        btnEdit2.Location = New Point(15, 345)
+        btnEdit2.Location = New Point(15, 365)
         btnEdit2.Name = "btnEdit2"
         btnEdit2.Size = New Size(140, 30)
         btnEdit2.TabIndex = 6
@@ -387,7 +387,7 @@ Partial Class frmBoardingRoom
         btnDelete2.FlatStyle = FlatStyle.Flat
         btnDelete2.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         btnDelete2.ForeColor = Color.WhiteSmoke
-        btnDelete2.Location = New Point(173, 345)
+        btnDelete2.Location = New Point(173, 365)
         btnDelete2.Name = "btnDelete2"
         btnDelete2.Size = New Size(140, 30)
         btnDelete2.TabIndex = 7
@@ -408,7 +408,7 @@ Partial Class frmBoardingRoom
         pnlRoom3.Location = New Point(715, 15)
         pnlRoom3.Margin = New Padding(10)
         pnlRoom3.Name = "pnlRoom3"
-        pnlRoom3.Size = New Size(330, 390)
+        pnlRoom3.Size = New Size(330, 410)
         pnlRoom3.TabIndex = 2
         '
         ' picRoom3
@@ -472,9 +472,9 @@ Partial Class frmBoardingRoom
         lblDescription3.AutoEllipsis = True
         lblDescription3.Font = New Font("Segoe UI", 9.0F)
         lblDescription3.ForeColor = Color.DimGray
-        lblDescription3.Location = New Point(15, 296)
+        lblDescription3.Location = New Point(15, 300)
         lblDescription3.Name = "lblDescription3"
-        lblDescription3.Size = New Size(298, 38)
+        lblDescription3.Size = New Size(298, 45)
         lblDescription3.TabIndex = 5
         lblDescription3.Text = "Comfortable boarding room for pets."
         '
@@ -485,7 +485,7 @@ Partial Class frmBoardingRoom
         btnEdit3.FlatStyle = FlatStyle.Flat
         btnEdit3.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         btnEdit3.ForeColor = Color.WhiteSmoke
-        btnEdit3.Location = New Point(15, 345)
+        btnEdit3.Location = New Point(15, 365)
         btnEdit3.Name = "btnEdit3"
         btnEdit3.Size = New Size(140, 30)
         btnEdit3.TabIndex = 6
@@ -499,7 +499,7 @@ Partial Class frmBoardingRoom
         btnDelete3.FlatStyle = FlatStyle.Flat
         btnDelete3.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         btnDelete3.ForeColor = Color.WhiteSmoke
-        btnDelete3.Location = New Point(173, 345)
+        btnDelete3.Location = New Point(173, 365)
         btnDelete3.Name = "btnDelete3"
         btnDelete3.Size = New Size(140, 30)
         btnDelete3.TabIndex = 7
@@ -517,10 +517,10 @@ Partial Class frmBoardingRoom
         pnlRoom4.Controls.Add(lblDescription4)
         pnlRoom4.Controls.Add(btnEdit4)
         pnlRoom4.Controls.Add(btnDelete4)
-        pnlRoom4.Location = New Point(15, 425)
+        pnlRoom4.Location = New Point(15, 435)
         pnlRoom4.Margin = New Padding(10)
         pnlRoom4.Name = "pnlRoom4"
-        pnlRoom4.Size = New Size(330, 390)
+        pnlRoom4.Size = New Size(330, 410)
         pnlRoom4.TabIndex = 3
         '
         ' picRoom4
@@ -584,9 +584,9 @@ Partial Class frmBoardingRoom
         lblDescription4.AutoEllipsis = True
         lblDescription4.Font = New Font("Segoe UI", 9.0F)
         lblDescription4.ForeColor = Color.DimGray
-        lblDescription4.Location = New Point(15, 296)
+        lblDescription4.Location = New Point(15, 300)
         lblDescription4.Name = "lblDescription4"
-        lblDescription4.Size = New Size(298, 38)
+        lblDescription4.Size = New Size(298, 45)
         lblDescription4.TabIndex = 5
         lblDescription4.Text = "Comfortable boarding room for pets."
         '
@@ -597,7 +597,7 @@ Partial Class frmBoardingRoom
         btnEdit4.FlatStyle = FlatStyle.Flat
         btnEdit4.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         btnEdit4.ForeColor = Color.WhiteSmoke
-        btnEdit4.Location = New Point(15, 345)
+        btnEdit4.Location = New Point(15, 365)
         btnEdit4.Name = "btnEdit4"
         btnEdit4.Size = New Size(140, 30)
         btnEdit4.TabIndex = 6
@@ -611,7 +611,7 @@ Partial Class frmBoardingRoom
         btnDelete4.FlatStyle = FlatStyle.Flat
         btnDelete4.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         btnDelete4.ForeColor = Color.WhiteSmoke
-        btnDelete4.Location = New Point(173, 345)
+        btnDelete4.Location = New Point(173, 365)
         btnDelete4.Name = "btnDelete4"
         btnDelete4.Size = New Size(140, 30)
         btnDelete4.TabIndex = 7
@@ -629,10 +629,10 @@ Partial Class frmBoardingRoom
         pnlRoom5.Controls.Add(lblDescription5)
         pnlRoom5.Controls.Add(btnEdit5)
         pnlRoom5.Controls.Add(btnDelete5)
-        pnlRoom5.Location = New Point(365, 425)
+        pnlRoom5.Location = New Point(365, 435)
         pnlRoom5.Margin = New Padding(10)
         pnlRoom5.Name = "pnlRoom5"
-        pnlRoom5.Size = New Size(330, 390)
+        pnlRoom5.Size = New Size(330, 410)
         pnlRoom5.TabIndex = 4
         '
         ' picRoom5
@@ -696,9 +696,9 @@ Partial Class frmBoardingRoom
         lblDescription5.AutoEllipsis = True
         lblDescription5.Font = New Font("Segoe UI", 9.0F)
         lblDescription5.ForeColor = Color.DimGray
-        lblDescription5.Location = New Point(15, 296)
+        lblDescription5.Location = New Point(15, 300)
         lblDescription5.Name = "lblDescription5"
-        lblDescription5.Size = New Size(298, 38)
+        lblDescription5.Size = New Size(298, 45)
         lblDescription5.TabIndex = 5
         lblDescription5.Text = "Comfortable boarding room for pets."
         '
@@ -709,7 +709,7 @@ Partial Class frmBoardingRoom
         btnEdit5.FlatStyle = FlatStyle.Flat
         btnEdit5.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         btnEdit5.ForeColor = Color.WhiteSmoke
-        btnEdit5.Location = New Point(15, 345)
+        btnEdit5.Location = New Point(15, 365)
         btnEdit5.Name = "btnEdit5"
         btnEdit5.Size = New Size(140, 30)
         btnEdit5.TabIndex = 6
@@ -723,7 +723,7 @@ Partial Class frmBoardingRoom
         btnDelete5.FlatStyle = FlatStyle.Flat
         btnDelete5.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         btnDelete5.ForeColor = Color.WhiteSmoke
-        btnDelete5.Location = New Point(173, 345)
+        btnDelete5.Location = New Point(173, 365)
         btnDelete5.Name = "btnDelete5"
         btnDelete5.Size = New Size(140, 30)
         btnDelete5.TabIndex = 7
@@ -741,10 +741,10 @@ Partial Class frmBoardingRoom
         pnlRoom6.Controls.Add(lblDescription6)
         pnlRoom6.Controls.Add(btnEdit6)
         pnlRoom6.Controls.Add(btnDelete6)
-        pnlRoom6.Location = New Point(715, 425)
+        pnlRoom6.Location = New Point(715, 435)
         pnlRoom6.Margin = New Padding(10)
         pnlRoom6.Name = "pnlRoom6"
-        pnlRoom6.Size = New Size(330, 390)
+        pnlRoom6.Size = New Size(330, 410)
         pnlRoom6.TabIndex = 5
         '
         ' picRoom6
@@ -808,9 +808,9 @@ Partial Class frmBoardingRoom
         lblDescription6.AutoEllipsis = True
         lblDescription6.Font = New Font("Segoe UI", 9.0F)
         lblDescription6.ForeColor = Color.DimGray
-        lblDescription6.Location = New Point(15, 296)
+        lblDescription6.Location = New Point(15, 300)
         lblDescription6.Name = "lblDescription6"
-        lblDescription6.Size = New Size(298, 38)
+        lblDescription6.Size = New Size(298, 45)
         lblDescription6.TabIndex = 5
         lblDescription6.Text = "Comfortable boarding room for pets."
         '
@@ -821,7 +821,7 @@ Partial Class frmBoardingRoom
         btnEdit6.FlatStyle = FlatStyle.Flat
         btnEdit6.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         btnEdit6.ForeColor = Color.WhiteSmoke
-        btnEdit6.Location = New Point(15, 345)
+        btnEdit6.Location = New Point(15, 365)
         btnEdit6.Name = "btnEdit6"
         btnEdit6.Size = New Size(140, 30)
         btnEdit6.TabIndex = 6
@@ -835,7 +835,7 @@ Partial Class frmBoardingRoom
         btnDelete6.FlatStyle = FlatStyle.Flat
         btnDelete6.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         btnDelete6.ForeColor = Color.WhiteSmoke
-        btnDelete6.Location = New Point(173, 345)
+        btnDelete6.Location = New Point(173, 365)
         btnDelete6.Name = "btnDelete6"
         btnDelete6.Size = New Size(140, 30)
         btnDelete6.TabIndex = 7
@@ -853,10 +853,10 @@ Partial Class frmBoardingRoom
         pnlRoom7.Controls.Add(lblDescription7)
         pnlRoom7.Controls.Add(btnEdit7)
         pnlRoom7.Controls.Add(btnDelete7)
-        pnlRoom7.Location = New Point(15, 835)
+        pnlRoom7.Location = New Point(15, 855)
         pnlRoom7.Margin = New Padding(10)
         pnlRoom7.Name = "pnlRoom7"
-        pnlRoom7.Size = New Size(330, 390)
+        pnlRoom7.Size = New Size(330, 410)
         pnlRoom7.TabIndex = 6
         '
         ' picRoom7
@@ -920,9 +920,9 @@ Partial Class frmBoardingRoom
         lblDescription7.AutoEllipsis = True
         lblDescription7.Font = New Font("Segoe UI", 9.0F)
         lblDescription7.ForeColor = Color.DimGray
-        lblDescription7.Location = New Point(15, 296)
+        lblDescription7.Location = New Point(15, 300)
         lblDescription7.Name = "lblDescription7"
-        lblDescription7.Size = New Size(298, 38)
+        lblDescription7.Size = New Size(298, 45)
         lblDescription7.TabIndex = 5
         lblDescription7.Text = "Comfortable boarding room for pets."
         '
@@ -933,7 +933,7 @@ Partial Class frmBoardingRoom
         btnEdit7.FlatStyle = FlatStyle.Flat
         btnEdit7.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         btnEdit7.ForeColor = Color.WhiteSmoke
-        btnEdit7.Location = New Point(15, 345)
+        btnEdit7.Location = New Point(15, 365)
         btnEdit7.Name = "btnEdit7"
         btnEdit7.Size = New Size(140, 30)
         btnEdit7.TabIndex = 6
@@ -947,7 +947,7 @@ Partial Class frmBoardingRoom
         btnDelete7.FlatStyle = FlatStyle.Flat
         btnDelete7.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         btnDelete7.ForeColor = Color.WhiteSmoke
-        btnDelete7.Location = New Point(173, 345)
+        btnDelete7.Location = New Point(173, 365)
         btnDelete7.Name = "btnDelete7"
         btnDelete7.Size = New Size(140, 30)
         btnDelete7.TabIndex = 7
@@ -965,10 +965,10 @@ Partial Class frmBoardingRoom
         pnlRoom8.Controls.Add(lblDescription8)
         pnlRoom8.Controls.Add(btnEdit8)
         pnlRoom8.Controls.Add(btnDelete8)
-        pnlRoom8.Location = New Point(365, 835)
+        pnlRoom8.Location = New Point(365, 855)
         pnlRoom8.Margin = New Padding(10)
         pnlRoom8.Name = "pnlRoom8"
-        pnlRoom8.Size = New Size(330, 390)
+        pnlRoom8.Size = New Size(330, 410)
         pnlRoom8.TabIndex = 7
         '
         ' picRoom8
@@ -1032,9 +1032,9 @@ Partial Class frmBoardingRoom
         lblDescription8.AutoEllipsis = True
         lblDescription8.Font = New Font("Segoe UI", 9.0F)
         lblDescription8.ForeColor = Color.DimGray
-        lblDescription8.Location = New Point(15, 296)
+        lblDescription8.Location = New Point(15, 300)
         lblDescription8.Name = "lblDescription8"
-        lblDescription8.Size = New Size(298, 38)
+        lblDescription8.Size = New Size(298, 45)
         lblDescription8.TabIndex = 5
         lblDescription8.Text = "Comfortable boarding room for pets."
         '
@@ -1045,7 +1045,7 @@ Partial Class frmBoardingRoom
         btnEdit8.FlatStyle = FlatStyle.Flat
         btnEdit8.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         btnEdit8.ForeColor = Color.WhiteSmoke
-        btnEdit8.Location = New Point(15, 345)
+        btnEdit8.Location = New Point(15, 365)
         btnEdit8.Name = "btnEdit8"
         btnEdit8.Size = New Size(140, 30)
         btnEdit8.TabIndex = 6
@@ -1059,7 +1059,7 @@ Partial Class frmBoardingRoom
         btnDelete8.FlatStyle = FlatStyle.Flat
         btnDelete8.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         btnDelete8.ForeColor = Color.WhiteSmoke
-        btnDelete8.Location = New Point(173, 345)
+        btnDelete8.Location = New Point(173, 365)
         btnDelete8.Name = "btnDelete8"
         btnDelete8.Size = New Size(140, 30)
         btnDelete8.TabIndex = 7
@@ -1140,7 +1140,7 @@ Partial Class frmBoardingRoom
         '
         ' txtSearch
         '
-        txtSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        txtSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Left
         txtSearch.Font = New Font("Segoe UI", 10.0F)
         txtSearch.Location = New Point(90, 18)
         txtSearch.Name = "txtSearch"

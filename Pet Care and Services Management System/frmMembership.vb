@@ -18,11 +18,10 @@ Public Class frmMembership
             Using connection As New MySqlConnection(connectionString)
                 connection.Open()
 
-                Dim query As String = "SELECT MembershipID, CustomerID, MembershipType, StartDate, EndDate, Status FROM Memberships ORDER BY MembershipID DESC"
+                Dim query As String = "SELECT MembershipID, CustomerID, MembershipType, StartDate, EndDate, Status FROM Membership ORDER BY MembershipID DESC"
 
                 Using command As New MySqlCommand(query, connection)
                     Using reader As MySqlDataReader = command.ExecuteReader()
-
                         dgvMembership.Rows.Clear()
 
                         While reader.Read()
@@ -37,7 +36,6 @@ Public Class frmMembership
                                 "[Delete]"
                             )
                         End While
-
                     End Using
                 End Using
             End Using
@@ -96,13 +94,12 @@ Public Class frmMembership
             Using connection As New MySqlConnection(connectionString)
                 connection.Open()
 
-                Dim query As String = "SELECT MembershipID, CustomerID, MembershipType, StartDate, EndDate, Status FROM Memberships WHERE MembershipID LIKE @Search OR CustomerID LIKE @Search OR MembershipType LIKE @Search OR Status LIKE @Search ORDER BY MembershipID DESC"
+                Dim query As String = "SELECT MembershipID, CustomerID, MembershipType, StartDate, EndDate, Status FROM Membership WHERE MembershipID LIKE @Search OR CustomerID LIKE @Search OR MembershipType LIKE @Search OR Status LIKE @Search ORDER BY MembershipID DESC"
 
                 Using command As New MySqlCommand(query, connection)
                     command.Parameters.AddWithValue("@Search", "%" & txtSearch.Text.Trim() & "%")
 
                     Using reader As MySqlDataReader = command.ExecuteReader()
-
                         dgvMembership.Rows.Clear()
 
                         While reader.Read()
@@ -117,7 +114,6 @@ Public Class frmMembership
                                 "[Delete]"
                             )
                         End While
-
                     End Using
                 End Using
             End Using
@@ -147,14 +143,13 @@ Public Class frmMembership
             Using connection As New MySqlConnection(connectionString)
                 connection.Open()
 
-                Dim query As String = "SELECT MembershipID, CustomerID, MembershipType, StartDate, EndDate, Status FROM Memberships WHERE (@Type = 'All' OR MembershipType = @Type) AND (@Status = 'All' OR Status = @Status) ORDER BY MembershipID DESC"
+                Dim query As String = "SELECT MembershipID, CustomerID, MembershipType, StartDate, EndDate, Status FROM Membership WHERE (@Type = 'All' OR MembershipType = @Type) AND (@Status = 'All' OR Status = @Status) ORDER BY MembershipID DESC"
 
                 Using command As New MySqlCommand(query, connection)
                     command.Parameters.AddWithValue("@Type", cboType.Text)
                     command.Parameters.AddWithValue("@Status", cboStatus.Text)
 
                     Using reader As MySqlDataReader = command.ExecuteReader()
-
                         dgvMembership.Rows.Clear()
 
                         While reader.Read()
@@ -169,7 +164,6 @@ Public Class frmMembership
                                 "[Delete]"
                             )
                         End While
-
                     End Using
                 End Using
             End Using
@@ -209,7 +203,7 @@ Public Class frmMembership
                 Using connection As New MySqlConnection(connectionString)
                     connection.Open()
 
-                    Dim query As String = "DELETE FROM Memberships WHERE MembershipID = @MembershipID"
+                    Dim query As String = "DELETE FROM Membership WHERE MembershipID = @MembershipID"
 
                     Using command As New MySqlCommand(query, connection)
                         command.Parameters.AddWithValue("@MembershipID", membershipID)

@@ -15,9 +15,7 @@ Public Class frmGroomingBooking
         Try
             Using conn As New MySqlConnection(connectionString)
                 conn.Open()
-                Dim sql As String =
-                    "SELECT GroomingBookingID, PetID, ServiceID, BookingDate, BookingTime, Status " &
-                    "FROM GroomingBookings"
+                Dim sql As String = "SELECT GroomingBookingID, PetID, ServiceID, DATE_FORMAT(BookingDate, '%Y-%m-%d') AS BookingDate, TIME_FORMAT(BookingTime, '%H:%i') AS BookingTime, Status FROM GroomingBookings ORDER BY GroomingBookingID"
 
                 Using cmd As New MySqlCommand(sql, conn)
                     Using adapter As New MySqlDataAdapter(cmd)
@@ -39,15 +37,7 @@ Public Class frmGroomingBooking
                 End Using
             End Using
         Catch ex As Exception
-            MessageBox.Show(
-                "Unable to load grooming booking data." &
-                Environment.NewLine &
-                Environment.NewLine &
-                ex.Message,
-                "Database Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error
-            )
+            MessageBox.Show("Unable to load grooming booking data." & Environment.NewLine & Environment.NewLine & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -60,11 +50,8 @@ Public Class frmGroomingBooking
 
     ' ADD GROOMING BOOKING
     Private Sub btnAddGroomingBooking_Click(sender As Object, e As EventArgs) Handles btnAddGroomingBooking.Click
-        ' Open Add Grooming Booking Form
         Dim frm As New frmAddGroomingBooking()
         frm.ShowDialog()
-
-        ' Reload data after adding
         LoadGroomingBookingData()
     End Sub
 
@@ -82,15 +69,7 @@ Public Class frmGroomingBooking
             Using conn As New MySqlConnection(connectionString)
                 conn.Open()
 
-                Dim sql As String =
-                    "SELECT GroomingBookingID, PetID, ServiceID, BookingDate, BookingTime, Status " &
-                    "FROM GroomingBookings " &
-                    "WHERE GroomingBookingID LIKE @search " &
-                    "OR PetID LIKE @search " &
-                    "OR ServiceID LIKE @search " &
-                    "OR BookingDate LIKE @search " &
-                    "OR BookingTime LIKE @search " &
-                    "OR Status LIKE @search"
+                Dim sql As String = "SELECT GroomingBookingID, PetID, ServiceID, DATE_FORMAT(BookingDate, '%Y-%m-%d') AS BookingDate, TIME_FORMAT(BookingTime, '%H:%i') AS BookingTime, Status FROM GroomingBookings WHERE GroomingBookingID LIKE @search OR PetID LIKE @search OR ServiceID LIKE @search OR DATE_FORMAT(BookingDate, '%Y-%m-%d') LIKE @search OR TIME_FORMAT(BookingTime, '%H:%i') LIKE @search OR Status LIKE @search ORDER BY GroomingBookingID"
 
                 Using cmd As New MySqlCommand(sql, conn)
                     cmd.Parameters.AddWithValue("@search", "%" & searchText & "%")
@@ -114,15 +93,7 @@ Public Class frmGroomingBooking
                 End Using
             End Using
         Catch ex As Exception
-            MessageBox.Show(
-                "Search failed." &
-                Environment.NewLine &
-                Environment.NewLine &
-                ex.Message,
-                "Database Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error
-            )
+            MessageBox.Show("Search failed." & Environment.NewLine & Environment.NewLine & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -148,21 +119,9 @@ Public Class frmGroomingBooking
 
         ' DELETE GROOMING BOOKING
         If e.ColumnIndex = dgvGroomingBooking.Columns("colDelete").Index Then
-            Dim bookingID As String =
-                dgvGroomingBooking.Rows(e.RowIndex).
-                Cells("colGroomingBookingID").
-                Value.ToString()
+            Dim bookingID As String = dgvGroomingBooking.Rows(e.RowIndex).Cells("colGroomingBookingID").Value.ToString()
 
-            Dim result As DialogResult =
-                MessageBox.Show(
-                    "Are you sure you want to delete this grooming booking?" &
-                    Environment.NewLine &
-                    Environment.NewLine &
-                    "Booking ID: " & bookingID,
-                    "Delete Grooming Booking",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning
-                )
+            Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete this grooming booking?" & Environment.NewLine & Environment.NewLine & "Booking ID: " & bookingID, "Delete Grooming Booking", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
             If result = DialogResult.Yes Then
                 DeleteGroomingBooking(bookingID)
@@ -176,46 +135,23 @@ Public Class frmGroomingBooking
             Using conn As New MySqlConnection(connectionString)
                 conn.Open()
 
-                Dim sql As String =
-                    "DELETE FROM GroomingBookings " &
-                    "WHERE GroomingBookingID = @GroomingBookingID"
+                Dim sql As String = "DELETE FROM GroomingBookings WHERE GroomingBookingID = @GroomingBookingID"
 
                 Using cmd As New MySqlCommand(sql, conn)
                     cmd.Parameters.AddWithValue("@GroomingBookingID", bookingID)
 
-                    Dim result As Integer =
-                        cmd.ExecuteNonQuery()
+                    Dim result As Integer = cmd.ExecuteNonQuery()
 
                     If result > 0 Then
-                        MessageBox.Show(
-                            "Grooming booking deleted successfully.",
-                            "Delete Grooming Booking",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information
-                        )
-
+                        MessageBox.Show("Grooming booking deleted successfully.", "Delete Grooming Booking", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         LoadGroomingBookingData()
-
                     Else
-                        MessageBox.Show(
-                            "Grooming booking was not found.",
-                            "Delete Grooming Booking",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning
-                        )
+                        MessageBox.Show("Grooming booking was not found.", "Delete Grooming Booking", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                     End If
                 End Using
             End Using
         Catch ex As Exception
-            MessageBox.Show(
-                "Unable to delete grooming booking." &
-                Environment.NewLine &
-                Environment.NewLine &
-                ex.Message,
-                "Database Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error
-            )
+            MessageBox.Show("Unable to delete grooming booking." & Environment.NewLine & Environment.NewLine & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

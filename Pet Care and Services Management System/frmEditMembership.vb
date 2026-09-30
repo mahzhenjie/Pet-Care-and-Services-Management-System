@@ -41,13 +41,12 @@ Public Class frmEditMembership
             Using connection As New MySqlConnection(connectionString)
                 connection.Open()
 
-                Dim query As String = "SELECT MembershipID, CustomerID, MembershipType, StartDate, EndDate, Status FROM Memberships WHERE MembershipID = @MembershipID"
+                Dim query As String = "SELECT MembershipID, CustomerID, MembershipType, StartDate, EndDate, Status FROM Membership WHERE MembershipID = @MembershipID"
 
                 Using command As New MySqlCommand(query, connection)
                     command.Parameters.AddWithValue("@MembershipID", membershipID)
 
                     Using reader As MySqlDataReader = command.ExecuteReader()
-
                         If reader.Read() Then
                             txtMembershipID.Text = reader("MembershipID").ToString()
                             txtCustomerID.Text = reader("CustomerID").ToString()
@@ -56,7 +55,6 @@ Public Class frmEditMembership
                             dtpEndDate.Value = Convert.ToDateTime(reader("EndDate"))
                             cboStatus.Text = reader("Status").ToString()
                         End If
-
                     End Using
                 End Using
             End Using
@@ -95,7 +93,7 @@ Public Class frmEditMembership
             Using connection As New MySqlConnection(connectionString)
                 connection.Open()
 
-                Dim query As String = "UPDATE Memberships SET CustomerID = @CustomerID, MembershipType = @MembershipType, StartDate = @StartDate, EndDate = @EndDate, Status = @Status WHERE MembershipID = @MembershipID"
+                Dim query As String = "UPDATE Membership SET CustomerID = @CustomerID, MembershipType = @MembershipType, StartDate = @StartDate, EndDate = @EndDate, Status = @Status WHERE MembershipID = @MembershipID"
 
                 Using command As New MySqlCommand(query, connection)
                     command.Parameters.AddWithValue("@CustomerID", txtCustomerID.Text.Trim())

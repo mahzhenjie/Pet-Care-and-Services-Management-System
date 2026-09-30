@@ -17,57 +17,31 @@ Public Class frmBoardingRoom
     ' LOAD ROOM DATA FROM DATABASE
     Private Sub LoadRoomCards()
         ClearRoomCards()
-
         Using connection As New MySqlConnection(connectionString)
-
             Try
                 connection.Open()
-
-                Dim query As String
-
-                ' CHECK ROOM STATUS FILTER
-                If cboStatus.SelectedItem.ToString() = "All Status" Then
-                    query = "SELECT RoomID, RoomNumber, RoomType, PricePerDay, Status, Description, RoomPhoto FROM BoardingRooms ORDER BY RoomID"
-                Else
-                    query = "SELECT RoomID, RoomNumber, RoomType, PricePerDay, Status, Description, RoomPhoto FROM BoardingRooms WHERE Status = @Status ORDER BY RoomID"
-                End If
-
+                Dim query As String = "SELECT br.RoomID, br.RoomNumber, br.RoomType, br.PricePerDay, br.Description, br.RoomPhoto, CASE WHEN EXISTS (SELECT 1 FROM BoardingBookings bb WHERE bb.RoomID = br.RoomID AND bb.Status IN ('Confirmed', 'Active') AND CURDATE() BETWEEN bb.StartDate AND bb.EndDate) THEN 'Occupied' WHEN EXISTS (SELECT 1 FROM BoardingBookings bb WHERE bb.RoomID = br.RoomID AND bb.Status IN ('Confirmed', 'Active') AND bb.StartDate > CURDATE()) THEN 'Booked' WHEN EXISTS (SELECT 1 FROM BoardingBookings bb WHERE bb.RoomID = br.RoomID AND bb.EndDate < CURDATE()) THEN 'Available' ELSE br.Status END AS CurrentStatus FROM BoardingRooms br ORDER BY br.RoomID"
                 Using command As New MySqlCommand(query, connection)
-
-                    ' ADD STATUS PARAMETER
-                    If cboStatus.SelectedItem.ToString() <> "All Status" Then
-                        command.Parameters.AddWithValue("@Status", cboStatus.SelectedItem.ToString())
-                    End If
-
                     Using reader As MySqlDataReader = command.ExecuteReader()
-
                         Dim index As Integer = 0
-
                         While reader.Read() AndAlso index < 8
-
                             Dim roomID As Integer = Convert.ToInt32(reader("RoomID"))
                             Dim roomNumber As String = reader("RoomNumber").ToString()
                             Dim roomType As String = reader("RoomType").ToString()
                             Dim price As Decimal = Convert.ToDecimal(reader("PricePerDay"))
-                            Dim status As String = reader("Status").ToString()
+                            Dim status As String = reader("CurrentStatus").ToString()
                             Dim description As String = reader("Description").ToString()
-
-                            roomIDValues(index) = roomID
-
-                            DisplayRoomCard(index, roomID, roomNumber, roomType, price, status, description, reader("RoomPhoto"))
-
-                            index += 1
-
+                            If cboStatus.SelectedItem.ToString() = "All Status" OrElse cboStatus.SelectedItem.ToString() = status Then
+                                roomIDValues(index) = roomID
+                                DisplayRoomCard(index, roomID, roomNumber, roomType, price, status, description, reader("RoomPhoto"))
+                                index += 1
+                            End If
                         End While
-
                     End Using
-
                 End Using
-
             Catch ex As Exception
                 MessageBox.Show("Error loading boarding rooms: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
-
         End Using
     End Sub
 
@@ -191,6 +165,8 @@ Public Class frmBoardingRoom
             roomStatus.ForeColor = Color.Green
         ElseIf status = "Occupied" Then
             roomStatus.ForeColor = Color.Red
+        ElseIf status = "Booked" Then
+            roomStatus.ForeColor = Color.DarkOrange
         Else
             roomStatus.ForeColor = Color.SaddleBrown
         End If
