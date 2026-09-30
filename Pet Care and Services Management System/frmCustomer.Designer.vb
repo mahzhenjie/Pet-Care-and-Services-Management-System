@@ -17,7 +17,7 @@ Partial Class frmCustomer
     'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
 
-    'NOTE: The following procedure is required by the Windows Form Designer
+    'NOTE: The following procedure is required by the Windows Form Designer.
     'It can be modified using the Windows Form Designer.
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
@@ -43,6 +43,7 @@ Partial Class frmCustomer
         ' 
         ' pnlCustomer
         ' 
+        pnlCustomer.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         pnlCustomer.BackColor = Color.FromArgb(CByte(232), CByte(216), CByte(194))
         pnlCustomer.Controls.Add(btnGoBackDashboard)
         pnlCustomer.Controls.Add(btnAddCustomer)
@@ -59,6 +60,7 @@ Partial Class frmCustomer
         ' 
         ' btnAddCustomer
         ' 
+        btnAddCustomer.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnAddCustomer.BackColor = Color.SaddleBrown
         btnAddCustomer.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnAddCustomer.ForeColor = Color.WhiteSmoke
@@ -72,6 +74,7 @@ Partial Class frmCustomer
         ' 
         ' btnRefresh
         ' 
+        btnRefresh.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnRefresh.BackColor = Color.SaddleBrown
         btnRefresh.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnRefresh.ForeColor = Color.WhiteSmoke
@@ -85,6 +88,7 @@ Partial Class frmCustomer
         ' 
         ' dgvCustomer
         ' 
+        dgvCustomer.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         dgvCustomer.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         dgvCustomer.BackgroundColor = Color.FromArgb(CByte(244), CByte(239), CByte(227))
         dgvCustomer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -102,14 +106,14 @@ Partial Class frmCustomer
         ' 
         ' colCustomerID
         ' 
-        colCustomerID.FillWeight = 110F
+        colCustomerID.FillWeight = 110.0F
         colCustomerID.HeaderText = "Customer ID"
         colCustomerID.MinimumWidth = 6
         colCustomerID.Name = "colCustomerID"
         ' 
         ' colFullName
         ' 
-        colFullName.FillWeight = 150F
+        colFullName.FillWeight = 150.0F
         colFullName.HeaderText = "Full Name"
         colFullName.MinimumWidth = 6
         colFullName.Name = "colFullName"
@@ -128,7 +132,7 @@ Partial Class frmCustomer
         ' 
         ' colPhoneNumber
         ' 
-        colPhoneNumber.FillWeight = 70F
+        colPhoneNumber.FillWeight = 70.0F
         colPhoneNumber.HeaderText = "Phone Number"
         colPhoneNumber.MinimumWidth = 6
         colPhoneNumber.Name = "colPhoneNumber"
@@ -161,6 +165,7 @@ Partial Class frmCustomer
         ' 
         ' txtSearch
         ' 
+        txtSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Left
         txtSearch.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         txtSearch.ForeColor = Color.Sienna
         txtSearch.Location = New Point(24, 80)
@@ -172,6 +177,7 @@ Partial Class frmCustomer
         ' 
         ' lblTitle
         ' 
+        lblTitle.Anchor = AnchorStyles.Top Or AnchorStyles.Left
         lblTitle.AutoSize = True
         lblTitle.Font = New Font("Lucida Sans Unicode", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblTitle.Location = New Point(20, 19)
@@ -182,6 +188,7 @@ Partial Class frmCustomer
         ' 
         ' btnGoBackDashboard
         ' 
+        btnGoBackDashboard.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnGoBackDashboard.BackColor = Color.SaddleBrown
         btnGoBackDashboard.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnGoBackDashboard.ForeColor = Color.WhiteSmoke
@@ -195,12 +202,14 @@ Partial Class frmCustomer
         ' 
         ' frmCustomer
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(942, 754)
         Controls.Add(pnlCustomer)
         Margin = New Padding(3, 4, 3, 4)
+        MinimumSize = New Size(950, 800)
         Name = "frmCustomer"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Customer Management"
         pnlCustomer.ResumeLayout(False)
         pnlCustomer.PerformLayout()
