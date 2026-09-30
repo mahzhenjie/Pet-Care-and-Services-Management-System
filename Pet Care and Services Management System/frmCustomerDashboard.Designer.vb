@@ -71,6 +71,11 @@ Partial Class frmCustomerDashboard
         lblDashboardTitle = New Label()
         pnlSummaryCards = New Panel()
         tlpSummaryCards = New TableLayoutPanel()
+        pnlPets = New Panel()
+        picPets = New PictureBox()
+        lblPetSubtitle = New Label()
+        lblPetCount = New Label()
+        lblPetTitle = New Label()
         pnlAppointments = New Panel()
         picAppointment = New PictureBox()
         lblAppointmentSubtitle = New Label()
@@ -81,11 +86,6 @@ Partial Class frmCustomerDashboard
         lblOrderSubtitle = New Label()
         lblOrderCount = New Label()
         lblOrderTitle = New Label()
-        pnlPets = New Panel()
-        picPets = New PictureBox()
-        lblPetSubtitle = New Label()
-        lblPetCount = New Label()
-        lblPetTitle = New Label()
         pnlQuickActions = New Panel()
         PictureBox15 = New PictureBox()
         PictureBox14 = New PictureBox()
@@ -124,12 +124,12 @@ Partial Class frmCustomerDashboard
         CType(picPaw, ComponentModel.ISupportInitialize).BeginInit()
         pnlSummaryCards.SuspendLayout()
         tlpSummaryCards.SuspendLayout()
+        pnlPets.SuspendLayout()
+        CType(picPets, ComponentModel.ISupportInitialize).BeginInit()
         pnlAppointments.SuspendLayout()
         CType(picAppointment, ComponentModel.ISupportInitialize).BeginInit()
         pnlOrders.SuspendLayout()
         CType(picOrder, ComponentModel.ISupportInitialize).BeginInit()
-        pnlPets.SuspendLayout()
-        CType(picPets, ComponentModel.ISupportInitialize).BeginInit()
         pnlQuickActions.SuspendLayout()
         CType(PictureBox15, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox14, ComponentModel.ISupportInitialize).BeginInit()
@@ -751,6 +751,62 @@ Partial Class frmCustomerDashboard
         tlpSummaryCards.Size = New Size(1053, 172)
         tlpSummaryCards.TabIndex = 16
         ' 
+        ' pnlPets
+        ' 
+        pnlPets.BackColor = Color.FromArgb(CByte(240), CByte(245), CByte(252))
+        pnlPets.Controls.Add(picPets)
+        pnlPets.Controls.Add(lblPetSubtitle)
+        pnlPets.Controls.Add(lblPetCount)
+        pnlPets.Controls.Add(lblPetTitle)
+        pnlPets.Location = New Point(5, 5)
+        pnlPets.Margin = New Padding(5)
+        pnlPets.Name = "pnlPets"
+        pnlPets.Size = New Size(341, 162)
+        pnlPets.TabIndex = 11
+        ' 
+        ' picPets
+        ' 
+        picPets.Image = CType(resources.GetObject("picPets.Image"), Image)
+        picPets.Location = New Point(8, 41)
+        picPets.Name = "picPets"
+        picPets.Size = New Size(90, 90)
+        picPets.SizeMode = PictureBoxSizeMode.Zoom
+        picPets.TabIndex = 12
+        picPets.TabStop = False
+        ' 
+        ' lblPetSubtitle
+        ' 
+        lblPetSubtitle.AutoSize = True
+        lblPetSubtitle.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblPetSubtitle.ForeColor = SystemColors.ControlText
+        lblPetSubtitle.Location = New Point(106, 103)
+        lblPetSubtitle.Name = "lblPetSubtitle"
+        lblPetSubtitle.Size = New Size(115, 32)
+        lblPetSubtitle.TabIndex = 10
+        lblPetSubtitle.Text = "Total Pets"
+        ' 
+        ' lblPetCount
+        ' 
+        lblPetCount.AutoSize = True
+        lblPetCount.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblPetCount.ForeColor = SystemColors.ControlText
+        lblPetCount.Location = New Point(106, 58)
+        lblPetCount.Name = "lblPetCount"
+        lblPetCount.Size = New Size(38, 45)
+        lblPetCount.TabIndex = 9
+        lblPetCount.Text = "0"
+        ' 
+        ' lblPetTitle
+        ' 
+        lblPetTitle.AutoSize = True
+        lblPetTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblPetTitle.ForeColor = Color.RoyalBlue
+        lblPetTitle.Location = New Point(128, 3)
+        lblPetTitle.Name = "lblPetTitle"
+        lblPetTitle.Size = New Size(61, 32)
+        lblPetTitle.TabIndex = 8
+        lblPetTitle.Text = "Pets"
+        ' 
         ' pnlAppointments
         ' 
         pnlAppointments.BackColor = Color.FromArgb(CByte(255), CByte(247), CByte(229))
@@ -863,62 +919,6 @@ Partial Class frmCustomerDashboard
         lblOrderTitle.TabIndex = 8
         lblOrderTitle.Text = "Orders"
         ' 
-        ' pnlPets
-        ' 
-        pnlPets.BackColor = Color.FromArgb(CByte(240), CByte(245), CByte(252))
-        pnlPets.Controls.Add(picPets)
-        pnlPets.Controls.Add(lblPetSubtitle)
-        pnlPets.Controls.Add(lblPetCount)
-        pnlPets.Controls.Add(lblPetTitle)
-        pnlPets.Location = New Point(5, 5)
-        pnlPets.Margin = New Padding(5)
-        pnlPets.Name = "pnlPets"
-        pnlPets.Size = New Size(341, 162)
-        pnlPets.TabIndex = 11
-        ' 
-        ' picPets
-        ' 
-        picPets.Image = CType(resources.GetObject("picPets.Image"), Image)
-        picPets.Location = New Point(8, 41)
-        picPets.Name = "picPets"
-        picPets.Size = New Size(90, 90)
-        picPets.SizeMode = PictureBoxSizeMode.Zoom
-        picPets.TabIndex = 12
-        picPets.TabStop = False
-        ' 
-        ' lblPetSubtitle
-        ' 
-        lblPetSubtitle.AutoSize = True
-        lblPetSubtitle.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblPetSubtitle.ForeColor = SystemColors.ControlText
-        lblPetSubtitle.Location = New Point(106, 103)
-        lblPetSubtitle.Name = "lblPetSubtitle"
-        lblPetSubtitle.Size = New Size(115, 32)
-        lblPetSubtitle.TabIndex = 10
-        lblPetSubtitle.Text = "Total Pets"
-        ' 
-        ' lblPetCount
-        ' 
-        lblPetCount.AutoSize = True
-        lblPetCount.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblPetCount.ForeColor = SystemColors.ControlText
-        lblPetCount.Location = New Point(106, 58)
-        lblPetCount.Name = "lblPetCount"
-        lblPetCount.Size = New Size(38, 45)
-        lblPetCount.TabIndex = 9
-        lblPetCount.Text = "0"
-        ' 
-        ' lblPetTitle
-        ' 
-        lblPetTitle.AutoSize = True
-        lblPetTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblPetTitle.ForeColor = Color.RoyalBlue
-        lblPetTitle.Location = New Point(128, 3)
-        lblPetTitle.Name = "lblPetTitle"
-        lblPetTitle.Size = New Size(61, 32)
-        lblPetTitle.TabIndex = 8
-        lblPetTitle.Text = "Pets"
-        ' 
         ' pnlQuickActions
         ' 
         pnlQuickActions.Anchor = AnchorStyles.Top Or AnchorStyles.Right
@@ -1014,7 +1014,7 @@ Partial Class frmCustomerDashboard
         btnAddCustomer.Name = "btnAddCustomer"
         btnAddCustomer.Size = New Size(221, 44)
         btnAddCustomer.TabIndex = 2
-        btnAddCustomer.Text = "＋ Add Customer"
+        btnAddCustomer.Text = "＋ Membership"
         btnAddCustomer.UseVisualStyleBackColor = False
         ' 
         ' btnNewAppointmnet
@@ -1177,15 +1177,15 @@ Partial Class frmCustomerDashboard
         CType(picPaw, ComponentModel.ISupportInitialize).EndInit()
         pnlSummaryCards.ResumeLayout(False)
         tlpSummaryCards.ResumeLayout(False)
+        pnlPets.ResumeLayout(False)
+        pnlPets.PerformLayout()
+        CType(picPets, ComponentModel.ISupportInitialize).EndInit()
         pnlAppointments.ResumeLayout(False)
         pnlAppointments.PerformLayout()
         CType(picAppointment, ComponentModel.ISupportInitialize).EndInit()
         pnlOrders.ResumeLayout(False)
         pnlOrders.PerformLayout()
         CType(picOrder, ComponentModel.ISupportInitialize).EndInit()
-        pnlPets.ResumeLayout(False)
-        pnlPets.PerformLayout()
-        CType(picPets, ComponentModel.ISupportInitialize).EndInit()
         pnlQuickActions.ResumeLayout(False)
         pnlQuickActions.PerformLayout()
         CType(PictureBox15, ComponentModel.ISupportInitialize).EndInit()
