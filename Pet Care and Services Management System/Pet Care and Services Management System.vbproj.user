@@ -2,6 +2,18 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="frmCustomerPayment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmCustomerCart.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmCustomerProduct.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmCustomerMembership.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmAbout.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -119,5 +131,10 @@
     <Compile Update="frmVideoView.vb">
       <SubType>Form</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="frmCustomerDashboard.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

@@ -402,14 +402,16 @@ Public Class frmEmployeeDashboard
         Dim result As DialogResult
 
         result = MessageBox.Show(
-            "Are you sure you want to logout?",
-            "Logout",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question
-        )
+        "Are you sure you want to logout?",
+        "Logout",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Question
+    )
 
         If result = DialogResult.Yes Then
-            Application.Exit()
+            Dim loginForm As New frmLogin()
+            loginForm.Show()
+            Me.Hide()
         End If
     End Sub
 

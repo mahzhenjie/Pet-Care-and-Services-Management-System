@@ -32,7 +32,7 @@ Public Class frmLogin
         Me.MaximizeBox = False
         Me.BackColor = colorBackground
 
-        ' Title
+        ' TITLE
         Dim lblTitle As New Label()
         lblTitle.Text = "PET CARE AND SERVICES" & vbCrLf & "MANAGEMENT SYSTEM"
         lblTitle.Font = New Font("Georgia", 15, FontStyle.Bold)
@@ -48,7 +48,7 @@ Public Class frmLogin
         pnlLine.Location = New Point(30, 72)
         Me.Controls.Add(pnlLine)
 
-        ' Login
+        ' LOGIN ROLE
         Dim grpRole As New GroupBox()
         grpRole.Text = "Login As"
         grpRole.ForeColor = colorDarkBrown
@@ -70,7 +70,7 @@ Public Class frmLogin
         rdoEmployee.Font = New Font("Segoe UI", 10)
         grpRole.Controls.Add(rdoEmployee)
 
-        ' Username
+        ' USERNAME
         Dim lblUsername As New Label()
         lblUsername.Text = "Username"
         lblUsername.Font = New Font("Segoe UI", 10, FontStyle.Bold)
@@ -84,7 +84,7 @@ Public Class frmLogin
         txtUsername.Font = New Font("Segoe UI", 10)
         Me.Controls.Add(txtUsername)
 
-        ' Password
+        ' PASSWORD
         Dim lblPassword As New Label()
         lblPassword.Text = "Password"
         lblPassword.Font = New Font("Segoe UI", 10, FontStyle.Bold)
@@ -99,7 +99,7 @@ Public Class frmLogin
         txtPassword.PasswordChar = "*"c
         Me.Controls.Add(txtPassword)
 
-        ' Show Password
+        ' SHOW PASSWORD
         chkShowPassword.Text = "Show Password"
         chkShowPassword.Font = New Font("Segoe UI", 9)
         chkShowPassword.ForeColor = colorDarkBrown
@@ -107,7 +107,7 @@ Public Class frmLogin
         chkShowPassword.Location = New Point(80, 285)
         Me.Controls.Add(chkShowPassword)
 
-        ' Login
+        ' LOGIN BUTTON
         btnLogin.Text = "Login"
         btnLogin.Font = New Font("Segoe UI", 11, FontStyle.Bold)
         btnLogin.BackColor = colorDarkBrown
@@ -118,7 +118,7 @@ Public Class frmLogin
         btnLogin.Location = New Point(80, 320)
         Me.Controls.Add(btnLogin)
 
-        ' Register
+        ' REGISTER
         Dim lblNoAccount As New Label()
         lblNoAccount.Text = "Don't have an account?"
         lblNoAccount.Font = New Font("Segoe UI", 9)
@@ -141,13 +141,11 @@ Public Class frmLogin
 
     ' SHOW / HIDE PASSWORD
     Private Sub chkShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPassword.CheckedChanged
-
         If chkShowPassword.Checked Then
             txtPassword.PasswordChar = ControlChars.NullChar
         Else
             txtPassword.PasswordChar = "*"c
         End If
-
     End Sub
 
     ' LOGIN
@@ -156,8 +154,7 @@ Public Class frmLogin
         Dim pword As String = txtPassword.Text
 
         If uname = "" OrElse pword = "" Then
-            MessageBox.Show("Please enter both username and password.", "Missing Information",
-                             MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Please enter both username and password.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
@@ -175,14 +172,12 @@ Public Class frmLogin
                     cmd.Parameters.AddWithValue("@p", pword)
 
                     Using reader As MySqlDataReader = cmd.ExecuteReader()
-
                         If reader.Read() Then
                             CurrentUserID = Convert.ToInt32(reader(idColumn))
                             CurrentUserName = reader("FullName").ToString()
                             CurrentUserRole = If(rdoCustomer.Checked, "Customer", "Employee")
 
-                            MessageBox.Show($"Welcome, {CurrentUserName}!", "Login Successful",
-                                             MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MessageBox.Show($"Welcome, {CurrentUserName}!", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                             ' OPEN EMPLOYEE DASHBOARD
                             If CurrentUserRole = "Employee" Then
@@ -196,19 +191,14 @@ Public Class frmLogin
                             End If
 
                             Me.Hide()
-
                         Else
-                            MessageBox.Show("Invalid username or password.", "Login Failed",
-                                             MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
-
                     End Using
                 End Using
             End Using
-
         Catch ex As Exception
-            MessageBox.Show("Database connection error: " & ex.Message, "Error",
-                             MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.ToString(), "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

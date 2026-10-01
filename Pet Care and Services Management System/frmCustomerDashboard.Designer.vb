@@ -209,7 +209,7 @@ Partial Class frmCustomerDashboard
         pnlPets.Location = New Point(5, 5)
         pnlPets.Margin = New Padding(5)
         pnlPets.Name = "pnlPets"
-        pnlPets.Size = New Size(347, 153)
+        pnlPets.Size = New Size(341, 162)
         pnlPets.TabIndex = 11
         ' 
         ' picPets
@@ -225,11 +225,11 @@ Partial Class frmCustomerDashboard
         ' lblPetSubtitle
         ' 
         lblPetSubtitle.AutoSize = True
-        lblPetSubtitle.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblPetSubtitle.Font = New Font("Segoe UI", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         lblPetSubtitle.ForeColor = SystemColors.ControlText
         lblPetSubtitle.Location = New Point(106, 103)
         lblPetSubtitle.Name = "lblPetSubtitle"
-        lblPetSubtitle.Size = New Size(72, 20)
+        lblPetSubtitle.Size = New Size(115, 32)
         lblPetSubtitle.TabIndex = 10
         lblPetSubtitle.Text = "Total Pets"
         ' 
@@ -240,7 +240,7 @@ Partial Class frmCustomerDashboard
         lblPetCount.ForeColor = SystemColors.ControlText
         lblPetCount.Location = New Point(106, 58)
         lblPetCount.Name = "lblPetCount"
-        lblPetCount.Size = New Size(32, 38)
+        lblPetCount.Size = New Size(38, 45)
         lblPetCount.TabIndex = 9
         lblPetCount.Text = "0"
         ' 
@@ -251,7 +251,7 @@ Partial Class frmCustomerDashboard
         lblPetTitle.ForeColor = Color.RoyalBlue
         lblPetTitle.Location = New Point(128, 3)
         lblPetTitle.Name = "lblPetTitle"
-        lblPetTitle.Size = New Size(51, 28)
+        lblPetTitle.Size = New Size(61, 32)
         lblPetTitle.TabIndex = 8
         lblPetTitle.Text = "Pets"
         ' 
@@ -262,16 +262,16 @@ Partial Class frmCustomerDashboard
         pnlAppointments.Controls.Add(lblAppointmentSubtitle)
         pnlAppointments.Controls.Add(lblAppointmentCount)
         pnlAppointments.Controls.Add(lblAppointmentTitle)
-        pnlAppointments.Location = New Point(362, 5)
+        pnlAppointments.Location = New Point(356, 5)
         pnlAppointments.Margin = New Padding(5)
         pnlAppointments.Name = "pnlAppointments"
-        pnlAppointments.Size = New Size(347, 153)
+        pnlAppointments.Size = New Size(341, 162)
         pnlAppointments.TabIndex = 11
         ' 
         ' picAppointment
         ' 
         picAppointment.Image = CType(resources.GetObject("picAppointment.Image"), Image)
-        picAppointment.Location = New Point(8, 41)
+        picAppointment.Location = New Point(0, 38)
         picAppointment.Name = "picAppointment"
         picAppointment.Size = New Size(90, 90)
         picAppointment.SizeMode = PictureBoxSizeMode.Zoom
@@ -281,11 +281,11 @@ Partial Class frmCustomerDashboard
         ' lblAppointmentSubtitle
         ' 
         lblAppointmentSubtitle.AutoSize = True
-        lblAppointmentSubtitle.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblAppointmentSubtitle.Font = New Font("Segoe UI", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         lblAppointmentSubtitle.ForeColor = SystemColors.ControlText
         lblAppointmentSubtitle.Location = New Point(87, 103)
         lblAppointmentSubtitle.Name = "lblAppointmentSubtitle"
-        lblAppointmentSubtitle.Size = New Size(156, 20)
+        lblAppointmentSubtitle.Size = New Size(251, 32)
         lblAppointmentSubtitle.TabIndex = 10
         lblAppointmentSubtitle.Text = "Today's Appointments"
         ' 
@@ -296,7 +296,7 @@ Partial Class frmCustomerDashboard
         lblAppointmentCount.ForeColor = SystemColors.ControlText
         lblAppointmentCount.Location = New Point(96, 58)
         lblAppointmentCount.Name = "lblAppointmentCount"
-        lblAppointmentCount.Size = New Size(32, 38)
+        lblAppointmentCount.Size = New Size(38, 45)
         lblAppointmentCount.TabIndex = 9
         lblAppointmentCount.Text = "0"
         ' 
@@ -307,7 +307,7 @@ Partial Class frmCustomerDashboard
         lblAppointmentTitle.ForeColor = Color.DarkKhaki
         lblAppointmentTitle.Location = New Point(76, 3)
         lblAppointmentTitle.Name = "lblAppointmentTitle"
-        lblAppointmentTitle.Size = New Size(146, 28)
+        lblAppointmentTitle.Size = New Size(177, 32)
         lblAppointmentTitle.TabIndex = 8
         lblAppointmentTitle.Text = "Appointments"
         ' 
@@ -318,10 +318,10 @@ Partial Class frmCustomerDashboard
         pnlOrders.Controls.Add(lblOrderSubtitle)
         pnlOrders.Controls.Add(lblOrderCount)
         pnlOrders.Controls.Add(lblOrderTitle)
-        pnlOrders.Location = New Point(719, 5)
+        pnlOrders.Location = New Point(707, 5)
         pnlOrders.Margin = New Padding(5)
         pnlOrders.Name = "pnlOrders"
-        pnlOrders.Size = New Size(347, 153)
+        pnlOrders.Size = New Size(341, 162)
         pnlOrders.TabIndex = 12
         ' 
         ' picOrder
@@ -337,11 +337,11 @@ Partial Class frmCustomerDashboard
         ' lblOrderSubtitle
         ' 
         lblOrderSubtitle.AutoSize = True
-        lblOrderSubtitle.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblOrderSubtitle.Font = New Font("Segoe UI", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         lblOrderSubtitle.ForeColor = SystemColors.ControlText
         lblOrderSubtitle.Location = New Point(104, 103)
         lblOrderSubtitle.Name = "lblOrderSubtitle"
-        lblOrderSubtitle.Size = New Size(110, 20)
+        lblOrderSubtitle.Size = New Size(179, 32)
         lblOrderSubtitle.TabIndex = 10
         lblOrderSubtitle.Text = "Pending Orders"
         ' 
@@ -352,7 +352,7 @@ Partial Class frmCustomerDashboard
         lblOrderCount.ForeColor = SystemColors.ControlText
         lblOrderCount.Location = New Point(107, 58)
         lblOrderCount.Name = "lblOrderCount"
-        lblOrderCount.Size = New Size(32, 38)
+        lblOrderCount.Size = New Size(38, 45)
         lblOrderCount.TabIndex = 9
         lblOrderCount.Text = "0"
         ' 
@@ -363,7 +363,7 @@ Partial Class frmCustomerDashboard
         lblOrderTitle.ForeColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
         lblOrderTitle.Location = New Point(84, 3)
         lblOrderTitle.Name = "lblOrderTitle"
-        lblOrderTitle.Size = New Size(75, 28)
+        lblOrderTitle.Size = New Size(91, 32)
         lblOrderTitle.TabIndex = 8
         lblOrderTitle.Text = "Orders"
         ' 
@@ -462,7 +462,7 @@ Partial Class frmCustomerDashboard
         btnAddCustomer.Name = "btnAddCustomer"
         btnAddCustomer.Size = New Size(221, 44)
         btnAddCustomer.TabIndex = 2
-        btnAddCustomer.Text = "＋ Add Customer"
+        btnAddCustomer.Text = "＋ Membership"
         btnAddCustomer.UseVisualStyleBackColor = False
         ' 
         ' btnNewAppointmnet
@@ -1252,6 +1252,35 @@ Partial Class frmCustomerDashboard
         CType(picLogo, ComponentModel.ISupportInitialize).EndInit()
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
+        pnlTopBar.ResumeLayout(False)
+        pnlTopBar.PerformLayout()
+        CType(PictureBox12, ComponentModel.ISupportInitialize).EndInit()
+        CType(picEmployee, ComponentModel.ISupportInitialize).EndInit()
+        CType(picPaw, ComponentModel.ISupportInitialize).EndInit()
+        pnlSummaryCards.ResumeLayout(False)
+        tlpSummaryCards.ResumeLayout(False)
+        pnlPets.ResumeLayout(False)
+        pnlPets.PerformLayout()
+        CType(picPets, ComponentModel.ISupportInitialize).EndInit()
+        pnlAppointments.ResumeLayout(False)
+        pnlAppointments.PerformLayout()
+        CType(picAppointment, ComponentModel.ISupportInitialize).EndInit()
+        pnlOrders.ResumeLayout(False)
+        pnlOrders.PerformLayout()
+        CType(picOrder, ComponentModel.ISupportInitialize).EndInit()
+        pnlQuickActions.ResumeLayout(False)
+        pnlQuickActions.PerformLayout()
+        CType(PictureBox15, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox14, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox13, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox16, ComponentModel.ISupportInitialize).EndInit()
+        pnlRecentAppointments.ResumeLayout(False)
+        pnlRecentAppointments.PerformLayout()
+        CType(dgvRecentAppointments, ComponentModel.ISupportInitialize).EndInit()
+        pnlWelcome.ResumeLayout(False)
+        pnlWelcome.PerformLayout()
+        CType(PictureBox17, ComponentModel.ISupportInitialize).EndInit()
+        CType(picPets2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
