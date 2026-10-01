@@ -2,10 +2,13 @@
 Imports System.IO
 
 Public Class frmEditBoardingService
+
     ' DATABASE CONNECTION
     Private connectionString As String = "Server=localhost;Database=pet_care_and_services_management_system;Uid=root;Pwd=;"
+
     ' SERVICE ID
     Private serviceID As Integer
+
     ' SELECTED PHOTO
     Private selectedPhoto() As Byte = Nothing
 
@@ -24,10 +27,13 @@ Public Class frmEditBoardingService
     Private Sub LoadBoardingService()
         Try
             Dim query As String = "SELECT ServiceName, Description, Price, Duration, ServicePhoto FROM BoardingServices WHERE ServiceID = @ServiceID"
+
             Using connection As New MySqlConnection(connectionString)
                 connection.Open()
+
                 Using command As New MySqlCommand(query, connection)
                     command.Parameters.AddWithValue("@ServiceID", serviceID)
+
                     Using reader As MySqlDataReader = command.ExecuteReader()
                         If reader.Read() Then
                             txtServiceName.Text = reader("ServiceName").ToString()
@@ -38,12 +44,14 @@ Public Class frmEditBoardingService
                             ' LOAD SERVICE PHOTO
                             If Not IsDBNull(reader("ServicePhoto")) Then
                                 Dim imageBytes() As Byte = DirectCast(reader("ServicePhoto"), Byte())
+
                                 If imageBytes IsNot Nothing AndAlso imageBytes.Length > 0 Then
                                     Using memoryStream As New MemoryStream(imageBytes)
                                         Using tempImage As Image = Image.FromStream(memoryStream)
                                             picServicePhoto.Image = New Bitmap(tempImage)
                                         End Using
                                     End Using
+
                                     picServicePhoto.SizeMode = PictureBoxSizeMode.Zoom
                                 End If
                             End If
@@ -54,6 +62,7 @@ Public Class frmEditBoardingService
                     End Using
                 End Using
             End Using
+
         Catch ex As Exception
             MessageBox.Show("Error loading boarding service: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -64,15 +73,19 @@ Public Class frmEditBoardingService
         Using openFileDialog As New OpenFileDialog()
             openFileDialog.Title = "Select Boarding Service Photo"
             openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp|All Files|*.*"
+
             If openFileDialog.ShowDialog() = DialogResult.OK Then
                 Try
                     selectedPhoto = File.ReadAllBytes(openFileDialog.FileName)
+
                     Using memoryStream As New MemoryStream(selectedPhoto)
                         Using tempImage As Image = Image.FromStream(memoryStream)
                             picServicePhoto.Image = New Bitmap(tempImage)
                         End Using
                     End Using
+
                     picServicePhoto.SizeMode = PictureBoxSizeMode.Zoom
+
                 Catch ex As Exception
                     MessageBox.Show("Unable to load the selected photo: " & ex.Message, "Photo Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     selectedPhoto = Nothing
@@ -100,11 +113,13 @@ Public Class frmEditBoardingService
 
         ' VALIDATE PRICE
         Dim price As Decimal
+
         If Not Decimal.TryParse(txtPrice.Text.Trim(), price) Then
             MessageBox.Show("Please enter a valid price.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtPrice.Focus()
             Return
         End If
+
         If price < 0 Then
             MessageBox.Show("Price cannot be negative.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtPrice.Focus()
@@ -113,11 +128,13 @@ Public Class frmEditBoardingService
 
         ' VALIDATE DURATION
         Dim duration As Integer
+
         If Not Integer.TryParse(txtDuration.Text.Trim(), duration) Then
             MessageBox.Show("Please enter a valid duration.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtDuration.Focus()
             Return
         End If
+
         If duration <= 0 Then
             MessageBox.Show("Duration must be greater than 0.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtDuration.Focus()
@@ -127,7 +144,9 @@ Public Class frmEditBoardingService
         Try
             Using connection As New MySqlConnection(connectionString)
                 connection.Open()
+
                 Dim query As String
+
                 If selectedPhoto IsNot Nothing AndAlso selectedPhoto.Length > 0 Then
                     query = "UPDATE BoardingServices SET ServiceName = @ServiceName, Description = @Description, Price = @Price, Duration = @Duration, ServicePhoto = @ServicePhoto WHERE ServiceID = @ServiceID"
                 Else
@@ -146,6 +165,7 @@ Public Class frmEditBoardingService
                     End If
 
                     Dim result As Integer = command.ExecuteNonQuery()
+
                     If result > 0 Then
                         MessageBox.Show("Boarding service updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Me.DialogResult = DialogResult.OK
@@ -155,8 +175,10 @@ Public Class frmEditBoardingService
                     End If
                 End Using
             End Using
+
         Catch ex As MySqlException
             MessageBox.Show("Error updating boarding service: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
         Catch ex As Exception
             MessageBox.Show("Error updating boarding service: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -167,4 +189,5 @@ Public Class frmEditBoardingService
         Me.DialogResult = DialogResult.Cancel
         Me.Close()
     End Sub
+
 End Class

@@ -24,9 +24,7 @@ Public Class frmOrder
             Using conn As New MySqlConnection(connectionString)
                 conn.Open()
 
-                Dim sql As String =
-                    "SELECT OrderID, CustomerID, OrderDate, TotalAmount, OrderStatus " &
-                    "FROM Orders"
+                Dim sql As String = "SELECT OrderID, CustomerID, OrderDate, TotalAmount, OrderStatus FROM Orders"
 
                 Using cmd As New MySqlCommand(sql, conn)
                     Using adapter As New MySqlDataAdapter(cmd)
@@ -48,22 +46,13 @@ Public Class frmOrder
                 End Using
             End Using
         Catch ex As Exception
-            MessageBox.Show(
-                "Unable to load order data." &
-                Environment.NewLine &
-                Environment.NewLine &
-                ex.Message,
-                "Database Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error
-            )
+            MessageBox.Show("Unable to load order data." & Environment.NewLine & Environment.NewLine & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
     ' GO BACK TO DASHBOARD
     Private Sub btnGoBackDashboard_Click(sender As Object, e As EventArgs) Handles btnGoBackDashboard.Click
-        Dim frm As New frmEmployeeDashboard()
-        frm.Show()
+        frmEmployeeDashboard.Show()
         Me.Hide()
     End Sub
 
@@ -101,14 +90,7 @@ Public Class frmOrder
             Using conn As New MySqlConnection(connectionString)
                 conn.Open()
 
-                Dim sql As String =
-                    "SELECT OrderID, CustomerID, OrderDate, TotalAmount, OrderStatus " &
-                    "FROM Orders " &
-                    "WHERE OrderID LIKE @search " &
-                    "OR CustomerID LIKE @search " &
-                    "OR OrderDate LIKE @search " &
-                    "OR TotalAmount LIKE @search " &
-                    "OR OrderStatus LIKE @search"
+                Dim sql As String = "SELECT OrderID, CustomerID, OrderDate, TotalAmount, OrderStatus FROM Orders WHERE OrderID LIKE @search OR CustomerID LIKE @search OR OrderDate LIKE @search OR TotalAmount LIKE @search OR OrderStatus LIKE @search"
 
                 Using cmd As New MySqlCommand(sql, conn)
                     cmd.Parameters.AddWithValue("@search", "%" & searchText & "%")
@@ -132,15 +114,7 @@ Public Class frmOrder
                 End Using
             End Using
         Catch ex As Exception
-            MessageBox.Show(
-                "Search failed." &
-                Environment.NewLine &
-                Environment.NewLine &
-                ex.Message,
-                "Database Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error
-            )
+            MessageBox.Show("Search failed." & Environment.NewLine & Environment.NewLine & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -157,10 +131,7 @@ Public Class frmOrder
             Using conn As New MySqlConnection(connectionString)
                 conn.Open()
 
-                Dim sql As String =
-                    "SELECT OrderID, CustomerID, OrderDate, TotalAmount, OrderStatus " &
-                    "FROM Orders " &
-                    "WHERE OrderStatus = @OrderStatus"
+                Dim sql As String = "SELECT OrderID, CustomerID, OrderDate, TotalAmount, OrderStatus FROM Orders WHERE OrderStatus = @OrderStatus"
 
                 Using cmd As New MySqlCommand(sql, conn)
                     cmd.Parameters.AddWithValue("@OrderStatus", status)
@@ -184,15 +155,7 @@ Public Class frmOrder
                 End Using
             End Using
         Catch ex As Exception
-            MessageBox.Show(
-                "Unable to filter order data." &
-                Environment.NewLine &
-                Environment.NewLine &
-                ex.Message,
-                "Database Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error
-            )
+            MessageBox.Show("Unable to filter order data." & Environment.NewLine & Environment.NewLine & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -218,20 +181,7 @@ Public Class frmOrder
             Dim orderID As String = dgvOrder.Rows(e.RowIndex).Cells("colOrderID").Value.ToString()
             Dim customerID As String = dgvOrder.Rows(e.RowIndex).Cells("colCustomerID").Value.ToString()
 
-            Dim result As DialogResult =
-                MessageBox.Show(
-                    "Are you sure you want to delete this order?" &
-                    Environment.NewLine &
-                    Environment.NewLine &
-                    "Order ID: " & orderID &
-                    Environment.NewLine &
-                    "Customer ID: " & customerID,
-                    "Delete Order",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning
-                )
-
-            If result = DialogResult.Yes Then
+            If MessageBox.Show("Are you sure you want to delete this order?" & Environment.NewLine & Environment.NewLine & "Order ID: " & orderID & Environment.NewLine & "Customer ID: " & customerID, "Delete Order", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
                 DeleteOrder(orderID)
             End If
         End If
@@ -243,18 +193,14 @@ Public Class frmOrder
             Using conn As New MySqlConnection(connectionString)
                 conn.Open()
 
-                Dim deleteDetailSql As String =
-                    "DELETE FROM OrderDetails " &
-                    "WHERE OrderID = @OrderID"
+                Dim deleteDetailSql As String = "DELETE FROM OrderDetails WHERE OrderID = @OrderID"
 
                 Using detailCmd As New MySqlCommand(deleteDetailSql, conn)
                     detailCmd.Parameters.AddWithValue("@OrderID", orderID)
                     detailCmd.ExecuteNonQuery()
                 End Using
 
-                Dim sql As String =
-                    "DELETE FROM Orders " &
-                    "WHERE OrderID = @OrderID"
+                Dim sql As String = "DELETE FROM Orders WHERE OrderID = @OrderID"
 
                 Using cmd As New MySqlCommand(sql, conn)
                     cmd.Parameters.AddWithValue("@OrderID", orderID)
@@ -262,34 +208,16 @@ Public Class frmOrder
                     Dim result As Integer = cmd.ExecuteNonQuery()
 
                     If result > 0 Then
-                        MessageBox.Show(
-                            "Order deleted successfully.",
-                            "Delete Order",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information
-                        )
+                        MessageBox.Show("Order deleted successfully.", "Delete Order", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                         LoadOrderData()
                     Else
-                        MessageBox.Show(
-                            "Order was not found.",
-                            "Delete Order",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning
-                        )
+                        MessageBox.Show("Order was not found.", "Delete Order", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                     End If
                 End Using
             End Using
         Catch ex As Exception
-            MessageBox.Show(
-                "Unable to delete order." &
-                Environment.NewLine &
-                Environment.NewLine &
-                ex.Message,
-                "Database Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error
-            )
+            MessageBox.Show("Unable to delete order." & Environment.NewLine & Environment.NewLine & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

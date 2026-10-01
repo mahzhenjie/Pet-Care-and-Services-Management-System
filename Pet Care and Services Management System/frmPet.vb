@@ -50,8 +50,7 @@ Public Class frmPet
 
     ' GO BACK TO DASHBOARD
     Private Sub btnGoBackDashboard_Click(sender As Object, e As EventArgs) Handles btnGoBackDashboard.Click
-        Dim frm As New frmEmployeeDashboard()
-        frm.Show()
+        frmEmployeeDashboard.Show()
         Me.Hide()
     End Sub
 
@@ -134,9 +133,7 @@ Public Class frmPet
             Dim petID As String = dgvPet.Rows(e.RowIndex).Cells("colPetID").Value.ToString()
             Dim petName As String = dgvPet.Rows(e.RowIndex).Cells("colPetName").Value.ToString()
 
-            Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete:" & Environment.NewLine & Environment.NewLine & petName & " (" & petID & ")?", "Delete Pet", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-
-            If result = DialogResult.Yes Then
+            If MessageBox.Show("Are you sure you want to delete:" & Environment.NewLine & Environment.NewLine & petName & " (" & petID & ")?", "Delete Pet", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
                 DeletePet(petID)
             End If
         End If

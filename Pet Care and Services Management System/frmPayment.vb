@@ -22,7 +22,6 @@ Public Class frmPayment
 
                 Using command As New MySqlCommand(query, connection)
                     Using reader As MySqlDataReader = command.ExecuteReader()
-
                         dgvPayment.Rows.Clear()
 
                         While reader.Read()
@@ -38,7 +37,6 @@ Public Class frmPayment
                                 "[Delete]"
                             )
                         End While
-
                     End Using
                 End Using
             End Using
@@ -106,7 +104,6 @@ Public Class frmPayment
                     command.Parameters.AddWithValue("@Search", "%" & txtSearch.Text.Trim() & "%")
 
                     Using reader As MySqlDataReader = command.ExecuteReader()
-
                         dgvPayment.Rows.Clear()
 
                         While reader.Read()
@@ -122,7 +119,6 @@ Public Class frmPayment
                                 "[Delete]"
                             )
                         End While
-
                     End Using
                 End Using
             End Using
@@ -159,7 +155,6 @@ Public Class frmPayment
                     command.Parameters.AddWithValue("@Status", cboStatus.Text)
 
                     Using reader As MySqlDataReader = command.ExecuteReader()
-
                         dgvPayment.Rows.Clear()
 
                         While reader.Read()
@@ -175,7 +170,6 @@ Public Class frmPayment
                                 "[Delete]"
                             )
                         End While
-
                     End Using
                 End Using
             End Using
@@ -208,9 +202,7 @@ Public Class frmPayment
 
     ' DELETE PAYMENT FROM DATABASE
     Private Sub DeletePayment(ByVal paymentID As String)
-        Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete this payment?", "Delete Payment", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-
-        If result = DialogResult.Yes Then
+        If MessageBox.Show("Are you sure you want to delete this payment?", "Delete Payment", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Try
                 Using connection As New MySqlConnection(connectionString)
                     connection.Open()

@@ -106,12 +106,12 @@ Public Class frmProduct
 
     ' ADD PRODUCT
     Private Sub btnAddProduct_Click(sender As Object, e As EventArgs) Handles btnAddProduct.Click
-        Dim frm As New frmAddProduct
-
-        If frm.ShowDialog() = DialogResult.OK Then
-            LoadCategory()
-            LoadProductData()
-        End If
+        Using frm As New frmAddProduct
+            If frm.ShowDialog() = DialogResult.OK Then
+                LoadCategory()
+                LoadProductData()
+            End If
+        End Using
     End Sub
 
     ' REFRESH
@@ -197,26 +197,25 @@ Public Class frmProduct
         If e.ColumnIndex = colEdit.Index Then
             Dim productID As String = dgvProduct.Rows(e.RowIndex).Cells(colProductID.Index).Value.ToString()
 
-            Dim frm As New frmEditProduct(productID)
-
-            If frm.ShowDialog() = DialogResult.OK Then
-                LoadCategory()
-                LoadProductData()
-            End If
+            Using frm As New frmEditProduct(productID)
+                If frm.ShowDialog() = DialogResult.OK Then
+                    LoadCategory()
+                    LoadProductData()
+                End If
+            End Using
 
         ElseIf e.ColumnIndex = colDelete.Index Then
             Dim productID As String = dgvProduct.Rows(e.RowIndex).Cells(colProductID.Index).Value.ToString()
 
             Dim productName As String = dgvProduct.Rows(e.RowIndex).Cells(colProductName.Index).Value.ToString()
 
-            Dim result As DialogResult = MessageBox.Show(
+            If MessageBox.Show(
                 "Are you sure you want to delete product '" & productName & "'?",
                 "Confirm Delete",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning
-            )
+            ) = DialogResult.Yes Then
 
-            If result = DialogResult.Yes Then
                 DeleteProduct(productID)
             End If
         End If
@@ -248,8 +247,7 @@ Public Class frmProduct
 
     ' GO BACK TO DASHBOARD
     Private Sub btnGoBackDashboard_Click(sender As Object, e As EventArgs) Handles btnGoBackDashboard.Click
-        Dim frm As New frmEmployeeDashboard
-        frm.Show()
+        frmEmployeeDashboard.Show()
         Me.Close()
     End Sub
 

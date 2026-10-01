@@ -43,8 +43,7 @@ Public Class frmGroomingBooking
 
     ' GO BACK TO DASHBOARD
     Private Sub btnGoBackDashboard_Click(sender As Object, e As EventArgs) Handles btnGoBackDashboard.Click
-        Dim frm As New frmEmployeeDashboard()
-        frm.Show()
+        frmEmployeeDashboard.Show()
         Me.Hide()
     End Sub
 
@@ -121,9 +120,7 @@ Public Class frmGroomingBooking
         If e.ColumnIndex = dgvGroomingBooking.Columns("colDelete").Index Then
             Dim bookingID As String = dgvGroomingBooking.Rows(e.RowIndex).Cells("colGroomingBookingID").Value.ToString()
 
-            Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete this grooming booking?" & Environment.NewLine & Environment.NewLine & "Booking ID: " & bookingID, "Delete Grooming Booking", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-
-            If result = DialogResult.Yes Then
+            If MessageBox.Show("Are you sure you want to delete this grooming booking?" & Environment.NewLine & Environment.NewLine & "Booking ID: " & bookingID, "Delete Grooming Booking", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
                 DeleteGroomingBooking(bookingID)
             End If
         End If

@@ -138,7 +138,11 @@ Public Class frmRegister
         textBox.Location = New Point(80, y + 22)
         textBox.Size = New Size(300, 26)
         textBox.Font = New Font("Segoe UI", 10)
-        If isPassword Then textBox.PasswordChar = "*"c
+
+        If isPassword Then
+            textBox.PasswordChar = "*"c
+        End If
+
         Me.Controls.Add(textBox)
     End Sub
 
@@ -152,25 +156,24 @@ Public Class frmRegister
 
         ' Check all fields
         If fullName = "" OrElse uname = "" OrElse email = "" OrElse
-       phone = "" OrElse pword = "" OrElse confirmPword = "" Then
+           phone = "" OrElse pword = "" OrElse confirmPword = "" Then
 
             MessageBox.Show("Please fill in all fields.",
-                        "Missing Information",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning)
+                            "Missing Information",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning)
             Return
         End If
 
         ' Check Email format
-        Dim emailPattern As String =
-        "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
+        Dim emailPattern As String = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
 
         If Not Regex.IsMatch(email, emailPattern) Then
             MessageBox.Show("Please enter a valid email address." & vbCrLf &
-                        "Example: example@gmail.com",
-                        "Invalid Email",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning)
+                            "Example: example@gmail.com",
+                            "Invalid Email",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning)
             txtEmail.Focus()
             Return
         End If
@@ -179,39 +182,39 @@ Public Class frmRegister
         ' Malaysia phone number: 10 or 11 digits, starting with 0
         If Not Regex.IsMatch(phone, "^0\d{9,10}$") Then
             MessageBox.Show("Please enter a valid phone number." & vbCrLf &
-                        "Example: 0123456789",
-                        "Invalid Phone Number",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning)
+                            "Example: 0123456789",
+                            "Invalid Phone Number",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning)
             txtPhone.Focus()
             Return
         End If
 
         ' Check Password strength
-        Dim passwordPattern As String =
-            "^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$"
+        Dim passwordPattern As String = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$"
 
         If Not Regex.IsMatch(pword, passwordPattern) Then
             MessageBox.Show(
-        "Password must contain:" & vbCrLf &
-        "- At least 8 characters" & vbCrLf &
-        "- At least one uppercase letter (A-Z)" & vbCrLf &
-        "- At least one lowercase letter (a-z)" & vbCrLf &
-        "- At least one number (0-9)" & vbCrLf &
-        "- At least one special character (!, @, #, $, etc.)",
-        "Weak Password",
-        MessageBoxButtons.OK,
-        MessageBoxIcon.Warning)
+                "Password must contain:" & vbCrLf &
+                "- At least 8 characters" & vbCrLf &
+                "- At least one uppercase letter (A-Z)" & vbCrLf &
+                "- At least one lowercase letter (a-z)" & vbCrLf &
+                "- At least one number (0-9)" & vbCrLf &
+                "- At least one special character (!, @, #, $, etc.)",
+                "Weak Password",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning)
 
             txtPassword.Focus()
             Return
         End If
+
         ' Check password confirmation
         If pword <> confirmPword Then
             MessageBox.Show("Password and Confirm Password do not match.",
-                        "Password Mismatch",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning)
+                            "Password Mismatch",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning)
             txtConfirmPassword.Focus()
             Return
         End If
@@ -222,18 +225,17 @@ Public Class frmRegister
 
                 ' Check Username
                 Using checkCmd As New MySqlCommand(
-                "SELECT COUNT(*) FROM customers WHERE Username = @u", conn)
+                    "SELECT COUNT(*) FROM customers WHERE Username = @u", conn)
 
                     checkCmd.Parameters.AddWithValue("@u", uname)
 
-                    Dim count As Long =
-                    Convert.ToInt64(checkCmd.ExecuteScalar())
+                    Dim count As Long = Convert.ToInt64(checkCmd.ExecuteScalar())
 
                     If count > 0 Then
                         MessageBox.Show("This username is already taken.",
-                                    "Registration Failed",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error)
+                                        "Registration Failed",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error)
                         txtUsername.Focus()
                         Return
                     End If
@@ -241,12 +243,11 @@ Public Class frmRegister
 
                 ' Insert Customer
                 Dim sql As String =
-                "INSERT INTO customers " &
-                "(FullName, Username, Password, Email, PhoneNumber, Address) " &
-                "VALUES (@fn, @un, @pw, @em, @ph, @addr)"
+                    "INSERT INTO customers " &
+                    "(FullName, Username, Password, Email, PhoneNumber, Address) " &
+                    "VALUES (@fn, @un, @pw, @em, @ph, @addr)"
 
                 Using cmd As New MySqlCommand(sql, conn)
-
                     cmd.Parameters.AddWithValue("@fn", fullName)
                     cmd.Parameters.AddWithValue("@un", uname)
                     cmd.Parameters.AddWithValue("@pw", pword)
@@ -259,22 +260,21 @@ Public Class frmRegister
             End Using
 
             MessageBox.Show("Registration successful! Please log in.",
-                        "Success",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information)
+                            "Success",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information)
 
             GoBackToLogin()
 
         Catch ex As Exception
             MessageBox.Show("Database error: " & ex.Message,
-                        "Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error)
+                            "Error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error)
         End Try
     End Sub
 
     Private Sub chkShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPassword.CheckedChanged
-
         If chkShowPassword.Checked Then
             txtPassword.PasswordChar = ControlChars.NullChar
             txtConfirmPassword.PasswordChar = ControlChars.NullChar
@@ -282,8 +282,8 @@ Public Class frmRegister
             txtPassword.PasswordChar = "*"c
             txtConfirmPassword.PasswordChar = "*"c
         End If
-
     End Sub
+
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         txtFullName.Clear()
         txtUsername.Clear()
@@ -300,8 +300,7 @@ Public Class frmRegister
     End Sub
 
     Private Sub GoBackToLogin()
-        Dim loginForm As New frmLogin()
-        loginForm.Show()
+        frmLogin.Show()
         Me.Hide()
     End Sub
 

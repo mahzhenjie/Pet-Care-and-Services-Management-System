@@ -196,9 +196,7 @@ Public Class frmMembership
 
     ' DELETE MEMBERSHIP FROM DATABASE
     Private Sub DeleteMembership(ByVal membershipID As String)
-        Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete this membership?", "Delete Membership", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-
-        If result = DialogResult.Yes Then
+        If MessageBox.Show("Are you sure you want to delete this membership?", "Delete Membership", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Try
                 Using connection As New MySqlConnection(connectionString)
                     connection.Open()

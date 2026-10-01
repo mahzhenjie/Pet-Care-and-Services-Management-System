@@ -127,14 +127,7 @@ Public Class frmOrderDetail
         ElseIf e.ColumnIndex = colDelete.Index Then
             Dim orderDetailID As String = dgvOrderDetail.Rows(e.RowIndex).Cells(colOrderDetailID.Index).Value.ToString()
 
-            Dim result As DialogResult = MessageBox.Show(
-                "Are you sure you want to delete Order Detail ID " & orderDetailID & "?",
-                "Confirm Delete",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning
-            )
-
-            If result = DialogResult.Yes Then
+            If MessageBox.Show("Are you sure you want to delete Order Detail ID " & orderDetailID & "?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
                 DeleteOrderDetail(orderDetailID)
             End If
         End If
@@ -165,8 +158,7 @@ Public Class frmOrderDetail
 
     ' GO BACK TO DASHBOARD
     Private Sub btnGoBackDashboard_Click(sender As Object, e As EventArgs) Handles btnGoBackDashboard.Click
-        Dim frm As New frmEmployeeDashboard
-        frm.Show()
+        frmEmployeeDashboard.Show()
         Me.Close()
     End Sub
 
