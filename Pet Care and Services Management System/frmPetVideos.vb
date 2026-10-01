@@ -26,11 +26,8 @@ Public Class frmPetVideos
 
                 Using cmd As New MySqlCommand(query, conn)
                     Using reader As MySqlDataReader = cmd.ExecuteReader()
-                        Dim cardNumber As Integer = 1
-
-                        While reader.Read() AndAlso cardNumber <= 6
-                            LoadVideoCard(cardNumber, reader)
-                            cardNumber += 1
+                        While reader.Read()
+                            CreateVideoCard(reader)
                         End While
                     End Using
                 End Using
@@ -45,100 +42,97 @@ Public Class frmPetVideos
         End Try
     End Sub
 
-    ' LOAD VIDEO CARD
-    Private Sub LoadVideoCard(cardNumber As Integer, reader As MySqlDataReader)
+    ' CREATE VIDEO CARD
+    Private Sub CreateVideoCard(reader As MySqlDataReader)
         Dim videoID As Integer = Convert.ToInt32(reader("VideoID"))
         Dim petName As String = reader("PetName").ToString()
         Dim videoURL As String = reader("VideoURL").ToString()
-        Dim description As String = reader("Description").ToString()
         Dim uploadDate As String = Convert.ToDateTime(reader("UploadDate")).ToString("dd/MM/yyyy")
 
-        Select Case cardNumber
-            Case 1
-                pnlVideo1.Visible = True
-                pnlVideo1.Tag = videoID
-                lblPetName1.Text = petName
-                lblVideoName1.Text = "Live Pet Video"
-                lblVideoDate1.Text = "Uploaded: " & uploadDate
-                btnView1.Tag = videoURL
-                btnDelete1.Tag = videoID
+        Dim videoCard As New Panel()
+        videoCard.BackColor = Color.White
+        videoCard.BorderStyle = BorderStyle.FixedSingle
+        videoCard.Margin = New Padding(10)
+        videoCard.Size = New Size(330, 390)
+        videoCard.Tag = videoID
 
-            Case 2
-                pnlVideo2.Visible = True
-                pnlVideo2.Tag = videoID
-                lblPetName2.Text = petName
-                lblVideoName2.Text = "Live Pet Video"
-                lblVideoDate2.Text = "Uploaded: " & uploadDate
-                btnView2.Tag = videoURL
-                btnDelete2.Tag = videoID
+        Dim picVideo As New PictureBox()
+        picVideo.BackColor = Color.FromArgb(232, 216, 194)
+        picVideo.BorderStyle = BorderStyle.FixedSingle
+        picVideo.Location = New Point(15, 15)
+        picVideo.Size = New Size(298, 180)
+        picVideo.SizeMode = PictureBoxSizeMode.Zoom
+        picVideo.TabStop = False
 
-            Case 3
-                pnlVideo3.Visible = True
-                pnlVideo3.Tag = videoID
-                lblPetName3.Text = petName
-                lblVideoName3.Text = "Live Pet Video"
-                lblVideoDate3.Text = "Uploaded: " & uploadDate
-                btnView3.Tag = videoURL
-                btnDelete3.Tag = videoID
+        Dim lblPetName As New Label()
+        lblPetName.AutoEllipsis = True
+        lblPetName.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        lblPetName.ForeColor = Color.SaddleBrown
+        lblPetName.Location = New Point(15, 210)
+        lblPetName.Size = New Size(298, 24)
+        lblPetName.Text = petName
 
-            Case 4
-                pnlVideo4.Visible = True
-                pnlVideo4.Tag = videoID
-                lblPetName4.Text = petName
-                lblVideoName4.Text = "Live Pet Video"
-                lblVideoDate4.Text = "Uploaded: " & uploadDate
-                btnView4.Tag = videoURL
-                btnDelete4.Tag = videoID
+        Dim lblVideoName As New Label()
+        lblVideoName.AutoEllipsis = True
+        lblVideoName.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold)
+        lblVideoName.ForeColor = Color.FromArgb(61, 40, 27)
+        lblVideoName.Location = New Point(15, 240)
+        lblVideoName.Size = New Size(298, 30)
+        lblVideoName.Text = "Live Pet Video"
 
-            Case 5
-                pnlVideo5.Visible = True
-                pnlVideo5.Tag = videoID
-                lblPetName5.Text = petName
-                lblVideoName5.Text = "Live Pet Video"
-                lblVideoDate5.Text = "Uploaded: " & uploadDate
-                btnView5.Tag = videoURL
-                btnDelete5.Tag = videoID
+        Dim lblVideoDate As New Label()
+        lblVideoDate.AutoEllipsis = True
+        lblVideoDate.Font = New Font("Segoe UI", 9.5F)
+        lblVideoDate.ForeColor = Color.DimGray
+        lblVideoDate.Location = New Point(15, 275)
+        lblVideoDate.Size = New Size(298, 25)
+        lblVideoDate.Text = "Uploaded: " & uploadDate
 
-            Case 6
-                pnlVideo6.Visible = True
-                pnlVideo6.Tag = videoID
-                lblPetName6.Text = petName
-                lblVideoName6.Text = "Live Pet Video"
-                lblVideoDate6.Text = "Uploaded: " & uploadDate
-                btnView6.Tag = videoURL
-                btnDelete6.Tag = videoID
-        End Select
+        Dim btnView As New Button()
+        btnView.BackColor = Color.Sienna
+        btnView.FlatAppearance.BorderSize = 0
+        btnView.FlatStyle = FlatStyle.Flat
+        btnView.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        btnView.ForeColor = Color.WhiteSmoke
+        btnView.Location = New Point(15, 325)
+        btnView.Size = New Size(140, 35)
+        btnView.Text = "View Video"
+        btnView.UseVisualStyleBackColor = False
+        btnView.Tag = videoURL
+
+        AddHandler btnView.Click, AddressOf ViewVideo_Click
+
+        Dim btnDelete As New Button()
+        btnDelete.BackColor = Color.FromArgb(96, 52, 16)
+        btnDelete.FlatAppearance.BorderSize = 0
+        btnDelete.FlatStyle = FlatStyle.Flat
+        btnDelete.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        btnDelete.ForeColor = Color.WhiteSmoke
+        btnDelete.Location = New Point(173, 325)
+        btnDelete.Size = New Size(140, 35)
+        btnDelete.Text = "Delete"
+        btnDelete.UseVisualStyleBackColor = False
+        btnDelete.Tag = videoID
+
+        AddHandler btnDelete.Click, AddressOf DeleteVideo_Click
+
+        videoCard.Controls.Add(picVideo)
+        videoCard.Controls.Add(lblPetName)
+        videoCard.Controls.Add(lblVideoName)
+        videoCard.Controls.Add(lblVideoDate)
+        videoCard.Controls.Add(btnView)
+        videoCard.Controls.Add(btnDelete)
+
+        flpVideos.Controls.Add(videoCard)
     End Sub
 
     ' CLEAR VIDEO CARDS
     Private Sub ClearVideoCards()
-        pnlVideo1.Visible = False
-        pnlVideo2.Visible = False
-        pnlVideo3.Visible = False
-        pnlVideo4.Visible = False
-        pnlVideo5.Visible = False
-        pnlVideo6.Visible = False
-
-        pnlVideo1.Tag = Nothing
-        pnlVideo2.Tag = Nothing
-        pnlVideo3.Tag = Nothing
-        pnlVideo4.Tag = Nothing
-        pnlVideo5.Tag = Nothing
-        pnlVideo6.Tag = Nothing
-
-        btnView1.Tag = Nothing
-        btnView2.Tag = Nothing
-        btnView3.Tag = Nothing
-        btnView4.Tag = Nothing
-        btnView5.Tag = Nothing
-        btnView6.Tag = Nothing
-
-        btnDelete1.Tag = Nothing
-        btnDelete2.Tag = Nothing
-        btnDelete3.Tag = Nothing
-        btnDelete4.Tag = Nothing
-        btnDelete5.Tag = Nothing
-        btnDelete6.Tag = Nothing
+        While flpVideos.Controls.Count > 0
+            Dim control As Control = flpVideos.Controls(0)
+            flpVideos.Controls.RemoveAt(0)
+            control.Dispose()
+        End While
     End Sub
 
     ' SEARCH PET VIDEOS
@@ -170,11 +164,8 @@ Public Class frmPetVideos
                     cmd.Parameters.AddWithValue("@Search", "%" & txtSearch.Text.Trim() & "%")
 
                     Using reader As MySqlDataReader = cmd.ExecuteReader()
-                        Dim cardNumber As Integer = 1
-
-                        While reader.Read() AndAlso cardNumber <= 6
-                            LoadVideoCard(cardNumber, reader)
-                            cardNumber += 1
+                        While reader.Read()
+                            CreateVideoCard(reader)
                         End While
                     End Using
                 End Using
@@ -195,34 +186,10 @@ Public Class frmPetVideos
         LoadPetVideos()
     End Sub
 
-    ' VIEW VIDEO 1
-    Private Sub btnView1_Click(sender As Object, e As EventArgs) Handles btnView1.Click
-        OpenVideoView(btnView1)
-    End Sub
-
-    ' VIEW VIDEO 2
-    Private Sub btnView2_Click(sender As Object, e As EventArgs) Handles btnView2.Click
-        OpenVideoView(btnView2)
-    End Sub
-
-    ' VIEW VIDEO 3
-    Private Sub btnView3_Click(sender As Object, e As EventArgs) Handles btnView3.Click
-        OpenVideoView(btnView3)
-    End Sub
-
-    ' VIEW VIDEO 4
-    Private Sub btnView4_Click(sender As Object, e As EventArgs) Handles btnView4.Click
-        OpenVideoView(btnView4)
-    End Sub
-
-    ' VIEW VIDEO 5
-    Private Sub btnView5_Click(sender As Object, e As EventArgs) Handles btnView5.Click
-        OpenVideoView(btnView5)
-    End Sub
-
-    ' VIEW VIDEO 6
-    Private Sub btnView6_Click(sender As Object, e As EventArgs) Handles btnView6.Click
-        OpenVideoView(btnView6)
+    ' VIEW VIDEO
+    Private Sub ViewVideo_Click(sender As Object, e As EventArgs)
+        Dim viewButton As Button = DirectCast(sender, Button)
+        OpenVideoView(viewButton)
     End Sub
 
     ' OPEN VIDEO VIEW
@@ -250,34 +217,10 @@ Public Class frmPetVideos
         End Try
     End Sub
 
-    ' DELETE VIDEO 1
-    Private Sub btnDelete1_Click(sender As Object, e As EventArgs) Handles btnDelete1.Click
-        DeleteVideo(btnDelete1)
-    End Sub
-
-    ' DELETE VIDEO 2
-    Private Sub btnDelete2_Click(sender As Object, e As EventArgs) Handles btnDelete2.Click
-        DeleteVideo(btnDelete2)
-    End Sub
-
-    ' DELETE VIDEO 3
-    Private Sub btnDelete3_Click(sender As Object, e As EventArgs) Handles btnDelete3.Click
-        DeleteVideo(btnDelete3)
-    End Sub
-
-    ' DELETE VIDEO 4
-    Private Sub btnDelete4_Click(sender As Object, e As EventArgs) Handles btnDelete4.Click
-        DeleteVideo(btnDelete4)
-    End Sub
-
-    ' DELETE VIDEO 5
-    Private Sub btnDelete5_Click(sender As Object, e As EventArgs) Handles btnDelete5.Click
-        DeleteVideo(btnDelete5)
-    End Sub
-
-    ' DELETE VIDEO 6
-    Private Sub btnDelete6_Click(sender As Object, e As EventArgs) Handles btnDelete6.Click
-        DeleteVideo(btnDelete6)
+    ' DELETE VIDEO
+    Private Sub DeleteVideo_Click(sender As Object, e As EventArgs)
+        Dim deleteButton As Button = DirectCast(sender, Button)
+        DeleteVideo(deleteButton)
     End Sub
 
     ' DELETE VIDEO FROM DATABASE

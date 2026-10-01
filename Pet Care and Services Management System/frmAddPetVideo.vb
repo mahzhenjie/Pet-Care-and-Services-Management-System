@@ -18,39 +18,43 @@ Public Class frmAddPetVideo
             Return
         End If
 
-        If Not Integer.TryParse(txtBookingID.Text.Trim(), Nothing) Then
+        Dim bookingID As Integer
+
+        If Not Integer.TryParse(txtBookingID.Text.Trim(), bookingID) Then
             MessageBox.Show("Boarding Booking ID must be a number.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
         Try
-            MySqlConnection = New MySqlConnection(connectionString)
-            MySqlConnection.Open()
+            Using conn As New MySqlConnection(connectionString)
+                conn.Open()
 
-            MySqlCommand = New MySqlCommand("SELECT COUNT(*) FROM BoardingBookings WHERE BoardingBookingID = @BoardingBookingID", MySqlConnection)
-            MySqlCommand.Parameters.AddWithValue("@BoardingBookingID", txtBookingID.Text.Trim())
+                Dim sql As String = "SELECT COUNT(*) FROM BoardingBookings WHERE BoardingBookingID = @BoardingBookingID"
 
-            If Convert.ToInt32(MySqlCommand.ExecuteScalar()) = 0 Then
-                MessageBox.Show("Boarding Booking ID does not exist.", "Invalid Booking", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                MySqlConnection.Close()
-                Return
-            End If
+                Using cmd As New MySqlCommand(sql, conn)
+                    cmd.Parameters.AddWithValue("@BoardingBookingID", bookingID)
 
-            MySqlCommand = New MySqlCommand("INSERT INTO PetVideos (BoardingBookingID, VideoURL, UploadDate, Description) VALUES (@BoardingBookingID, @VideoURL, @UploadDate, @Description)", MySqlConnection)
-            MySqlCommand.Parameters.AddWithValue("@BoardingBookingID", txtBookingID.Text.Trim())
-            MySqlCommand.Parameters.AddWithValue("@VideoURL", txtVideoURL.Text.Trim())
-            MySqlCommand.Parameters.AddWithValue("@UploadDate", dtpUploadDate.Value)
-            MySqlCommand.Parameters.AddWithValue("@Description", txtDescription.Text.Trim())
-            MySqlCommand.ExecuteNonQuery()
+                    If Convert.ToInt32(cmd.ExecuteScalar()) = 0 Then
+                        MessageBox.Show("Boarding Booking ID does not exist.", "Invalid Booking", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                        Return
+                    End If
+                End Using
 
-            MySqlConnection.Close()
+                sql = "INSERT INTO PetVideos (BoardingBookingID, VideoURL, UploadDate, Description) VALUES (@BoardingBookingID, @VideoURL, @UploadDate, @Description)"
+
+                Using cmd As New MySqlCommand(sql, conn)
+                    cmd.Parameters.AddWithValue("@BoardingBookingID", bookingID)
+                    cmd.Parameters.AddWithValue("@VideoURL", txtVideoURL.Text.Trim())
+                    cmd.Parameters.AddWithValue("@UploadDate", dtpUploadDate.Value)
+                    cmd.Parameters.AddWithValue("@Description", txtDescription.Text.Trim())
+                    cmd.ExecuteNonQuery()
+                End Using
+            End Using
 
             MessageBox.Show("Pet video added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.Close()
+
         Catch ex As Exception
-            If MySqlConnection IsNot Nothing AndAlso MySqlConnection.State = ConnectionState.Open Then
-                MySqlConnection.Close()
-            End If
             MessageBox.Show(ex.Message, "Add Pet Video Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
