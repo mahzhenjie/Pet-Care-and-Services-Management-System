@@ -1,5 +1,3 @@
-﻿Public Class frmCustomerDashboard
-    Private Sub lblSidebarSubtitle_Click(sender As Object, e As EventArgs) Handles lblSidebarSubtitle.Click
+﻿Public Class Form1
 
-    End Sub
 End Class
