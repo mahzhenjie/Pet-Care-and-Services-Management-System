@@ -1,7 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class frmCustomer
-
     ' DATABASE CONNECTION
     Private connectionString As String = "Server=localhost;Database=pet_care_and_services_management_system;Uid=root;Pwd=;"
 
@@ -15,6 +14,7 @@ Public Class frmCustomer
         Try
             Using conn As New MySqlConnection(connectionString)
                 conn.Open()
+
                 Dim sql As String =
                     "SELECT CustomerID, FullName, Username, Email, PhoneNumber, Address " &
                     "FROM Customers"
@@ -23,7 +23,9 @@ Public Class frmCustomer
                     Using adapter As New MySqlDataAdapter(cmd)
                         Dim table As New DataTable()
                         adapter.Fill(table)
+
                         dgvCustomer.Rows.Clear()
+
                         For Each row As DataRow In table.Rows
                             dgvCustomer.Rows.Add(
                                 row("CustomerID").ToString(),
@@ -37,6 +39,7 @@ Public Class frmCustomer
                     End Using
                 End Using
             End Using
+
         Catch ex As Exception
             MessageBox.Show(
                 "Unable to load customer data." &
@@ -59,11 +62,11 @@ Public Class frmCustomer
 
     ' ADD CUSTOMER
     Private Sub btnAddCustomer_Click(sender As Object, e As EventArgs) Handles btnAddCustomer.Click
-        'Open Add Customer Form
+        ' Open Add Customer Form
         Dim frm As New frmAddCustomers()
         frm.ShowDialog()
 
-        'Reload data after adding
+        ' Reload data after adding
         LoadCustomerData()
     End Sub
 
@@ -76,9 +79,11 @@ Public Class frmCustomer
     ' SEARCH CUSTOMER
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
         Dim searchText As String = txtSearch.Text.Trim()
+
         Try
             Using conn As New MySqlConnection(connectionString)
                 conn.Open()
+
                 Dim sql As String =
                     "SELECT CustomerID, FullName, Username, Email, PhoneNumber, Address " &
                     "FROM Customers " &
@@ -88,15 +93,19 @@ Public Class frmCustomer
                     "OR Email LIKE @search " &
                     "OR PhoneNumber LIKE @search " &
                     "OR Address LIKE @search"
+
                 Using cmd As New MySqlCommand(sql, conn)
                     cmd.Parameters.AddWithValue(
                         "@search",
                         "%" & searchText & "%"
                     )
+
                     Using adapter As New MySqlDataAdapter(cmd)
                         Dim table As New DataTable()
                         adapter.Fill(table)
+
                         dgvCustomer.Rows.Clear()
+
                         For Each row As DataRow In table.Rows
                             dgvCustomer.Rows.Add(
                                 row("CustomerID").ToString(),
@@ -110,6 +119,7 @@ Public Class frmCustomer
                     End Using
                 End Using
             End Using
+
         Catch ex As Exception
             MessageBox.Show(
                 "Search failed." &
@@ -137,6 +147,7 @@ Public Class frmCustomer
         If e.ColumnIndex = dgvCustomer.Columns("colEdit").Index Then
             Dim customerID As String = dgvCustomer.Rows(e.RowIndex).Cells("colCustomerID").Value.ToString()
             Dim frm As New frmEditCustomer(customerID)
+
             If frm.ShowDialog() = DialogResult.OK Then
                 LoadCustomerData()
             End If
@@ -148,10 +159,12 @@ Public Class frmCustomer
                 dgvCustomer.Rows(e.RowIndex).
                 Cells("colCustomerID").
                 Value.ToString()
+
             Dim customerName As String =
                 dgvCustomer.Rows(e.RowIndex).
                 Cells("colFullName").
                 Value.ToString()
+
             Dim result As DialogResult =
                 MessageBox.Show(
                     "Are you sure you want to delete:" &
@@ -175,14 +188,17 @@ Public Class frmCustomer
         Try
             Using conn As New MySqlConnection(connectionString)
                 conn.Open()
+
                 Dim sql As String =
                     "DELETE FROM Customers " &
                     "WHERE CustomerID = @CustomerID"
+
                 Using cmd As New MySqlCommand(sql, conn)
                     cmd.Parameters.AddWithValue(
                         "@CustomerID",
                         customerID
                     )
+
                     Dim result As Integer =
                         cmd.ExecuteNonQuery()
 
@@ -206,6 +222,7 @@ Public Class frmCustomer
                     End If
                 End Using
             End Using
+
         Catch ex As Exception
             MessageBox.Show(
                 "Unable to delete customer." &

@@ -59,7 +59,6 @@ Public Class frmCustomerPayment
                 Try
                     ' CREATE ORDER
                     Dim orderID As Integer
-
                     Dim orderSQL As String = "INSERT INTO orders (CustomerID, OrderDate, TotalAmount, OrderStatus) VALUES (@CustomerID, @OrderDate, @TotalAmount, @OrderStatus)"
 
                     Using orderCmd As New MySqlCommand(orderSQL, conn, transaction)
@@ -74,7 +73,6 @@ Public Class frmCustomerPayment
                     ' CREATE ORDER DETAILS
                     For Each item As CartItem In CustomerCart.Values
                         Dim currentStock As Integer
-
                         Dim stockSQL As String = "SELECT StockQuantity FROM products WHERE ProductID = @ProductID FOR UPDATE"
 
                         Using stockCmd As New MySqlCommand(stockSQL, conn, transaction)

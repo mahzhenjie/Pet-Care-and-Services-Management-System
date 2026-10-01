@@ -23,7 +23,6 @@ Public Class frmCustomerProduct
 
                 Using cmd As New MySqlCommand(sql, conn)
                     Using reader As MySqlDataReader = cmd.ExecuteReader()
-
                         While reader.Read()
                             Dim productID As Integer = Convert.ToInt32(reader("ProductID"))
                             Dim productName As String = reader("ProductName").ToString()
@@ -282,13 +281,12 @@ Public Class frmCustomerProduct
 
     ' VIEW CART
     Private Sub btnViewCart_Click(sender As Object, e As EventArgs) Handles btnViewCart.Click
-        Using cartForm As New frmCustomerCart()
-            cartForm.ShowDialog()
-        End Using
+        frmCustomerCart.ShowDialog()
     End Sub
 
     ' GO BACK TO DASHBOARD
     Private Sub btnGoBackDashboard_Click(sender As Object, e As EventArgs) Handles btnGoBackDashboard.Click
+        frmCustomerDashboard.Show()
         Me.Close()
     End Sub
 

@@ -2,10 +2,8 @@
 Imports System.IO
 
 Public Class frmAddProduct
-
     ' DATABASE CONNECTION
-    Private connectionString As String = "Server=localhost;Database=pet_care_and_services_management_system;Uid=root;Pwd=;"
-
+    Private connectionString As String = "Server=localhost;Database=pet_care_and_services_Management_System;Uid=root;Pwd=;"
     Private selectedPhoto As Byte() = Nothing
 
     ' FORM LOAD
@@ -60,7 +58,6 @@ Public Class frmAddProduct
         End If
 
         Dim price As Decimal
-
         If Not Decimal.TryParse(txtPrice.Text.Trim(), price) OrElse price < 0 Then
             MessageBox.Show("Please enter a valid price.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtPrice.Focus()
@@ -68,7 +65,6 @@ Public Class frmAddProduct
         End If
 
         Dim stockQuantity As Integer
-
         If Not Integer.TryParse(txtStockQuantity.Text.Trim(), stockQuantity) OrElse stockQuantity < 0 Then
             MessageBox.Show("Please enter a valid stock quantity.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtStockQuantity.Focus()
@@ -100,7 +96,6 @@ Public Class frmAddProduct
             End Using
 
             MessageBox.Show("Product added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
             Me.DialogResult = DialogResult.OK
             Me.Close()
 
@@ -121,5 +116,4 @@ Public Class frmAddProduct
         Me.DialogResult = DialogResult.Cancel
         Me.Close()
     End Sub
-
 End Class

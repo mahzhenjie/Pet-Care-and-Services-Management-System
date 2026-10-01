@@ -31,7 +31,6 @@ Public Class frmEditBoardingRoom
 
     ' LOAD BOARDING ROOM DATA FROM DATABASE
     Private Sub LoadBoardingRoomData()
-
         Try
             Using connection As New MySqlConnection(connectionString)
                 connection.Open()
@@ -42,9 +41,7 @@ Public Class frmEditBoardingRoom
                     command.Parameters.AddWithValue("@RoomID", roomID)
 
                     Using reader As MySqlDataReader = command.ExecuteReader()
-
                         If reader.Read() Then
-
                             txtRoomID.Text = reader("RoomID").ToString()
                             cboRoomType.Text = reader("RoomType").ToString()
                             txtPrice.Text = reader("PricePerDay").ToString()
@@ -63,12 +60,10 @@ Public Class frmEditBoardingRoom
                                 picRoom.Image = Nothing
                                 selectedPhoto = Nothing
                             End If
-
                         Else
                             MessageBox.Show("Boarding room not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                             Me.Close()
                         End If
-
                     End Using
                 End Using
             End Using
@@ -76,32 +71,26 @@ Public Class frmEditBoardingRoom
         Catch ex As Exception
             MessageBox.Show("Error loading boarding room:" & Environment.NewLine & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
     End Sub
 
     ' CHOOSE PHOTO
     Private Sub btnChoosePhoto_Click(sender As Object, e As EventArgs) Handles btnChoosePhoto.Click
-
         Using openFileDialog As New OpenFileDialog()
             openFileDialog.Title = "Select Boarding Room Photo"
             openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp"
 
             If openFileDialog.ShowDialog() = DialogResult.OK Then
-
                 selectedPhoto = File.ReadAllBytes(openFileDialog.FileName)
 
                 Using memoryStream As New MemoryStream(selectedPhoto)
                     picRoom.Image = New Bitmap(Image.FromStream(memoryStream))
                 End Using
-
             End If
         End Using
-
     End Sub
 
     ' SAVE CHANGES
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-
         If cboRoomType.SelectedIndex = -1 Then
             MessageBox.Show("Please select Room Type.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             cboRoomType.Focus()
@@ -135,7 +124,6 @@ Public Class frmEditBoardingRoom
                 Dim query As String = "UPDATE BoardingRooms SET RoomType = @RoomType, PricePerDay = @PricePerDay, Status = @Status, Description = @Description, RoomPhoto = @RoomPhoto WHERE RoomID = @RoomID"
 
                 Using command As New MySqlCommand(query, connection)
-
                     command.Parameters.AddWithValue("@RoomID", txtRoomID.Text.Trim())
                     command.Parameters.AddWithValue("@RoomType", cboRoomType.Text)
                     command.Parameters.AddWithValue("@PricePerDay", price)
@@ -149,7 +137,6 @@ Public Class frmEditBoardingRoom
                     End If
 
                     command.ExecuteNonQuery()
-
                 End Using
             End Using
 
@@ -160,7 +147,6 @@ Public Class frmEditBoardingRoom
         Catch ex As Exception
             MessageBox.Show("Error updating boarding room:" & Environment.NewLine & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
     End Sub
 
     ' CANCEL

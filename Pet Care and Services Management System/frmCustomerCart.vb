@@ -17,6 +17,7 @@ Public Class frmCustomerCart
         imageColumn.HeaderText = "Photo"
         imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom
         imageColumn.Width = 100
+
         dgvCart.Columns.Add(imageColumn)
 
         dgvCart.Columns.Add("ProductID", "Product ID")
@@ -32,7 +33,16 @@ Public Class frmCustomerCart
         Dim total As Decimal = 0
 
         For Each item As CartItem In CustomerCart.Values
-            Dim rowIndex As Integer = dgvCart.Rows.Add(item.ProductImage, item.ProductID, item.ProductName, "RM " & item.UnitPrice.ToString("0.00"), item.Quantity, "RM " & item.Subtotal.ToString("0.00"))
+            Dim rowIndex As Integer =
+                dgvCart.Rows.Add(
+                    item.ProductImage,
+                    item.ProductID,
+                    item.ProductName,
+                    "RM " & item.UnitPrice.ToString("0.00"),
+                    item.Quantity,
+                    "RM " & item.Subtotal.ToString("0.00")
+                )
+
             dgvCart.Rows(rowIndex).Height = 90
             total += item.Subtotal
         Next
@@ -43,7 +53,12 @@ Public Class frmCustomerCart
     ' CHECKOUT
     Private Sub btnCheckout_Click(sender As Object, e As EventArgs) Handles btnCheckout.Click
         If CustomerCart.Count = 0 Then
-            MessageBox.Show("Your cart is empty.", "Shopping Cart", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show(
+                "Your cart is empty.",
+                "Shopping Cart",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+            )
             Return
         End If
 
@@ -57,7 +72,14 @@ Public Class frmCustomerCart
             If paymentForm.ShowDialog() = DialogResult.OK Then
                 CustomerCart.Clear()
                 LoadCart()
-                MessageBox.Show("Your order has been completed successfully.", "Order Completed", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                MessageBox.Show(
+                    "Your order has been completed successfully.",
+                    "Order Completed",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                )
+
                 Me.Close()
             End If
         End Using

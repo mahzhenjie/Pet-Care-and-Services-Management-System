@@ -4,7 +4,6 @@ Public Class frmEditOrderDetail
 
     ' DATABASE CONNECTION
     Private connectionString As String = "Server=localhost;Database=pet_care_and_services_management_system;Uid=root;Pwd=;"
-
     Private orderDetailID As String
 
     ' CONSTRUCTOR

@@ -22,6 +22,7 @@ Partial Class frmCustomerDashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCustomerDashboard))
         lblDescription = New Label()
         pnlMain = New Panel()
         pnlSummaryCards = New Panel()
@@ -55,7 +56,6 @@ Partial Class frmCustomerDashboard
         dgvRecentAppointments = New DataGridView()
         lblRecentTitle = New Label()
         pnlWelcome = New Panel()
-        PictureBox17 = New PictureBox()
         picPets2 = New PictureBox()
         lblWelcomeBack = New Label()
         pnlTopBar = New Panel()
@@ -122,7 +122,6 @@ Partial Class frmCustomerDashboard
         pnlRecentAppointments.SuspendLayout()
         CType(dgvRecentAppointments, ComponentModel.ISupportInitialize).BeginInit()
         pnlWelcome.SuspendLayout()
-        CType(PictureBox17, ComponentModel.ISupportInitialize).BeginInit()
         CType(picPets2, ComponentModel.ISupportInitialize).BeginInit()
         pnlTopBar.SuspendLayout()
         CType(PictureBox12, ComponentModel.ISupportInitialize).BeginInit()
@@ -185,7 +184,7 @@ Partial Class frmCustomerDashboard
         tlpSummaryCards.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 33.3333321F))
         tlpSummaryCards.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 33.3333321F))
         tlpSummaryCards.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 33.3333321F))
-        tlpSummaryCards.ColumnStyles.Add(New ColumnStyle(SizeType.Absolute, 20.0F))
+        tlpSummaryCards.ColumnStyles.Add(New ColumnStyle(SizeType.Absolute, 20F))
         tlpSummaryCards.Controls.Add(pnlPets, 0, 0)
         tlpSummaryCards.Controls.Add(pnlAppointments, 1, 0)
         tlpSummaryCards.Controls.Add(pnlOrders, 2, 0)
@@ -193,7 +192,7 @@ Partial Class frmCustomerDashboard
         tlpSummaryCards.Location = New Point(0, 0)
         tlpSummaryCards.Name = "tlpSummaryCards"
         tlpSummaryCards.RowCount = 1
-        tlpSummaryCards.RowStyles.Add(New RowStyle(SizeType.Percent, 100.0F))
+        tlpSummaryCards.RowStyles.Add(New RowStyle(SizeType.Percent, 100F))
         tlpSummaryCards.Size = New Size(1072, 163)
         tlpSummaryCards.TabIndex = 16
         ' 
@@ -212,6 +211,7 @@ Partial Class frmCustomerDashboard
         ' 
         ' picPets
         ' 
+        picPets.Image = CType(resources.GetObject("picPets.Image"), Image)
         picPets.Location = New Point(8, 41)
         picPets.Name = "picPets"
         picPets.Size = New Size(90, 90)
@@ -222,7 +222,7 @@ Partial Class frmCustomerDashboard
         ' lblPetSubtitle
         ' 
         lblPetSubtitle.AutoSize = True
-        lblPetSubtitle.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblPetSubtitle.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         lblPetSubtitle.ForeColor = SystemColors.ControlText
         lblPetSubtitle.Location = New Point(106, 103)
         lblPetSubtitle.Name = "lblPetSubtitle"
@@ -244,7 +244,7 @@ Partial Class frmCustomerDashboard
         ' lblPetTitle
         ' 
         lblPetTitle.AutoSize = True
-        lblPetTitle.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblPetTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblPetTitle.ForeColor = Color.RoyalBlue
         lblPetTitle.Location = New Point(128, 3)
         lblPetTitle.Name = "lblPetTitle"
@@ -267,6 +267,7 @@ Partial Class frmCustomerDashboard
         ' 
         ' picAppointment
         ' 
+        picAppointment.Image = CType(resources.GetObject("picAppointment.Image"), Image)
         picAppointment.Location = New Point(8, 41)
         picAppointment.Name = "picAppointment"
         picAppointment.Size = New Size(90, 90)
@@ -277,7 +278,7 @@ Partial Class frmCustomerDashboard
         ' lblAppointmentSubtitle
         ' 
         lblAppointmentSubtitle.AutoSize = True
-        lblAppointmentSubtitle.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblAppointmentSubtitle.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         lblAppointmentSubtitle.ForeColor = SystemColors.ControlText
         lblAppointmentSubtitle.Location = New Point(104, 103)
         lblAppointmentSubtitle.Name = "lblAppointmentSubtitle"
@@ -299,7 +300,7 @@ Partial Class frmCustomerDashboard
         ' lblAppointmentTitle
         ' 
         lblAppointmentTitle.AutoSize = True
-        lblAppointmentTitle.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblAppointmentTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblAppointmentTitle.ForeColor = Color.DarkKhaki
         lblAppointmentTitle.Location = New Point(76, 3)
         lblAppointmentTitle.Name = "lblAppointmentTitle"
@@ -322,6 +323,7 @@ Partial Class frmCustomerDashboard
         ' 
         ' picOrder
         ' 
+        picOrder.Image = CType(resources.GetObject("picOrder.Image"), Image)
         picOrder.Location = New Point(8, 41)
         picOrder.Name = "picOrder"
         picOrder.Size = New Size(90, 90)
@@ -332,7 +334,7 @@ Partial Class frmCustomerDashboard
         ' lblOrderSubtitle
         ' 
         lblOrderSubtitle.AutoSize = True
-        lblOrderSubtitle.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblOrderSubtitle.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         lblOrderSubtitle.ForeColor = SystemColors.ControlText
         lblOrderSubtitle.Location = New Point(104, 103)
         lblOrderSubtitle.Name = "lblOrderSubtitle"
@@ -354,7 +356,7 @@ Partial Class frmCustomerDashboard
         ' lblOrderTitle
         ' 
         lblOrderTitle.AutoSize = True
-        lblOrderTitle.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblOrderTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblOrderTitle.ForeColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
         lblOrderTitle.Location = New Point(84, 3)
         lblOrderTitle.Name = "lblOrderTitle"
@@ -383,6 +385,7 @@ Partial Class frmCustomerDashboard
         ' 
         ' PictureBox15
         ' 
+        PictureBox15.Image = CType(resources.GetObject("PictureBox15.Image"), Image)
         PictureBox15.Location = New Point(5, 239)
         PictureBox15.Name = "PictureBox15"
         PictureBox15.Size = New Size(44, 44)
@@ -392,6 +395,7 @@ Partial Class frmCustomerDashboard
         ' 
         ' PictureBox14
         ' 
+        PictureBox14.Image = CType(resources.GetObject("PictureBox14.Image"), Image)
         PictureBox14.Location = New Point(5, 159)
         PictureBox14.Name = "PictureBox14"
         PictureBox14.Size = New Size(44, 44)
@@ -401,6 +405,7 @@ Partial Class frmCustomerDashboard
         ' 
         ' PictureBox13
         ' 
+        PictureBox13.Image = CType(resources.GetObject("PictureBox13.Image"), Image)
         PictureBox13.Location = New Point(5, 316)
         PictureBox13.Name = "PictureBox13"
         PictureBox13.Size = New Size(44, 44)
@@ -410,6 +415,7 @@ Partial Class frmCustomerDashboard
         ' 
         ' PictureBox16
         ' 
+        PictureBox16.Image = CType(resources.GetObject("PictureBox16.Image"), Image)
         PictureBox16.Location = New Point(5, 79)
         PictureBox16.Name = "PictureBox16"
         PictureBox16.Size = New Size(44, 44)
@@ -525,7 +531,6 @@ Partial Class frmCustomerDashboard
         ' 
         pnlWelcome.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         pnlWelcome.BackColor = Color.FromArgb(CByte(252), CByte(235), CByte(213))
-        pnlWelcome.Controls.Add(PictureBox17)
         pnlWelcome.Controls.Add(picPets2)
         pnlWelcome.Controls.Add(lblDescription)
         pnlWelcome.Controls.Add(lblWelcomeBack)
@@ -535,24 +540,12 @@ Partial Class frmCustomerDashboard
         pnlWelcome.Size = New Size(1055, 164)
         pnlWelcome.TabIndex = 16
         ' 
-        ' PictureBox17
-        ' 
-        PictureBox17.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        PictureBox17.BackColor = Color.Transparent
-        PictureBox17.ErrorImage = Nothing
-        PictureBox17.Location = New Point(484, 0)
-        PictureBox17.Name = "PictureBox17"
-        PictureBox17.Size = New Size(572, 168)
-        PictureBox17.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox17.TabIndex = 9
-        PictureBox17.TabStop = False
-        PictureBox17.Visible = False
-        ' 
         ' picPets2
         ' 
         picPets2.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         picPets2.BackColor = Color.Transparent
         picPets2.ErrorImage = Nothing
+        picPets2.Image = CType(resources.GetObject("picPets2.Image"), Image)
         picPets2.Location = New Point(400, 0)
         picPets2.Name = "picPets2"
         picPets2.Size = New Size(655, 168)
@@ -597,7 +590,7 @@ Partial Class frmCustomerDashboard
         Button2.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         Button2.FlatAppearance.BorderSize = 0
         Button2.FlatStyle = FlatStyle.Flat
-        Button2.Font = New Font("Segoe UI", 18.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Button2.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Button2.ForeColor = Color.FromArgb(CByte(75), CByte(43), CByte(28))
         Button2.Location = New Point(803, 42)
         Button2.Name = "Button2"
@@ -635,6 +628,7 @@ Partial Class frmCustomerDashboard
         ' PictureBox12
         ' 
         PictureBox12.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        PictureBox12.Image = CType(resources.GetObject("PictureBox12.Image"), Image)
         PictureBox12.Location = New Point(872, 35)
         PictureBox12.Name = "PictureBox12"
         PictureBox12.Size = New Size(65, 65)
@@ -712,7 +706,7 @@ Partial Class frmCustomerDashboard
         btnNotification.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnNotification.FlatAppearance.BorderSize = 0
         btnNotification.FlatStyle = FlatStyle.Flat
-        btnNotification.Font = New Font("Segoe UI", 18.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnNotification.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnNotification.Location = New Point(1659, 42)
         btnNotification.Name = "btnNotification"
         btnNotification.Size = New Size(54, 45)
@@ -723,6 +717,7 @@ Partial Class frmCustomerDashboard
         ' 
         ' picPaw
         ' 
+        picPaw.Image = CType(resources.GetObject("picPaw.Image"), Image)
         picPaw.Location = New Point(628, 35)
         picPaw.Name = "picPaw"
         picPaw.Size = New Size(63, 69)
@@ -733,7 +728,7 @@ Partial Class frmCustomerDashboard
         ' lblDashboardTitle
         ' 
         lblDashboardTitle.AutoSize = True
-        lblDashboardTitle.Font = New Font("Georgia", 24.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblDashboardTitle.Font = New Font("Georgia", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblDashboardTitle.ForeColor = SystemColors.ControlText
         lblDashboardTitle.Location = New Point(63, 50)
         lblDashboardTitle.Name = "lblDashboardTitle"
@@ -783,7 +778,7 @@ Partial Class frmCustomerDashboard
         ' lblSidebarSubtitle
         ' 
         lblSidebarSubtitle.AutoSize = True
-        lblSidebarSubtitle.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblSidebarSubtitle.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         lblSidebarSubtitle.ForeColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
         lblSidebarSubtitle.Location = New Point(99, 104)
         lblSidebarSubtitle.Name = "lblSidebarSubtitle"
@@ -795,7 +790,7 @@ Partial Class frmCustomerDashboard
         ' lblSidebarTitle
         ' 
         lblSidebarTitle.AutoSize = True
-        lblSidebarTitle.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblSidebarTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblSidebarTitle.ForeColor = Color.White
         lblSidebarTitle.Location = New Point(99, 40)
         lblSidebarTitle.Name = "lblSidebarTitle"
@@ -829,6 +824,7 @@ Partial Class frmCustomerDashboard
         ' PictureBox11
         ' 
         PictureBox11.BackColor = Color.FromArgb(CByte(75), CByte(43), CByte(28))
+        PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), Image)
         PictureBox11.Location = New Point(8, 735)
         PictureBox11.Name = "PictureBox11"
         PictureBox11.Size = New Size(43, 40)
@@ -839,6 +835,7 @@ Partial Class frmCustomerDashboard
         ' PictureBox10
         ' 
         PictureBox10.BackColor = Color.FromArgb(CByte(75), CByte(43), CByte(28))
+        PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), Image)
         PictureBox10.Location = New Point(8, 689)
         PictureBox10.Name = "PictureBox10"
         PictureBox10.Size = New Size(43, 40)
@@ -849,6 +846,7 @@ Partial Class frmCustomerDashboard
         ' PictureBox9
         ' 
         PictureBox9.BackColor = Color.FromArgb(CByte(75), CByte(43), CByte(28))
+        PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), Image)
         PictureBox9.Location = New Point(8, 613)
         PictureBox9.Name = "PictureBox9"
         PictureBox9.Size = New Size(43, 40)
@@ -859,6 +857,7 @@ Partial Class frmCustomerDashboard
         ' PictureBox8
         ' 
         PictureBox8.BackColor = Color.FromArgb(CByte(75), CByte(43), CByte(28))
+        PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), Image)
         PictureBox8.Location = New Point(8, 567)
         PictureBox8.Name = "PictureBox8"
         PictureBox8.Size = New Size(43, 40)
@@ -869,6 +868,7 @@ Partial Class frmCustomerDashboard
         ' PictureBox7
         ' 
         PictureBox7.BackColor = Color.FromArgb(CByte(75), CByte(43), CByte(28))
+        PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), Image)
         PictureBox7.Location = New Point(8, 521)
         PictureBox7.Name = "PictureBox7"
         PictureBox7.Size = New Size(43, 40)
@@ -889,6 +889,7 @@ Partial Class frmCustomerDashboard
         ' PictureBox5
         ' 
         PictureBox5.BackColor = Color.FromArgb(CByte(75), CByte(43), CByte(28))
+        PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
         PictureBox5.Location = New Point(8, 401)
         PictureBox5.Name = "PictureBox5"
         PictureBox5.Size = New Size(43, 40)
@@ -899,6 +900,7 @@ Partial Class frmCustomerDashboard
         ' PictureBox4
         ' 
         PictureBox4.BackColor = Color.FromArgb(CByte(75), CByte(43), CByte(28))
+        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
         PictureBox4.Location = New Point(8, 355)
         PictureBox4.Name = "PictureBox4"
         PictureBox4.Size = New Size(43, 40)
@@ -909,6 +911,7 @@ Partial Class frmCustomerDashboard
         ' PictureBox3
         ' 
         PictureBox3.BackColor = Color.FromArgb(CByte(75), CByte(43), CByte(28))
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
         PictureBox3.Location = New Point(8, 309)
         PictureBox3.Name = "PictureBox3"
         PictureBox3.Size = New Size(43, 40)
@@ -919,6 +922,7 @@ Partial Class frmCustomerDashboard
         ' PictureBox2
         ' 
         PictureBox2.BackColor = Color.FromArgb(CByte(75), CByte(43), CByte(28))
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
         PictureBox2.Location = New Point(8, 263)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(43, 40)
@@ -929,6 +933,7 @@ Partial Class frmCustomerDashboard
         ' PictureBox1
         ' 
         PictureBox1.BackColor = Color.FromArgb(CByte(75), CByte(43), CByte(28))
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
         PictureBox1.Location = New Point(8, 219)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(43, 40)
@@ -953,7 +958,7 @@ Partial Class frmCustomerDashboard
         ' 
         btnMembership.FlatAppearance.BorderSize = 0
         btnMembership.FlatStyle = FlatStyle.Flat
-        btnMembership.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnMembership.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnMembership.ForeColor = SystemColors.Control
         btnMembership.Location = New Point(57, 735)
         btnMembership.Name = "btnMembership"
@@ -967,7 +972,7 @@ Partial Class frmCustomerDashboard
         ' 
         btnProduct.FlatAppearance.BorderSize = 0
         btnProduct.FlatStyle = FlatStyle.Flat
-        btnProduct.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnProduct.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnProduct.ForeColor = SystemColors.Control
         btnProduct.Location = New Point(57, 689)
         btnProduct.Name = "btnProduct"
@@ -981,7 +986,7 @@ Partial Class frmCustomerDashboard
         ' 
         btnBoardingVideos.FlatAppearance.BorderSize = 0
         btnBoardingVideos.FlatStyle = FlatStyle.Flat
-        btnBoardingVideos.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnBoardingVideos.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnBoardingVideos.ForeColor = SystemColors.Control
         btnBoardingVideos.Location = New Point(57, 613)
         btnBoardingVideos.Name = "btnBoardingVideos"
@@ -995,7 +1000,7 @@ Partial Class frmCustomerDashboard
         ' 
         btnGroomingServices.FlatAppearance.BorderSize = 0
         btnGroomingServices.FlatStyle = FlatStyle.Flat
-        btnGroomingServices.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnGroomingServices.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnGroomingServices.ForeColor = SystemColors.Control
         btnGroomingServices.Location = New Point(57, 521)
         btnGroomingServices.Name = "btnGroomingServices"
@@ -1009,7 +1014,7 @@ Partial Class frmCustomerDashboard
         ' 
         btnPayments.FlatAppearance.BorderSize = 0
         btnPayments.FlatStyle = FlatStyle.Flat
-        btnPayments.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnPayments.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnPayments.ForeColor = SystemColors.Control
         btnPayments.Location = New Point(57, 401)
         btnPayments.Name = "btnPayments"
@@ -1023,7 +1028,7 @@ Partial Class frmCustomerDashboard
         ' 
         btnBoardingServices.FlatAppearance.BorderSize = 0
         btnBoardingServices.FlatStyle = FlatStyle.Flat
-        btnBoardingServices.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnBoardingServices.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnBoardingServices.ForeColor = SystemColors.Control
         btnBoardingServices.Location = New Point(57, 567)
         btnBoardingServices.Name = "btnBoardingServices"
@@ -1037,7 +1042,7 @@ Partial Class frmCustomerDashboard
         ' 
         btnServices.FlatAppearance.BorderSize = 0
         btnServices.FlatStyle = FlatStyle.Flat
-        btnServices.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnServices.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnServices.ForeColor = SystemColors.Control
         btnServices.Location = New Point(57, 475)
         btnServices.Name = "btnServices"
@@ -1051,7 +1056,7 @@ Partial Class frmCustomerDashboard
         ' 
         btnOrders.FlatAppearance.BorderSize = 0
         btnOrders.FlatStyle = FlatStyle.Flat
-        btnOrders.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnOrders.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnOrders.ForeColor = SystemColors.Control
         btnOrders.Location = New Point(57, 355)
         btnOrders.Name = "btnOrders"
@@ -1065,7 +1070,7 @@ Partial Class frmCustomerDashboard
         ' 
         btnAppointments.FlatAppearance.BorderSize = 0
         btnAppointments.FlatStyle = FlatStyle.Flat
-        btnAppointments.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnAppointments.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnAppointments.ForeColor = SystemColors.Control
         btnAppointments.Location = New Point(57, 309)
         btnAppointments.Name = "btnAppointments"
@@ -1079,7 +1084,7 @@ Partial Class frmCustomerDashboard
         ' 
         btnPet.FlatAppearance.BorderSize = 0
         btnPet.FlatStyle = FlatStyle.Flat
-        btnPet.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnPet.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnPet.ForeColor = SystemColors.Control
         btnPet.Location = New Point(57, 263)
         btnPet.Name = "btnPet"
@@ -1104,7 +1109,7 @@ Partial Class frmCustomerDashboard
         btnProfile.BackColor = Color.FromArgb(CByte(75), CByte(43), CByte(28))
         btnProfile.FlatAppearance.BorderSize = 0
         btnProfile.FlatStyle = FlatStyle.Flat
-        btnProfile.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnProfile.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnProfile.ForeColor = SystemColors.Control
         btnProfile.Location = New Point(57, 217)
         btnProfile.Name = "btnProfile"
@@ -1131,6 +1136,7 @@ Partial Class frmCustomerDashboard
         ' picLogo
         ' 
         picLogo.BackColor = Color.Transparent
+        picLogo.Image = CType(resources.GetObject("picLogo.Image"), Image)
         picLogo.Location = New Point(1, 39)
         picLogo.Name = "picLogo"
         picLogo.Size = New Size(92, 85)
@@ -1141,7 +1147,7 @@ Partial Class frmCustomerDashboard
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.White
         Label1.Location = New Point(99, 39)
         Label1.Name = "Label1"
@@ -1203,7 +1209,6 @@ Partial Class frmCustomerDashboard
         CType(dgvRecentAppointments, ComponentModel.ISupportInitialize).EndInit()
         pnlWelcome.ResumeLayout(False)
         pnlWelcome.PerformLayout()
-        CType(PictureBox17, ComponentModel.ISupportInitialize).EndInit()
         CType(picPets2, ComponentModel.ISupportInitialize).EndInit()
         pnlTopBar.ResumeLayout(False)
         pnlTopBar.PerformLayout()
@@ -1309,7 +1314,6 @@ Partial Class frmCustomerDashboard
     Friend WithEvents pnlRecentAppointments As Panel
     Friend WithEvents dgvRecentAppointments As DataGridView
     Friend WithEvents lblRecentTitle As Label
-    Friend WithEvents PictureBox17 As PictureBox
     Friend WithEvents lblSidebarTitle As Label
     Friend WithEvents lblSidebarSubtitle As Label
     Friend WithEvents lblDescription As Label

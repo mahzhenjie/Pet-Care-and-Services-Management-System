@@ -15,168 +15,83 @@ Public Class frmAddCustomers
 
         ' VALIDATION
         If txtFullName.Text.Trim() = "" Then
-            MessageBox.Show(
-                "Please enter Full Name.",
-                "Validation",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning
-            )
+            MessageBox.Show("Please enter Full Name.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtFullName.Focus()
             Exit Sub
         End If
 
         If txtUsername.Text.Trim() = "" Then
-            MessageBox.Show(
-                "Please enter Username.",
-                "Validation",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning
-            )
+            MessageBox.Show("Please enter Username.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtUsername.Focus()
             Exit Sub
         End If
 
         If txtPassword.Text.Trim() = "" Then
-            MessageBox.Show(
-                "Please enter Password.",
-                "Validation",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning
-            )
+            MessageBox.Show("Please enter Password.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtPassword.Focus()
             Exit Sub
         End If
 
         If txtEmail.Text.Trim() = "" Then
-            MessageBox.Show(
-                "Please enter Email.",
-                "Validation",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning
-            )
+            MessageBox.Show("Please enter Email.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtEmail.Focus()
             Exit Sub
         End If
 
         If txtPhoneNumber.Text.Trim() = "" Then
-            MessageBox.Show(
-                "Please enter Phone Number.",
-                "Validation",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning
-            )
+            MessageBox.Show("Please enter Phone Number.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtPhoneNumber.Focus()
             Exit Sub
         End If
 
         If txtAddress.Text.Trim() = "" Then
-
-            MessageBox.Show(
-                "Please enter Address.",
-                "Validation",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning
-            )
+            MessageBox.Show("Please enter Address.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtAddress.Focus()
             Exit Sub
         End If
 
         ' INSERT CUSTOMER INTO DATABASE
+        Dim conn As New MySqlConnection(connectionString)
+
         Try
-            Using conn As New MySqlConnection(connectionString)
-                conn.Open()
-                Dim sql As String =
-                    "INSERT INTO Customers " &
-                    "(FullName, Username, Password, Email, PhoneNumber, Address) " &
-                    "VALUES " &
-                    "(@FullName, @Username, @Password, @Email, @PhoneNumber, @Address)"
+            conn.Open()
 
-                Using cmd As New MySqlCommand(sql, conn)
+            Dim sql As String = "INSERT INTO Customers (FullName, Username, Password, Email, PhoneNumber, Address) VALUES (@FullName, @Username, @Password, @Email, @PhoneNumber, @Address)"
+            Dim cmd As New MySqlCommand(sql, conn)
 
-                    cmd.Parameters.AddWithValue(
-                        "@FullName",
-                        txtFullName.Text.Trim()
-                    )
+            cmd.Parameters.AddWithValue("@FullName", txtFullName.Text.Trim())
+            cmd.Parameters.AddWithValue("@Username", txtUsername.Text.Trim())
+            cmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim())
+            cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim())
+            cmd.Parameters.AddWithValue("@PhoneNumber", txtPhoneNumber.Text.Trim())
+            cmd.Parameters.AddWithValue("@Address", txtAddress.Text.Trim())
 
-                    cmd.Parameters.AddWithValue(
-                        "@Username",
-                        txtUsername.Text.Trim()
-                    )
-
-                    cmd.Parameters.AddWithValue(
-                        "@Password",
-                        txtPassword.Text.Trim()
-                    )
-
-                    cmd.Parameters.AddWithValue(
-                        "@Email",
-                        txtEmail.Text.Trim()
-                    )
-
-                    cmd.Parameters.AddWithValue(
-                        "@PhoneNumber",
-                        txtPhoneNumber.Text.Trim()
-                    )
-
-                    cmd.Parameters.AddWithValue(
-                        "@Address",
-                        txtAddress.Text.Trim()
-                    )
-
-                    Dim result As Integer = cmd.ExecuteNonQuery()
-
-                    If result > 0 Then
-                        MessageBox.Show(
-                            "Customer added successfully!",
-                            "Add Customer",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information
-                        )
-                        Me.DialogResult = DialogResult.OK
-                        Me.Close()
-                    Else
-                        MessageBox.Show(
-                            "Customer could not be added.",
-                            "Add Customer",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning
-                        )
-                    End If
-                End Using
-            End Using
-        Catch ex As MySqlException
-
-            ' CHECK DUPLICATE USERNAME
-            If ex.Number = 1062 Then
-                MessageBox.Show(
-                    "Username already exists. Please use another username.",
-                    "Add Customer",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                )
-
+            If cmd.ExecuteNonQuery() > 0 Then
+                MessageBox.Show("Customer added successfully!", "Add Customer", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Me.DialogResult = DialogResult.OK
+                Me.Close()
             Else
-                MessageBox.Show(
-                    "Unable to add customer." &
-                    Environment.NewLine &
-                    Environment.NewLine &
-                    ex.Message,
-                    "Database Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                )
+                MessageBox.Show("Customer could not be added.", "Add Customer", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+
+            cmd.Dispose()
+
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then
+                MessageBox.Show("Username already exists. Please use another username.", "Add Customer", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                MessageBox.Show("Unable to add customer." & Environment.NewLine & Environment.NewLine & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
 
         Catch ex As Exception
-            MessageBox.Show(
-                "Unable to add customer." &
-                Environment.NewLine &
-                Environment.NewLine &
-                ex.Message,
-                "Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error
-            )
+            MessageBox.Show("Unable to add customer." & Environment.NewLine & Environment.NewLine & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        Finally
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
+
+            conn.Dispose()
         End Try
     End Sub
 
@@ -184,4 +99,5 @@ Public Class frmAddCustomers
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Close()
     End Sub
+
 End Class

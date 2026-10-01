@@ -54,6 +54,7 @@ Public Class frmEditGroomingBooking
                     End Using
                 End Using
             End Using
+
         Catch ex As Exception
             MessageBox.Show("Unable to load grooming booking data." & Environment.NewLine & Environment.NewLine & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -107,6 +108,7 @@ Public Class frmEditGroomingBooking
                     End If
                 End Using
             End Using
+
         Catch ex As Exception
             MessageBox.Show("Unable to update grooming booking." & Environment.NewLine & Environment.NewLine & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try

@@ -71,25 +71,34 @@ Public Class frmAddOrderDetail
         Dim subtotal As Decimal = quantity * unitPrice
 
         Try
-            Using conn As New MySqlConnection(connectionString)
-                conn.Open()
+            Dim conn As New MySqlConnection(connectionString)
+            conn.Open()
 
-                Dim query As String = "INSERT INTO OrderDetails (OrderID, ProductID, Quantity, UnitPrice, Subtotal) VALUES (@OrderID, @ProductID, @Quantity, @UnitPrice, @Subtotal)"
+            Dim query As String = "INSERT INTO OrderDetails (OrderID, ProductID, Quantity, UnitPrice, Subtotal) VALUES (@OrderID, @ProductID, @Quantity, @UnitPrice, @Subtotal)"
+            Dim cmd As New MySqlCommand(query, conn)
 
-                Using cmd As New MySqlCommand(query, conn)
-                    cmd.Parameters.AddWithValue("@OrderID", orderID)
-                    cmd.Parameters.AddWithValue("@ProductID", txtProductID.Text.Trim())
-                    cmd.Parameters.AddWithValue("@Quantity", quantity)
-                    cmd.Parameters.AddWithValue("@UnitPrice", unitPrice)
-                    cmd.Parameters.AddWithValue("@Subtotal", subtotal)
-                    cmd.ExecuteNonQuery()
-                End Using
-            End Using
+            cmd.Parameters.AddWithValue("@OrderID", orderID)
+            cmd.Parameters.AddWithValue("@ProductID", txtProductID.Text.Trim())
+            cmd.Parameters.AddWithValue("@Quantity", quantity)
+            cmd.Parameters.AddWithValue("@UnitPrice", unitPrice)
+            cmd.Parameters.AddWithValue("@Subtotal", subtotal)
 
-            MessageBox.Show("Order detail added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If cmd.ExecuteNonQuery() > 0 Then
+                MessageBox.Show("Order detail added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            Me.DialogResult = DialogResult.OK
-            Me.Close()
+                cmd.Dispose()
+                conn.Close()
+                conn.Dispose()
+
+                Me.DialogResult = DialogResult.OK
+                Me.Close()
+            Else
+                MessageBox.Show("Order detail was not added.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+                cmd.Dispose()
+                conn.Close()
+                conn.Dispose()
+            End If
 
         Catch ex As Exception
             MessageBox.Show("Error adding order detail: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

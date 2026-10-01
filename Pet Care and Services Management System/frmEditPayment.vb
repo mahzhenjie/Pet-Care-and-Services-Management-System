@@ -60,7 +60,6 @@ Public Class frmEditPayment
                     command.Parameters.AddWithValue("@PaymentID", paymentID)
 
                     Using reader As MySqlDataReader = command.ExecuteReader()
-
                         If reader.Read() Then
                             txtPaymentID.Text = reader("PaymentID").ToString()
                             txtCustomerID.Text = reader("CustomerID").ToString()
@@ -70,7 +69,6 @@ Public Class frmEditPayment
                             cboPaymentType.Text = reader("PaymentType").ToString()
                             cboPaymentStatus.Text = reader("PaymentStatus").ToString()
                         End If
-
                     End Using
                 End Using
             End Using
@@ -140,7 +138,6 @@ Public Class frmEditPayment
                     command.Parameters.AddWithValue("@PaymentType", cboPaymentType.Text)
                     command.Parameters.AddWithValue("@PaymentStatus", cboPaymentStatus.Text)
                     command.Parameters.AddWithValue("@PaymentID", paymentID)
-
                     command.ExecuteNonQuery()
                 End Using
             End Using

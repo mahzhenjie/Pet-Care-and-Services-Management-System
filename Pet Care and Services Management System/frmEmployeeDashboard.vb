@@ -37,6 +37,7 @@ Public Class frmEmployeeDashboard
                     lblOrderCount.Text = Convert.ToInt32(cmd.ExecuteScalar()).ToString()
                 End Using
             End Using
+
         Catch ex As Exception
             MessageBox.Show("Unable to load dashboard data." & vbCrLf & ex.Message, "Dashboard Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -47,6 +48,7 @@ Public Class frmEmployeeDashboard
         Try
             Using conn As MySqlConnection = GetConnection()
                 conn.Open()
+
                 Dim sql As String = "SELECT * FROM (" &
                     "SELECT " &
                     "c.FullName AS Customer, " &
@@ -109,6 +111,7 @@ Public Class frmEmployeeDashboard
                     End Using
                 End Using
             End Using
+
         Catch ex As Exception
             MessageBox.Show("Unable to load appointments." & vbCrLf & ex.Message, "Appointment Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -117,6 +120,7 @@ Public Class frmEmployeeDashboard
     ' COLLAPSE / EXPAND SIDEBAR
     Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
         If sidebarCollapsed = False Then
+
             ' COLLAPSE SIDEBAR
             pnlSidebar.Width = 70
             pnlTopBar.Location = New Point(70, 0)
@@ -222,6 +226,7 @@ Public Class frmEmployeeDashboard
             sidebarCollapsed = True
 
         Else
+
             ' EXPAND SIDEBAR
             pnlSidebar.Width = 280
             pnlTopBar.Location = New Point(280, 0)
@@ -322,95 +327,74 @@ Public Class frmEmployeeDashboard
 
     ' CUSTOMERS
     Private Sub btnCustomers_Click(sender As Object, e As EventArgs) Handles btnCustomers.Click
-        Dim frm As New frmCustomer()
-        frm.Show()
+        frmCustomer.Show()
         Me.Hide()
     End Sub
 
     ' PETS
     Private Sub btnPets_Click(sender As Object, e As EventArgs) Handles btnPets.Click
-        Dim frm As New frmPet()
-        frm.Show()
+        frmPet.Show()
         Me.Hide()
     End Sub
 
     ' BOOKINGS
     Private Sub btnBookings_Click(sender As Object, e As EventArgs) Handles btnBookings.Click
-        Dim frm As New frmGroomingBooking()
-        frm.Show()
+        frmGroomingBooking.Show()
         Me.Hide()
     End Sub
 
     ' ORDERS
     Private Sub btnOrders_Click(sender As Object, e As EventArgs) Handles btnOrders.Click
-        Dim frm As New frmOrder()
-        frm.Show()
+        frmOrder.Show()
         Me.Hide()
     End Sub
 
     ' PAYMENTS
     Private Sub btnPayments_Click(sender As Object, e As EventArgs) Handles btnPayments.Click
-        Dim frm As New frmPayment()
-        frm.Show()
+        frmPayment.Show()
         Me.Hide()
     End Sub
 
     ' GROOMING SERVICES
     Private Sub btnGroomingServices_Click(sender As Object, e As EventArgs) Handles btnGroomingServices.Click
-        Dim frm As New frmGrommingServices()
-        frm.Show()
+        frmGrommingServices.Show()
         Me.Hide()
     End Sub
 
     ' BOARDING SERVICES
     Private Sub btnBoardingServices_Click(sender As Object, e As EventArgs) Handles btnBoardingServices.Click
-        Dim frm As New frmBoardingServices()
-        frm.Show()
+        frmBoardingServices.Show()
         Me.Hide()
     End Sub
 
     ' BOARDING ROOMS
     Private Sub btnBoardingRooms_Click(sender As Object, e As EventArgs) Handles btnBoardingRooms.Click
-        Dim frm As New frmBoardingRoom()
-        frm.Show()
+        frmBoardingRoom.Show()
         Me.Hide()
     End Sub
 
     ' BOARDING VIDEOS
     Private Sub btnBoardingVideos_Click(sender As Object, e As EventArgs) Handles btnBoardingVideos.Click
-        Dim frm As New frmPetVideos()
-        frm.Show()
+        frmPetVideos.Show()
         Me.Hide()
     End Sub
 
     ' PRODUCTS
     Private Sub btnProducts_Click(sender As Object, e As EventArgs) Handles btnProducts.Click
-        Dim frm As New frmProduct()
-        frm.Show()
+        frmProduct.Show()
         Me.Hide()
     End Sub
 
     ' MEMBERSHIP
     Private Sub btnMembership_Click(sender As Object, e As EventArgs) Handles btnMembership.Click
-        Dim frm As New frmMembership()
-        frm.Show()
+        frmMembership.Show()
         Me.Hide()
     End Sub
 
     ' LOGOUT
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
-        Dim result As DialogResult
-
-        result = MessageBox.Show(
-        "Are you sure you want to logout?",
-        "Logout",
-        MessageBoxButtons.YesNo,
-        MessageBoxIcon.Question
-    )
-
-        If result = DialogResult.Yes Then
-            Dim loginForm As New frmLogin()
-            loginForm.Show()
+        If MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            frmLogin.Show()
             Me.Hide()
         End If
     End Sub

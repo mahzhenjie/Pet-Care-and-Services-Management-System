@@ -52,14 +52,12 @@ Public Class frmCustomerMembership
             Return
         End If
 
-        Dim result As DialogResult = MessageBox.Show(
+        If MessageBox.Show(
             "Are you sure you want to register for the " & cboMembershipType.Text & " membership?",
             "Confirm Membership",
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Question
-        )
-
-        If result <> DialogResult.Yes Then
+        ) <> DialogResult.Yes Then
             Return
         End If
 
@@ -69,19 +67,20 @@ Public Class frmCustomerMembership
     ' CHECK EXISTING MEMBERSHIP
     Private Function CheckExistingMembership() As Boolean
         Try
-            Using conn As New MySqlConnection(connectionString)
-                conn.Open()
+            Dim conn As New MySqlConnection(connectionString)
+            conn.Open()
 
-                Dim sql As String = "SELECT COUNT(*) FROM membership WHERE CustomerID = @CustomerID AND Status = 'Active'"
+            Dim sql As String = "SELECT COUNT(*) FROM membership WHERE CustomerID = @CustomerID AND Status = 'Active'"
+            Dim cmd As New MySqlCommand(sql, conn)
+            cmd.Parameters.AddWithValue("@CustomerID", CurrentUserID)
 
-                Using cmd As New MySqlCommand(sql, conn)
-                    cmd.Parameters.AddWithValue("@CustomerID", CurrentUserID)
+            If Convert.ToInt32(cmd.ExecuteScalar()) > 0 Then
+                conn.Close()
+                Return True
+            End If
 
-                    Dim count As Integer = Convert.ToInt32(cmd.ExecuteScalar())
-
-                    Return count > 0
-                End Using
-            End Using
+            conn.Close()
+            Return False
         Catch ex As Exception
             MessageBox.Show("Unable to check membership." & Environment.NewLine & Environment.NewLine & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return True
@@ -91,38 +90,38 @@ Public Class frmCustomerMembership
     ' INSERT MEMBERSHIP INTO DATABASE
     Private Sub RegisterMembership()
         Try
-            Using conn As New MySqlConnection(connectionString)
-                conn.Open()
+            Dim conn As New MySqlConnection(connectionString)
+            conn.Open()
 
-                Dim sql As String = "INSERT INTO membership (CustomerID, MembershipType, StartDate, EndDate, Status) VALUES (@CustomerID, @MembershipType, @StartDate, @EndDate, @Status)"
+            Dim sql As String = "INSERT INTO membership (CustomerID, MembershipType, StartDate, EndDate, Status) VALUES (@CustomerID, @MembershipType, @StartDate, @EndDate, @Status)"
+            Dim cmd As New MySqlCommand(sql, conn)
 
-                Using cmd As New MySqlCommand(sql, conn)
-                    cmd.Parameters.AddWithValue("@CustomerID", CurrentUserID)
-                    cmd.Parameters.AddWithValue("@MembershipType", cboMembershipType.Text)
-                    cmd.Parameters.AddWithValue("@StartDate", dtpStartDate.Value.Date)
-                    cmd.Parameters.AddWithValue("@EndDate", dtpEndDate.Value.Date)
-                    cmd.Parameters.AddWithValue("@Status", "Active")
+            cmd.Parameters.AddWithValue("@CustomerID", CurrentUserID)
+            cmd.Parameters.AddWithValue("@MembershipType", cboMembershipType.Text)
+            cmd.Parameters.AddWithValue("@StartDate", dtpStartDate.Value.Date)
+            cmd.Parameters.AddWithValue("@EndDate", dtpEndDate.Value.Date)
+            cmd.Parameters.AddWithValue("@Status", "Active")
 
-                    Dim result As Integer = cmd.ExecuteNonQuery()
+            If cmd.ExecuteNonQuery() > 0 Then
+                conn.Close()
 
-                    If result > 0 Then
-                        MessageBox.Show(
-                            "Membership registered successfully." & Environment.NewLine & Environment.NewLine &
-                            "Membership Type: " & cboMembershipType.Text & Environment.NewLine &
-                            "Start Date: " & dtpStartDate.Value.ToString("dd/MM/yyyy") & Environment.NewLine &
-                            "End Date: " & dtpEndDate.Value.ToString("dd/MM/yyyy"),
-                            "Registration Successful",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information
-                        )
+                MessageBox.Show(
+                    "Membership registered successfully." & Environment.NewLine & Environment.NewLine &
+                    "Membership Type: " & cboMembershipType.Text & Environment.NewLine &
+                    "Start Date: " & dtpStartDate.Value.ToString("dd/MM/yyyy") & Environment.NewLine &
+                    "End Date: " & dtpEndDate.Value.ToString("dd/MM/yyyy"),
+                    "Registration Successful",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                )
 
-                        Me.DialogResult = DialogResult.OK
-                        Me.Close()
-                    Else
-                        MessageBox.Show("Membership registration failed.", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End If
-                End Using
-            End Using
+                Me.DialogResult = DialogResult.OK
+                Me.Close()
+            Else
+                conn.Close()
+
+                MessageBox.Show("Membership registration failed.", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
         Catch ex As MySqlException
             MessageBox.Show(
                 "Unable to register membership." & Environment.NewLine & Environment.NewLine & ex.Message,
