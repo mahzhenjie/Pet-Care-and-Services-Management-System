@@ -7,6 +7,7 @@ Public Class frmPet
 
     ' FORM LOAD
     Private Sub frmPet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        dgvPet.AutoGenerateColumns = False
         SetupDataGridView()
         LoadPetData()
     End Sub

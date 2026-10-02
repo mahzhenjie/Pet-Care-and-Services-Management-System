@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmGroomingBooking
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -17,10 +17,10 @@ Partial Class frmGroomingBooking
     'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
 
-    'NOTE: The following procedure is required by the Windows Form Designer
-    'It can be modified using the Windows Form Designer.  
+    'NOTE: The following procedure is required by the Windows Form Designer.
+    'It can be modified using the code editor.
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         pnlGroomingBooking = New Panel()
         dgvGroomingBooking = New DataGridView()
@@ -43,157 +43,224 @@ Partial Class frmGroomingBooking
         ' 
         ' pnlGroomingBooking
         ' 
-        pnlGroomingBooking.BackColor = Color.FromArgb(CByte(232), CByte(216), CByte(194))
+        pnlGroomingBooking.Anchor = CType((((AnchorStyles.Top Or AnchorStyles.Bottom) Or AnchorStyles.Left) Or AnchorStyles.Right), AnchorStyles)
+        pnlGroomingBooking.BackColor = Color.FromArgb(245, 230, 209)
         pnlGroomingBooking.Controls.Add(btnGoBackDashboard)
         pnlGroomingBooking.Controls.Add(dgvGroomingBooking)
         pnlGroomingBooking.Controls.Add(btnAddGroomingBooking)
         pnlGroomingBooking.Controls.Add(btnRefresh)
         pnlGroomingBooking.Controls.Add(txtSearch)
         pnlGroomingBooking.Controls.Add(lblTitle)
-        pnlGroomingBooking.ForeColor = Color.SaddleBrown
-        pnlGroomingBooking.Location = New Point(12, 15)
-        pnlGroomingBooking.Margin = New Padding(3, 4, 3, 4)
+        pnlGroomingBooking.Location = New Point(15, 15)
         pnlGroomingBooking.Name = "pnlGroomingBooking"
-        pnlGroomingBooking.Size = New Size(920, 725)
+        pnlGroomingBooking.Padding = New Padding(20)
+        pnlGroomingBooking.Size = New Size(1130, 770)
         pnlGroomingBooking.TabIndex = 2
         ' 
         ' dgvGroomingBooking
         ' 
+        dgvGroomingBooking.AllowUserToAddRows = False
+        dgvGroomingBooking.AllowUserToDeleteRows = False
+        dgvGroomingBooking.AllowUserToResizeRows = False
+        dgvGroomingBooking.Anchor = CType((((AnchorStyles.Top Or AnchorStyles.Bottom) Or AnchorStyles.Left) Or AnchorStyles.Right), AnchorStyles)
+        dgvGroomingBooking.AutoGenerateColumns = False
         dgvGroomingBooking.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-        dgvGroomingBooking.BackgroundColor = Color.FromArgb(CByte(244), CByte(239), CByte(227))
-        dgvGroomingBooking.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvGroomingBooking.Columns.AddRange(New DataGridViewColumn() {colGroomingBookingID, colPetID, colServiceID, colBookingDate, colBookingTime, colStatus, colEdit, colDelete})
-        dgvGroomingBooking.GridColor = Color.Sienna
-        dgvGroomingBooking.Location = New Point(24, 121)
-        dgvGroomingBooking.Margin = New Padding(3, 4, 3, 4)
+        dgvGroomingBooking.BackgroundColor = Color.FromArgb(250, 247, 240)
+        dgvGroomingBooking.BorderStyle = BorderStyle.None
+        dgvGroomingBooking.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
+        dgvGroomingBooking.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
+        dgvGroomingBooking.ColumnHeadersDefaultCellStyle = New DataGridViewCellStyle With {
+            .BackColor = Color.FromArgb(96, 52, 16),
+            .ForeColor = Color.WhiteSmoke,
+            .Font = New Font("Segoe UI", 9.5F, FontStyle.Bold),
+            .Alignment = DataGridViewContentAlignment.MiddleLeft,
+            .SelectionBackColor = Color.FromArgb(96, 52, 16),
+            .SelectionForeColor = Color.WhiteSmoke
+        }
+        dgvGroomingBooking.ColumnHeadersHeight = 42
+        dgvGroomingBooking.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        dgvGroomingBooking.Columns.AddRange(New DataGridViewColumn() {
+            colGroomingBookingID,
+            colPetID,
+            colServiceID,
+            colBookingDate,
+            colBookingTime,
+            colStatus,
+            colEdit,
+            colDelete
+        })
+        dgvGroomingBooking.DefaultCellStyle = New DataGridViewCellStyle With {
+            .BackColor = Color.White,
+            .ForeColor = Color.FromArgb(61, 40, 27),
+            .Font = New Font("Segoe UI", 9.0F),
+            .SelectionBackColor = Color.FromArgb(232, 216, 194),
+            .SelectionForeColor = Color.FromArgb(61, 40, 27),
+            .Alignment = DataGridViewContentAlignment.MiddleLeft
+        }
+        dgvGroomingBooking.GridColor = Color.FromArgb(225, 211, 192)
+        dgvGroomingBooking.Location = New Point(20, 140)
+        dgvGroomingBooking.MultiSelect = False
         dgvGroomingBooking.Name = "dgvGroomingBooking"
+        dgvGroomingBooking.ReadOnly = True
         dgvGroomingBooking.RightToLeft = RightToLeft.No
-        dgvGroomingBooking.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
-        dgvGroomingBooking.RowHeadersWidth = 51
-        dgvGroomingBooking.RowTemplate.Height = 24
-        dgvGroomingBooking.Size = New Size(868, 569)
+        dgvGroomingBooking.RowHeadersVisible = False
+        dgvGroomingBooking.RowTemplate.Height = 38
+        dgvGroomingBooking.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        dgvGroomingBooking.Size = New Size(1090, 605)
         dgvGroomingBooking.TabIndex = 7
         ' 
         ' colGroomingBookingID
         ' 
-        colGroomingBookingID.HeaderText = "Grooming Booking ID"
+        colGroomingBookingID.FillWeight = 125.0F
+        colGroomingBookingID.HeaderText = "Booking ID"
         colGroomingBookingID.MinimumWidth = 6
         colGroomingBookingID.Name = "colGroomingBookingID"
+        colGroomingBookingID.ReadOnly = True
         ' 
         ' colPetID
         ' 
+        colPetID.FillWeight = 75.0F
         colPetID.HeaderText = "Pet ID"
         colPetID.MinimumWidth = 6
         colPetID.Name = "colPetID"
+        colPetID.ReadOnly = True
         ' 
         ' colServiceID
         ' 
+        colServiceID.FillWeight = 85.0F
         colServiceID.HeaderText = "Service ID"
         colServiceID.MinimumWidth = 6
         colServiceID.Name = "colServiceID"
+        colServiceID.ReadOnly = True
         ' 
         ' colBookingDate
         ' 
-        colBookingDate.FillWeight = 150F
+        colBookingDate.FillWeight = 120.0F
         colBookingDate.HeaderText = "Booking Date"
         colBookingDate.MinimumWidth = 6
         colBookingDate.Name = "colBookingDate"
+        colBookingDate.ReadOnly = True
         ' 
         ' colBookingTime
         ' 
+        colBookingTime.FillWeight = 120.0F
         colBookingTime.HeaderText = "Booking Time"
         colBookingTime.MinimumWidth = 6
         colBookingTime.Name = "colBookingTime"
+        colBookingTime.ReadOnly = True
         ' 
         ' colStatus
         ' 
+        colStatus.FillWeight = 105.0F
         colStatus.HeaderText = "Status"
         colStatus.MinimumWidth = 6
         colStatus.Name = "colStatus"
+        colStatus.ReadOnly = True
         ' 
         ' colEdit
         ' 
+        colEdit.FillWeight = 70.0F
         colEdit.HeaderText = "Edit"
         colEdit.MinimumWidth = 6
         colEdit.Name = "colEdit"
+        colEdit.ReadOnly = True
+        colEdit.Resizable = DataGridViewTriState.True
+        colEdit.SortMode = DataGridViewColumnSortMode.Automatic
+        colEdit.Text = "Edit"
+        colEdit.UseColumnTextForButtonValue = True
         ' 
         ' colDelete
         ' 
+        colDelete.FillWeight = 75.0F
         colDelete.HeaderText = "Delete"
         colDelete.MinimumWidth = 6
         colDelete.Name = "colDelete"
-        colDelete.Text = "[Delete]"
+        colDelete.ReadOnly = True
+        colDelete.Resizable = DataGridViewTriState.True
+        colDelete.SortMode = DataGridViewColumnSortMode.Automatic
+        colDelete.Text = "Delete"
+        colDelete.UseColumnTextForButtonValue = True
         ' 
         ' btnAddGroomingBooking
         ' 
-        btnAddGroomingBooking.BackColor = Color.SaddleBrown
-        btnAddGroomingBooking.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnAddGroomingBooking.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnAddGroomingBooking.BackColor = Color.FromArgb(96, 52, 16)
+        btnAddGroomingBooking.FlatAppearance.BorderSize = 0
+        btnAddGroomingBooking.FlatStyle = FlatStyle.Flat
+        btnAddGroomingBooking.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnAddGroomingBooking.ForeColor = Color.WhiteSmoke
-        btnAddGroomingBooking.Location = New Point(603, 80)
-        btnAddGroomingBooking.Margin = New Padding(3, 4, 3, 4)
+        btnAddGroomingBooking.Location = New Point(930, 82)
         btnAddGroomingBooking.Name = "btnAddGroomingBooking"
-        btnAddGroomingBooking.Size = New Size(156, 34)
+        btnAddGroomingBooking.Size = New Size(160, 38)
         btnAddGroomingBooking.TabIndex = 6
-        btnAddGroomingBooking.Text = "+Grooming Booking"
+        btnAddGroomingBooking.Text = "+ Add Booking"
         btnAddGroomingBooking.UseVisualStyleBackColor = False
         ' 
         ' btnRefresh
         ' 
-        btnRefresh.BackColor = Color.SaddleBrown
-        btnRefresh.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnRefresh.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnRefresh.BackColor = Color.Sienna
+        btnRefresh.FlatAppearance.BorderSize = 0
+        btnRefresh.FlatStyle = FlatStyle.Flat
+        btnRefresh.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnRefresh.ForeColor = Color.WhiteSmoke
-        btnRefresh.Location = New Point(765, 80)
-        btnRefresh.Margin = New Padding(3, 4, 3, 4)
+        btnRefresh.Location = New Point(785, 82)
         btnRefresh.Name = "btnRefresh"
-        btnRefresh.Size = New Size(137, 34)
+        btnRefresh.Size = New Size(130, 38)
         btnRefresh.TabIndex = 3
         btnRefresh.Text = "Refresh"
         btnRefresh.UseVisualStyleBackColor = False
         ' 
         ' txtSearch
         ' 
-        txtSearch.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        txtSearch.ForeColor = Color.Sienna
-        txtSearch.Location = New Point(24, 80)
-        txtSearch.Margin = New Padding(3, 4, 3, 4)
+        txtSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Left
+        txtSearch.BackColor = Color.White
+        txtSearch.BorderStyle = BorderStyle.FixedSingle
+        txtSearch.Font = New Font("Segoe UI", 10.0F)
+        txtSearch.ForeColor = Color.FromArgb(107, 98, 91)
+        txtSearch.Location = New Point(20, 84)
         txtSearch.Name = "txtSearch"
-        txtSearch.Size = New Size(398, 27)
+        txtSearch.Size = New Size(575, 30)
         txtSearch.TabIndex = 1
         txtSearch.Text = "Search booking..."
-        txtSearch.UseWaitCursor = True
         ' 
         ' lblTitle
         ' 
         lblTitle.AutoSize = True
-        lblTitle.Font = New Font("Lucida Sans Unicode", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblTitle.Location = New Point(20, 19)
+        lblTitle.Font = New Font("Georgia", 20.0F, FontStyle.Bold)
+        lblTitle.ForeColor = Color.FromArgb(61, 40, 27)
+        lblTitle.Location = New Point(20, 20)
         lblTitle.Name = "lblTitle"
-        lblTitle.Size = New Size(474, 34)
+        lblTitle.Size = New Size(460, 39)
         lblTitle.TabIndex = 0
         lblTitle.Text = "Grooming Booking Management"
         ' 
         ' btnGoBackDashboard
         ' 
+        btnGoBackDashboard.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnGoBackDashboard.BackColor = Color.SaddleBrown
-        btnGoBackDashboard.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnGoBackDashboard.FlatAppearance.BorderSize = 0
+        btnGoBackDashboard.FlatStyle = FlatStyle.Flat
+        btnGoBackDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnGoBackDashboard.ForeColor = Color.WhiteSmoke
-        btnGoBackDashboard.Location = New Point(441, 80)
-        btnGoBackDashboard.Margin = New Padding(3, 4, 3, 4)
+        btnGoBackDashboard.Location = New Point(625, 82)
         btnGoBackDashboard.Name = "btnGoBackDashboard"
-        btnGoBackDashboard.Size = New Size(156, 34)
+        btnGoBackDashboard.Size = New Size(145, 38)
         btnGoBackDashboard.TabIndex = 8
         btnGoBackDashboard.Text = "Dashboard"
         btnGoBackDashboard.UseVisualStyleBackColor = False
         ' 
         ' frmGroomingBooking
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(942, 754)
+        BackColor = Color.FromArgb(235, 221, 202)
+        ClientSize = New Size(1160, 800)
         Controls.Add(pnlGroomingBooking)
-        Margin = New Padding(3, 4, 3, 4)
+        MinimumSize = New Size(1050, 700)
         Name = "frmGroomingBooking"
-        Text = "Gromming Booking Management"
+        StartPosition = FormStartPosition.CenterScreen
+        Text = "Grooming Booking Management"
         pnlGroomingBooking.ResumeLayout(False)
         pnlGroomingBooking.PerformLayout()
         CType(dgvGroomingBooking, ComponentModel.ISupportInitialize).EndInit()
@@ -216,4 +283,5 @@ Partial Class frmGroomingBooking
     Friend WithEvents colEdit As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents colDelete As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents btnGoBackDashboard As Button
+
 End Class

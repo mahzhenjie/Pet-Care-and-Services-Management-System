@@ -17,8 +17,8 @@ Partial Class frmPet
     'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
 
-    'NOTE: The following procedure is required by the Windows Form Designer
-    'It can be modified using the Windows Form Designer.
+    'NOTE: The following procedure is required by the Windows Form Designer.
+    'It can be modified using the code editor.
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
@@ -44,156 +44,232 @@ Partial Class frmPet
         ' 
         ' pnlPet
         ' 
-        pnlPet.BackColor = Color.FromArgb(CByte(232), CByte(216), CByte(194))
+        pnlPet.Anchor = CType((((AnchorStyles.Top Or AnchorStyles.Bottom) Or AnchorStyles.Left) Or AnchorStyles.Right), AnchorStyles)
+        pnlPet.BackColor = Color.FromArgb(245, 230, 209)
         pnlPet.Controls.Add(btnGoBackDashboard)
         pnlPet.Controls.Add(txtSearch)
         pnlPet.Controls.Add(btnAddPet)
         pnlPet.Controls.Add(btnRefresh)
         pnlPet.Controls.Add(dgvPet)
         pnlPet.Controls.Add(lblTitle)
-        pnlPet.ForeColor = Color.SaddleBrown
-        pnlPet.Location = New Point(12, 12)
+        pnlPet.Location = New Point(15, 15)
         pnlPet.Name = "pnlPet"
-        pnlPet.Size = New Size(920, 580)
+        pnlPet.Padding = New Padding(20)
+        pnlPet.Size = New Size(1130, 770)
         pnlPet.TabIndex = 1
         ' 
         ' btnGoBackDashboard
         ' 
+        btnGoBackDashboard.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnGoBackDashboard.BackColor = Color.SaddleBrown
-        btnGoBackDashboard.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnGoBackDashboard.FlatAppearance.BorderSize = 0
+        btnGoBackDashboard.FlatStyle = FlatStyle.Flat
+        btnGoBackDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnGoBackDashboard.ForeColor = Color.WhiteSmoke
-        btnGoBackDashboard.Location = New Point(469, 44)
+        btnGoBackDashboard.Location = New Point(625, 82)
         btnGoBackDashboard.Name = "btnGoBackDashboard"
-        btnGoBackDashboard.Size = New Size(137, 34)
+        btnGoBackDashboard.Size = New Size(145, 38)
         btnGoBackDashboard.TabIndex = 8
         btnGoBackDashboard.Text = "Dashboard"
         btnGoBackDashboard.UseVisualStyleBackColor = False
         ' 
         ' txtSearch
         ' 
-        txtSearch.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        txtSearch.ForeColor = Color.Sienna
-        txtSearch.Location = New Point(24, 64)
+        txtSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Left
+        txtSearch.BackColor = Color.White
+        txtSearch.BorderStyle = BorderStyle.FixedSingle
+        txtSearch.Font = New Font("Segoe UI", 10.0F)
+        txtSearch.ForeColor = Color.FromArgb(107, 98, 91)
+        txtSearch.Location = New Point(20, 84)
         txtSearch.Name = "txtSearch"
-        txtSearch.Size = New Size(398, 27)
+        txtSearch.Size = New Size(575, 30)
         txtSearch.TabIndex = 7
         txtSearch.Text = "Search customer..."
         ' 
         ' btnAddPet
         ' 
-        btnAddPet.BackColor = Color.SaddleBrown
-        btnAddPet.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnAddPet.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnAddPet.BackColor = Color.FromArgb(96, 52, 16)
+        btnAddPet.FlatAppearance.BorderSize = 0
+        btnAddPet.FlatStyle = FlatStyle.Flat
+        btnAddPet.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnAddPet.ForeColor = Color.WhiteSmoke
-        btnAddPet.Location = New Point(612, 44)
+        btnAddPet.Location = New Point(930, 82)
         btnAddPet.Name = "btnAddPet"
-        btnAddPet.Size = New Size(137, 34)
+        btnAddPet.Size = New Size(160, 38)
         btnAddPet.TabIndex = 6
-        btnAddPet.Text = "+Add Pet"
+        btnAddPet.Text = "+ Add Pet"
         btnAddPet.UseVisualStyleBackColor = False
         ' 
         ' btnRefresh
         ' 
-        btnRefresh.BackColor = Color.SaddleBrown
-        btnRefresh.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnRefresh.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnRefresh.BackColor = Color.Sienna
+        btnRefresh.FlatAppearance.BorderSize = 0
+        btnRefresh.FlatStyle = FlatStyle.Flat
+        btnRefresh.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnRefresh.ForeColor = Color.WhiteSmoke
-        btnRefresh.Location = New Point(755, 44)
+        btnRefresh.Location = New Point(785, 82)
         btnRefresh.Name = "btnRefresh"
-        btnRefresh.Size = New Size(137, 34)
+        btnRefresh.Size = New Size(130, 38)
         btnRefresh.TabIndex = 3
         btnRefresh.Text = "Refresh"
         btnRefresh.UseVisualStyleBackColor = False
         ' 
         ' dgvPet
         ' 
+        dgvPet.AllowUserToAddRows = False
+        dgvPet.AllowUserToDeleteRows = False
+        dgvPet.AllowUserToResizeRows = False
+        dgvPet.Anchor = CType((((AnchorStyles.Top Or AnchorStyles.Bottom) Or AnchorStyles.Left) Or AnchorStyles.Right), AnchorStyles)
+        dgvPet.AutoGenerateColumns = False
         dgvPet.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-        dgvPet.BackgroundColor = Color.FromArgb(CByte(244), CByte(239), CByte(227))
-        dgvPet.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvPet.Columns.AddRange(New DataGridViewColumn() {colPetID, colCustomerID, colPetName, colGender, colBreed, colWeight, colTemperament, colEdit, colDelete})
-        dgvPet.GridColor = Color.Sienna
-        dgvPet.Location = New Point(24, 97)
+        dgvPet.BackgroundColor = Color.FromArgb(250, 247, 240)
+        dgvPet.BorderStyle = BorderStyle.None
+        dgvPet.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
+        dgvPet.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
+        dgvPet.ColumnHeadersDefaultCellStyle = New DataGridViewCellStyle With {
+            .BackColor = Color.FromArgb(96, 52, 16),
+            .ForeColor = Color.WhiteSmoke,
+            .Font = New Font("Segoe UI", 9.5F, FontStyle.Bold),
+            .Alignment = DataGridViewContentAlignment.MiddleLeft,
+            .SelectionBackColor = Color.FromArgb(96, 52, 16),
+            .SelectionForeColor = Color.WhiteSmoke
+        }
+        dgvPet.ColumnHeadersHeight = 42
+        dgvPet.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        dgvPet.Columns.AddRange(New DataGridViewColumn() {
+            colPetID,
+            colCustomerID,
+            colPetName,
+            colGender,
+            colBreed,
+            colWeight,
+            colTemperament,
+            colEdit,
+            colDelete
+        })
+        dgvPet.DefaultCellStyle = New DataGridViewCellStyle With {
+            .BackColor = Color.White,
+            .ForeColor = Color.FromArgb(61, 40, 27),
+            .Font = New Font("Segoe UI", 9.0F),
+            .SelectionBackColor = Color.FromArgb(232, 216, 194),
+            .SelectionForeColor = Color.FromArgb(61, 40, 27),
+            .Alignment = DataGridViewContentAlignment.MiddleLeft
+        }
+        dgvPet.GridColor = Color.FromArgb(225, 211, 192)
+        dgvPet.Location = New Point(20, 140)
+        dgvPet.MultiSelect = False
         dgvPet.Name = "dgvPet"
-        dgvPet.RightToLeft = RightToLeft.No
-        dgvPet.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
-        dgvPet.RowHeadersWidth = 51
-        dgvPet.RowTemplate.Height = 24
-        dgvPet.Size = New Size(868, 455)
+        dgvPet.ReadOnly = True
+        dgvPet.RowHeadersVisible = False
+        dgvPet.RowTemplate.Height = 38
+        dgvPet.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        dgvPet.Size = New Size(1090, 605)
         dgvPet.TabIndex = 3
         ' 
         ' colPetID
         ' 
-        colPetID.FillWeight = 135F
+        colPetID.FillWeight = 80.0F
         colPetID.HeaderText = "Pet ID"
         colPetID.MinimumWidth = 6
         colPetID.Name = "colPetID"
+        colPetID.ReadOnly = True
         ' 
         ' colCustomerID
         ' 
-        colCustomerID.FillWeight = 135F
-        colCustomerID.HeaderText = "CustomerID"
+        colCustomerID.FillWeight = 90.0F
+        colCustomerID.HeaderText = "Customer ID"
         colCustomerID.MinimumWidth = 6
         colCustomerID.Name = "colCustomerID"
+        colCustomerID.ReadOnly = True
         ' 
         ' colPetName
         ' 
+        colPetName.FillWeight = 105.0F
         colPetName.HeaderText = "Pet Name"
         colPetName.MinimumWidth = 6
         colPetName.Name = "colPetName"
+        colPetName.ReadOnly = True
         ' 
         ' colGender
         ' 
+        colGender.FillWeight = 80.0F
         colGender.HeaderText = "Gender"
         colGender.MinimumWidth = 6
         colGender.Name = "colGender"
+        colGender.ReadOnly = True
         ' 
         ' colBreed
         ' 
+        colBreed.FillWeight = 110.0F
         colBreed.HeaderText = "Breed"
         colBreed.MinimumWidth = 6
         colBreed.Name = "colBreed"
+        colBreed.ReadOnly = True
         ' 
         ' colWeight
         ' 
-        colWeight.HeaderText = "Wieght"
+        colWeight.FillWeight = 80.0F
+        colWeight.HeaderText = "Weight"
         colWeight.MinimumWidth = 6
         colWeight.Name = "colWeight"
+        colWeight.ReadOnly = True
         ' 
         ' colTemperament
         ' 
+        colTemperament.FillWeight = 115.0F
         colTemperament.HeaderText = "Temperament"
         colTemperament.MinimumWidth = 6
         colTemperament.Name = "colTemperament"
+        colTemperament.ReadOnly = True
         ' 
         ' colEdit
         ' 
+        colEdit.FillWeight = 70.0F
         colEdit.HeaderText = "Edit"
         colEdit.MinimumWidth = 6
         colEdit.Name = "colEdit"
+        colEdit.ReadOnly = True
+        colEdit.Resizable = DataGridViewTriState.True
+        colEdit.SortMode = DataGridViewColumnSortMode.Automatic
+        colEdit.Text = "Edit"
+        colEdit.UseColumnTextForButtonValue = True
         ' 
         ' colDelete
         ' 
+        colDelete.FillWeight = 70.0F
         colDelete.HeaderText = "Delete"
         colDelete.MinimumWidth = 6
         colDelete.Name = "colDelete"
-        colDelete.Text = "[Delete]"
+        colDelete.ReadOnly = True
+        colDelete.Resizable = DataGridViewTriState.True
+        colDelete.SortMode = DataGridViewColumnSortMode.Automatic
+        colDelete.Text = "Delete"
+        colDelete.UseColumnTextForButtonValue = True
         ' 
         ' lblTitle
         ' 
         lblTitle.AutoSize = True
-        lblTitle.Font = New Font("Lucida Sans Unicode", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblTitle.Location = New Point(20, 15)
+        lblTitle.Font = New Font("Georgia", 20.0F, FontStyle.Bold)
+        lblTitle.ForeColor = Color.FromArgb(61, 40, 27)
+        lblTitle.Location = New Point(20, 20)
         lblTitle.Name = "lblTitle"
-        lblTitle.Size = New Size(252, 34)
+        lblTitle.Size = New Size(280, 39)
         lblTitle.TabIndex = 0
         lblTitle.Text = "Pet Management"
         ' 
         ' frmPet
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(942, 603)
+        BackColor = Color.FromArgb(235, 221, 202)
+        ClientSize = New Size(1160, 800)
         Controls.Add(pnlPet)
+        MinimumSize = New Size(1050, 700)
         Name = "frmPet"
-        Text = "Form1"
+        StartPosition = FormStartPosition.CenterScreen
+        Text = "Pet Management"
         pnlPet.ResumeLayout(False)
         pnlPet.PerformLayout()
         CType(dgvPet, ComponentModel.ISupportInitialize).EndInit()
