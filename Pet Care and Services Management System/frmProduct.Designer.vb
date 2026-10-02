@@ -17,8 +17,8 @@ Partial Class frmProduct
     'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
 
-    'NOTE: The following procedure is required by the Windows Form Designer
-    'It can be modified using the Windows Form Designer.
+    'NOTE: The following procedure is required by the Windows Form Designer.
+    'It can be modified using the code editor.
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
@@ -45,7 +45,8 @@ Partial Class frmProduct
         ' 
         ' pnlProduct
         ' 
-        pnlProduct.BackColor = Color.FromArgb(CByte(232), CByte(216), CByte(194))
+        pnlProduct.Anchor = CType((((AnchorStyles.Top Or AnchorStyles.Bottom) Or AnchorStyles.Left) Or AnchorStyles.Right), AnchorStyles)
+        pnlProduct.BackColor = Color.FromArgb(245, 230, 209)
         pnlProduct.Controls.Add(btnGoBackDashboard)
         pnlProduct.Controls.Add(cboCategory)
         pnlProduct.Controls.Add(dgvProduct)
@@ -53,55 +54,93 @@ Partial Class frmProduct
         pnlProduct.Controls.Add(btnRefresh)
         pnlProduct.Controls.Add(txtSearch)
         pnlProduct.Controls.Add(lblTitle)
-        pnlProduct.ForeColor = Color.SaddleBrown
-        pnlProduct.Location = New Point(12, 15)
-        pnlProduct.Margin = New Padding(3, 4, 3, 4)
+        pnlProduct.Location = New Point(15, 15)
         pnlProduct.Name = "pnlProduct"
-        pnlProduct.Size = New Size(920, 725)
+        pnlProduct.Padding = New Padding(20)
+        pnlProduct.Size = New Size(1130, 770)
         pnlProduct.TabIndex = 3
         ' 
         ' cboCategory
         ' 
-        cboCategory.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        cboCategory.ForeColor = Color.Sienna
+        cboCategory.Anchor = AnchorStyles.Top Or AnchorStyles.Left
+        cboCategory.BackColor = Color.White
+        cboCategory.DropDownStyle = ComboBoxStyle.DropDownList
+        cboCategory.Font = New Font("Segoe UI", 10.0F)
+        cboCategory.ForeColor = Color.FromArgb(61, 40, 27)
         cboCategory.FormattingEnabled = True
-        cboCategory.Location = New Point(369, 87)
-        cboCategory.Margin = New Padding(3, 4, 3, 4)
+        cboCategory.Location = New Point(390, 84)
         cboCategory.Name = "cboCategory"
-        cboCategory.Size = New Size(87, 28)
+        cboCategory.Size = New Size(150, 31)
         cboCategory.TabIndex = 12
-        cboCategory.Text = "Category"
         ' 
         ' dgvProduct
         ' 
+        dgvProduct.AllowUserToAddRows = False
+        dgvProduct.AllowUserToDeleteRows = False
+        dgvProduct.AllowUserToResizeRows = False
+        dgvProduct.Anchor = CType((((AnchorStyles.Top Or AnchorStyles.Bottom) Or AnchorStyles.Left) Or AnchorStyles.Right), AnchorStyles)
+        dgvProduct.AutoGenerateColumns = False
         dgvProduct.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-        dgvProduct.BackgroundColor = Color.FromArgb(CByte(244), CByte(239), CByte(227))
-        dgvProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvProduct.Columns.AddRange(New DataGridViewColumn() {colProductID, colProductName, colCategory, colDescription, colPrice, colStockQuantity, colPhoto, colEdit, colDelete})
-        dgvProduct.GridColor = Color.Sienna
-        dgvProduct.Location = New Point(24, 121)
-        dgvProduct.Margin = New Padding(3, 4, 3, 4)
+        dgvProduct.BackgroundColor = Color.FromArgb(250, 247, 240)
+        dgvProduct.BorderStyle = BorderStyle.None
+        dgvProduct.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
+        dgvProduct.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
+        dgvProduct.ColumnHeadersDefaultCellStyle = New DataGridViewCellStyle With {
+            .BackColor = Color.FromArgb(96, 52, 16),
+            .ForeColor = Color.WhiteSmoke,
+            .Font = New Font("Segoe UI", 9.5F, FontStyle.Bold),
+            .Alignment = DataGridViewContentAlignment.MiddleLeft,
+            .SelectionBackColor = Color.FromArgb(96, 52, 16),
+            .SelectionForeColor = Color.WhiteSmoke
+        }
+        dgvProduct.ColumnHeadersHeight = 42
+        dgvProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        dgvProduct.Columns.AddRange(New DataGridViewColumn() {
+            colProductID,
+            colProductName,
+            colCategory,
+            colDescription,
+            colPrice,
+            colStockQuantity,
+            colPhoto,
+            colEdit,
+            colDelete
+        })
+        dgvProduct.DefaultCellStyle = New DataGridViewCellStyle With {
+            .BackColor = Color.White,
+            .ForeColor = Color.FromArgb(61, 40, 27),
+            .Font = New Font("Segoe UI", 9.0F),
+            .SelectionBackColor = Color.FromArgb(232, 216, 194),
+            .SelectionForeColor = Color.FromArgb(61, 40, 27),
+            .Alignment = DataGridViewContentAlignment.MiddleLeft
+        }
+        dgvProduct.GridColor = Color.FromArgb(225, 211, 192)
+        dgvProduct.Location = New Point(20, 140)
+        dgvProduct.MultiSelect = False
         dgvProduct.Name = "dgvProduct"
+        dgvProduct.ReadOnly = True
         dgvProduct.RightToLeft = RightToLeft.No
-        dgvProduct.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
-        dgvProduct.RowHeadersWidth = 51
-        dgvProduct.RowTemplate.Height = 80
-        dgvProduct.Size = New Size(868, 569)
+        dgvProduct.RowHeadersVisible = False
+        dgvProduct.RowTemplate.Height = 70
+        dgvProduct.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        dgvProduct.Size = New Size(1090, 605)
         dgvProduct.TabIndex = 7
         ' 
         ' colProductID
         ' 
-        colProductID.FillWeight = 100.0F
+        colProductID.FillWeight = 80.0F
         colProductID.HeaderText = "Product ID"
         colProductID.MinimumWidth = 6
         colProductID.Name = "colProductID"
+        colProductID.ReadOnly = True
         ' 
         ' colProductName
         ' 
-        colProductName.FillWeight = 125.0F
+        colProductName.FillWeight = 120.0F
         colProductName.HeaderText = "Product Name"
         colProductName.MinimumWidth = 6
         colProductName.Name = "colProductName"
+        colProductName.ReadOnly = True
         ' 
         ' colCategory
         ' 
@@ -109,35 +148,40 @@ Partial Class frmProduct
         colCategory.HeaderText = "Category"
         colCategory.MinimumWidth = 6
         colCategory.Name = "colCategory"
+        colCategory.ReadOnly = True
         ' 
         ' colDescription
         ' 
-        colDescription.FillWeight = 180.0F
+        colDescription.FillWeight = 160.0F
         colDescription.HeaderText = "Description"
         colDescription.MinimumWidth = 6
         colDescription.Name = "colDescription"
+        colDescription.ReadOnly = True
         ' 
         ' colPrice
         ' 
-        colPrice.FillWeight = 80.0F
+        colPrice.FillWeight = 75.0F
         colPrice.HeaderText = "Price"
         colPrice.MinimumWidth = 6
         colPrice.Name = "colPrice"
+        colPrice.ReadOnly = True
         ' 
         ' colStockQuantity
         ' 
-        colStockQuantity.FillWeight = 90.0F
+        colStockQuantity.FillWeight = 95.0F
         colStockQuantity.HeaderText = "Stock Quantity"
         colStockQuantity.MinimumWidth = 6
         colStockQuantity.Name = "colStockQuantity"
+        colStockQuantity.ReadOnly = True
         ' 
         ' colPhoto
         ' 
-        colPhoto.FillWeight = 100.0F
+        colPhoto.FillWeight = 95.0F
         colPhoto.HeaderText = "Photo"
         colPhoto.ImageLayout = DataGridViewImageCellLayout.Zoom
         colPhoto.MinimumWidth = 6
         colPhoto.Name = "colPhoto"
+        colPhoto.ReadOnly = True
         ' 
         ' colEdit
         ' 
@@ -145,73 +189,90 @@ Partial Class frmProduct
         colEdit.HeaderText = "Edit"
         colEdit.MinimumWidth = 6
         colEdit.Name = "colEdit"
-        colEdit.Text = "[Edit]"
+        colEdit.ReadOnly = True
+        colEdit.Resizable = DataGridViewTriState.True
+        colEdit.SortMode = DataGridViewColumnSortMode.Automatic
+        colEdit.Text = "Edit"
+        colEdit.UseColumnTextForButtonValue = True
         ' 
         ' colDelete
         ' 
-        colDelete.FillWeight = 70.0F
+        colDelete.FillWeight = 75.0F
         colDelete.HeaderText = "Delete"
         colDelete.MinimumWidth = 6
         colDelete.Name = "colDelete"
-        colDelete.Text = "[Delete]"
+        colDelete.ReadOnly = True
+        colDelete.Resizable = DataGridViewTriState.True
+        colDelete.SortMode = DataGridViewColumnSortMode.Automatic
+        colDelete.Text = "Delete"
+        colDelete.UseColumnTextForButtonValue = True
         ' 
         ' btnAddProduct
         ' 
+        btnAddProduct.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnAddProduct.BackColor = Color.SaddleBrown
-        btnAddProduct.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnAddProduct.FlatAppearance.BorderSize = 0
+        btnAddProduct.FlatStyle = FlatStyle.Flat
+        btnAddProduct.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnAddProduct.ForeColor = Color.WhiteSmoke
-        btnAddProduct.Location = New Point(748, 84)
-        btnAddProduct.Margin = New Padding(3, 4, 3, 4)
+        btnAddProduct.Location = New Point(930, 82)
         btnAddProduct.Name = "btnAddProduct"
-        btnAddProduct.Size = New Size(144, 34)
+        btnAddProduct.Size = New Size(160, 38)
         btnAddProduct.TabIndex = 6
-        btnAddProduct.Text = "+Product"
+        btnAddProduct.Text = "+ Add Product"
         btnAddProduct.UseVisualStyleBackColor = False
         ' 
         ' btnRefresh
         ' 
-        btnRefresh.BackColor = Color.SaddleBrown
-        btnRefresh.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnRefresh.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnRefresh.BackColor = Color.Sienna
+        btnRefresh.FlatAppearance.BorderSize = 0
+        btnRefresh.FlatStyle = FlatStyle.Flat
+        btnRefresh.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnRefresh.ForeColor = Color.WhiteSmoke
-        btnRefresh.Location = New Point(605, 84)
-        btnRefresh.Margin = New Padding(3, 4, 3, 4)
+        btnRefresh.Location = New Point(785, 82)
         btnRefresh.Name = "btnRefresh"
-        btnRefresh.Size = New Size(137, 34)
+        btnRefresh.Size = New Size(130, 38)
         btnRefresh.TabIndex = 3
         btnRefresh.Text = "Refresh"
         btnRefresh.UseVisualStyleBackColor = False
         ' 
         ' txtSearch
         ' 
-        txtSearch.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        txtSearch.ForeColor = Color.Sienna
-        txtSearch.Location = New Point(24, 80)
-        txtSearch.Margin = New Padding(3, 4, 3, 4)
+        txtSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Left
+        txtSearch.BackColor = Color.White
+        txtSearch.BorderStyle = BorderStyle.FixedSingle
+        txtSearch.Font = New Font("Segoe UI", 10.0F)
+        txtSearch.ForeColor = Color.FromArgb(107, 98, 91)
+        txtSearch.Location = New Point(20, 84)
         txtSearch.Name = "txtSearch"
-        txtSearch.Size = New Size(313, 27)
+        txtSearch.Size = New Size(355, 30)
         txtSearch.TabIndex = 1
         txtSearch.Text = "Search product..."
-        txtSearch.UseWaitCursor = True
+        txtSearch.UseWaitCursor = False
         ' 
         ' lblTitle
         ' 
         lblTitle.AutoSize = True
-        lblTitle.Font = New Font("Lucida Sans Unicode", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblTitle.Location = New Point(20, 19)
+        lblTitle.Font = New Font("Georgia", 20.0F, FontStyle.Bold)
+        lblTitle.ForeColor = Color.FromArgb(61, 40, 27)
+        lblTitle.Location = New Point(20, 20)
         lblTitle.Name = "lblTitle"
-        lblTitle.Size = New Size(317, 34)
+        lblTitle.Size = New Size(330, 39)
         lblTitle.TabIndex = 0
         lblTitle.Text = "Product Management"
         ' 
         ' btnGoBackDashboard
         ' 
+        btnGoBackDashboard.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnGoBackDashboard.BackColor = Color.SaddleBrown
-        btnGoBackDashboard.Font = New Font("Lucida Sans Unicode", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnGoBackDashboard.FlatAppearance.BorderSize = 0
+        btnGoBackDashboard.FlatStyle = FlatStyle.Flat
+        btnGoBackDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnGoBackDashboard.ForeColor = Color.WhiteSmoke
-        btnGoBackDashboard.Location = New Point(462, 85)
-        btnGoBackDashboard.Margin = New Padding(3, 4, 3, 4)
+        btnGoBackDashboard.Location = New Point(625, 82)
         btnGoBackDashboard.Name = "btnGoBackDashboard"
-        btnGoBackDashboard.Size = New Size(137, 34)
+        btnGoBackDashboard.Size = New Size(145, 38)
         btnGoBackDashboard.TabIndex = 13
         btnGoBackDashboard.Text = "Dashboard"
         btnGoBackDashboard.UseVisualStyleBackColor = False
@@ -220,11 +281,13 @@ Partial Class frmProduct
         ' 
         AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(942, 754)
+        BackColor = Color.FromArgb(235, 221, 202)
+        ClientSize = New Size(1160, 800)
         Controls.Add(pnlProduct)
-        Margin = New Padding(3, 4, 3, 4)
+        MinimumSize = New Size(1050, 700)
         Name = "frmProduct"
-        Text = "Product"
+        StartPosition = FormStartPosition.CenterScreen
+        Text = "Product Management"
         pnlProduct.ResumeLayout(False)
         pnlProduct.PerformLayout()
         CType(dgvProduct, ComponentModel.ISupportInitialize).EndInit()

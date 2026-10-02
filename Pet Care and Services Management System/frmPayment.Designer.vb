@@ -22,7 +22,9 @@ Partial Class frmPayment
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         pnlPayment = New Panel()
+        btnGoBackDashboard = New Button()
         cboMethod = New ComboBox()
         cboStatus = New ComboBox()
         txtSearch = New TextBox()
@@ -38,15 +40,14 @@ Partial Class frmPayment
         colEdit = New DataGridViewButtonColumn()
         colDelete = New DataGridViewButtonColumn()
         lblTitle = New Label()
-        btnGoBackDashboard = New Button()
         pnlPayment.SuspendLayout()
         CType(dgvPayment, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' pnlPayment
         ' 
-        pnlPayment.Anchor = CType((((AnchorStyles.Top Or AnchorStyles.Bottom) Or AnchorStyles.Left) Or AnchorStyles.Right), AnchorStyles)
-        pnlPayment.BackColor = Color.FromArgb(245, 230, 209)
+        pnlPayment.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        pnlPayment.BackColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
         pnlPayment.Controls.Add(btnGoBackDashboard)
         pnlPayment.Controls.Add(cboMethod)
         pnlPayment.Controls.Add(cboStatus)
@@ -60,13 +61,27 @@ Partial Class frmPayment
         pnlPayment.Size = New Size(1130, 770)
         pnlPayment.TabIndex = 2
         ' 
+        ' btnGoBackDashboard
+        ' 
+        btnGoBackDashboard.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnGoBackDashboard.BackColor = Color.SaddleBrown
+        btnGoBackDashboard.FlatAppearance.BorderSize = 0
+        btnGoBackDashboard.FlatStyle = FlatStyle.Flat
+        btnGoBackDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        btnGoBackDashboard.ForeColor = Color.WhiteSmoke
+        btnGoBackDashboard.Location = New Point(819, 84)
+        btnGoBackDashboard.Name = "btnGoBackDashboard"
+        btnGoBackDashboard.Size = New Size(145, 38)
+        btnGoBackDashboard.TabIndex = 15
+        btnGoBackDashboard.Text = "Dashboard"
+        btnGoBackDashboard.UseVisualStyleBackColor = False
+        ' 
         ' cboMethod
         ' 
-        cboMethod.Anchor = AnchorStyles.Top Or AnchorStyles.Left
         cboMethod.BackColor = Color.White
         cboMethod.DropDownStyle = ComboBoxStyle.DropDownList
-        cboMethod.Font = New Font("Segoe UI", 10.0F)
-        cboMethod.ForeColor = Color.FromArgb(61, 40, 27)
+        cboMethod.Font = New Font("Segoe UI", 10F)
+        cboMethod.ForeColor = Color.FromArgb(CByte(61), CByte(40), CByte(27))
         cboMethod.FormattingEnabled = True
         cboMethod.Location = New Point(520, 84)
         cboMethod.Name = "cboMethod"
@@ -75,11 +90,10 @@ Partial Class frmPayment
         ' 
         ' cboStatus
         ' 
-        cboStatus.Anchor = AnchorStyles.Top Or AnchorStyles.Left
         cboStatus.BackColor = Color.White
         cboStatus.DropDownStyle = ComboBoxStyle.DropDownList
-        cboStatus.Font = New Font("Segoe UI", 10.0F)
-        cboStatus.ForeColor = Color.FromArgb(61, 40, 27)
+        cboStatus.Font = New Font("Segoe UI", 10F)
+        cboStatus.ForeColor = Color.FromArgb(CByte(61), CByte(40), CByte(27))
         cboStatus.FormattingEnabled = True
         cboStatus.Location = New Point(390, 84)
         cboStatus.Name = "cboStatus"
@@ -88,11 +102,10 @@ Partial Class frmPayment
         ' 
         ' txtSearch
         ' 
-        txtSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Left
         txtSearch.BackColor = Color.White
         txtSearch.BorderStyle = BorderStyle.FixedSingle
-        txtSearch.Font = New Font("Segoe UI", 10.0F)
-        txtSearch.ForeColor = Color.FromArgb(107, 98, 91)
+        txtSearch.Font = New Font("Segoe UI", 10F)
+        txtSearch.ForeColor = Color.FromArgb(CByte(107), CByte(98), CByte(91))
         txtSearch.Location = New Point(20, 84)
         txtSearch.Name = "txtSearch"
         txtSearch.Size = New Size(355, 30)
@@ -107,7 +120,7 @@ Partial Class frmPayment
         btnRefresh.FlatStyle = FlatStyle.Flat
         btnRefresh.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnRefresh.ForeColor = Color.WhiteSmoke
-        btnRefresh.Location = New Point(785, 82)
+        btnRefresh.Location = New Point(980, 84)
         btnRefresh.Name = "btnRefresh"
         btnRefresh.Size = New Size(130, 38)
         btnRefresh.TabIndex = 3
@@ -119,49 +132,24 @@ Partial Class frmPayment
         dgvPayment.AllowUserToAddRows = False
         dgvPayment.AllowUserToDeleteRows = False
         dgvPayment.AllowUserToResizeRows = False
-        dgvPayment.Anchor = CType((((AnchorStyles.Top Or AnchorStyles.Bottom) Or AnchorStyles.Left) Or AnchorStyles.Right), AnchorStyles)
-        dgvPayment.AutoGenerateColumns = False
+        dgvPayment.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         dgvPayment.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-        dgvPayment.BackgroundColor = Color.FromArgb(250, 247, 240)
+        dgvPayment.BackgroundColor = Color.FromArgb(CByte(250), CByte(247), CByte(240))
         dgvPayment.BorderStyle = BorderStyle.None
         dgvPayment.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
         dgvPayment.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
-        dgvPayment.ColumnHeadersDefaultCellStyle = New DataGridViewCellStyle With {
-            .BackColor = Color.FromArgb(96, 52, 16),
-            .ForeColor = Color.WhiteSmoke,
-            .Font = New Font("Segoe UI", 9.5F, FontStyle.Bold),
-            .Alignment = DataGridViewContentAlignment.MiddleLeft,
-            .SelectionBackColor = Color.FromArgb(96, 52, 16),
-            .SelectionForeColor = Color.WhiteSmoke
-        }
+        dgvPayment.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         dgvPayment.ColumnHeadersHeight = 42
         dgvPayment.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        dgvPayment.Columns.AddRange(New DataGridViewColumn() {
-            colPaymentID,
-            colCustomerID,
-            colPaymentDate,
-            colAmount,
-            colPaymentMethod,
-            colPaymentType,
-            colPaymentStatus,
-            colEdit,
-            colDelete
-        })
-        dgvPayment.DefaultCellStyle = New DataGridViewCellStyle With {
-            .BackColor = Color.White,
-            .ForeColor = Color.FromArgb(61, 40, 27),
-            .Font = New Font("Segoe UI", 9.0F),
-            .SelectionBackColor = Color.FromArgb(232, 216, 194),
-            .SelectionForeColor = Color.FromArgb(61, 40, 27),
-            .Alignment = DataGridViewContentAlignment.MiddleLeft
-        }
-        dgvPayment.GridColor = Color.FromArgb(225, 211, 192)
+        dgvPayment.Columns.AddRange(New DataGridViewColumn() {colPaymentID, colCustomerID, colPaymentDate, colAmount, colPaymentMethod, colPaymentType, colPaymentStatus, colEdit, colDelete})
+        dgvPayment.GridColor = Color.FromArgb(CByte(225), CByte(211), CByte(192))
         dgvPayment.Location = New Point(20, 140)
         dgvPayment.MultiSelect = False
         dgvPayment.Name = "dgvPayment"
         dgvPayment.ReadOnly = True
         dgvPayment.RightToLeft = RightToLeft.No
         dgvPayment.RowHeadersVisible = False
+        dgvPayment.RowHeadersWidth = 51
         dgvPayment.RowTemplate.Height = 38
         dgvPayment.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         dgvPayment.Size = New Size(1090, 605)
@@ -169,7 +157,7 @@ Partial Class frmPayment
         ' 
         ' colPaymentID
         ' 
-        colPaymentID.FillWeight = 90.0F
+        colPaymentID.FillWeight = 90F
         colPaymentID.HeaderText = "Payment ID"
         colPaymentID.MinimumWidth = 6
         colPaymentID.Name = "colPaymentID"
@@ -177,7 +165,6 @@ Partial Class frmPayment
         ' 
         ' colCustomerID
         ' 
-        colCustomerID.FillWeight = 100.0F
         colCustomerID.HeaderText = "Customer ID"
         colCustomerID.MinimumWidth = 6
         colCustomerID.Name = "colCustomerID"
@@ -185,7 +172,7 @@ Partial Class frmPayment
         ' 
         ' colPaymentDate
         ' 
-        colPaymentDate.FillWeight = 115.0F
+        colPaymentDate.FillWeight = 115F
         colPaymentDate.HeaderText = "Payment Date"
         colPaymentDate.MinimumWidth = 6
         colPaymentDate.Name = "colPaymentDate"
@@ -193,7 +180,7 @@ Partial Class frmPayment
         ' 
         ' colAmount
         ' 
-        colAmount.FillWeight = 90.0F
+        colAmount.FillWeight = 90F
         colAmount.HeaderText = "Amount"
         colAmount.MinimumWidth = 6
         colAmount.Name = "colAmount"
@@ -201,7 +188,7 @@ Partial Class frmPayment
         ' 
         ' colPaymentMethod
         ' 
-        colPaymentMethod.FillWeight = 115.0F
+        colPaymentMethod.FillWeight = 115F
         colPaymentMethod.HeaderText = "Payment Method"
         colPaymentMethod.MinimumWidth = 6
         colPaymentMethod.Name = "colPaymentMethod"
@@ -209,7 +196,7 @@ Partial Class frmPayment
         ' 
         ' colPaymentType
         ' 
-        colPaymentType.FillWeight = 105.0F
+        colPaymentType.FillWeight = 105F
         colPaymentType.HeaderText = "Payment Type"
         colPaymentType.MinimumWidth = 6
         colPaymentType.Name = "colPaymentType"
@@ -217,7 +204,7 @@ Partial Class frmPayment
         ' 
         ' colPaymentStatus
         ' 
-        colPaymentStatus.FillWeight = 115.0F
+        colPaymentStatus.FillWeight = 115F
         colPaymentStatus.HeaderText = "Payment Status"
         colPaymentStatus.MinimumWidth = 6
         colPaymentStatus.Name = "colPaymentStatus"
@@ -225,7 +212,7 @@ Partial Class frmPayment
         ' 
         ' colEdit
         ' 
-        colEdit.FillWeight = 70.0F
+        colEdit.FillWeight = 70F
         colEdit.HeaderText = "Edit"
         colEdit.MinimumWidth = 6
         colEdit.Name = "colEdit"
@@ -237,7 +224,7 @@ Partial Class frmPayment
         ' 
         ' colDelete
         ' 
-        colDelete.FillWeight = 75.0F
+        colDelete.FillWeight = 75F
         colDelete.HeaderText = "Delete"
         colDelete.MinimumWidth = 6
         colDelete.Name = "colDelete"
@@ -250,34 +237,19 @@ Partial Class frmPayment
         ' lblTitle
         ' 
         lblTitle.AutoSize = True
-        lblTitle.Font = New Font("Georgia", 20.0F, FontStyle.Bold)
-        lblTitle.ForeColor = Color.FromArgb(61, 40, 27)
+        lblTitle.Font = New Font("Georgia", 20F, FontStyle.Bold)
+        lblTitle.ForeColor = Color.FromArgb(CByte(61), CByte(40), CByte(27))
         lblTitle.Location = New Point(20, 20)
         lblTitle.Name = "lblTitle"
-        lblTitle.Size = New Size(330, 39)
+        lblTitle.Size = New Size(408, 39)
         lblTitle.TabIndex = 0
         lblTitle.Text = "Payment Management"
         ' 
-        ' btnGoBackDashboard
-        ' 
-        btnGoBackDashboard.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        btnGoBackDashboard.BackColor = Color.SaddleBrown
-        btnGoBackDashboard.FlatAppearance.BorderSize = 0
-        btnGoBackDashboard.FlatStyle = FlatStyle.Flat
-        btnGoBackDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
-        btnGoBackDashboard.ForeColor = Color.WhiteSmoke
-        btnGoBackDashboard.Location = New Point(640, 82)
-        btnGoBackDashboard.Name = "btnGoBackDashboard"
-        btnGoBackDashboard.Size = New Size(145, 38)
-        btnGoBackDashboard.TabIndex = 15
-        btnGoBackDashboard.Text = "Dashboard"
-        btnGoBackDashboard.UseVisualStyleBackColor = False
-        ' 
         ' frmPayment
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.FromArgb(235, 221, 202)
+        BackColor = Color.FromArgb(CByte(235), CByte(221), CByte(202))
         ClientSize = New Size(1160, 800)
         Controls.Add(pnlPayment)
         MinimumSize = New Size(1050, 700)

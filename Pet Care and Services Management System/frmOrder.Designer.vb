@@ -22,7 +22,9 @@ Partial Class frmOrder
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         pnlOrder = New Panel()
+        btnGoBackDashboard = New Button()
         cboOrderStatus = New ComboBox()
         btnAddOrder = New Button()
         dgvOrder = New DataGridView()
@@ -36,15 +38,14 @@ Partial Class frmOrder
         btnRefresh = New Button()
         txtSearch = New TextBox()
         lblTitle = New Label()
-        btnGoBackDashboard = New Button()
         pnlOrder.SuspendLayout()
         CType(dgvOrder, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' pnlOrder
         ' 
-        pnlOrder.Anchor = CType((((AnchorStyles.Top Or AnchorStyles.Bottom) Or AnchorStyles.Left) Or AnchorStyles.Right), AnchorStyles)
-        pnlOrder.BackColor = Color.FromArgb(245, 230, 209)
+        pnlOrder.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        pnlOrder.BackColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
         pnlOrder.Controls.Add(btnGoBackDashboard)
         pnlOrder.Controls.Add(cboOrderStatus)
         pnlOrder.Controls.Add(btnAddOrder)
@@ -52,22 +53,35 @@ Partial Class frmOrder
         pnlOrder.Controls.Add(btnRefresh)
         pnlOrder.Controls.Add(txtSearch)
         pnlOrder.Controls.Add(lblTitle)
-        pnlOrder.Enabled = True
         pnlOrder.Location = New Point(15, 15)
         pnlOrder.Name = "pnlOrder"
         pnlOrder.Padding = New Padding(20)
         pnlOrder.Size = New Size(1130, 770)
         pnlOrder.TabIndex = 6
         ' 
+        ' btnGoBackDashboard
+        ' 
+        btnGoBackDashboard.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnGoBackDashboard.BackColor = Color.SaddleBrown
+        btnGoBackDashboard.FlatAppearance.BorderSize = 0
+        btnGoBackDashboard.FlatStyle = FlatStyle.Flat
+        btnGoBackDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        btnGoBackDashboard.ForeColor = Color.WhiteSmoke
+        btnGoBackDashboard.Location = New Point(625, 82)
+        btnGoBackDashboard.Name = "btnGoBackDashboard"
+        btnGoBackDashboard.Size = New Size(145, 38)
+        btnGoBackDashboard.TabIndex = 11
+        btnGoBackDashboard.Text = "Dashboard"
+        btnGoBackDashboard.UseVisualStyleBackColor = False
+        ' 
         ' cboOrderStatus
         ' 
-        cboOrderStatus.Anchor = AnchorStyles.Top Or AnchorStyles.Left
         cboOrderStatus.BackColor = Color.White
         cboOrderStatus.DropDownStyle = ComboBoxStyle.DropDownList
-        cboOrderStatus.Font = New Font("Segoe UI", 10.0F)
-        cboOrderStatus.ForeColor = Color.FromArgb(61, 40, 27)
+        cboOrderStatus.Font = New Font("Segoe UI", 10F)
+        cboOrderStatus.ForeColor = Color.FromArgb(CByte(61), CByte(40), CByte(27))
         cboOrderStatus.FormattingEnabled = True
-        cboOrderStatus.Location = New Point(615, 84)
+        cboOrderStatus.Location = New Point(449, 87)
         cboOrderStatus.Name = "cboOrderStatus"
         cboOrderStatus.Size = New Size(155, 31)
         cboOrderStatus.TabIndex = 10
@@ -75,7 +89,7 @@ Partial Class frmOrder
         ' btnAddOrder
         ' 
         btnAddOrder.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        btnAddOrder.BackColor = Color.FromArgb(96, 52, 16)
+        btnAddOrder.BackColor = Color.FromArgb(CByte(96), CByte(52), CByte(16))
         btnAddOrder.FlatAppearance.BorderSize = 0
         btnAddOrder.FlatStyle = FlatStyle.Flat
         btnAddOrder.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
@@ -92,47 +106,24 @@ Partial Class frmOrder
         dgvOrder.AllowUserToAddRows = False
         dgvOrder.AllowUserToDeleteRows = False
         dgvOrder.AllowUserToResizeRows = False
-        dgvOrder.Anchor = CType((((AnchorStyles.Top Or AnchorStyles.Bottom) Or AnchorStyles.Left) Or AnchorStyles.Right), AnchorStyles)
-        dgvOrder.AutoGenerateColumns = False
+        dgvOrder.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         dgvOrder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-        dgvOrder.BackgroundColor = Color.FromArgb(250, 247, 240)
+        dgvOrder.BackgroundColor = Color.FromArgb(CByte(250), CByte(247), CByte(240))
         dgvOrder.BorderStyle = BorderStyle.None
         dgvOrder.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
         dgvOrder.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
-        dgvOrder.ColumnHeadersDefaultCellStyle = New DataGridViewCellStyle With {
-            .BackColor = Color.FromArgb(96, 52, 16),
-            .ForeColor = Color.WhiteSmoke,
-            .Font = New Font("Segoe UI", 9.5F, FontStyle.Bold),
-            .Alignment = DataGridViewContentAlignment.MiddleLeft,
-            .SelectionBackColor = Color.FromArgb(96, 52, 16),
-            .SelectionForeColor = Color.WhiteSmoke
-        }
+        dgvOrder.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         dgvOrder.ColumnHeadersHeight = 42
         dgvOrder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        dgvOrder.Columns.AddRange(New DataGridViewColumn() {
-            colOrderID,
-            colCustomerID,
-            colOrderDate,
-            colTotalAmount,
-            colOrderStatus,
-            colView,
-            colDelete
-        })
-        dgvOrder.DefaultCellStyle = New DataGridViewCellStyle With {
-            .BackColor = Color.White,
-            .ForeColor = Color.FromArgb(61, 40, 27),
-            .Font = New Font("Segoe UI", 9.0F),
-            .SelectionBackColor = Color.FromArgb(232, 216, 194),
-            .SelectionForeColor = Color.FromArgb(61, 40, 27),
-            .Alignment = DataGridViewContentAlignment.MiddleLeft
-        }
-        dgvOrder.GridColor = Color.FromArgb(225, 211, 192)
+        dgvOrder.Columns.AddRange(New DataGridViewColumn() {colOrderID, colCustomerID, colOrderDate, colTotalAmount, colOrderStatus, colView, colDelete})
+        dgvOrder.GridColor = Color.FromArgb(CByte(225), CByte(211), CByte(192))
         dgvOrder.Location = New Point(20, 140)
         dgvOrder.MultiSelect = False
         dgvOrder.Name = "dgvOrder"
         dgvOrder.ReadOnly = True
         dgvOrder.RightToLeft = RightToLeft.No
         dgvOrder.RowHeadersVisible = False
+        dgvOrder.RowHeadersWidth = 51
         dgvOrder.RowTemplate.Height = 38
         dgvOrder.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         dgvOrder.Size = New Size(1090, 605)
@@ -140,7 +131,7 @@ Partial Class frmOrder
         ' 
         ' colOrderID
         ' 
-        colOrderID.FillWeight = 90.0F
+        colOrderID.FillWeight = 90F
         colOrderID.HeaderText = "Order ID"
         colOrderID.MinimumWidth = 6
         colOrderID.Name = "colOrderID"
@@ -148,7 +139,6 @@ Partial Class frmOrder
         ' 
         ' colCustomerID
         ' 
-        colCustomerID.FillWeight = 100.0F
         colCustomerID.HeaderText = "Customer ID"
         colCustomerID.MinimumWidth = 6
         colCustomerID.Name = "colCustomerID"
@@ -156,7 +146,7 @@ Partial Class frmOrder
         ' 
         ' colOrderDate
         ' 
-        colOrderDate.FillWeight = 120.0F
+        colOrderDate.FillWeight = 120F
         colOrderDate.HeaderText = "Order Date"
         colOrderDate.MinimumWidth = 6
         colOrderDate.Name = "colOrderDate"
@@ -164,7 +154,7 @@ Partial Class frmOrder
         ' 
         ' colTotalAmount
         ' 
-        colTotalAmount.FillWeight = 120.0F
+        colTotalAmount.FillWeight = 120F
         colTotalAmount.HeaderText = "Total Amount"
         colTotalAmount.MinimumWidth = 6
         colTotalAmount.Name = "colTotalAmount"
@@ -172,7 +162,7 @@ Partial Class frmOrder
         ' 
         ' colOrderStatus
         ' 
-        colOrderStatus.FillWeight = 110.0F
+        colOrderStatus.FillWeight = 110F
         colOrderStatus.HeaderText = "Order Status"
         colOrderStatus.MinimumWidth = 6
         colOrderStatus.Name = "colOrderStatus"
@@ -180,7 +170,7 @@ Partial Class frmOrder
         ' 
         ' colView
         ' 
-        colView.FillWeight = 75.0F
+        colView.FillWeight = 75F
         colView.HeaderText = "View"
         colView.MinimumWidth = 6
         colView.Name = "colView"
@@ -192,7 +182,7 @@ Partial Class frmOrder
         ' 
         ' colDelete
         ' 
-        colDelete.FillWeight = 75.0F
+        colDelete.FillWeight = 75F
         colDelete.HeaderText = "Delete"
         colDelete.MinimumWidth = 6
         colDelete.Name = "colDelete"
@@ -219,48 +209,32 @@ Partial Class frmOrder
         ' 
         ' txtSearch
         ' 
-        txtSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Left
         txtSearch.BackColor = Color.White
         txtSearch.BorderStyle = BorderStyle.FixedSingle
-        txtSearch.Font = New Font("Segoe UI", 10.0F)
-        txtSearch.ForeColor = Color.FromArgb(107, 98, 91)
+        txtSearch.Font = New Font("Segoe UI", 10F)
+        txtSearch.ForeColor = Color.FromArgb(CByte(107), CByte(98), CByte(91))
         txtSearch.Location = New Point(20, 84)
         txtSearch.Name = "txtSearch"
-        txtSearch.Size = New Size(575, 30)
+        txtSearch.Size = New Size(395, 30)
         txtSearch.TabIndex = 1
         txtSearch.Text = "Search order..."
         ' 
         ' lblTitle
         ' 
         lblTitle.AutoSize = True
-        lblTitle.Font = New Font("Georgia", 20.0F, FontStyle.Bold)
-        lblTitle.ForeColor = Color.FromArgb(61, 40, 27)
+        lblTitle.Font = New Font("Georgia", 20F, FontStyle.Bold)
+        lblTitle.ForeColor = Color.FromArgb(CByte(61), CByte(40), CByte(27))
         lblTitle.Location = New Point(20, 20)
         lblTitle.Name = "lblTitle"
-        lblTitle.Size = New Size(300, 39)
+        lblTitle.Size = New Size(360, 39)
         lblTitle.TabIndex = 0
         lblTitle.Text = "Order Management"
         ' 
-        ' btnGoBackDashboard
-        ' 
-        btnGoBackDashboard.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        btnGoBackDashboard.BackColor = Color.SaddleBrown
-        btnGoBackDashboard.FlatAppearance.BorderSize = 0
-        btnGoBackDashboard.FlatStyle = FlatStyle.Flat
-        btnGoBackDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
-        btnGoBackDashboard.ForeColor = Color.WhiteSmoke
-        btnGoBackDashboard.Location = New Point(625, 82)
-        btnGoBackDashboard.Name = "btnGoBackDashboard"
-        btnGoBackDashboard.Size = New Size(145, 38)
-        btnGoBackDashboard.TabIndex = 11
-        btnGoBackDashboard.Text = "Dashboard"
-        btnGoBackDashboard.UseVisualStyleBackColor = False
-        ' 
         ' frmOrder
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.FromArgb(235, 221, 202)
+        BackColor = Color.FromArgb(CByte(235), CByte(221), CByte(202))
         ClientSize = New Size(1160, 800)
         Controls.Add(pnlOrder)
         MinimumSize = New Size(1050, 700)
