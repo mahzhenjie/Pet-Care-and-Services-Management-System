@@ -53,13 +53,11 @@ Partial Class frmPetVideos
         flpVideos.AutoScroll = True
         flpVideos.BackColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
         flpVideos.Dock = DockStyle.Fill
-        flpVideos.FlowDirection = FlowDirection.LeftToRight
         flpVideos.Location = New Point(0, 15)
         flpVideos.Name = "flpVideos"
         flpVideos.Padding = New Padding(5)
         flpVideos.Size = New Size(1144, 805)
         flpVideos.TabIndex = 0
-        flpVideos.WrapContents = True
         ' 
         ' pnlToolbar
         ' 
@@ -123,21 +121,21 @@ Partial Class frmPetVideos
         ' txtSearch
         ' 
         txtSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        txtSearch.Font = New Font("Segoe UI", 10.0F)
+        txtSearch.Font = New Font("Segoe UI", 10F)
         txtSearch.Location = New Point(90, 18)
         txtSearch.Name = "txtSearch"
-        txtSearch.Size = New Size(515, 30)
+        txtSearch.Size = New Size(515, 34)
         txtSearch.TabIndex = 1
         txtSearch.Text = "Search pet video..."
         ' 
         ' lblSearch
         ' 
         lblSearch.AutoSize = True
-        lblSearch.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        lblSearch.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         lblSearch.ForeColor = Color.SaddleBrown
         lblSearch.Location = New Point(15, 22)
         lblSearch.Name = "lblSearch"
-        lblSearch.Size = New Size(63, 23)
+        lblSearch.Size = New Size(75, 28)
         lblSearch.TabIndex = 0
         lblSearch.Text = "Search"
         ' 
@@ -159,18 +157,18 @@ Partial Class frmPetVideos
         lblSubtitle.ForeColor = Color.FromArgb(CByte(107), CByte(98), CByte(91))
         lblSubtitle.Location = New Point(20, 49)
         lblSubtitle.Name = "lblSubtitle"
-        lblSubtitle.Size = New Size(360, 21)
+        lblSubtitle.Size = New Size(439, 25)
         lblSubtitle.TabIndex = 1
         lblSubtitle.Text = "Manage and view pet boarding and activity videos."
         ' 
         ' lblTitle
         ' 
         lblTitle.AutoSize = True
-        lblTitle.Font = New Font("Georgia", 20.0F, FontStyle.Bold)
+        lblTitle.Font = New Font("Georgia", 20F, FontStyle.Bold)
         lblTitle.ForeColor = Color.FromArgb(CByte(61), CByte(40), CByte(27))
         lblTitle.Location = New Point(18, 12)
         lblTitle.Name = "lblTitle"
-        lblTitle.Size = New Size(439, 39)
+        lblTitle.Size = New Size(518, 46)
         lblTitle.TabIndex = 0
         lblTitle.Text = "Pet Videos Management"
         ' 

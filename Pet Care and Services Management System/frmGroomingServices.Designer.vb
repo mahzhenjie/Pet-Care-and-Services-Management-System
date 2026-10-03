@@ -29,16 +29,14 @@ Partial Class frmGrommingServices
         pnlHeader = New Panel()
         lblSubtitle = New Label()
         lblTitle = New Label()
-
         pnlMain.SuspendLayout()
         pnlContent.SuspendLayout()
         pnlToolbar.SuspendLayout()
         pnlHeader.SuspendLayout()
         SuspendLayout()
-
-        '
+        ' 
         ' pnlMain
-        '
+        ' 
         pnlMain.BackColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
         pnlMain.Controls.Add(pnlContent)
         pnlMain.Controls.Add(pnlToolbar)
@@ -49,10 +47,9 @@ Partial Class frmGrommingServices
         pnlMain.Padding = New Padding(20)
         pnlMain.Size = New Size(1184, 1031)
         pnlMain.TabIndex = 0
-
-        '
+        ' 
         ' pnlContent
-        '
+        ' 
         pnlContent.BackColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
         pnlContent.Controls.Add(flpServices)
         pnlContent.Dock = DockStyle.Fill
@@ -61,10 +58,9 @@ Partial Class frmGrommingServices
         pnlContent.Padding = New Padding(0, 15, 0, 0)
         pnlContent.Size = New Size(1144, 836)
         pnlContent.TabIndex = 2
-
-        '
+        ' 
         ' flpServices
-        '
+        ' 
         flpServices.AutoScroll = True
         flpServices.BackColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
         flpServices.Dock = DockStyle.Fill
@@ -73,10 +69,9 @@ Partial Class frmGrommingServices
         flpServices.Padding = New Padding(5)
         flpServices.Size = New Size(1144, 821)
         flpServices.TabIndex = 0
-
-        '
+        ' 
         ' pnlToolbar
-        '
+        ' 
         pnlToolbar.BackColor = Color.FromArgb(CByte(232), CByte(216), CByte(194))
         pnlToolbar.Controls.Add(btnGoBackDashboard)
         pnlToolbar.Controls.Add(btnAddGroomingService)
@@ -88,10 +83,9 @@ Partial Class frmGrommingServices
         pnlToolbar.Name = "pnlToolbar"
         pnlToolbar.Size = New Size(1144, 70)
         pnlToolbar.TabIndex = 1
-
-        '
+        ' 
         ' btnGoBackDashboard
-        '
+        ' 
         btnGoBackDashboard.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnGoBackDashboard.BackColor = Color.SaddleBrown
         btnGoBackDashboard.FlatAppearance.BorderSize = 0
@@ -104,10 +98,9 @@ Partial Class frmGrommingServices
         btnGoBackDashboard.TabIndex = 0
         btnGoBackDashboard.Text = "Back to Dashboard"
         btnGoBackDashboard.UseVisualStyleBackColor = False
-
-        '
+        ' 
         ' btnAddGroomingService
-        '
+        ' 
         btnAddGroomingService.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnAddGroomingService.BackColor = Color.FromArgb(CByte(96), CByte(52), CByte(16))
         btnAddGroomingService.FlatAppearance.BorderSize = 0
@@ -120,10 +113,9 @@ Partial Class frmGrommingServices
         btnAddGroomingService.TabIndex = 1
         btnAddGroomingService.Text = "+ Add Service"
         btnAddGroomingService.UseVisualStyleBackColor = False
-
-        '
+        ' 
         ' btnRefresh
-        '
+        ' 
         btnRefresh.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnRefresh.BackColor = Color.Sienna
         btnRefresh.FlatAppearance.BorderSize = 0
@@ -136,33 +128,30 @@ Partial Class frmGrommingServices
         btnRefresh.TabIndex = 2
         btnRefresh.Text = "Refresh"
         btnRefresh.UseVisualStyleBackColor = False
-
-        '
+        ' 
         ' txtSearch
-        '
+        ' 
         txtSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        txtSearch.Font = New Font("Segoe UI", 10.0F)
+        txtSearch.Font = New Font("Segoe UI", 10F)
         txtSearch.Location = New Point(90, 18)
         txtSearch.Name = "txtSearch"
-        txtSearch.Size = New Size(515, 30)
+        txtSearch.Size = New Size(515, 34)
         txtSearch.TabIndex = 3
         txtSearch.Text = "Search grooming service..."
-
-        '
+        ' 
         ' lblSearch
-        '
+        ' 
         lblSearch.AutoSize = True
-        lblSearch.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        lblSearch.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         lblSearch.ForeColor = Color.SaddleBrown
         lblSearch.Location = New Point(15, 22)
         lblSearch.Name = "lblSearch"
-        lblSearch.Size = New Size(63, 23)
+        lblSearch.Size = New Size(75, 28)
         lblSearch.TabIndex = 4
         lblSearch.Text = "Search"
-
-        '
+        ' 
         ' pnlHeader
-        '
+        ' 
         pnlHeader.BackColor = Color.FromArgb(CByte(252), CByte(235), CByte(213))
         pnlHeader.Controls.Add(lblSubtitle)
         pnlHeader.Controls.Add(lblTitle)
@@ -171,34 +160,31 @@ Partial Class frmGrommingServices
         pnlHeader.Name = "pnlHeader"
         pnlHeader.Size = New Size(1144, 85)
         pnlHeader.TabIndex = 0
-
-        '
+        ' 
         ' lblSubtitle
-        '
+        ' 
         lblSubtitle.AutoSize = True
         lblSubtitle.Font = New Font("Segoe UI", 9.5F)
         lblSubtitle.ForeColor = Color.FromArgb(CByte(107), CByte(98), CByte(91))
         lblSubtitle.Location = New Point(20, 49)
         lblSubtitle.Name = "lblSubtitle"
-        lblSubtitle.Size = New Size(335, 21)
+        lblSubtitle.Size = New Size(408, 25)
         lblSubtitle.TabIndex = 0
         lblSubtitle.Text = "Manage grooming services and service pricing."
-
-        '
+        ' 
         ' lblTitle
-        '
+        ' 
         lblTitle.AutoSize = True
-        lblTitle.Font = New Font("Georgia", 20.0F, FontStyle.Bold)
+        lblTitle.Font = New Font("Georgia", 20F, FontStyle.Bold)
         lblTitle.ForeColor = Color.FromArgb(CByte(61), CByte(40), CByte(27))
         lblTitle.Location = New Point(18, 12)
         lblTitle.Name = "lblTitle"
-        lblTitle.Size = New Size(586, 39)
+        lblTitle.Size = New Size(692, 46)
         lblTitle.TabIndex = 1
         lblTitle.Text = "Grooming Services Management"
-
-        '
+        ' 
         ' frmGrommingServices
-        '
+        ' 
         AutoScaleMode = AutoScaleMode.None
         BackColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
         ClientSize = New Size(1184, 1031)
@@ -207,7 +193,6 @@ Partial Class frmGrommingServices
         Name = "frmGrommingServices"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Grooming Services Management"
-
         pnlMain.ResumeLayout(False)
         pnlContent.ResumeLayout(False)
         pnlToolbar.ResumeLayout(False)

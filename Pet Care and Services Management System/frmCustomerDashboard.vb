@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Runtime.Intrinsics
+Imports MySql.Data.MySqlClient
 
 Public Class frmCustomerDashboard
 
@@ -87,18 +88,15 @@ Public Class frmCustomerDashboard
 
     ' PROFILE
     Private Sub btnProfile_Click(sender As Object, e As EventArgs) Handles btnProfile.Click
-        MessageBox.Show("Profile button is working.", "Testing", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Dim frm As New FrmMyProfile()
+        frm.ShowDialog()
     End Sub
 
     ' PET
     Private Sub btnPet_Click(sender As Object, e As EventArgs) Handles btnPet.Click
-        Try
-            Dim petForm As New frmPet()
-            petForm.Show()
-            Me.Hide()
-        Catch ex As Exception
-            MessageBox.Show("Unable to open Pet Management." & Environment.NewLine & Environment.NewLine & ex.Message, "Navigation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        Dim frm As New FrmMyPets()
+        frm.ShowDialog()
+
     End Sub
 
     ' APPOINTMENTS

@@ -22,9 +22,253 @@ Partial Class FrmGroomingService
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Text = "FrmGroomingService"
+        pnlMain = New Panel()
+        pnlContent = New Panel()
+        flpServices = New FlowLayoutPanel()
+        pnlToolbar = New Panel()
+        btnBackToDashboard = New Button()
+        Button2 = New Button()
+        Button3 = New Button()
+        btnGoBackDashboard = New Button()
+        btnAddBoardingService = New Button()
+        btnRefresh = New Button()
+        txtSearch = New TextBox()
+        lblSearch = New Label()
+        pnlHeader = New Panel()
+        lblSubtitle = New Label()
+        lblTitle = New Label()
+        pnlMain.SuspendLayout()
+        pnlContent.SuspendLayout()
+        pnlToolbar.SuspendLayout()
+        pnlHeader.SuspendLayout()
+        SuspendLayout()
+        ' 
+        ' pnlMain
+        ' 
+        pnlMain.BackColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
+        pnlMain.Controls.Add(pnlContent)
+        pnlMain.Controls.Add(pnlToolbar)
+        pnlMain.Controls.Add(pnlHeader)
+        pnlMain.Dock = DockStyle.Fill
+        pnlMain.Location = New Point(0, 0)
+        pnlMain.Name = "pnlMain"
+        pnlMain.Padding = New Padding(20)
+        pnlMain.Size = New Size(1577, 923)
+        pnlMain.TabIndex = 1
+        ' 
+        ' pnlContent
+        ' 
+        pnlContent.BackColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
+        pnlContent.Controls.Add(flpServices)
+        pnlContent.Dock = DockStyle.Fill
+        pnlContent.Location = New Point(20, 194)
+        pnlContent.Name = "pnlContent"
+        pnlContent.Padding = New Padding(0, 15, 0, 0)
+        pnlContent.Size = New Size(1537, 709)
+        pnlContent.TabIndex = 2
+        ' 
+        ' flpServices
+        ' 
+        flpServices.AutoScroll = True
+        flpServices.BackColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
+        flpServices.Dock = DockStyle.Fill
+        flpServices.Location = New Point(0, 15)
+        flpServices.Name = "flpServices"
+        flpServices.Padding = New Padding(5)
+        flpServices.Size = New Size(1537, 694)
+        flpServices.TabIndex = 0
+        ' 
+        ' pnlToolbar
+        ' 
+        pnlToolbar.BackColor = Color.FromArgb(CByte(232), CByte(216), CByte(194))
+        pnlToolbar.Controls.Add(btnBackToDashboard)
+        pnlToolbar.Controls.Add(Button2)
+        pnlToolbar.Controls.Add(Button3)
+        pnlToolbar.Controls.Add(btnGoBackDashboard)
+        pnlToolbar.Controls.Add(btnAddBoardingService)
+        pnlToolbar.Controls.Add(btnRefresh)
+        pnlToolbar.Controls.Add(txtSearch)
+        pnlToolbar.Controls.Add(lblSearch)
+        pnlToolbar.Dock = DockStyle.Top
+        pnlToolbar.Location = New Point(20, 124)
+        pnlToolbar.Name = "pnlToolbar"
+        pnlToolbar.Size = New Size(1537, 70)
+        pnlToolbar.TabIndex = 1
+        ' 
+        ' btnBackToDashboard
+        ' 
+        btnBackToDashboard.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnBackToDashboard.BackColor = Color.SaddleBrown
+        btnBackToDashboard.FlatAppearance.BorderSize = 0
+        btnBackToDashboard.FlatStyle = FlatStyle.Flat
+        btnBackToDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        btnBackToDashboard.ForeColor = Color.WhiteSmoke
+        btnBackToDashboard.Location = New Point(1304, 17)
+        btnBackToDashboard.Name = "btnBackToDashboard"
+        btnBackToDashboard.Size = New Size(195, 40)
+        btnBackToDashboard.TabIndex = 5
+        btnBackToDashboard.Text = "Back to Dashboard"
+        btnBackToDashboard.UseVisualStyleBackColor = False
+        ' 
+        ' Button2
+        ' 
+        Button2.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        Button2.BackColor = Color.FromArgb(CByte(96), CByte(52), CByte(16))
+        Button2.FlatAppearance.BorderSize = 0
+        Button2.FlatStyle = FlatStyle.Flat
+        Button2.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        Button2.ForeColor = Color.WhiteSmoke
+        Button2.Location = New Point(1074, 17)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(190, 40)
+        Button2.TabIndex = 6
+        Button2.Text = "+ Add Booking"
+        Button2.UseVisualStyleBackColor = False
+        ' 
+        ' Button3
+        ' 
+        Button3.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        Button3.BackColor = Color.Sienna
+        Button3.FlatAppearance.BorderSize = 0
+        Button3.FlatStyle = FlatStyle.Flat
+        Button3.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        Button3.ForeColor = Color.WhiteSmoke
+        Button3.Location = New Point(829, 17)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(207, 40)
+        Button3.TabIndex = 7
+        Button3.Text = "Refresh"
+        Button3.UseVisualStyleBackColor = False
+        ' 
+        ' btnGoBackDashboard
+        ' 
+        btnGoBackDashboard.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnGoBackDashboard.BackColor = Color.SaddleBrown
+        btnGoBackDashboard.FlatAppearance.BorderSize = 0
+        btnGoBackDashboard.FlatStyle = FlatStyle.Flat
+        btnGoBackDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        btnGoBackDashboard.ForeColor = Color.WhiteSmoke
+        btnGoBackDashboard.Location = New Point(2267, 15)
+        btnGoBackDashboard.Name = "btnGoBackDashboard"
+        btnGoBackDashboard.Size = New Size(195, 40)
+        btnGoBackDashboard.TabIndex = 0
+        btnGoBackDashboard.Text = "Back to Dashboard"
+        btnGoBackDashboard.UseVisualStyleBackColor = False
+        ' 
+        ' btnAddBoardingService
+        ' 
+        btnAddBoardingService.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnAddBoardingService.BackColor = Color.FromArgb(CByte(96), CByte(52), CByte(16))
+        btnAddBoardingService.FlatAppearance.BorderSize = 0
+        btnAddBoardingService.FlatStyle = FlatStyle.Flat
+        btnAddBoardingService.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        btnAddBoardingService.ForeColor = Color.WhiteSmoke
+        btnAddBoardingService.Location = New Point(2062, 15)
+        btnAddBoardingService.Name = "btnAddBoardingService"
+        btnAddBoardingService.Size = New Size(190, 40)
+        btnAddBoardingService.TabIndex = 1
+        btnAddBoardingService.Text = "+ Add Service"
+        btnAddBoardingService.UseVisualStyleBackColor = False
+        ' 
+        ' btnRefresh
+        ' 
+        btnRefresh.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnRefresh.BackColor = Color.Sienna
+        btnRefresh.FlatAppearance.BorderSize = 0
+        btnRefresh.FlatStyle = FlatStyle.Flat
+        btnRefresh.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        btnRefresh.ForeColor = Color.WhiteSmoke
+        btnRefresh.Location = New Point(1967, 15)
+        btnRefresh.Name = "btnRefresh"
+        btnRefresh.Size = New Size(85, 40)
+        btnRefresh.TabIndex = 2
+        btnRefresh.Text = "Refresh"
+        btnRefresh.UseVisualStyleBackColor = False
+        ' 
+        ' txtSearch
+        ' 
+        txtSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        txtSearch.Font = New Font("Segoe UI", 10F)
+        txtSearch.Location = New Point(96, 19)
+        txtSearch.Name = "txtSearch"
+        txtSearch.Size = New Size(671, 34)
+        txtSearch.TabIndex = 3
+        txtSearch.Text = "Search grooming service..."
+        ' 
+        ' lblSearch
+        ' 
+        lblSearch.AutoSize = True
+        lblSearch.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
+        lblSearch.ForeColor = Color.SaddleBrown
+        lblSearch.Location = New Point(15, 22)
+        lblSearch.Name = "lblSearch"
+        lblSearch.Size = New Size(75, 28)
+        lblSearch.TabIndex = 4
+        lblSearch.Text = "Search"
+        ' 
+        ' pnlHeader
+        ' 
+        pnlHeader.BackColor = Color.FromArgb(CByte(252), CByte(235), CByte(213))
+        pnlHeader.Controls.Add(lblSubtitle)
+        pnlHeader.Controls.Add(lblTitle)
+        pnlHeader.Dock = DockStyle.Top
+        pnlHeader.Location = New Point(20, 20)
+        pnlHeader.Name = "pnlHeader"
+        pnlHeader.Size = New Size(1537, 104)
+        pnlHeader.TabIndex = 0
+        ' 
+        ' lblSubtitle
+        ' 
+        lblSubtitle.AutoSize = True
+        lblSubtitle.Font = New Font("Segoe UI", 9.5F)
+        lblSubtitle.ForeColor = Color.FromArgb(CByte(107), CByte(98), CByte(91))
+        lblSubtitle.Location = New Point(29, 58)
+        lblSubtitle.Name = "lblSubtitle"
+        lblSubtitle.Size = New Size(336, 25)
+        lblSubtitle.TabIndex = 0
+        lblSubtitle.Text = "Grooming services and service pricing."
+        ' 
+        ' lblTitle
+        ' 
+        lblTitle.AutoSize = True
+        lblTitle.Font = New Font("Georgia", 20F, FontStyle.Bold)
+        lblTitle.ForeColor = Color.FromArgb(CByte(61), CByte(40), CByte(27))
+        lblTitle.Location = New Point(18, 12)
+        lblTitle.Name = "lblTitle"
+        lblTitle.Size = New Size(411, 46)
+        lblTitle.TabIndex = 1
+        lblTitle.Text = "Grooming Services"
+        ' 
+        ' FrmGroomingService
+        ' 
+        AutoScaleDimensions = New SizeF(12F, 30F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(1577, 923)
+        Controls.Add(pnlMain)
+        Name = "FrmGroomingService"
+        Text = "FrmGroomingService"
+        pnlMain.ResumeLayout(False)
+        pnlContent.ResumeLayout(False)
+        pnlToolbar.ResumeLayout(False)
+        pnlToolbar.PerformLayout()
+        pnlHeader.ResumeLayout(False)
+        pnlHeader.PerformLayout()
+        ResumeLayout(False)
     End Sub
+
+    Friend WithEvents pnlMain As Panel
+    Friend WithEvents pnlContent As Panel
+    Friend WithEvents flpServices As FlowLayoutPanel
+    Friend WithEvents pnlToolbar As Panel
+    Friend WithEvents btnGoBackDashboard As Button
+    Friend WithEvents btnAddBoardingService As Button
+    Friend WithEvents btnRefresh As Button
+    Friend WithEvents txtSearch As TextBox
+    Friend WithEvents lblSearch As Label
+    Friend WithEvents pnlHeader As Panel
+    Friend WithEvents lblSubtitle As Label
+    Friend WithEvents lblTitle As Label
+    Friend WithEvents btnBackToDashboard As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
 End Class

@@ -261,4 +261,7 @@ Public Class frmGrommingServices
         Me.Close()
     End Sub
 
+    Private Sub flpServices_Paint(sender As Object, e As PaintEventArgs) Handles flpServices.Paint
+
+    End Sub
 End Class

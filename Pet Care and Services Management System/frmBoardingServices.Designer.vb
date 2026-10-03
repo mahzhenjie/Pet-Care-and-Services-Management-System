@@ -132,21 +132,21 @@ Partial Class frmBoardingServices
         ' txtSearch
         ' 
         txtSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        txtSearch.Font = New Font("Segoe UI", 10.0F)
+        txtSearch.Font = New Font("Segoe UI", 10F)
         txtSearch.Location = New Point(90, 18)
         txtSearch.Name = "txtSearch"
-        txtSearch.Size = New Size(515, 30)
+        txtSearch.Size = New Size(515, 34)
         txtSearch.TabIndex = 3
         txtSearch.Text = "Search boarding service..."
         ' 
         ' lblSearch
         ' 
         lblSearch.AutoSize = True
-        lblSearch.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        lblSearch.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         lblSearch.ForeColor = Color.SaddleBrown
         lblSearch.Location = New Point(15, 22)
         lblSearch.Name = "lblSearch"
-        lblSearch.Size = New Size(63, 23)
+        lblSearch.Size = New Size(75, 28)
         lblSearch.TabIndex = 4
         lblSearch.Text = "Search"
         ' 
@@ -168,18 +168,18 @@ Partial Class frmBoardingServices
         lblSubtitle.ForeColor = Color.FromArgb(CByte(107), CByte(98), CByte(91))
         lblSubtitle.Location = New Point(20, 49)
         lblSubtitle.Name = "lblSubtitle"
-        lblSubtitle.Size = New Size(335, 21)
+        lblSubtitle.Size = New Size(402, 25)
         lblSubtitle.TabIndex = 0
         lblSubtitle.Text = "Manage boarding services and service pricing."
         ' 
         ' lblTitle
         ' 
         lblTitle.AutoSize = True
-        lblTitle.Font = New Font("Georgia", 20.0F, FontStyle.Bold)
+        lblTitle.Font = New Font("Georgia", 20F, FontStyle.Bold)
         lblTitle.ForeColor = Color.FromArgb(CByte(61), CByte(40), CByte(27))
         lblTitle.Location = New Point(18, 12)
         lblTitle.Name = "lblTitle"
-        lblTitle.Size = New Size(586, 39)
+        lblTitle.Size = New Size(675, 46)
         lblTitle.TabIndex = 1
         lblTitle.Text = "Boarding Services Management"
         ' 
