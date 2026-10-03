@@ -200,7 +200,7 @@ Public Class frmCustomerDashboard
     End Sub
 
     ' QUICK ACTION - ADD CUSTOMER
-    Private Sub btnAddCustomer_Click(sender As Object, e As EventArgs) Handles btnAddCustomer.Click
+    Private Sub btnAddCustomer_Click(sender As Object, e As EventArgs)
         MessageBox.Show("Add Customer button is working.", "Testing", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 

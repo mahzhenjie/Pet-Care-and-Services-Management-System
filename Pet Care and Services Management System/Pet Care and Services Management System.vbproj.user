@@ -2,6 +2,21 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmAddMyPet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmAppointments.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmBoardingService.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmBoardingVideos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmCustomerDashboard.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +110,9 @@
     <Compile Update="frmGroomingBooking.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmGroomingService.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmGroomingServices.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +120,24 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmMembership.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmMembershipvb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmMyOrders.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmMyPayment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmMyPets.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmMyProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmNewAppointment.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmOrder.vb">
@@ -116,19 +152,31 @@
     <Compile Update="frmPet.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmPetServices.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmPetVideos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmProduct.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmProducts.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmServices.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmSplash.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="frmVideoView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ThemeColor.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

@@ -44,12 +44,10 @@ Partial Class frmCustomerDashboard
         lblOrderTitle = New Label()
         pnlQuickActions = New Panel()
         PictureBox15 = New PictureBox()
-        PictureBox14 = New PictureBox()
         PictureBox13 = New PictureBox()
         PictureBox16 = New PictureBox()
         btnAddService = New Button()
         btnAddPet = New Button()
-        btnAddCustomer = New Button()
         btnNewAppointmnet = New Button()
         lblQuickActions = New Label()
         pnlRecentAppointments = New Panel()
@@ -116,7 +114,6 @@ Partial Class frmCustomerDashboard
         CType(picOrder, ComponentModel.ISupportInitialize).BeginInit()
         pnlQuickActions.SuspendLayout()
         CType(PictureBox15, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox14, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox13, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox16, ComponentModel.ISupportInitialize).BeginInit()
         pnlRecentAppointments.SuspendLayout()
@@ -150,7 +147,7 @@ Partial Class frmCustomerDashboard
         lblDescription.ForeColor = Color.FromArgb(CByte(61), CByte(40), CByte(27))
         lblDescription.Location = New Point(7, 87)
         lblDescription.Name = "lblDescription"
-        lblDescription.Size = New Size(315, 60)
+        lblDescription.Size = New Size(381, 74)
         lblDescription.TabIndex = 6
         lblDescription.Text = "Manage your pet care services " & vbCrLf & "easily and efficiently."
         ' 
@@ -226,7 +223,7 @@ Partial Class frmCustomerDashboard
         lblPetSubtitle.ForeColor = SystemColors.ControlText
         lblPetSubtitle.Location = New Point(106, 103)
         lblPetSubtitle.Name = "lblPetSubtitle"
-        lblPetSubtitle.Size = New Size(72, 20)
+        lblPetSubtitle.Size = New Size(86, 25)
         lblPetSubtitle.TabIndex = 10
         lblPetSubtitle.Text = "Total Pets"
         ' 
@@ -237,7 +234,7 @@ Partial Class frmCustomerDashboard
         lblPetCount.ForeColor = SystemColors.ControlText
         lblPetCount.Location = New Point(106, 58)
         lblPetCount.Name = "lblPetCount"
-        lblPetCount.Size = New Size(32, 38)
+        lblPetCount.Size = New Size(38, 45)
         lblPetCount.TabIndex = 9
         lblPetCount.Text = "0"
         ' 
@@ -248,7 +245,7 @@ Partial Class frmCustomerDashboard
         lblPetTitle.ForeColor = Color.RoyalBlue
         lblPetTitle.Location = New Point(128, 3)
         lblPetTitle.Name = "lblPetTitle"
-        lblPetTitle.Size = New Size(51, 28)
+        lblPetTitle.Size = New Size(61, 32)
         lblPetTitle.TabIndex = 8
         lblPetTitle.Text = "Pets"
         ' 
@@ -282,7 +279,7 @@ Partial Class frmCustomerDashboard
         lblAppointmentSubtitle.ForeColor = SystemColors.ControlText
         lblAppointmentSubtitle.Location = New Point(104, 103)
         lblAppointmentSubtitle.Name = "lblAppointmentSubtitle"
-        lblAppointmentSubtitle.Size = New Size(156, 20)
+        lblAppointmentSubtitle.Size = New Size(190, 25)
         lblAppointmentSubtitle.TabIndex = 10
         lblAppointmentSubtitle.Text = "Today's Appointments"
         ' 
@@ -293,7 +290,7 @@ Partial Class frmCustomerDashboard
         lblAppointmentCount.ForeColor = SystemColors.ControlText
         lblAppointmentCount.Location = New Point(96, 58)
         lblAppointmentCount.Name = "lblAppointmentCount"
-        lblAppointmentCount.Size = New Size(32, 38)
+        lblAppointmentCount.Size = New Size(38, 45)
         lblAppointmentCount.TabIndex = 9
         lblAppointmentCount.Text = "0"
         ' 
@@ -304,7 +301,7 @@ Partial Class frmCustomerDashboard
         lblAppointmentTitle.ForeColor = Color.DarkKhaki
         lblAppointmentTitle.Location = New Point(76, 3)
         lblAppointmentTitle.Name = "lblAppointmentTitle"
-        lblAppointmentTitle.Size = New Size(146, 28)
+        lblAppointmentTitle.Size = New Size(177, 32)
         lblAppointmentTitle.TabIndex = 8
         lblAppointmentTitle.Text = "Appointments"
         ' 
@@ -338,7 +335,7 @@ Partial Class frmCustomerDashboard
         lblOrderSubtitle.ForeColor = SystemColors.ControlText
         lblOrderSubtitle.Location = New Point(104, 103)
         lblOrderSubtitle.Name = "lblOrderSubtitle"
-        lblOrderSubtitle.Size = New Size(110, 20)
+        lblOrderSubtitle.Size = New Size(135, 25)
         lblOrderSubtitle.TabIndex = 10
         lblOrderSubtitle.Text = "Pending Orders"
         ' 
@@ -349,7 +346,7 @@ Partial Class frmCustomerDashboard
         lblOrderCount.ForeColor = SystemColors.ControlText
         lblOrderCount.Location = New Point(107, 58)
         lblOrderCount.Name = "lblOrderCount"
-        lblOrderCount.Size = New Size(32, 38)
+        lblOrderCount.Size = New Size(38, 45)
         lblOrderCount.TabIndex = 9
         lblOrderCount.Text = "0"
         ' 
@@ -360,7 +357,7 @@ Partial Class frmCustomerDashboard
         lblOrderTitle.ForeColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
         lblOrderTitle.Location = New Point(84, 3)
         lblOrderTitle.Name = "lblOrderTitle"
-        lblOrderTitle.Size = New Size(75, 28)
+        lblOrderTitle.Size = New Size(91, 32)
         lblOrderTitle.TabIndex = 8
         lblOrderTitle.Text = "Orders"
         ' 
@@ -370,43 +367,31 @@ Partial Class frmCustomerDashboard
         pnlQuickActions.BackColor = Color.Cornsilk
         pnlQuickActions.BorderStyle = BorderStyle.FixedSingle
         pnlQuickActions.Controls.Add(PictureBox15)
-        pnlQuickActions.Controls.Add(PictureBox14)
         pnlQuickActions.Controls.Add(PictureBox13)
         pnlQuickActions.Controls.Add(PictureBox16)
         pnlQuickActions.Controls.Add(btnAddService)
         pnlQuickActions.Controls.Add(btnAddPet)
-        pnlQuickActions.Controls.Add(btnAddCustomer)
         pnlQuickActions.Controls.Add(btnNewAppointmnet)
         pnlQuickActions.Controls.Add(lblQuickActions)
         pnlQuickActions.Location = New Point(1061, 495)
         pnlQuickActions.Name = "pnlQuickActions"
-        pnlQuickActions.Size = New Size(298, 395)
+        pnlQuickActions.Size = New Size(298, 394)
         pnlQuickActions.TabIndex = 18
         ' 
         ' PictureBox15
         ' 
         PictureBox15.Image = CType(resources.GetObject("PictureBox15.Image"), Image)
-        PictureBox15.Location = New Point(5, 239)
+        PictureBox15.Location = New Point(5, 165)
         PictureBox15.Name = "PictureBox15"
         PictureBox15.Size = New Size(44, 44)
         PictureBox15.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox15.TabIndex = 8
         PictureBox15.TabStop = False
         ' 
-        ' PictureBox14
-        ' 
-        PictureBox14.Image = CType(resources.GetObject("PictureBox14.Image"), Image)
-        PictureBox14.Location = New Point(5, 159)
-        PictureBox14.Name = "PictureBox14"
-        PictureBox14.Size = New Size(44, 44)
-        PictureBox14.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox14.TabIndex = 7
-        PictureBox14.TabStop = False
-        ' 
         ' PictureBox13
         ' 
         PictureBox13.Image = CType(resources.GetObject("PictureBox13.Image"), Image)
-        PictureBox13.Location = New Point(5, 316)
+        PictureBox13.Location = New Point(5, 242)
         PictureBox13.Name = "PictureBox13"
         PictureBox13.Size = New Size(44, 44)
         PictureBox13.SizeMode = PictureBoxSizeMode.Zoom
@@ -429,7 +414,7 @@ Partial Class frmCustomerDashboard
         btnAddService.FlatStyle = FlatStyle.Flat
         btnAddService.Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnAddService.ForeColor = SystemColors.ControlText
-        btnAddService.Location = New Point(61, 307)
+        btnAddService.Location = New Point(61, 233)
         btnAddService.Name = "btnAddService"
         btnAddService.Size = New Size(221, 44)
         btnAddService.TabIndex = 4
@@ -442,25 +427,12 @@ Partial Class frmCustomerDashboard
         btnAddPet.FlatStyle = FlatStyle.Flat
         btnAddPet.Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnAddPet.ForeColor = SystemColors.ControlText
-        btnAddPet.Location = New Point(61, 231)
+        btnAddPet.Location = New Point(61, 157)
         btnAddPet.Name = "btnAddPet"
         btnAddPet.Size = New Size(221, 44)
         btnAddPet.TabIndex = 3
         btnAddPet.Text = "＋ Add Pet"
         btnAddPet.UseVisualStyleBackColor = False
-        ' 
-        ' btnAddCustomer
-        ' 
-        btnAddCustomer.BackColor = Color.FromArgb(CByte(240), CByte(245), CByte(252))
-        btnAddCustomer.FlatStyle = FlatStyle.Flat
-        btnAddCustomer.Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnAddCustomer.ForeColor = SystemColors.ControlText
-        btnAddCustomer.Location = New Point(61, 155)
-        btnAddCustomer.Name = "btnAddCustomer"
-        btnAddCustomer.Size = New Size(221, 44)
-        btnAddCustomer.TabIndex = 2
-        btnAddCustomer.Text = "＋ Add Customer"
-        btnAddCustomer.UseVisualStyleBackColor = False
         ' 
         ' btnNewAppointmnet
         ' 
@@ -483,7 +455,7 @@ Partial Class frmCustomerDashboard
         lblQuickActions.ForeColor = SystemColors.ControlText
         lblQuickActions.Location = New Point(5, 11)
         lblQuickActions.Name = "lblQuickActions"
-        lblQuickActions.Size = New Size(202, 31)
+        lblQuickActions.Size = New Size(245, 38)
         lblQuickActions.TabIndex = 0
         lblQuickActions.Text = "⚡ Quick Actions"
         ' 
@@ -523,9 +495,9 @@ Partial Class frmCustomerDashboard
         lblRecentTitle.ForeColor = SystemColors.ControlText
         lblRecentTitle.Location = New Point(17, 11)
         lblRecentTitle.Name = "lblRecentTitle"
-        lblRecentTitle.Size = New Size(291, 31)
+        lblRecentTitle.Size = New Size(387, 38)
         lblRecentTitle.TabIndex = 0
-        lblRecentTitle.Text = "📅  Recent Appointments"
+        lblRecentTitle.Text = "📅Upcoming Appointments"
         ' 
         ' pnlWelcome
         ' 
@@ -561,7 +533,7 @@ Partial Class frmCustomerDashboard
         lblWelcomeBack.ForeColor = Color.FromArgb(CByte(61), CByte(40), CByte(27))
         lblWelcomeBack.Location = New Point(3, 9)
         lblWelcomeBack.Name = "lblWelcomeBack"
-        lblWelcomeBack.Size = New Size(404, 59)
+        lblWelcomeBack.Size = New Size(486, 70)
         lblWelcomeBack.TabIndex = 7
         lblWelcomeBack.Text = "Welcome back! 👋"
         ' 
@@ -608,7 +580,7 @@ Partial Class frmCustomerDashboard
         lblCustomer.ForeColor = Color.FromArgb(CByte(61), CByte(40), CByte(27))
         lblCustomer.Location = New Point(943, 65)
         lblCustomer.Name = "lblCustomer"
-        lblCustomer.Size = New Size(117, 31)
+        lblCustomer.Size = New Size(143, 38)
         lblCustomer.TabIndex = 9
         lblCustomer.Text = "Customer"
         ' 
@@ -621,7 +593,7 @@ Partial Class frmCustomerDashboard
         Label5.ForeColor = Color.FromArgb(CByte(107), CByte(98), CByte(91))
         Label5.Location = New Point(943, 42)
         Label5.Name = "Label5"
-        Label5.Size = New Size(84, 23)
+        Label5.Size = New Size(104, 30)
         Label5.TabIndex = 7
         Label5.Text = "Welcome,"
         ' 
@@ -658,7 +630,7 @@ Partial Class frmCustomerDashboard
         lblEmployee.ForeColor = Color.FromArgb(CByte(61), CByte(40), CByte(27))
         lblEmployee.Location = New Point(1799, 65)
         lblEmployee.Name = "lblEmployee"
-        lblEmployee.Size = New Size(118, 31)
+        lblEmployee.Size = New Size(145, 38)
         lblEmployee.TabIndex = 6
         lblEmployee.Text = "Employee"
         lblEmployee.Visible = False
@@ -685,7 +657,7 @@ Partial Class frmCustomerDashboard
         lblWelcome.ForeColor = Color.FromArgb(CByte(107), CByte(98), CByte(91))
         lblWelcome.Location = New Point(1799, 42)
         lblWelcome.Name = "lblWelcome"
-        lblWelcome.Size = New Size(84, 23)
+        lblWelcome.Size = New Size(104, 30)
         lblWelcome.TabIndex = 5
         lblWelcome.Text = "Welcome,"
         lblWelcome.Visible = False
@@ -732,7 +704,7 @@ Partial Class frmCustomerDashboard
         lblDashboardTitle.ForeColor = SystemColors.ControlText
         lblDashboardTitle.Location = New Point(63, 50)
         lblDashboardTitle.Name = "lblDashboardTitle"
-        lblDashboardTitle.Size = New Size(564, 46)
+        lblDashboardTitle.Size = New Size(675, 56)
         lblDashboardTitle.TabIndex = 1
         lblDashboardTitle.Text = "CUSTOMER DASHBOARD"
         ' 
@@ -782,7 +754,7 @@ Partial Class frmCustomerDashboard
         lblSidebarSubtitle.ForeColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
         lblSidebarSubtitle.Location = New Point(99, 104)
         lblSidebarSubtitle.Name = "lblSidebarSubtitle"
-        lblSidebarSubtitle.Size = New Size(168, 20)
+        lblSidebarSubtitle.Size = New Size(202, 25)
         lblSidebarSubtitle.TabIndex = 31
         lblSidebarSubtitle.Text = "MANAGEMENT SYSTEM"
         lblSidebarSubtitle.TextAlign = ContentAlignment.MiddleCenter
@@ -794,7 +766,7 @@ Partial Class frmCustomerDashboard
         lblSidebarTitle.ForeColor = Color.White
         lblSidebarTitle.Location = New Point(99, 40)
         lblSidebarTitle.Name = "lblSidebarTitle"
-        lblSidebarTitle.Size = New Size(151, 56)
+        lblSidebarTitle.Size = New Size(182, 64)
         lblSidebarTitle.TabIndex = 30
         lblSidebarTitle.Text = "PET CARE " & vbCrLf & "AND SERVICES"
         lblSidebarTitle.TextAlign = ContentAlignment.MiddleLeft
@@ -806,7 +778,7 @@ Partial Class frmCustomerDashboard
         Label3.ForeColor = Color.FromArgb(CByte(221), CByte(184), CByte(146))
         Label3.Location = New Point(19, 455)
         Label3.Name = "Label3"
-        Label3.Size = New Size(65, 17)
+        Label3.Size = New Size(82, 21)
         Label3.TabIndex = 29
         Label3.Text = "SERVICES"
         ' 
@@ -817,7 +789,7 @@ Partial Class frmCustomerDashboard
         Label2.ForeColor = Color.FromArgb(CByte(221), CByte(184), CByte(146))
         Label2.Location = New Point(19, 194)
         Label2.Name = "Label2"
-        Label2.Size = New Size(101, 17)
+        Label2.Size = New Size(126, 21)
         Label2.TabIndex = 28
         Label2.Text = "MANAGEMENT"
         ' 
@@ -1090,7 +1062,7 @@ Partial Class frmCustomerDashboard
         btnPet.Name = "btnPet"
         btnPet.Size = New Size(210, 40)
         btnPet.TabIndex = 5
-        btnPet.Text = "Pet"
+        btnPet.Text = "My Pet"
         btnPet.TextAlign = ContentAlignment.MiddleLeft
         btnPet.UseVisualStyleBackColor = True
         ' 
@@ -1115,7 +1087,7 @@ Partial Class frmCustomerDashboard
         btnProfile.Name = "btnProfile"
         btnProfile.Size = New Size(210, 40)
         btnProfile.TabIndex = 3
-        btnProfile.Text = "Profile"
+        btnProfile.Text = "My Profile"
         btnProfile.TextAlign = ContentAlignment.MiddleLeft
         btnProfile.UseVisualStyleBackColor = False
         ' 
@@ -1151,7 +1123,7 @@ Partial Class frmCustomerDashboard
         Label1.ForeColor = Color.White
         Label1.Location = New Point(99, 39)
         Label1.Name = "Label1"
-        Label1.Size = New Size(151, 56)
+        Label1.Size = New Size(182, 64)
         Label1.TabIndex = 1
         Label1.Text = "PET CARE" & vbCrLf & "AND SERVICES"
         Label1.Visible = False
@@ -1162,14 +1134,14 @@ Partial Class frmCustomerDashboard
         MenuStrip1.Items.AddRange(New ToolStripItem() {FileToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(1382, 28)
+        MenuStrip1.Size = New Size(1382, 38)
         MenuStrip1.TabIndex = 1
         MenuStrip1.Text = "MenuStrip1"
         ' 
         ' FileToolStripMenuItem
         ' 
         FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        FileToolStripMenuItem.Size = New Size(46, 24)
+        FileToolStripMenuItem.Size = New Size(60, 34)
         FileToolStripMenuItem.Text = "File"
         ' 
         ' frmCustomerDashboard
@@ -1201,7 +1173,6 @@ Partial Class frmCustomerDashboard
         pnlQuickActions.ResumeLayout(False)
         pnlQuickActions.PerformLayout()
         CType(PictureBox15, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox14, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox13, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox16, ComponentModel.ISupportInitialize).EndInit()
         pnlRecentAppointments.ResumeLayout(False)
@@ -1303,12 +1274,10 @@ Partial Class frmCustomerDashboard
     Friend WithEvents lblOrderTitle As Label
     Friend WithEvents pnlQuickActions As Panel
     Friend WithEvents PictureBox15 As PictureBox
-    Friend WithEvents PictureBox14 As PictureBox
     Friend WithEvents PictureBox13 As PictureBox
     Friend WithEvents PictureBox16 As PictureBox
     Friend WithEvents btnAddService As Button
     Friend WithEvents btnAddPet As Button
-    Friend WithEvents btnAddCustomer As Button
     Friend WithEvents btnNewAppointmnet As Button
     Friend WithEvents lblQuickActions As Label
     Friend WithEvents pnlRecentAppointments As Panel
