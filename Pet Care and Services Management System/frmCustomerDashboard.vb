@@ -101,62 +101,38 @@ Public Class frmCustomerDashboard
 
     ' APPOINTMENTS
     Private Sub btnAppointments_Click(sender As Object, e As EventArgs) Handles btnAppointments.Click
-        Try
-            Dim appointmentForm As New frmGroomingBooking()
-            appointmentForm.Show()
-            Me.Hide()
-        Catch ex As Exception
-            MessageBox.Show("Unable to open Appointments." & Environment.NewLine & Environment.NewLine & ex.Message, "Navigation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        Dim frm As New FrmAppointments()
+        frm.ShowDialog()
     End Sub
 
     ' ORDERS
     Private Sub btnOrders_Click(sender As Object, e As EventArgs) Handles btnOrders.Click
-        Try
-            Dim orderForm As New frmOrder()
-            orderForm.Show()
-            Me.Hide()
-        Catch ex As Exception
-            MessageBox.Show("Unable to open Orders." & Environment.NewLine & Environment.NewLine & ex.Message, "Navigation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        Dim frm As New FrmMyOrders()
+        frm.ShowDialog()
     End Sub
 
     ' GROOMING SERVICES
     Private Sub btnGroomingServices_Click(sender As Object, e As EventArgs) Handles btnGroomingServices.Click
-        Try
-            Dim serviceForm As New frmGrommingServices()
-            serviceForm.Show()
-            Me.Hide()
-        Catch ex As Exception
-            MessageBox.Show("Unable to open Grooming Services." & Environment.NewLine & Environment.NewLine & ex.Message, "Navigation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        Dim frm As New FrmGroomingService()
+        frm.ShowDialog()
     End Sub
 
     ' BOARDING SERVICES
     Private Sub btnBoardingServices_Click(sender As Object, e As EventArgs) Handles btnBoardingServices.Click
-        Try
-            Dim serviceForm As New frmBoardingServices()
-            serviceForm.Show()
-            Me.Hide()
-        Catch ex As Exception
-            MessageBox.Show("Unable to open Boarding Services." & Environment.NewLine & Environment.NewLine & ex.Message, "Navigation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        Dim frm As New FrmBoardingService()
+        frm.ShowDialog()
     End Sub
 
     ' PAYMENTS
     Private Sub btnPayments_Click(sender As Object, e As EventArgs) Handles btnPayments.Click
-        MessageBox.Show("Payment History is not connected yet.", "Payments", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Dim frm As New FrmMyPayment()
+        frm.ShowDialog()
     End Sub
 
     ' BOARDING VIDEOS
     Private Sub btnBoardingVideos_Click(sender As Object, e As EventArgs) Handles btnBoardingVideos.Click
-        Try
-            Dim videoForm As New frmPetVideos()
-            videoForm.Show()
-            Me.Hide()
-        Catch ex As Exception
-            MessageBox.Show("Unable to open Boarding Videos." & Environment.NewLine & Environment.NewLine & ex.Message, "Navigation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        Dim frm As New FrmBoardingVideos()
+        frm.ShowDialog()
     End Sub
 
     ' PRODUCT
@@ -186,7 +162,7 @@ Public Class frmCustomerDashboard
     ' QUICK ACTION - NEW APPOINTMENT
     Private Sub btnNewAppointmnet_Click(sender As Object, e As EventArgs) Handles btnNewAppointmnet.Click
         Try
-            Using appointmentForm As New frmAddGroomingBooking()
+            Using appointmentForm As New FrmBookingGroomingService()
                 appointmentForm.ShowDialog()
             End Using
 
@@ -231,9 +207,16 @@ Public Class frmCustomerDashboard
             CurrentUserRole = ""
 
             Dim loginForm As New frmLogin()
-            loginForm.Show()
             Me.Close()
+            loginForm.Show()
+
         End If
     End Sub
 
+    Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
+        MessageBox.Show("You are already on the Customer Dashboard.",
+                    "Dashboard",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information)
+    End Sub
 End Class

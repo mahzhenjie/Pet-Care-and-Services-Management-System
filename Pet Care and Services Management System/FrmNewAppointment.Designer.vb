@@ -27,6 +27,10 @@ Partial Class FrmNewAppointment
         PictureBox2 = New PictureBox()
         lblMyAppointment = New Label()
         pnlAddPet = New Panel()
+        dtpBookingTime = New DateTimePicker()
+        dtpAppointmentDate = New DateTimePicker()
+        cmbService = New ComboBox()
+        cmbPet = New ComboBox()
         cmbGender = New ComboBox()
         btnCancel = New Button()
         btnBookAppointment = New Button()
@@ -36,10 +40,6 @@ Partial Class FrmNewAppointment
         lblServiceType = New Label()
         lblPetName = New Label()
         lblNewAppoinment = New Label()
-        cmbPet = New ComboBox()
-        cmbService = New ComboBox()
-        dtpAppointmentDate = New DateTimePicker()
-        dtpBookingTime = New DateTimePicker()
         pnlHeader.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         pnlAddPet.SuspendLayout()
@@ -99,10 +99,45 @@ Partial Class FrmNewAppointment
         pnlAddPet.Size = New Size(840, 638)
         pnlAddPet.TabIndex = 17
         ' 
+        ' dtpBookingTime
+        ' 
+        dtpBookingTime.CustomFormat = "hh:mm tt"
+        dtpBookingTime.Font = New Font("Segoe UI", 10F)
+        dtpBookingTime.Format = DateTimePickerFormat.Custom
+        dtpBookingTime.Location = New Point(281, 369)
+        dtpBookingTime.Margin = New Padding(4)
+        dtpBookingTime.Name = "dtpBookingTime"
+        dtpBookingTime.ShowUpDown = True
+        dtpBookingTime.Size = New Size(478, 34)
+        dtpBookingTime.TabIndex = 18
+        ' 
+        ' dtpAppointmentDate
+        ' 
+        dtpAppointmentDate.Format = DateTimePickerFormat.Short
+        dtpAppointmentDate.Location = New Point(281, 306)
+        dtpAppointmentDate.Name = "dtpAppointmentDate"
+        dtpAppointmentDate.Size = New Size(199, 35)
+        dtpAppointmentDate.TabIndex = 8
+        ' 
+        ' cmbService
+        ' 
+        cmbService.FormattingEnabled = True
+        cmbService.Location = New Point(284, 242)
+        cmbService.Name = "cmbService"
+        cmbService.Size = New Size(196, 38)
+        cmbService.TabIndex = 17
+        ' 
+        ' cmbPet
+        ' 
+        cmbPet.FormattingEnabled = True
+        cmbPet.Location = New Point(284, 107)
+        cmbPet.Name = "cmbPet"
+        cmbPet.Size = New Size(196, 38)
+        cmbPet.TabIndex = 16
+        ' 
         ' cmbGender
         ' 
         cmbGender.FormattingEnabled = True
-        cmbGender.Items.AddRange(New Object() {"Male", "Female", "Others"})
         cmbGender.Location = New Point(284, 176)
         cmbGender.Name = "cmbGender"
         cmbGender.Size = New Size(196, 38)
@@ -205,44 +240,6 @@ Partial Class FrmNewAppointment
         lblNewAppoinment.Size = New Size(333, 44)
         lblNewAppoinment.TabIndex = 0
         lblNewAppoinment.Text = "New Appoinment"
-        ' 
-        ' cmbPet
-        ' 
-        cmbPet.FormattingEnabled = True
-        cmbPet.Items.AddRange(New Object() {"Male", "Female", "Others"})
-        cmbPet.Location = New Point(284, 107)
-        cmbPet.Name = "cmbPet"
-        cmbPet.Size = New Size(196, 38)
-        cmbPet.TabIndex = 16
-        ' 
-        ' cmbService
-        ' 
-        cmbService.FormattingEnabled = True
-        cmbService.Items.AddRange(New Object() {"Male", "Female", "Others"})
-        cmbService.Location = New Point(284, 242)
-        cmbService.Name = "cmbService"
-        cmbService.Size = New Size(196, 38)
-        cmbService.TabIndex = 17
-        ' 
-        ' dtpAppointmentDate
-        ' 
-        dtpAppointmentDate.Format = DateTimePickerFormat.Short
-        dtpAppointmentDate.Location = New Point(281, 306)
-        dtpAppointmentDate.Name = "dtpAppointmentDate"
-        dtpAppointmentDate.Size = New Size(199, 35)
-        dtpAppointmentDate.TabIndex = 8
-        ' 
-        ' dtpBookingTime
-        ' 
-        dtpBookingTime.CustomFormat = "hh:mm tt"
-        dtpBookingTime.Font = New Font("Segoe UI", 10F)
-        dtpBookingTime.Format = DateTimePickerFormat.Custom
-        dtpBookingTime.Location = New Point(281, 369)
-        dtpBookingTime.Margin = New Padding(4)
-        dtpBookingTime.Name = "dtpBookingTime"
-        dtpBookingTime.ShowUpDown = True
-        dtpBookingTime.Size = New Size(478, 34)
-        dtpBookingTime.TabIndex = 18
         ' 
         ' FrmNewAppointment
         ' 

@@ -186,6 +186,7 @@ Public Class frmLogin
 
                                 ' OPEN CUSTOMER DASHBOARD
                             ElseIf CurrentUserRole = "Customer" Then
+                                GlobalVariables.LoggedInCustomerID = Convert.ToInt32(reader("CustomerID"))
                                 Dim customerForm As New frmCustomerDashboard()
                                 customerForm.Show()
                             End If

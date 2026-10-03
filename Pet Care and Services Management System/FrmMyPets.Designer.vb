@@ -22,7 +22,7 @@ Partial Class FrmMyPets
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMyPets))
         btnGoBackDashboard = New Button()
         dgvPets = New DataGridView()
@@ -74,7 +74,7 @@ Partial Class FrmMyPets
         dgvPets.BorderStyle = BorderStyle.None
         dgvPets.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
         dgvPets.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
-        dgvPets.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        dgvPets.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         dgvPets.ColumnHeadersHeight = 42
         dgvPets.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         dgvPets.Columns.AddRange(New DataGridViewColumn() {colPetID, colPetName, colGender, colBreed, colWeight, Temperament, colEdit, colDelete})
