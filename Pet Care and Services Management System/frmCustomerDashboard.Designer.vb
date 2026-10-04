@@ -43,6 +43,8 @@ Partial Class frmCustomerDashboard
         lblOrderCount = New Label()
         lblOrderTitle = New Label()
         pnlQuickActions = New Panel()
+        Button1 = New Button()
+        PictureBox14 = New PictureBox()
         PictureBox15 = New PictureBox()
         PictureBox13 = New PictureBox()
         PictureBox16 = New PictureBox()
@@ -72,14 +74,13 @@ Partial Class frmCustomerDashboard
         pnlSidebar = New Panel()
         lblSidebarSubtitle = New Label()
         lblSidebarTitle = New Label()
-        Label3 = New Label()
-        Label2 = New Label()
+        lblServices = New Label()
+        lblManagement = New Label()
         PictureBox11 = New PictureBox()
         PictureBox10 = New PictureBox()
         PictureBox9 = New PictureBox()
         PictureBox8 = New PictureBox()
         PictureBox7 = New PictureBox()
-        PictureBox6 = New PictureBox()
         PictureBox5 = New PictureBox()
         PictureBox4 = New PictureBox()
         PictureBox3 = New PictureBox()
@@ -92,7 +93,6 @@ Partial Class frmCustomerDashboard
         btnGroomingServices = New Button()
         btnPayments = New Button()
         btnBoardingServices = New Button()
-        btnServices = New Button()
         btnOrders = New Button()
         btnAppointments = New Button()
         btnPet = New Button()
@@ -103,8 +103,7 @@ Partial Class frmCustomerDashboard
         Label1 = New Label()
         MenuStrip1 = New MenuStrip()
         FileToolStripMenuItem = New ToolStripMenuItem()
-        PictureBox14 = New PictureBox()
-        Button1 = New Button()
+        lblShopAndMembership = New Label()
         pnlMain.SuspendLayout()
         pnlSummaryCards.SuspendLayout()
         tlpSummaryCards.SuspendLayout()
@@ -115,6 +114,7 @@ Partial Class frmCustomerDashboard
         pnlOrders.SuspendLayout()
         CType(picOrder, ComponentModel.ISupportInitialize).BeginInit()
         pnlQuickActions.SuspendLayout()
+        CType(PictureBox14, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox15, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox13, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox16, ComponentModel.ISupportInitialize).BeginInit()
@@ -132,7 +132,6 @@ Partial Class frmCustomerDashboard
         CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
@@ -140,7 +139,6 @@ Partial Class frmCustomerDashboard
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(picLogo, ComponentModel.ISupportInitialize).BeginInit()
         MenuStrip1.SuspendLayout()
-        CType(PictureBox14, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' lblDescription
@@ -382,6 +380,29 @@ Partial Class frmCustomerDashboard
         pnlQuickActions.Name = "pnlQuickActions"
         pnlQuickActions.Size = New Size(298, 394)
         pnlQuickActions.TabIndex = 18
+        ' 
+        ' Button1
+        ' 
+        Button1.BackColor = Color.FromArgb(CByte(248), CByte(240), CByte(248))
+        Button1.FlatStyle = FlatStyle.Flat
+        Button1.Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button1.ForeColor = SystemColors.ControlText
+        Button1.Location = New Point(61, 305)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(221, 44)
+        Button1.TabIndex = 10
+        Button1.Text = "＋ Book Boarding"
+        Button1.UseVisualStyleBackColor = False
+        ' 
+        ' PictureBox14
+        ' 
+        PictureBox14.Image = CType(resources.GetObject("PictureBox14.Image"), Image)
+        PictureBox14.Location = New Point(5, 305)
+        PictureBox14.Name = "PictureBox14"
+        PictureBox14.Size = New Size(44, 44)
+        PictureBox14.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox14.TabIndex = 9
+        PictureBox14.TabStop = False
         ' 
         ' PictureBox15
         ' 
@@ -716,16 +737,16 @@ Partial Class frmCustomerDashboard
         ' pnlSidebar
         ' 
         pnlSidebar.BackColor = Color.FromArgb(CByte(74), CByte(44), CByte(26))
+        pnlSidebar.Controls.Add(lblShopAndMembership)
         pnlSidebar.Controls.Add(lblSidebarSubtitle)
         pnlSidebar.Controls.Add(lblSidebarTitle)
-        pnlSidebar.Controls.Add(Label3)
-        pnlSidebar.Controls.Add(Label2)
+        pnlSidebar.Controls.Add(lblServices)
+        pnlSidebar.Controls.Add(lblManagement)
         pnlSidebar.Controls.Add(PictureBox11)
         pnlSidebar.Controls.Add(PictureBox10)
         pnlSidebar.Controls.Add(PictureBox9)
         pnlSidebar.Controls.Add(PictureBox8)
         pnlSidebar.Controls.Add(PictureBox7)
-        pnlSidebar.Controls.Add(PictureBox6)
         pnlSidebar.Controls.Add(PictureBox5)
         pnlSidebar.Controls.Add(PictureBox4)
         pnlSidebar.Controls.Add(PictureBox3)
@@ -738,7 +759,6 @@ Partial Class frmCustomerDashboard
         pnlSidebar.Controls.Add(btnGroomingServices)
         pnlSidebar.Controls.Add(btnPayments)
         pnlSidebar.Controls.Add(btnBoardingServices)
-        pnlSidebar.Controls.Add(btnServices)
         pnlSidebar.Controls.Add(btnOrders)
         pnlSidebar.Controls.Add(btnAppointments)
         pnlSidebar.Controls.Add(btnPet)
@@ -776,33 +796,33 @@ Partial Class frmCustomerDashboard
         lblSidebarTitle.Text = "PET CARE " & vbCrLf & "AND SERVICES"
         lblSidebarTitle.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' Label3
+        ' lblServices
         ' 
-        Label3.AutoSize = True
-        Label3.Font = New Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.ForeColor = Color.FromArgb(CByte(221), CByte(184), CByte(146))
-        Label3.Location = New Point(19, 455)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(82, 21)
-        Label3.TabIndex = 29
-        Label3.Text = "SERVICES"
+        lblServices.AutoSize = True
+        lblServices.Font = New Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblServices.ForeColor = Color.FromArgb(CByte(221), CByte(184), CByte(146))
+        lblServices.Location = New Point(12, 450)
+        lblServices.Name = "lblServices"
+        lblServices.Size = New Size(82, 21)
+        lblServices.TabIndex = 29
+        lblServices.Text = "SERVICES"
         ' 
-        ' Label2
+        ' lblManagement
         ' 
-        Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.ForeColor = Color.FromArgb(CByte(221), CByte(184), CByte(146))
-        Label2.Location = New Point(19, 194)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(126, 21)
-        Label2.TabIndex = 28
-        Label2.Text = "MANAGEMENT"
+        lblManagement.AutoSize = True
+        lblManagement.Font = New Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblManagement.ForeColor = Color.FromArgb(CByte(221), CByte(184), CByte(146))
+        lblManagement.Location = New Point(19, 194)
+        lblManagement.Name = "lblManagement"
+        lblManagement.Size = New Size(126, 21)
+        lblManagement.TabIndex = 28
+        lblManagement.Text = "MANAGEMENT"
         ' 
         ' PictureBox11
         ' 
         PictureBox11.BackColor = Color.FromArgb(CByte(75), CByte(43), CByte(28))
         PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), Image)
-        PictureBox11.Location = New Point(8, 735)
+        PictureBox11.Location = New Point(8, 719)
         PictureBox11.Name = "PictureBox11"
         PictureBox11.Size = New Size(43, 40)
         PictureBox11.SizeMode = PictureBoxSizeMode.Zoom
@@ -813,7 +833,7 @@ Partial Class frmCustomerDashboard
         ' 
         PictureBox10.BackColor = Color.FromArgb(CByte(75), CByte(43), CByte(28))
         PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), Image)
-        PictureBox10.Location = New Point(8, 689)
+        PictureBox10.Location = New Point(8, 673)
         PictureBox10.Name = "PictureBox10"
         PictureBox10.Size = New Size(43, 40)
         PictureBox10.SizeMode = PictureBoxSizeMode.Zoom
@@ -824,7 +844,7 @@ Partial Class frmCustomerDashboard
         ' 
         PictureBox9.BackColor = Color.FromArgb(CByte(75), CByte(43), CByte(28))
         PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), Image)
-        PictureBox9.Location = New Point(8, 613)
+        PictureBox9.Location = New Point(8, 578)
         PictureBox9.Name = "PictureBox9"
         PictureBox9.Size = New Size(43, 40)
         PictureBox9.SizeMode = PictureBoxSizeMode.Zoom
@@ -835,7 +855,7 @@ Partial Class frmCustomerDashboard
         ' 
         PictureBox8.BackColor = Color.FromArgb(CByte(75), CByte(43), CByte(28))
         PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), Image)
-        PictureBox8.Location = New Point(8, 567)
+        PictureBox8.Location = New Point(8, 532)
         PictureBox8.Name = "PictureBox8"
         PictureBox8.Size = New Size(43, 40)
         PictureBox8.SizeMode = PictureBoxSizeMode.Zoom
@@ -846,22 +866,12 @@ Partial Class frmCustomerDashboard
         ' 
         PictureBox7.BackColor = Color.FromArgb(CByte(75), CByte(43), CByte(28))
         PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), Image)
-        PictureBox7.Location = New Point(8, 521)
+        PictureBox7.Location = New Point(8, 486)
         PictureBox7.Name = "PictureBox7"
         PictureBox7.Size = New Size(43, 40)
         PictureBox7.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox7.TabIndex = 23
         PictureBox7.TabStop = False
-        ' 
-        ' PictureBox6
-        ' 
-        PictureBox6.BackColor = Color.FromArgb(CByte(75), CByte(43), CByte(28))
-        PictureBox6.Location = New Point(8, 475)
-        PictureBox6.Name = "PictureBox6"
-        PictureBox6.Size = New Size(43, 40)
-        PictureBox6.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox6.TabIndex = 22
-        PictureBox6.TabStop = False
         ' 
         ' PictureBox5
         ' 
@@ -924,7 +934,7 @@ Partial Class frmCustomerDashboard
         btnLogout.FlatStyle = FlatStyle.Flat
         btnLogout.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnLogout.ForeColor = Color.White
-        btnLogout.Location = New Point(19, 848)
+        btnLogout.Location = New Point(30, 801)
         btnLogout.Name = "btnLogout"
         btnLogout.Size = New Size(212, 41)
         btnLogout.TabIndex = 16
@@ -937,7 +947,7 @@ Partial Class frmCustomerDashboard
         btnMembership.FlatStyle = FlatStyle.Flat
         btnMembership.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnMembership.ForeColor = SystemColors.Control
-        btnMembership.Location = New Point(57, 735)
+        btnMembership.Location = New Point(57, 719)
         btnMembership.Name = "btnMembership"
         btnMembership.Size = New Size(210, 40)
         btnMembership.TabIndex = 15
@@ -951,7 +961,7 @@ Partial Class frmCustomerDashboard
         btnProduct.FlatStyle = FlatStyle.Flat
         btnProduct.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnProduct.ForeColor = SystemColors.Control
-        btnProduct.Location = New Point(57, 689)
+        btnProduct.Location = New Point(57, 673)
         btnProduct.Name = "btnProduct"
         btnProduct.Size = New Size(210, 40)
         btnProduct.TabIndex = 14
@@ -965,7 +975,7 @@ Partial Class frmCustomerDashboard
         btnBoardingVideos.FlatStyle = FlatStyle.Flat
         btnBoardingVideos.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnBoardingVideos.ForeColor = SystemColors.Control
-        btnBoardingVideos.Location = New Point(57, 613)
+        btnBoardingVideos.Location = New Point(57, 578)
         btnBoardingVideos.Name = "btnBoardingVideos"
         btnBoardingVideos.Size = New Size(210, 40)
         btnBoardingVideos.TabIndex = 13
@@ -979,7 +989,7 @@ Partial Class frmCustomerDashboard
         btnGroomingServices.FlatStyle = FlatStyle.Flat
         btnGroomingServices.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnGroomingServices.ForeColor = SystemColors.Control
-        btnGroomingServices.Location = New Point(57, 521)
+        btnGroomingServices.Location = New Point(57, 486)
         btnGroomingServices.Name = "btnGroomingServices"
         btnGroomingServices.Size = New Size(210, 40)
         btnGroomingServices.TabIndex = 12
@@ -1007,27 +1017,13 @@ Partial Class frmCustomerDashboard
         btnBoardingServices.FlatStyle = FlatStyle.Flat
         btnBoardingServices.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnBoardingServices.ForeColor = SystemColors.Control
-        btnBoardingServices.Location = New Point(57, 567)
+        btnBoardingServices.Location = New Point(57, 532)
         btnBoardingServices.Name = "btnBoardingServices"
         btnBoardingServices.Size = New Size(210, 40)
         btnBoardingServices.TabIndex = 10
         btnBoardingServices.Text = "Boarding Services"
         btnBoardingServices.TextAlign = ContentAlignment.MiddleLeft
         btnBoardingServices.UseVisualStyleBackColor = True
-        ' 
-        ' btnServices
-        ' 
-        btnServices.FlatAppearance.BorderSize = 0
-        btnServices.FlatStyle = FlatStyle.Flat
-        btnServices.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        btnServices.ForeColor = SystemColors.Control
-        btnServices.Location = New Point(57, 475)
-        btnServices.Name = "btnServices"
-        btnServices.Size = New Size(210, 40)
-        btnServices.TabIndex = 8
-        btnServices.Text = "Services"
-        btnServices.TextAlign = ContentAlignment.MiddleLeft
-        btnServices.UseVisualStyleBackColor = True
         ' 
         ' btnOrders
         ' 
@@ -1149,28 +1145,16 @@ Partial Class frmCustomerDashboard
         FileToolStripMenuItem.Size = New Size(60, 34)
         FileToolStripMenuItem.Text = "File"
         ' 
-        ' PictureBox14
+        ' lblShopAndMembership
         ' 
-        PictureBox14.Image = CType(resources.GetObject("PictureBox14.Image"), Image)
-        PictureBox14.Location = New Point(5, 305)
-        PictureBox14.Name = "PictureBox14"
-        PictureBox14.Size = New Size(44, 44)
-        PictureBox14.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox14.TabIndex = 9
-        PictureBox14.TabStop = False
-        ' 
-        ' Button1
-        ' 
-        Button1.BackColor = Color.FromArgb(CByte(248), CByte(240), CByte(248))
-        Button1.FlatStyle = FlatStyle.Flat
-        Button1.Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button1.ForeColor = SystemColors.ControlText
-        Button1.Location = New Point(61, 305)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(221, 44)
-        Button1.TabIndex = 10
-        Button1.Text = "＋ Book Boarding"
-        Button1.UseVisualStyleBackColor = False
+        lblShopAndMembership.AutoSize = True
+        lblShopAndMembership.Font = New Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblShopAndMembership.ForeColor = Color.FromArgb(CByte(221), CByte(184), CByte(146))
+        lblShopAndMembership.Location = New Point(11, 636)
+        lblShopAndMembership.Name = "lblShopAndMembership"
+        lblShopAndMembership.Size = New Size(201, 21)
+        lblShopAndMembership.TabIndex = 32
+        lblShopAndMembership.Text = "SHOP AND MEMBERSHIP"
         ' 
         ' frmCustomerDashboard
         ' 
@@ -1200,6 +1184,7 @@ Partial Class frmCustomerDashboard
         CType(picOrder, ComponentModel.ISupportInitialize).EndInit()
         pnlQuickActions.ResumeLayout(False)
         pnlQuickActions.PerformLayout()
+        CType(PictureBox14, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox15, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox13, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox16, ComponentModel.ISupportInitialize).EndInit()
@@ -1221,7 +1206,6 @@ Partial Class frmCustomerDashboard
         CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
@@ -1230,7 +1214,6 @@ Partial Class frmCustomerDashboard
         CType(picLogo, ComponentModel.ISupportInitialize).EndInit()
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
-        CType(PictureBox14, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -1244,7 +1227,6 @@ Partial Class frmCustomerDashboard
     Friend WithEvents btnDashboard As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents btnProfile As Button
-    Friend WithEvents btnServices As Button
     Friend WithEvents btnOrders As Button
     Friend WithEvents btnAppointments As Button
     Friend WithEvents btnPet As Button
@@ -1261,13 +1243,12 @@ Partial Class frmCustomerDashboard
     Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents PictureBox7 As PictureBox
-    Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblManagement As Label
+    Friend WithEvents lblServices As Label
     Friend WithEvents pnlTopBar As Panel
     Friend WithEvents btnDropdown As Button
     Friend WithEvents lblEmployee As Label
@@ -1317,4 +1298,5 @@ Partial Class frmCustomerDashboard
     Friend WithEvents lblDescription As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox14 As PictureBox
+    Friend WithEvents lblShopAndMembership As Label
 End Class

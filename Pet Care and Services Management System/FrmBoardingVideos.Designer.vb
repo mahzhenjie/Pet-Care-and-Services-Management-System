@@ -25,40 +25,39 @@ Partial Class FrmBoardingVideos
         pnlMain = New Panel()
         pnlContent = New Panel()
         flpVideos = New FlowLayoutPanel()
-        pnlToolbar = New Panel()
-        Button1 = New Button()
-        Button2 = New Button()
-        Button3 = New Button()
-        btnGoBackDashboard = New Button()
-        btnAddVideo = New Button()
-        btnRefresh = New Button()
-        txtSearch = New TextBox()
-        lblSearch = New Label()
+        Label1 = New Label()
+        lblPet = New Label()
+        cmbPetName = New ComboBox()
+        Panel1 = New Panel()
+        VideoView1 = New LibVLCSharp.WinForms.VideoView()
+        pnlControls = New Panel()
+        btnStartLive = New Button()
+        Label2 = New Label()
+        txtCameraURL = New TextBox()
+        lblCameraURL = New Label()
+        btnDashboard = New Button()
         pnlHeader = New Panel()
         lblSubtitle = New Label()
         lblTitle = New Label()
-        VideoView1 = New LibVLCSharp.WinForms.VideoView()
-        Label1 = New Label()
-        lblPet = New Label()
         pnlMain.SuspendLayout()
         pnlContent.SuspendLayout()
         flpVideos.SuspendLayout()
-        pnlToolbar.SuspendLayout()
-        pnlHeader.SuspendLayout()
+        Panel1.SuspendLayout()
         CType(VideoView1, ComponentModel.ISupportInitialize).BeginInit()
+        pnlControls.SuspendLayout()
+        pnlHeader.SuspendLayout()
         SuspendLayout()
         ' 
         ' pnlMain
         ' 
         pnlMain.BackColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
         pnlMain.Controls.Add(pnlContent)
-        pnlMain.Controls.Add(pnlToolbar)
         pnlMain.Controls.Add(pnlHeader)
         pnlMain.Dock = DockStyle.Fill
         pnlMain.Location = New Point(0, 0)
         pnlMain.Name = "pnlMain"
         pnlMain.Padding = New Padding(20)
-        pnlMain.Size = New Size(1162, 918)
+        pnlMain.Size = New Size(1162, 1127)
         pnlMain.TabIndex = 1
         ' 
         ' pnlContent
@@ -66,153 +65,152 @@ Partial Class FrmBoardingVideos
         pnlContent.BackColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
         pnlContent.Controls.Add(flpVideos)
         pnlContent.Dock = DockStyle.Fill
-        pnlContent.Location = New Point(20, 175)
+        pnlContent.Location = New Point(20, 105)
         pnlContent.Name = "pnlContent"
         pnlContent.Padding = New Padding(0, 15, 0, 0)
-        pnlContent.Size = New Size(1122, 723)
+        pnlContent.Size = New Size(1122, 1002)
         pnlContent.TabIndex = 2
         ' 
         ' flpVideos
         ' 
         flpVideos.AutoScroll = True
         flpVideos.BackColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
-        flpVideos.Controls.Add(VideoView1)
         flpVideos.Controls.Add(Label1)
         flpVideos.Controls.Add(lblPet)
+        flpVideos.Controls.Add(cmbPetName)
+        flpVideos.Controls.Add(Panel1)
         flpVideos.Dock = DockStyle.Fill
         flpVideos.Location = New Point(0, 15)
         flpVideos.Name = "flpVideos"
         flpVideos.Padding = New Padding(5)
-        flpVideos.Size = New Size(1122, 708)
+        flpVideos.Size = New Size(1122, 987)
         flpVideos.TabIndex = 0
         ' 
-        ' pnlToolbar
+        ' Label1
         ' 
-        pnlToolbar.BackColor = Color.FromArgb(CByte(232), CByte(216), CByte(194))
-        pnlToolbar.Controls.Add(Button1)
-        pnlToolbar.Controls.Add(Button2)
-        pnlToolbar.Controls.Add(Button3)
-        pnlToolbar.Controls.Add(btnGoBackDashboard)
-        pnlToolbar.Controls.Add(btnAddVideo)
-        pnlToolbar.Controls.Add(btnRefresh)
-        pnlToolbar.Controls.Add(txtSearch)
-        pnlToolbar.Controls.Add(lblSearch)
-        pnlToolbar.Dock = DockStyle.Top
-        pnlToolbar.Location = New Point(20, 105)
-        pnlToolbar.Name = "pnlToolbar"
-        pnlToolbar.Size = New Size(1122, 70)
-        pnlToolbar.TabIndex = 1
+        Label1.AutoSize = True
+        Label1.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = Color.SaddleBrown
+        Label1.Location = New Point(8, 5)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(169, 38)
+        Label1.TabIndex = 1
+        Label1.Text = "Pet Name : "
         ' 
-        ' Button1
+        ' lblPet
         ' 
-        Button1.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        Button1.BackColor = Color.SaddleBrown
-        Button1.FlatAppearance.BorderSize = 0
-        Button1.FlatStyle = FlatStyle.Flat
-        Button1.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
-        Button1.ForeColor = Color.WhiteSmoke
-        Button1.Location = New Point(912, 16)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(195, 40)
-        Button1.TabIndex = 7
-        Button1.Text = "Back to Dashboard"
-        Button1.UseVisualStyleBackColor = False
+        lblPet.AutoSize = True
+        lblPet.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblPet.ForeColor = Color.SaddleBrown
+        lblPet.Location = New Point(183, 5)
+        lblPet.Name = "lblPet"
+        lblPet.Size = New Size(0, 38)
+        lblPet.TabIndex = 2
         ' 
-        ' Button2
+        ' cmbPetName
         ' 
-        Button2.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        Button2.BackColor = Color.FromArgb(CByte(96), CByte(52), CByte(16))
-        Button2.FlatAppearance.BorderSize = 0
-        Button2.FlatStyle = FlatStyle.Flat
-        Button2.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
-        Button2.ForeColor = Color.WhiteSmoke
-        Button2.Location = New Point(716, 17)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(190, 40)
-        Button2.TabIndex = 6
-        Button2.Text = "+ Add Video"
-        Button2.UseVisualStyleBackColor = False
+        cmbPetName.FormattingEnabled = True
+        cmbPetName.Location = New Point(189, 8)
+        cmbPetName.Name = "cmbPetName"
+        cmbPetName.Size = New Size(206, 38)
+        cmbPetName.TabIndex = 5
         ' 
-        ' Button3
+        ' Panel1
         ' 
-        Button3.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        Button3.BackColor = Color.Sienna
-        Button3.FlatAppearance.BorderSize = 0
-        Button3.FlatStyle = FlatStyle.Flat
-        Button3.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
-        Button3.ForeColor = Color.WhiteSmoke
-        Button3.Location = New Point(503, 16)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(207, 40)
-        Button3.TabIndex = 5
-        Button3.Text = "Refresh"
-        Button3.UseVisualStyleBackColor = False
+        Panel1.BackColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
+        Panel1.Controls.Add(VideoView1)
+        Panel1.Controls.Add(pnlControls)
+        Panel1.Location = New Point(8, 52)
+        Panel1.Name = "Panel1"
+        Panel1.Padding = New Padding(20)
+        Panel1.Size = New Size(1099, 853)
+        Panel1.TabIndex = 3
         ' 
-        ' btnGoBackDashboard
+        ' VideoView1
         ' 
-        btnGoBackDashboard.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        btnGoBackDashboard.BackColor = Color.SaddleBrown
-        btnGoBackDashboard.FlatAppearance.BorderSize = 0
-        btnGoBackDashboard.FlatStyle = FlatStyle.Flat
-        btnGoBackDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
-        btnGoBackDashboard.ForeColor = Color.WhiteSmoke
-        btnGoBackDashboard.Location = New Point(1852, 15)
-        btnGoBackDashboard.Name = "btnGoBackDashboard"
-        btnGoBackDashboard.Size = New Size(195, 40)
-        btnGoBackDashboard.TabIndex = 4
-        btnGoBackDashboard.Text = "Back to Dashboard"
-        btnGoBackDashboard.UseVisualStyleBackColor = False
+        VideoView1.BackColor = Color.Black
+        VideoView1.Location = New Point(4, 8)
+        VideoView1.MediaPlayer = Nothing
+        VideoView1.Name = "VideoView1"
+        VideoView1.Size = New Size(1089, 650)
+        VideoView1.TabIndex = 2
+        VideoView1.Text = "VideoView1"
         ' 
-        ' btnAddVideo
+        ' pnlControls
         ' 
-        btnAddVideo.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        btnAddVideo.BackColor = Color.FromArgb(CByte(96), CByte(52), CByte(16))
-        btnAddVideo.FlatAppearance.BorderSize = 0
-        btnAddVideo.FlatStyle = FlatStyle.Flat
-        btnAddVideo.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
-        btnAddVideo.ForeColor = Color.WhiteSmoke
-        btnAddVideo.Location = New Point(1647, 15)
-        btnAddVideo.Name = "btnAddVideo"
-        btnAddVideo.Size = New Size(190, 40)
-        btnAddVideo.TabIndex = 3
-        btnAddVideo.Text = "+ Add Video"
-        btnAddVideo.UseVisualStyleBackColor = False
+        pnlControls.BackColor = Color.FromArgb(CByte(232), CByte(216), CByte(194))
+        pnlControls.Controls.Add(btnStartLive)
+        pnlControls.Controls.Add(Label2)
+        pnlControls.Controls.Add(txtCameraURL)
+        pnlControls.Controls.Add(btnDashboard)
+        pnlControls.Controls.Add(lblCameraURL)
+        pnlControls.Dock = DockStyle.Bottom
+        pnlControls.Location = New Point(20, 678)
+        pnlControls.Name = "pnlControls"
+        pnlControls.Padding = New Padding(18, 12, 18, 12)
+        pnlControls.Size = New Size(1059, 155)
+        pnlControls.TabIndex = 1
         ' 
-        ' btnRefresh
+        ' btnStartLive
         ' 
-        btnRefresh.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        btnRefresh.BackColor = Color.Sienna
-        btnRefresh.FlatAppearance.BorderSize = 0
-        btnRefresh.FlatStyle = FlatStyle.Flat
-        btnRefresh.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
-        btnRefresh.ForeColor = Color.WhiteSmoke
-        btnRefresh.Location = New Point(1552, 15)
-        btnRefresh.Name = "btnRefresh"
-        btnRefresh.Size = New Size(85, 40)
-        btnRefresh.TabIndex = 2
-        btnRefresh.Text = "Refresh"
-        btnRefresh.UseVisualStyleBackColor = False
+        btnStartLive.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnStartLive.BackColor = Color.Sienna
+        btnStartLive.FlatAppearance.BorderSize = 0
+        btnStartLive.FlatStyle = FlatStyle.Flat
+        btnStartLive.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        btnStartLive.ForeColor = Color.WhiteSmoke
+        btnStartLive.Location = New Point(391, 107)
+        btnStartLive.Name = "btnStartLive"
+        btnStartLive.Size = New Size(294, 40)
+        btnStartLive.TabIndex = 3
+        btnStartLive.Text = "Start Live"
+        btnStartLive.UseVisualStyleBackColor = False
         ' 
-        ' txtSearch
+        ' Label2
         ' 
-        txtSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        txtSearch.Font = New Font("Segoe UI", 10F)
-        txtSearch.Location = New Point(90, 18)
-        txtSearch.Name = "txtSearch"
-        txtSearch.Size = New Size(392, 34)
-        txtSearch.TabIndex = 1
-        txtSearch.Text = "Search pet video..."
+        Label2.AutoSize = True
+        Label2.Font = New Font("Georgia", 15F, FontStyle.Bold)
+        Label2.ForeColor = Color.FromArgb(CByte(61), CByte(40), CByte(27))
+        Label2.Location = New Point(21, 12)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(260, 35)
+        Label2.TabIndex = 0
+        Label2.Text = "Live CCTV View"
         ' 
-        ' lblSearch
+        ' txtCameraURL
         ' 
-        lblSearch.AutoSize = True
-        lblSearch.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
-        lblSearch.ForeColor = Color.SaddleBrown
-        lblSearch.Location = New Point(8, 21)
-        lblSearch.Name = "lblSearch"
-        lblSearch.Size = New Size(75, 28)
-        lblSearch.TabIndex = 0
-        lblSearch.Text = "Search"
+        txtCameraURL.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
+        txtCameraURL.Font = New Font("Segoe UI", 9.5F)
+        txtCameraURL.Location = New Point(144, 59)
+        txtCameraURL.Name = "txtCameraURL"
+        txtCameraURL.Size = New Size(894, 33)
+        txtCameraURL.TabIndex = 3
+        ' 
+        ' lblCameraURL
+        ' 
+        lblCameraURL.AutoSize = True
+        lblCameraURL.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        lblCameraURL.ForeColor = Color.SaddleBrown
+        lblCameraURL.Location = New Point(18, 62)
+        lblCameraURL.Name = "lblCameraURL"
+        lblCameraURL.Size = New Size(120, 25)
+        lblCameraURL.TabIndex = 2
+        lblCameraURL.Text = "Camera URL"
+        ' 
+        ' btnDashboard
+        ' 
+        btnDashboard.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnDashboard.BackColor = Color.SaddleBrown
+        btnDashboard.FlatAppearance.BorderSize = 0
+        btnDashboard.FlatStyle = FlatStyle.Flat
+        btnDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        btnDashboard.ForeColor = Color.WhiteSmoke
+        btnDashboard.Location = New Point(708, 107)
+        btnDashboard.Name = "btnDashboard"
+        btnDashboard.Size = New Size(330, 40)
+        btnDashboard.TabIndex = 7
+        btnDashboard.Text = "Back to Dashboard"
+        btnDashboard.UseVisualStyleBackColor = False
         ' 
         ' pnlHeader
         ' 
@@ -247,42 +245,11 @@ Partial Class FrmBoardingVideos
         lblTitle.TabIndex = 0
         lblTitle.Text = "Pet Videos"
         ' 
-        ' VideoView1
-        ' 
-        VideoView1.BackColor = Color.Black
-        VideoView1.Location = New Point(8, 8)
-        VideoView1.MediaPlayer = Nothing
-        VideoView1.Name = "VideoView1"
-        VideoView1.Size = New Size(1099, 497)
-        VideoView1.TabIndex = 0
-        VideoView1.Text = "VideoView1"
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.ForeColor = Color.SaddleBrown
-        Label1.Location = New Point(8, 508)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(169, 38)
-        Label1.TabIndex = 1
-        Label1.Text = "Pet Name : "
-        ' 
-        ' lblPet
-        ' 
-        lblPet.AutoSize = True
-        lblPet.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblPet.ForeColor = Color.SaddleBrown
-        lblPet.Location = New Point(183, 508)
-        lblPet.Name = "lblPet"
-        lblPet.Size = New Size(0, 38)
-        lblPet.TabIndex = 2
-        ' 
         ' FrmBoardingVideos
         ' 
         AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1162, 918)
+        ClientSize = New Size(1162, 1127)
         Controls.Add(pnlMain)
         Name = "FrmBoardingVideos"
         Text = "FrmBoardingVideos"
@@ -290,30 +257,30 @@ Partial Class FrmBoardingVideos
         pnlContent.ResumeLayout(False)
         flpVideos.ResumeLayout(False)
         flpVideos.PerformLayout()
-        pnlToolbar.ResumeLayout(False)
-        pnlToolbar.PerformLayout()
+        Panel1.ResumeLayout(False)
+        CType(VideoView1, ComponentModel.ISupportInitialize).EndInit()
+        pnlControls.ResumeLayout(False)
+        pnlControls.PerformLayout()
         pnlHeader.ResumeLayout(False)
         pnlHeader.PerformLayout()
-        CType(VideoView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents pnlMain As Panel
     Friend WithEvents pnlContent As Panel
-    Friend WithEvents flpVideos As FlowLayoutPanel
-    Friend WithEvents pnlToolbar As Panel
-    Friend WithEvents btnGoBackDashboard As Button
-    Friend WithEvents btnAddVideo As Button
-    Friend WithEvents btnRefresh As Button
-    Friend WithEvents txtSearch As TextBox
-    Friend WithEvents lblSearch As Label
     Friend WithEvents pnlHeader As Panel
     Friend WithEvents lblSubtitle As Label
     Friend WithEvents lblTitle As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents VideoView1 As LibVLCSharp.WinForms.VideoView
+    Friend WithEvents btnDashboard As Button
+    Friend WithEvents flpVideos As FlowLayoutPanel
     Friend WithEvents Label1 As Label
     Friend WithEvents lblPet As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents pnlControls As Panel
+    Friend WithEvents txtCameraURL As TextBox
+    Friend WithEvents lblCameraURL As Label
+    Friend WithEvents cmbPetName As ComboBox
+    Friend WithEvents VideoView1 As LibVLCSharp.WinForms.VideoView
+    Friend WithEvents btnStartLive As Button
+    Friend WithEvents Label2 As Label
 End Class

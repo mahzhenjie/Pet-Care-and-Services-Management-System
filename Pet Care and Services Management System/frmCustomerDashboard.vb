@@ -6,6 +6,7 @@ Public Class frmCustomerDashboard
     ' DATABASE CONNECTION
     Private connectionString As String = "Server=localhost;Database=pet_care_and_services_management_system;Uid=root;Pwd=;"
 
+    Private sidebarCollapsed As Boolean = False
     ' FORM LOAD
     Private Sub frmCustomerDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblCustomer.Text = CurrentUserName
@@ -218,5 +219,195 @@ Public Class frmCustomerDashboard
                     "Dashboard",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information)
+    End Sub
+    ' COLLAPSE / EXPAND SIDEBAR
+    Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
+
+        If sidebarCollapsed = False Then
+
+            ' COLLAPSE SIDEBAR
+            pnlSidebar.Width = 70
+            pnlTopBar.Location = New Point(70, 0)
+            pnlTopBar.Width = Me.ClientSize.Width - 70
+
+            ' HIDE SIDEBAR TEXT
+            lblSidebarTitle.Visible = False
+            lblSidebarSubtitle.Visible = False
+            picLogo.Visible = False
+            lblManagement.Visible = False
+            lblServices.Visible = False
+            lblShopAndMembership.Visible = False
+
+            ' DASHBOARD
+            btnDashboard.Location = New Point(8, 141)
+            btnDashboard.Size = New Size(54, 45)
+            btnDashboard.Text = "⌂"
+
+            ' CUSTOMERS
+            btnProfile.Location = New Point(8, 217)
+            btnProfile.Size = New Size(54, 40)
+            btnProfile.Text = ""
+
+            ' PETS
+            btnPet.Location = New Point(8, 263)
+            btnPet.Size = New Size(54, 40)
+            btnPet.Text = ""
+
+            ' BOOKINGS
+            btnAppointments.Location = New Point(8, 309)
+            btnAppointments.Size = New Size(54, 40)
+            btnAppointments.Text = ""
+
+            ' ORDERS
+            btnOrders.Location = New Point(8, 355)
+            btnOrders.Size = New Size(54, 40)
+            btnOrders.Text = ""
+
+            ' PAYMENTS
+            btnPayments.Location = New Point(8, 401)
+            btnPayments.Size = New Size(54, 40)
+            btnPayments.Text = ""
+
+            ' GROOMING SERVICES
+            btnGroomingServices.Location = New Point(8, 475)
+            btnGroomingServices.Size = New Size(54, 40)
+            btnGroomingServices.Text = ""
+
+            ' BOARDING SERVICES
+            btnBoardingServices.Location = New Point(8, 521)
+            btnBoardingServices.Size = New Size(54, 40)
+            btnBoardingServices.Text = ""
+
+            ' BOARDING VIDEOS
+            btnBoardingVideos.Location = New Point(8, 642)
+            btnBoardingVideos.Size = New Size(54, 40)
+            btnBoardingVideos.Text = ""
+
+            ' PRODUCTS
+            btnProduct.Location = New Point(8, 720)
+            btnProduct.Size = New Size(54, 40)
+            btnProduct.Text = ""
+
+            ' MEMBERSHIP
+            btnMembership.Location = New Point(8, 766)
+            btnMembership.Size = New Size(54, 40)
+            btnMembership.Text = ""
+
+            ' LOGOUT
+            btnLogout.Location = New Point(8, 848)
+            btnLogout.Size = New Size(54, 41)
+            btnLogout.Text = "↪"
+
+            ' SIDEBAR ICONS
+            PictureBox1.Visible = True
+            PictureBox2.Visible = True
+            PictureBox3.Visible = True
+            PictureBox4.Visible = True
+            PictureBox5.Visible = True
+            PictureBox7.Visible = True
+            PictureBox8.Visible = True
+            PictureBox9.Visible = True
+            PictureBox10.Visible = True
+            PictureBox11.Visible = True
+
+            ' MOVE MAIN CONTENT
+            pnlWelcome.Location = New Point(98, 132)
+            pnlWelcome.Width = 1265
+
+            pnlSummaryCards.Location = New Point(82, 308)
+            pnlSummaryCards.Width = 1282
+
+            pnlRecentAppointments.Location = New Point(99, 495)
+            pnlRecentAppointments.Width = 958
+
+            sidebarCollapsed = True
+
+        Else
+
+            ' EXPAND SIDEBAR
+            pnlSidebar.Width = 280
+            pnlTopBar.Location = New Point(280, 0)
+            pnlTopBar.Width = Me.ClientSize.Width - 280
+
+            ' SHOW SIDEBAR TEXT
+            lblSidebarTitle.Visible = True
+            lblSidebarSubtitle.Visible = True
+            picLogo.Visible = True
+            lblManagement.Visible = True
+            lblServices.Visible = True
+            lblShopAndMembership.Visible = True
+
+            ' DASHBOARD
+            btnDashboard.Location = New Point(11, 141)
+            btnDashboard.Size = New Size(220, 45)
+            btnDashboard.Text = "Dashboard"
+
+            ' CUSTOMERS
+            btnProfile.Location = New Point(57, 217)
+            btnProfile.Size = New Size(210, 40)
+            btnProfile.Text = "Profile"
+
+            ' PETS
+            btnPet.Location = New Point(57, 263)
+            btnPet.Size = New Size(210, 40)
+            btnPet.Text = "Pets"
+
+            ' BOOKINGS
+            btnAppointments.Location = New Point(57, 309)
+            btnAppointments.Size = New Size(210, 40)
+            btnAppointments.Text = "Appointments"
+
+            ' ORDERS
+            btnOrders.Location = New Point(57, 355)
+            btnOrders.Size = New Size(210, 40)
+            btnOrders.Text = "Orders"
+
+            ' PAYMENTS
+            btnPayments.Location = New Point(57, 401)
+            btnPayments.Size = New Size(210, 40)
+            btnPayments.Text = "Payments"
+
+            ' GROOMING SERVICES
+            btnGroomingServices.Location = New Point(57, 475)
+            btnGroomingServices.Size = New Size(210, 40)
+            btnGroomingServices.Text = "Grooming Services"
+
+            ' BOARDING SERVICES
+            btnBoardingServices.Location = New Point(57, 521)
+            btnBoardingServices.Size = New Size(210, 40)
+            btnBoardingServices.Text = "Boarding Services"
+
+            ' BOARDING VIDEOS
+            btnBoardingVideos.Location = New Point(57, 642)
+            btnBoardingVideos.Size = New Size(210, 40)
+            btnBoardingVideos.Text = "Boarding Videos"
+
+            ' PRODUCTS
+            btnProduct.Location = New Point(57, 720)
+            btnProduct.Size = New Size(210, 40)
+            btnProduct.Text = "Products"
+
+            ' MEMBERSHIP
+            btnMembership.Location = New Point(57, 766)
+            btnMembership.Size = New Size(210, 40)
+            btnMembership.Text = "Membership"
+
+            ' LOGOUT
+            btnLogout.Location = New Point(19, 848)
+            btnLogout.Size = New Size(212, 41)
+            btnLogout.Text = "Logout"
+
+            ' MOVE MAIN CONTENT BACK
+            pnlWelcome.Location = New Point(308, 132)
+            pnlWelcome.Width = 1055
+
+            pnlSummaryCards.Location = New Point(292, 308)
+            pnlSummaryCards.Width = 1072
+
+            pnlRecentAppointments.Location = New Point(309, 495)
+            pnlRecentAppointments.Width = 748
+
+            sidebarCollapsed = False
+        End If
     End Sub
 End Class
