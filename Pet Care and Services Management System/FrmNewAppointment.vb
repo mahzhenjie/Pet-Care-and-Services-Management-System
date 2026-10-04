@@ -45,7 +45,7 @@ Public Class FrmNewAppointment
                     cmbPetName.DataSource = dtPets
                     cmbPetName.DisplayMember = "PetName"
                     cmbPetName.ValueMember = "PetID"
-                    cmbPetName.SelectedIndex = -1 ' Clear selection initially
+                    cmbPetName.SelectedIndex = -1
                 Catch ex As Exception
                     MessageBox.Show("Error loading pets: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End Try
@@ -68,7 +68,8 @@ Public Class FrmNewAppointment
 
         If selectedType = "Grooming" Then
 
-            query = "SELECT ServiceID AS ID, ServiceName AS Name FROM service"
+            query = "SELECT ServiceID AS ID, ServiceName AS Name FROM groomingservices"
+
         ElseIf selectedType = "Boarding" Then
 
             query = "
@@ -108,6 +109,7 @@ Public Class FrmNewAppointment
             End Using
         End If
     End Sub
+
     ' -----------------------------------------------------------
     ' SERVICE CHANGED (Load Description)
     ' -----------------------------------------------------------
@@ -136,9 +138,11 @@ Public Class FrmNewAppointment
         Using connection As New MySqlConnection(connectionString)
             Using command As New MySqlCommand(query, connection)
                 command.Parameters.AddWithValue("@ID", selectedID)
+
                 Try
                     connection.Open()
                     Dim desc As Object = command.ExecuteScalar()
+
                     If desc IsNot Nothing Then
                         txtDescription.Text = desc.ToString()
                     End If
@@ -181,7 +185,7 @@ Public Class FrmNewAppointment
                     End Using
 
                 ElseIf selectedType = "Boarding" Then
-                    ' Insert into boardingbookings. 
+                    ' Insert into boardingbookings.
                     ' NOTE: UI only has one Date field, so setting EndDate to StartDate + 1 day as default.
                     query = "INSERT INTO boardingbookings (PetID, RoomID, StartDate, EndDate, Status) VALUES (@PetID, @RoomID, @StartDate, @EndDate, 'Pending')"
 

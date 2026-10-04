@@ -78,7 +78,6 @@ Partial Class frmEmployeeDashboard
         PictureBox10 = New PictureBox()
         PictureBox9 = New PictureBox()
         PictureBox8 = New PictureBox()
-        PictureBox7 = New PictureBox()
         PictureBox6 = New PictureBox()
         PictureBox5 = New PictureBox()
         PictureBox4 = New PictureBox()
@@ -93,7 +92,6 @@ Partial Class frmEmployeeDashboard
         lblServices = New Label()
         btnBoardingVideos = New Button()
         btnBoardingRooms = New Button()
-        btnBoardingServices = New Button()
         btnGroomingServices = New Button()
         btnPayments = New Button()
         btnOrders = New Button()
@@ -153,7 +151,6 @@ Partial Class frmEmployeeDashboard
         CType(PictureBox10, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
@@ -757,7 +754,6 @@ Partial Class frmEmployeeDashboard
         pnlSidebar.Controls.Add(PictureBox10)
         pnlSidebar.Controls.Add(PictureBox9)
         pnlSidebar.Controls.Add(PictureBox8)
-        pnlSidebar.Controls.Add(PictureBox7)
         pnlSidebar.Controls.Add(PictureBox6)
         pnlSidebar.Controls.Add(PictureBox5)
         pnlSidebar.Controls.Add(PictureBox4)
@@ -772,7 +768,6 @@ Partial Class frmEmployeeDashboard
         pnlSidebar.Controls.Add(lblServices)
         pnlSidebar.Controls.Add(btnBoardingVideos)
         pnlSidebar.Controls.Add(btnBoardingRooms)
-        pnlSidebar.Controls.Add(btnBoardingServices)
         pnlSidebar.Controls.Add(btnGroomingServices)
         pnlSidebar.Controls.Add(btnPayments)
         pnlSidebar.Controls.Add(btnOrders)
@@ -793,7 +788,7 @@ Partial Class frmEmployeeDashboard
         ' PictureBox11
         ' 
         PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), Image)
-        PictureBox11.Location = New Point(8, 766)
+        PictureBox11.Location = New Point(8, 717)
         PictureBox11.Name = "PictureBox11"
         PictureBox11.Size = New Size(43, 40)
         PictureBox11.SizeMode = PictureBoxSizeMode.Zoom
@@ -803,7 +798,7 @@ Partial Class frmEmployeeDashboard
         ' PictureBox10
         ' 
         PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), Image)
-        PictureBox10.Location = New Point(8, 720)
+        PictureBox10.Location = New Point(8, 671)
         PictureBox10.Name = "PictureBox10"
         PictureBox10.Size = New Size(43, 40)
         PictureBox10.SizeMode = PictureBoxSizeMode.Zoom
@@ -813,7 +808,7 @@ Partial Class frmEmployeeDashboard
         ' PictureBox9
         ' 
         PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), Image)
-        PictureBox9.Location = New Point(8, 642)
+        PictureBox9.Location = New Point(8, 593)
         PictureBox9.Name = "PictureBox9"
         PictureBox9.Size = New Size(43, 40)
         PictureBox9.SizeMode = PictureBoxSizeMode.Zoom
@@ -823,22 +818,12 @@ Partial Class frmEmployeeDashboard
         ' PictureBox8
         ' 
         PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), Image)
-        PictureBox8.Location = New Point(8, 596)
+        PictureBox8.Location = New Point(8, 547)
         PictureBox8.Name = "PictureBox8"
         PictureBox8.Size = New Size(43, 40)
         PictureBox8.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox8.TabIndex = 35
         PictureBox8.TabStop = False
-        ' 
-        ' PictureBox7
-        ' 
-        PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), Image)
-        PictureBox7.Location = New Point(8, 521)
-        PictureBox7.Name = "PictureBox7"
-        PictureBox7.Size = New Size(43, 40)
-        PictureBox7.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox7.TabIndex = 34
-        PictureBox7.TabStop = False
         ' 
         ' PictureBox6
         ' 
@@ -918,7 +903,7 @@ Partial Class frmEmployeeDashboard
         btnProducts.FlatAppearance.BorderSize = 0
         btnProducts.FlatStyle = FlatStyle.Flat
         btnProducts.ForeColor = SystemColors.Control
-        btnProducts.Location = New Point(57, 720)
+        btnProducts.Location = New Point(57, 671)
         btnProducts.Name = "btnProducts"
         btnProducts.Size = New Size(210, 40)
         btnProducts.TabIndex = 26
@@ -931,7 +916,7 @@ Partial Class frmEmployeeDashboard
         btnMembership.FlatAppearance.BorderSize = 0
         btnMembership.FlatStyle = FlatStyle.Flat
         btnMembership.ForeColor = SystemColors.Control
-        btnMembership.Location = New Point(57, 766)
+        btnMembership.Location = New Point(57, 717)
         btnMembership.Name = "btnMembership"
         btnMembership.Size = New Size(210, 40)
         btnMembership.TabIndex = 25
@@ -944,7 +929,7 @@ Partial Class frmEmployeeDashboard
         lblShopAndMembership.AutoSize = True
         lblShopAndMembership.Font = New Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblShopAndMembership.ForeColor = Color.FromArgb(CByte(221), CByte(184), CByte(146))
-        lblShopAndMembership.Location = New Point(19, 700)
+        lblShopAndMembership.Location = New Point(19, 651)
         lblShopAndMembership.Name = "lblShopAndMembership"
         lblShopAndMembership.Size = New Size(163, 17)
         lblShopAndMembership.TabIndex = 24
@@ -955,7 +940,7 @@ Partial Class frmEmployeeDashboard
         lblFacility.AutoSize = True
         lblFacility.Font = New Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblFacility.ForeColor = Color.FromArgb(CByte(221), CByte(184), CByte(146))
-        lblFacility.Location = New Point(19, 576)
+        lblFacility.Location = New Point(19, 527)
         lblFacility.Name = "lblFacility"
         lblFacility.Size = New Size(62, 17)
         lblFacility.TabIndex = 23
@@ -977,7 +962,7 @@ Partial Class frmEmployeeDashboard
         btnBoardingVideos.FlatAppearance.BorderSize = 0
         btnBoardingVideos.FlatStyle = FlatStyle.Flat
         btnBoardingVideos.ForeColor = SystemColors.Control
-        btnBoardingVideos.Location = New Point(57, 642)
+        btnBoardingVideos.Location = New Point(57, 593)
         btnBoardingVideos.Name = "btnBoardingVideos"
         btnBoardingVideos.Size = New Size(210, 40)
         btnBoardingVideos.TabIndex = 21
@@ -990,26 +975,13 @@ Partial Class frmEmployeeDashboard
         btnBoardingRooms.FlatAppearance.BorderSize = 0
         btnBoardingRooms.FlatStyle = FlatStyle.Flat
         btnBoardingRooms.ForeColor = SystemColors.Control
-        btnBoardingRooms.Location = New Point(57, 596)
+        btnBoardingRooms.Location = New Point(57, 547)
         btnBoardingRooms.Name = "btnBoardingRooms"
         btnBoardingRooms.Size = New Size(210, 40)
         btnBoardingRooms.TabIndex = 20
         btnBoardingRooms.Text = "Boarding Rooms"
         btnBoardingRooms.TextAlign = ContentAlignment.MiddleLeft
         btnBoardingRooms.UseVisualStyleBackColor = True
-        ' 
-        ' btnBoardingServices
-        ' 
-        btnBoardingServices.FlatAppearance.BorderSize = 0
-        btnBoardingServices.FlatStyle = FlatStyle.Flat
-        btnBoardingServices.ForeColor = SystemColors.Control
-        btnBoardingServices.Location = New Point(57, 521)
-        btnBoardingServices.Name = "btnBoardingServices"
-        btnBoardingServices.Size = New Size(210, 40)
-        btnBoardingServices.TabIndex = 19
-        btnBoardingServices.Text = "Boarding Services"
-        btnBoardingServices.TextAlign = ContentAlignment.MiddleLeft
-        btnBoardingServices.UseVisualStyleBackColor = True
         ' 
         ' btnGroomingServices
         ' 
@@ -1319,7 +1291,6 @@ Partial Class frmEmployeeDashboard
         CType(PictureBox10, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
@@ -1344,7 +1315,6 @@ Partial Class frmEmployeeDashboard
     Friend WithEvents lblManagement As Label
     Friend WithEvents btnBoardingVideos As Button
     Friend WithEvents btnBoardingRooms As Button
-    Friend WithEvents btnBoardingServices As Button
     Friend WithEvents btnGroomingServices As Button
     Friend WithEvents btnPayments As Button
     Friend WithEvents btnOrders As Button
@@ -1411,7 +1381,6 @@ Partial Class frmEmployeeDashboard
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents PictureBox8 As PictureBox
-    Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents PictureBox15 As PictureBox
     Friend WithEvents PictureBox14 As PictureBox
     Friend WithEvents PictureBox13 As PictureBox

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmMyPets
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -17,10 +17,10 @@ Partial Class FrmMyPets
     'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
 
-    'NOTE: The following procedure is required by the Windows Form Designer
-    'It can be modified using the Windows Form Designer.  
+    'NOTE: The following procedure is required by the Windows Form Designer.
+    'It can be modified using the code editor.
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMyPets))
@@ -47,10 +47,9 @@ Partial Class FrmMyPets
         btnDashboard.FlatStyle = FlatStyle.Flat
         btnDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnDashboard.ForeColor = Color.WhiteSmoke
-        btnDashboard.Location = New Point(895, 77)
-        btnDashboard.Margin = New Padding(4)
+        btnDashboard.Location = New Point(625, 82)
         btnDashboard.Name = "btnDashboard"
-        btnDashboard.Size = New Size(218, 57)
+        btnDashboard.Size = New Size(145, 38)
         btnDashboard.TabIndex = 14
         btnDashboard.Text = "Dashboard"
         btnDashboard.UseVisualStyleBackColor = False
@@ -60,41 +59,52 @@ Partial Class FrmMyPets
         dgvPets.AllowUserToAddRows = False
         dgvPets.AllowUserToDeleteRows = False
         dgvPets.AllowUserToResizeRows = False
-        dgvPets.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        dgvPets.Anchor = CType((((AnchorStyles.Top Or AnchorStyles.Bottom) Or AnchorStyles.Left) Or AnchorStyles.Right), AnchorStyles)
         dgvPets.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-        dgvPets.BackgroundColor = Color.FromArgb(CByte(250), CByte(247), CByte(240))
+        dgvPets.BackgroundColor = Color.FromArgb(250, 247, 240)
         dgvPets.BorderStyle = BorderStyle.None
         dgvPets.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
         dgvPets.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.BackColor = Color.FromArgb(96, 52, 16)
+        DataGridViewCellStyle1.ForeColor = Color.WhiteSmoke
+        DataGridViewCellStyle1.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(96, 52, 16)
+        DataGridViewCellStyle1.SelectionForeColor = Color.WhiteSmoke
         dgvPets.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         dgvPets.ColumnHeadersHeight = 42
         dgvPets.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        dgvPets.GridColor = Color.FromArgb(CByte(225), CByte(211), CByte(192))
-        dgvPets.Location = New Point(34, 151)
-        dgvPets.Margin = New Padding(4)
+        dgvPets.DefaultCellStyle = New DataGridViewCellStyle With {
+            .BackColor = Color.White,
+            .ForeColor = Color.FromArgb(61, 40, 27),
+            .Font = New Font("Segoe UI", 9.0F),
+            .SelectionBackColor = Color.FromArgb(232, 216, 194),
+            .SelectionForeColor = Color.FromArgb(61, 40, 27),
+            .Alignment = DataGridViewContentAlignment.MiddleLeft
+        }
+        dgvPets.GridColor = Color.FromArgb(225, 211, 192)
+        dgvPets.Location = New Point(20, 140)
         dgvPets.MultiSelect = False
         dgvPets.Name = "dgvPets"
         dgvPets.ReadOnly = True
         dgvPets.RightToLeft = RightToLeft.No
         dgvPets.RowHeadersVisible = False
-        dgvPets.RowHeadersWidth = 62
         dgvPets.RowTemplate.Height = 38
         dgvPets.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        dgvPets.Size = New Size(1649, 824)
+        dgvPets.Size = New Size(1090, 605)
         dgvPets.TabIndex = 13
         ' 
         ' btnAddPet
         ' 
         btnAddPet.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        btnAddPet.BackColor = Color.FromArgb(CByte(96), CByte(52), CByte(16))
+        btnAddPet.BackColor = Color.FromArgb(96, 52, 16)
         btnAddPet.FlatAppearance.BorderSize = 0
         btnAddPet.FlatStyle = FlatStyle.Flat
         btnAddPet.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnAddPet.ForeColor = Color.WhiteSmoke
-        btnAddPet.Location = New Point(1419, 77)
-        btnAddPet.Margin = New Padding(4)
+        btnAddPet.Location = New Point(930, 82)
         btnAddPet.Name = "btnAddPet"
-        btnAddPet.Size = New Size(240, 57)
+        btnAddPet.Size = New Size(160, 38)
         btnAddPet.TabIndex = 12
         btnAddPet.Text = "+ Add Pet"
         btnAddPet.UseVisualStyleBackColor = False
@@ -107,59 +117,59 @@ Partial Class FrmMyPets
         btnRefresh.FlatStyle = FlatStyle.Flat
         btnRefresh.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnRefresh.ForeColor = Color.WhiteSmoke
-        btnRefresh.Location = New Point(1169, 77)
-        btnRefresh.Margin = New Padding(4)
+        btnRefresh.Location = New Point(785, 82)
         btnRefresh.Name = "btnRefresh"
-        btnRefresh.Size = New Size(195, 57)
+        btnRefresh.Size = New Size(130, 38)
         btnRefresh.TabIndex = 11
         btnRefresh.Text = "Refresh"
         btnRefresh.UseVisualStyleBackColor = False
         ' 
         ' txtSearch
         ' 
+        txtSearch.Anchor = AnchorStyles.Top Or AnchorStyles.Left
         txtSearch.BackColor = Color.White
         txtSearch.BorderStyle = BorderStyle.FixedSingle
-        txtSearch.Font = New Font("Segoe UI", 10F)
-        txtSearch.ForeColor = Color.FromArgb(CByte(107), CByte(98), CByte(91))
-        txtSearch.Location = New Point(34, 88)
-        txtSearch.Margin = New Padding(4)
-        txtSearch.Multiline = True
+        txtSearch.Font = New Font("Segoe UI", 10.0F)
+        txtSearch.ForeColor = Color.FromArgb(107, 98, 91)
+        txtSearch.Location = New Point(20, 84)
         txtSearch.Name = "txtSearch"
-        txtSearch.Size = New Size(782, 46)
+        txtSearch.Size = New Size(575, 30)
         txtSearch.TabIndex = 10
         txtSearch.Text = "Search Pet Name..."
         ' 
         ' Panel1
         ' 
-        Panel1.BackColor = Color.FromArgb(CByte(255), CByte(243), CByte(222))
+        Panel1.Anchor = CType((((AnchorStyles.Top Or AnchorStyles.Bottom) Or AnchorStyles.Left) Or AnchorStyles.Right), AnchorStyles)
+        Panel1.BackColor = Color.FromArgb(245, 230, 209)
         Panel1.Controls.Add(pnlHeader)
         Panel1.Controls.Add(btnDashboard)
         Panel1.Controls.Add(dgvPets)
         Panel1.Controls.Add(btnAddPet)
         Panel1.Controls.Add(btnRefresh)
         Panel1.Controls.Add(txtSearch)
-        Panel1.Location = New Point(0, 1)
+        Panel1.Location = New Point(15, 15)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1716, 1008)
+        Panel1.Padding = New Padding(20)
+        Panel1.Size = New Size(1130, 770)
         Panel1.TabIndex = 15
         ' 
         ' pnlHeader
         ' 
-        pnlHeader.BackColor = Color.FromArgb(CByte(55), CByte(32), CByte(20))
+        pnlHeader.BackColor = Color.FromArgb(96, 52, 16)
         pnlHeader.Controls.Add(PictureBox2)
         pnlHeader.Controls.Add(Label1)
         pnlHeader.Dock = DockStyle.Top
-        pnlHeader.Location = New Point(0, 0)
+        pnlHeader.Location = New Point(20, 20)
         pnlHeader.Name = "pnlHeader"
-        pnlHeader.Size = New Size(1716, 70)
+        pnlHeader.Size = New Size(1090, 55)
         pnlHeader.TabIndex = 15
         ' 
         ' PictureBox2
         ' 
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(3, 9)
+        PictureBox2.Location = New Point(10, 4)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(91, 53)
+        PictureBox2.Size = New Size(70, 48)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox2.TabIndex = 2
         PictureBox2.TabStop = False
@@ -167,24 +177,25 @@ Partial Class FrmMyPets
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Georgia", 22F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.ForeColor = Color.FromArgb(CByte(255), CByte(243), CByte(222))
-        Label1.Location = New Point(88, 11)
+        Label1.Font = New Font("Georgia", 20.0F, FontStyle.Bold)
+        Label1.ForeColor = Color.FromArgb(255, 243, 222)
+        Label1.Location = New Point(88, 8)
         Label1.Name = "Label1"
-        Label1.Size = New Size(232, 51)
+        Label1.Size = New Size(210, 38)
         Label1.TabIndex = 0
         Label1.Text = "MY PETS"
         ' 
         ' FrmMyPets
         ' 
-        AutoScaleDimensions = New SizeF(12F, 30F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.FromArgb(CByte(235), CByte(221), CByte(202))
-        ClientSize = New Size(1712, 1006)
+        BackColor = Color.FromArgb(235, 221, 202)
+        ClientSize = New Size(1160, 800)
         Controls.Add(Panel1)
+        MinimumSize = New Size(1050, 700)
         Name = "FrmMyPets"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "FrmMyPets"
+        Text = "My Pets"
         CType(dgvPets, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
@@ -192,6 +203,7 @@ Partial Class FrmMyPets
         pnlHeader.PerformLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
+
     End Sub
 
     Friend WithEvents btnDashboard As Button
@@ -203,4 +215,5 @@ Partial Class FrmMyPets
     Friend WithEvents pnlHeader As Panel
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label1 As Label
+
 End Class

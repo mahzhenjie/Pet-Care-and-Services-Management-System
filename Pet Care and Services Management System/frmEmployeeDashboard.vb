@@ -170,10 +170,6 @@ Public Class frmEmployeeDashboard
             btnGroomingServices.Size = New Size(54, 40)
             btnGroomingServices.Text = ""
 
-            ' BOARDING SERVICES
-            btnBoardingServices.Location = New Point(8, 521)
-            btnBoardingServices.Size = New Size(54, 40)
-            btnBoardingServices.Text = ""
 
             ' BOARDING ROOMS
             btnBoardingRooms.Location = New Point(8, 596)
@@ -207,7 +203,6 @@ Public Class frmEmployeeDashboard
             PictureBox4.Visible = True
             PictureBox5.Visible = True
             PictureBox6.Visible = True
-            PictureBox7.Visible = True
             PictureBox8.Visible = True
             PictureBox9.Visible = True
             PictureBox10.Visible = True
@@ -276,10 +271,6 @@ Public Class frmEmployeeDashboard
             btnGroomingServices.Size = New Size(210, 40)
             btnGroomingServices.Text = "Grooming Services"
 
-            ' BOARDING SERVICES
-            btnBoardingServices.Location = New Point(57, 521)
-            btnBoardingServices.Size = New Size(210, 40)
-            btnBoardingServices.Text = "Boarding Services"
 
             ' BOARDING ROOMS
             btnBoardingRooms.Location = New Point(57, 596)
@@ -339,7 +330,7 @@ Public Class frmEmployeeDashboard
 
     ' BOOKINGS
     Private Sub btnBookings_Click(sender As Object, e As EventArgs) Handles btnBookings.Click
-        frmGroomingBooking.Show()
+        frmBooking.Show()
         Me.Hide()
     End Sub
 
@@ -361,11 +352,6 @@ Public Class frmEmployeeDashboard
         Me.Hide()
     End Sub
 
-    ' BOARDING SERVICES
-    Private Sub btnBoardingServices_Click(sender As Object, e As EventArgs) Handles btnBoardingServices.Click
-        frmBoardingServices.Show()
-        Me.Hide()
-    End Sub
 
     ' BOARDING ROOMS
     Private Sub btnBoardingRooms_Click(sender As Object, e As EventArgs) Handles btnBoardingRooms.Click

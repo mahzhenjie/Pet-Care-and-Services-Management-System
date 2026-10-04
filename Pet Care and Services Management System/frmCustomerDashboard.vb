@@ -7,6 +7,7 @@ Public Class frmCustomerDashboard
     Private connectionString As String = "Server=localhost;Database=pet_care_and_services_management_system;Uid=root;Pwd=;"
 
     Private sidebarCollapsed As Boolean = False
+
     ' FORM LOAD
     Private Sub frmCustomerDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblCustomer.Text = CurrentUserName
@@ -45,6 +46,7 @@ Public Class frmCustomerDashboard
                     lblOrderCount.Text = Convert.ToInt32(orderCmd.ExecuteScalar()).ToString()
                 End Using
             End Using
+
         Catch ex As Exception
             MessageBox.Show("Unable to load dashboard data." & Environment.NewLine & Environment.NewLine & ex.Message, "Dashboard Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -76,6 +78,7 @@ Public Class frmCustomerDashboard
             dgvRecentAppointments.AllowUserToDeleteRows = False
             dgvRecentAppointments.SelectionMode = DataGridViewSelectionMode.FullRowSelect
             dgvRecentAppointments.RowHeadersVisible = False
+
         Catch ex As Exception
             MessageBox.Show("Unable to load recent appointments." & Environment.NewLine & Environment.NewLine & ex.Message, "Appointment Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -97,7 +100,6 @@ Public Class frmCustomerDashboard
     Private Sub btnPet_Click(sender As Object, e As EventArgs) Handles btnPet.Click
         Dim frm As New FrmMyPets()
         frm.ShowDialog()
-
     End Sub
 
     ' APPOINTMENTS
@@ -142,6 +144,7 @@ Public Class frmCustomerDashboard
             Dim productForm As New frmCustomerProduct()
             productForm.Show()
             Me.Hide()
+
         Catch ex As Exception
             MessageBox.Show("Unable to open Products." & Environment.NewLine & Environment.NewLine & ex.Message, "Navigation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -155,6 +158,7 @@ Public Class frmCustomerDashboard
             End Using
 
             LoadDashboardData()
+
         Catch ex As Exception
             MessageBox.Show("Unable to open Membership." & Environment.NewLine & Environment.NewLine & ex.Message, "Navigation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -169,6 +173,7 @@ Public Class frmCustomerDashboard
 
             LoadDashboardData()
             LoadRecentAppointments()
+
         Catch ex As Exception
             MessageBox.Show("Unable to open New Appointment." & Environment.NewLine & Environment.NewLine & ex.Message, "Navigation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -187,6 +192,7 @@ Public Class frmCustomerDashboard
             End Using
 
             LoadDashboardData()
+
         Catch ex As Exception
             MessageBox.Show("Unable to open Add Pet." & Environment.NewLine & Environment.NewLine & ex.Message, "Navigation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -210,16 +216,17 @@ Public Class frmCustomerDashboard
             Dim loginForm As New frmLogin()
             Me.Close()
             loginForm.Show()
-
         End If
     End Sub
 
+    ' DASHBOARD
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
         MessageBox.Show("You are already on the Customer Dashboard.",
-                    "Dashboard",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information)
+                        "Dashboard",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information)
     End Sub
+
     ' COLLAPSE / EXPAND SIDEBAR
     Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
 
@@ -236,7 +243,6 @@ Public Class frmCustomerDashboard
             picLogo.Visible = False
             lblManagement.Visible = False
             lblServices.Visible = False
-            lblShopAndMembership.Visible = False
 
             ' DASHBOARD
             btnDashboard.Location = New Point(8, 141)
@@ -335,7 +341,6 @@ Public Class frmCustomerDashboard
             picLogo.Visible = True
             lblManagement.Visible = True
             lblServices.Visible = True
-            lblShopAndMembership.Visible = True
 
             ' DASHBOARD
             btnDashboard.Location = New Point(11, 141)
@@ -368,32 +373,32 @@ Public Class frmCustomerDashboard
             btnPayments.Text = "Payments"
 
             ' GROOMING SERVICES
-            btnGroomingServices.Location = New Point(57, 475)
+            btnGroomingServices.Location = New Point(57, 486)
             btnGroomingServices.Size = New Size(210, 40)
             btnGroomingServices.Text = "Grooming Services"
 
             ' BOARDING SERVICES
-            btnBoardingServices.Location = New Point(57, 521)
+            btnBoardingServices.Location = New Point(57, 532)
             btnBoardingServices.Size = New Size(210, 40)
             btnBoardingServices.Text = "Boarding Services"
 
             ' BOARDING VIDEOS
-            btnBoardingVideos.Location = New Point(57, 642)
+            btnBoardingVideos.Location = New Point(57, 578)
             btnBoardingVideos.Size = New Size(210, 40)
             btnBoardingVideos.Text = "Boarding Videos"
 
             ' PRODUCTS
-            btnProduct.Location = New Point(57, 720)
+            btnProduct.Location = New Point(57, 673)
             btnProduct.Size = New Size(210, 40)
             btnProduct.Text = "Products"
 
             ' MEMBERSHIP
-            btnMembership.Location = New Point(57, 766)
+            btnMembership.Location = New Point(57, 719)
             btnMembership.Size = New Size(210, 40)
             btnMembership.Text = "Membership"
 
             ' LOGOUT
-            btnLogout.Location = New Point(19, 848)
+            btnLogout.Location = New Point(19, 801)
             btnLogout.Size = New Size(212, 41)
             btnLogout.Text = "Logout"
 
@@ -408,6 +413,9 @@ Public Class frmCustomerDashboard
             pnlRecentAppointments.Width = 748
 
             sidebarCollapsed = False
+
         End If
+
     End Sub
+
 End Class

@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 
-Public Class frmGroomingBooking
+Public Class frmBooking
 
     ' DATABASE CONNECTION
     Private connectionString As String = "Server=localhost;Database=pet_care_and_services_management_system;Uid=root;Pwd=;"
@@ -8,6 +8,7 @@ Public Class frmGroomingBooking
     ' FORM LOAD
     Private Sub frmGroomingBooking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadGroomingBookingData()
+        LoadBoardingBookingData()
     End Sub
 
     ' LOAD GROOMING BOOKING DATA FROM DATABASE
@@ -15,6 +16,7 @@ Public Class frmGroomingBooking
         Try
             Using conn As New MySqlConnection(connectionString)
                 conn.Open()
+
                 Dim sql As String = "SELECT GroomingBookingID, PetID, ServiceID, DATE_FORMAT(BookingDate, '%Y-%m-%d') AS BookingDate, TIME_FORMAT(BookingTime, '%H:%i') AS BookingTime, Status FROM GroomingBookings ORDER BY GroomingBookingID"
 
                 Using cmd As New MySqlCommand(sql, conn)
@@ -36,8 +38,42 @@ Public Class frmGroomingBooking
                     End Using
                 End Using
             End Using
+
         Catch ex As Exception
             MessageBox.Show("Unable to load grooming booking data." & Environment.NewLine & Environment.NewLine & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    ' LOAD BOARDING BOOKING DATA FROM DATABASE
+    Private Sub LoadBoardingBookingData()
+        Try
+            Using conn As New MySqlConnection(connectionString)
+                conn.Open()
+
+                Dim sql As String = "SELECT BoardingBookingID, PetID, RoomID, DATE_FORMAT(StartDate, '%Y-%m-%d') AS StartDate, DATE_FORMAT(EndDate, '%Y-%m-%d') AS EndDate, Status FROM BoardingBookings ORDER BY BoardingBookingID"
+
+                Using cmd As New MySqlCommand(sql, conn)
+                    Using adapter As New MySqlDataAdapter(cmd)
+                        Dim table As New DataTable()
+                        adapter.Fill(table)
+                        dgvBoardingBooking.Rows.Clear()
+
+                        For Each row As DataRow In table.Rows
+                            dgvBoardingBooking.Rows.Add(
+                                row("BoardingBookingID").ToString(),
+                                row("PetID").ToString(),
+                                row("RoomID").ToString(),
+                                row("StartDate").ToString(),
+                                row("EndDate").ToString(),
+                                row("Status").ToString()
+                            )
+                        Next
+                    End Using
+                End Using
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Unable to load boarding booking data." & Environment.NewLine & Environment.NewLine & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
@@ -58,6 +94,7 @@ Public Class frmGroomingBooking
     Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
         txtSearch.Text = ""
         LoadGroomingBookingData()
+        LoadBoardingBookingData()
     End Sub
 
     ' SEARCH GROOMING BOOKING
@@ -91,12 +128,50 @@ Public Class frmGroomingBooking
                     End Using
                 End Using
             End Using
+
+            SearchBoardingBooking(searchText)
+
         Catch ex As Exception
             MessageBox.Show("Search failed." & Environment.NewLine & Environment.NewLine & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
-    ' EDIT / DELETE BUTTON
+    ' SEARCH BOARDING BOOKING
+    Private Sub SearchBoardingBooking(searchText As String)
+        Try
+            Using conn As New MySqlConnection(connectionString)
+                conn.Open()
+
+                Dim sql As String = "SELECT BoardingBookingID, PetID, RoomID, DATE_FORMAT(StartDate, '%Y-%m-%d') AS StartDate, DATE_FORMAT(EndDate, '%Y-%m-%d') AS EndDate, Status FROM BoardingBookings WHERE BoardingBookingID LIKE @search OR PetID LIKE @search OR RoomID LIKE @search OR DATE_FORMAT(StartDate, '%Y-%m-%d') LIKE @search OR DATE_FORMAT(EndDate, '%Y-%m-%d') LIKE @search OR Status LIKE @search ORDER BY BoardingBookingID"
+
+                Using cmd As New MySqlCommand(sql, conn)
+                    cmd.Parameters.AddWithValue("@search", "%" & searchText & "%")
+
+                    Using adapter As New MySqlDataAdapter(cmd)
+                        Dim table As New DataTable()
+                        adapter.Fill(table)
+                        dgvBoardingBooking.Rows.Clear()
+
+                        For Each row As DataRow In table.Rows
+                            dgvBoardingBooking.Rows.Add(
+                                row("BoardingBookingID").ToString(),
+                                row("PetID").ToString(),
+                                row("RoomID").ToString(),
+                                row("StartDate").ToString(),
+                                row("EndDate").ToString(),
+                                row("Status").ToString()
+                            )
+                        Next
+                    End Using
+                End Using
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Boarding booking search failed." & Environment.NewLine & Environment.NewLine & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    ' EDIT / DELETE GROOMING BOOKING
     Private Sub dgvGroomingBooking_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGroomingBooking.CellContentClick
         If e.RowIndex < 0 Then
             Exit Sub
@@ -126,6 +201,36 @@ Public Class frmGroomingBooking
         End If
     End Sub
 
+    ' EDIT / DELETE BOARDING BOOKING
+    Private Sub dgvBoardingBooking_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvBoardingBooking.CellContentClick
+        If e.RowIndex < 0 Then
+            Exit Sub
+        End If
+
+        If dgvBoardingBooking.Rows(e.RowIndex).IsNewRow Then
+            Exit Sub
+        End If
+
+        ' EDIT BOARDING BOOKING
+        If e.ColumnIndex = dgvBoardingBooking.Columns("colBoardingEdit").Index Then
+            Dim bookingID As String = dgvBoardingBooking.Rows(e.RowIndex).Cells("colBoardingBookingID").Value.ToString()
+            Dim frm As New frmEditBoardingBooking(bookingID)
+
+            If frm.ShowDialog() = DialogResult.OK Then
+                LoadBoardingBookingData()
+            End If
+        End If
+
+        ' DELETE BOARDING BOOKING
+        If e.ColumnIndex = dgvBoardingBooking.Columns("colBoardingDelete").Index Then
+            Dim bookingID As String = dgvBoardingBooking.Rows(e.RowIndex).Cells("colBoardingBookingID").Value.ToString()
+
+            If MessageBox.Show("Are you sure you want to delete this boarding booking?" & Environment.NewLine & Environment.NewLine & "Booking ID: " & bookingID, "Delete Boarding Booking", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                DeleteBoardingBooking(bookingID)
+            End If
+        End If
+    End Sub
+
     ' DELETE GROOMING BOOKING FROM DATABASE
     Private Sub DeleteGroomingBooking(bookingID As String)
         Try
@@ -147,8 +252,36 @@ Public Class frmGroomingBooking
                     End If
                 End Using
             End Using
+
         Catch ex As Exception
             MessageBox.Show("Unable to delete grooming booking." & Environment.NewLine & Environment.NewLine & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    ' DELETE BOARDING BOOKING FROM DATABASE
+    Private Sub DeleteBoardingBooking(bookingID As String)
+        Try
+            Using conn As New MySqlConnection(connectionString)
+                conn.Open()
+
+                Dim sql As String = "DELETE FROM BoardingBookings WHERE BoardingBookingID = @BoardingBookingID"
+
+                Using cmd As New MySqlCommand(sql, conn)
+                    cmd.Parameters.AddWithValue("@BoardingBookingID", bookingID)
+
+                    Dim result As Integer = cmd.ExecuteNonQuery()
+
+                    If result > 0 Then
+                        MessageBox.Show("Boarding booking deleted successfully.", "Delete Boarding Booking", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        LoadBoardingBookingData()
+                    Else
+                        MessageBox.Show("Boarding booking was not found.", "Delete Boarding Booking", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    End If
+                End Using
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Unable to delete boarding booking." & Environment.NewLine & Environment.NewLine & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
