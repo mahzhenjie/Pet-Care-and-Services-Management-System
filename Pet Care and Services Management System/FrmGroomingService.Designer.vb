@@ -26,9 +26,9 @@ Partial Class FrmGroomingService
         pnlContent = New Panel()
         flpServices = New FlowLayoutPanel()
         pnlToolbar = New Panel()
-        btnBackToDashboard = New Button()
-        Button2 = New Button()
-        Button3 = New Button()
+        btnDashboard = New Button()
+        btnBookingService = New Button()
+        Refreshbtn = New Button()
         btnGoBackDashboard = New Button()
         btnAddBoardingService = New Button()
         btnRefresh = New Button()
@@ -81,9 +81,9 @@ Partial Class FrmGroomingService
         ' pnlToolbar
         ' 
         pnlToolbar.BackColor = Color.FromArgb(CByte(232), CByte(216), CByte(194))
-        pnlToolbar.Controls.Add(btnBackToDashboard)
-        pnlToolbar.Controls.Add(Button2)
-        pnlToolbar.Controls.Add(Button3)
+        pnlToolbar.Controls.Add(btnDashboard)
+        pnlToolbar.Controls.Add(btnBookingService)
+        pnlToolbar.Controls.Add(Refreshbtn)
         pnlToolbar.Controls.Add(btnGoBackDashboard)
         pnlToolbar.Controls.Add(btnAddBoardingService)
         pnlToolbar.Controls.Add(btnRefresh)
@@ -95,50 +95,50 @@ Partial Class FrmGroomingService
         pnlToolbar.Size = New Size(1537, 70)
         pnlToolbar.TabIndex = 1
         ' 
-        ' btnBackToDashboard
+        ' btnDashboard
         ' 
-        btnBackToDashboard.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        btnBackToDashboard.BackColor = Color.SaddleBrown
-        btnBackToDashboard.FlatAppearance.BorderSize = 0
-        btnBackToDashboard.FlatStyle = FlatStyle.Flat
-        btnBackToDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
-        btnBackToDashboard.ForeColor = Color.WhiteSmoke
-        btnBackToDashboard.Location = New Point(1304, 17)
-        btnBackToDashboard.Name = "btnBackToDashboard"
-        btnBackToDashboard.Size = New Size(195, 40)
-        btnBackToDashboard.TabIndex = 5
-        btnBackToDashboard.Text = "Back to Dashboard"
-        btnBackToDashboard.UseVisualStyleBackColor = False
+        btnDashboard.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnDashboard.BackColor = Color.SaddleBrown
+        btnDashboard.FlatAppearance.BorderSize = 0
+        btnDashboard.FlatStyle = FlatStyle.Flat
+        btnDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        btnDashboard.ForeColor = Color.WhiteSmoke
+        btnDashboard.Location = New Point(1304, 17)
+        btnDashboard.Name = "btnDashboard"
+        btnDashboard.Size = New Size(195, 40)
+        btnDashboard.TabIndex = 5
+        btnDashboard.Text = "Dashboard"
+        btnDashboard.UseVisualStyleBackColor = False
         ' 
-        ' Button2
+        ' btnBookingService
         ' 
-        Button2.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        Button2.BackColor = Color.FromArgb(CByte(96), CByte(52), CByte(16))
-        Button2.FlatAppearance.BorderSize = 0
-        Button2.FlatStyle = FlatStyle.Flat
-        Button2.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
-        Button2.ForeColor = Color.WhiteSmoke
-        Button2.Location = New Point(1074, 17)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(190, 40)
-        Button2.TabIndex = 6
-        Button2.Text = "+ Add Booking"
-        Button2.UseVisualStyleBackColor = False
+        btnBookingService.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnBookingService.BackColor = Color.FromArgb(CByte(96), CByte(52), CByte(16))
+        btnBookingService.FlatAppearance.BorderSize = 0
+        btnBookingService.FlatStyle = FlatStyle.Flat
+        btnBookingService.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        btnBookingService.ForeColor = Color.WhiteSmoke
+        btnBookingService.Location = New Point(1074, 17)
+        btnBookingService.Name = "btnBookingService"
+        btnBookingService.Size = New Size(190, 40)
+        btnBookingService.TabIndex = 6
+        btnBookingService.Text = "+ Booking Service"
+        btnBookingService.UseVisualStyleBackColor = False
         ' 
-        ' Button3
+        ' Refreshbtn
         ' 
-        Button3.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        Button3.BackColor = Color.Sienna
-        Button3.FlatAppearance.BorderSize = 0
-        Button3.FlatStyle = FlatStyle.Flat
-        Button3.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
-        Button3.ForeColor = Color.WhiteSmoke
-        Button3.Location = New Point(829, 17)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(207, 40)
-        Button3.TabIndex = 7
-        Button3.Text = "Refresh"
-        Button3.UseVisualStyleBackColor = False
+        Refreshbtn.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        Refreshbtn.BackColor = Color.Sienna
+        Refreshbtn.FlatAppearance.BorderSize = 0
+        Refreshbtn.FlatStyle = FlatStyle.Flat
+        Refreshbtn.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        Refreshbtn.ForeColor = Color.WhiteSmoke
+        Refreshbtn.Location = New Point(829, 17)
+        Refreshbtn.Name = "Refreshbtn"
+        Refreshbtn.Size = New Size(207, 40)
+        Refreshbtn.TabIndex = 7
+        Refreshbtn.Text = "Refresh"
+        Refreshbtn.UseVisualStyleBackColor = False
         ' 
         ' btnGoBackDashboard
         ' 
@@ -268,7 +268,7 @@ Partial Class FrmGroomingService
     Friend WithEvents pnlHeader As Panel
     Friend WithEvents lblSubtitle As Label
     Friend WithEvents lblTitle As Label
-    Friend WithEvents btnBackToDashboard As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btnDashboard As Button
+    Friend WithEvents btnBookingService As Button
+    Friend WithEvents Refreshbtn As Button
 End Class

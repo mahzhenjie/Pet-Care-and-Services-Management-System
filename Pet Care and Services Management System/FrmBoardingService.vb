@@ -177,4 +177,7 @@ Public Class FrmBoardingService
         Me.Close()
     End Sub
 
+    Private Sub flpRooms_Paint(sender As Object, e As PaintEventArgs) Handles flpRooms.Paint
+
+    End Sub
 End Class

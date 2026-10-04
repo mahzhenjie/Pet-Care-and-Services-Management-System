@@ -53,7 +53,7 @@ Partial Class FrmBoardingService
         pnlMain.Location = New Point(0, 0)
         pnlMain.Name = "pnlMain"
         pnlMain.Padding = New Padding(20)
-        pnlMain.Size = New Size(1210, 926)
+        pnlMain.Size = New Size(1540, 1107)
         pnlMain.TabIndex = 1
         ' 
         ' pnlContent
@@ -64,7 +64,7 @@ Partial Class FrmBoardingService
         pnlContent.Location = New Point(20, 175)
         pnlContent.Name = "pnlContent"
         pnlContent.Padding = New Padding(0, 15, 0, 0)
-        pnlContent.Size = New Size(1170, 731)
+        pnlContent.Size = New Size(1500, 912)
         pnlContent.TabIndex = 2
         ' 
         ' flpRooms
@@ -75,7 +75,7 @@ Partial Class FrmBoardingService
         flpRooms.Location = New Point(0, 15)
         flpRooms.Name = "flpRooms"
         flpRooms.Padding = New Padding(5)
-        flpRooms.Size = New Size(1170, 716)
+        flpRooms.Size = New Size(1500, 897)
         flpRooms.TabIndex = 0
         ' 
         ' pnlToolbar
@@ -92,7 +92,7 @@ Partial Class FrmBoardingService
         pnlToolbar.Dock = DockStyle.Top
         pnlToolbar.Location = New Point(20, 105)
         pnlToolbar.Name = "pnlToolbar"
-        pnlToolbar.Size = New Size(1170, 70)
+        pnlToolbar.Size = New Size(1500, 70)
         pnlToolbar.TabIndex = 1
         ' 
         ' btnDashboard
@@ -103,7 +103,7 @@ Partial Class FrmBoardingService
         btnDashboard.FlatStyle = FlatStyle.Flat
         btnDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnDashboard.ForeColor = Color.WhiteSmoke
-        btnDashboard.Location = New Point(957, 17)
+        btnDashboard.Location = New Point(1287, 17)
         btnDashboard.Name = "btnDashboard"
         btnDashboard.Size = New Size(195, 40)
         btnDashboard.TabIndex = 5
@@ -118,7 +118,7 @@ Partial Class FrmBoardingService
         btnAddBooking.FlatStyle = FlatStyle.Flat
         btnAddBooking.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnAddBooking.ForeColor = Color.WhiteSmoke
-        btnAddBooking.Location = New Point(752, 17)
+        btnAddBooking.Location = New Point(1082, 17)
         btnAddBooking.Name = "btnAddBooking"
         btnAddBooking.Size = New Size(190, 40)
         btnAddBooking.TabIndex = 6
@@ -133,7 +133,7 @@ Partial Class FrmBoardingService
         Refreshbtn.FlatStyle = FlatStyle.Flat
         Refreshbtn.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         Refreshbtn.ForeColor = Color.WhiteSmoke
-        Refreshbtn.Location = New Point(540, 17)
+        Refreshbtn.Location = New Point(870, 17)
         Refreshbtn.Name = "Refreshbtn"
         Refreshbtn.Size = New Size(202, 40)
         Refreshbtn.TabIndex = 7
@@ -148,7 +148,7 @@ Partial Class FrmBoardingService
         btnGoBackDashboard.FlatStyle = FlatStyle.Flat
         btnGoBackDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnGoBackDashboard.ForeColor = Color.WhiteSmoke
-        btnGoBackDashboard.Location = New Point(1900, 15)
+        btnGoBackDashboard.Location = New Point(2230, 15)
         btnGoBackDashboard.Name = "btnGoBackDashboard"
         btnGoBackDashboard.Size = New Size(195, 40)
         btnGoBackDashboard.TabIndex = 0
@@ -163,7 +163,7 @@ Partial Class FrmBoardingService
         btnAddBoardingService.FlatStyle = FlatStyle.Flat
         btnAddBoardingService.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnAddBoardingService.ForeColor = Color.WhiteSmoke
-        btnAddBoardingService.Location = New Point(1695, 15)
+        btnAddBoardingService.Location = New Point(2025, 15)
         btnAddBoardingService.Name = "btnAddBoardingService"
         btnAddBoardingService.Size = New Size(190, 40)
         btnAddBoardingService.TabIndex = 1
@@ -178,7 +178,7 @@ Partial Class FrmBoardingService
         btnRefresh.FlatStyle = FlatStyle.Flat
         btnRefresh.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnRefresh.ForeColor = Color.WhiteSmoke
-        btnRefresh.Location = New Point(1600, 15)
+        btnRefresh.Location = New Point(1930, 15)
         btnRefresh.Name = "btnRefresh"
         btnRefresh.Size = New Size(85, 40)
         btnRefresh.TabIndex = 2
@@ -191,7 +191,7 @@ Partial Class FrmBoardingService
         txtSearch.Font = New Font("Segoe UI", 10F)
         txtSearch.Location = New Point(90, 18)
         txtSearch.Name = "txtSearch"
-        txtSearch.Size = New Size(424, 34)
+        txtSearch.Size = New Size(754, 34)
         txtSearch.TabIndex = 3
         txtSearch.Text = "Search boarding service..."
         ' 
@@ -214,7 +214,7 @@ Partial Class FrmBoardingService
         pnlHeader.Dock = DockStyle.Top
         pnlHeader.Location = New Point(20, 20)
         pnlHeader.Name = "pnlHeader"
-        pnlHeader.Size = New Size(1170, 85)
+        pnlHeader.Size = New Size(1500, 85)
         pnlHeader.TabIndex = 0
         ' 
         ' lblSubtitle
@@ -243,7 +243,7 @@ Partial Class FrmBoardingService
         ' 
         AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1210, 926)
+        ClientSize = New Size(1540, 1107)
         Controls.Add(pnlMain)
         Name = "FrmBoardingService"
         Text = "FrmBoardingService"
