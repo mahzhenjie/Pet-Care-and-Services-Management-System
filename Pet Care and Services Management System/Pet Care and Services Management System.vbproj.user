@@ -98,6 +98,9 @@
     <Compile Update="frmEditMembership.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmEditMyPet.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmEditOrderDetail.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +132,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmMembershipvb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmMyOrderDetail.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmMyOrders.vb">

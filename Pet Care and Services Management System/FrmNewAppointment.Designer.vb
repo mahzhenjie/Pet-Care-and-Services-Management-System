@@ -27,11 +27,13 @@ Partial Class FrmNewAppointment
         PictureBox2 = New PictureBox()
         lblMyAppointment = New Label()
         pnlAddPet = New Panel()
-        dtpBookingTime = New DateTimePicker()
-        dtpAppointmentDate = New DateTimePicker()
+        txtDescription = New TextBox()
+        Label1 = New Label()
+        dtpTime = New DateTimePicker()
+        dtpDate = New DateTimePicker()
         cmbService = New ComboBox()
-        cmbPet = New ComboBox()
-        cmbGender = New ComboBox()
+        cmbPetName = New ComboBox()
+        cmbServiceType = New ComboBox()
         btnCancel = New Button()
         btnBookAppointment = New Button()
         lblTime = New Label()
@@ -80,11 +82,13 @@ Partial Class FrmNewAppointment
         ' pnlAddPet
         ' 
         pnlAddPet.BackColor = Color.FromArgb(CByte(232), CByte(216), CByte(194))
-        pnlAddPet.Controls.Add(dtpBookingTime)
-        pnlAddPet.Controls.Add(dtpAppointmentDate)
+        pnlAddPet.Controls.Add(txtDescription)
+        pnlAddPet.Controls.Add(Label1)
+        pnlAddPet.Controls.Add(dtpTime)
+        pnlAddPet.Controls.Add(dtpDate)
         pnlAddPet.Controls.Add(cmbService)
-        pnlAddPet.Controls.Add(cmbPet)
-        pnlAddPet.Controls.Add(cmbGender)
+        pnlAddPet.Controls.Add(cmbPetName)
+        pnlAddPet.Controls.Add(cmbServiceType)
         pnlAddPet.Controls.Add(btnCancel)
         pnlAddPet.Controls.Add(btnBookAppointment)
         pnlAddPet.Controls.Add(lblTime)
@@ -96,28 +100,49 @@ Partial Class FrmNewAppointment
         pnlAddPet.Location = New Point(24, 92)
         pnlAddPet.Margin = New Padding(4)
         pnlAddPet.Name = "pnlAddPet"
-        pnlAddPet.Size = New Size(840, 638)
+        pnlAddPet.Size = New Size(840, 723)
         pnlAddPet.TabIndex = 17
         ' 
-        ' dtpBookingTime
+        ' txtDescription
         ' 
-        dtpBookingTime.CustomFormat = "hh:mm tt"
-        dtpBookingTime.Font = New Font("Segoe UI", 10F)
-        dtpBookingTime.Format = DateTimePickerFormat.Custom
-        dtpBookingTime.Location = New Point(281, 369)
-        dtpBookingTime.Margin = New Padding(4)
-        dtpBookingTime.Name = "dtpBookingTime"
-        dtpBookingTime.ShowUpDown = True
-        dtpBookingTime.Size = New Size(478, 34)
-        dtpBookingTime.TabIndex = 18
+        txtDescription.Location = New Point(281, 314)
+        txtDescription.Multiline = True
+        txtDescription.Name = "txtDescription"
+        txtDescription.ReadOnly = True
+        txtDescription.Size = New Size(473, 101)
+        txtDescription.TabIndex = 20
         ' 
-        ' dtpAppointmentDate
+        ' Label1
         ' 
-        dtpAppointmentDate.Format = DateTimePickerFormat.Short
-        dtpAppointmentDate.Location = New Point(281, 306)
-        dtpAppointmentDate.Name = "dtpAppointmentDate"
-        dtpAppointmentDate.Size = New Size(199, 35)
-        dtpAppointmentDate.TabIndex = 8
+        Label1.AutoSize = True
+        Label1.Font = New Font("Lucida Sans Unicode", 11F)
+        Label1.ForeColor = Color.SaddleBrown
+        Label1.Location = New Point(88, 314)
+        Label1.Margin = New Padding(4, 0, 4, 0)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(133, 27)
+        Label1.TabIndex = 19
+        Label1.Text = "Description"
+        ' 
+        ' dtpTime
+        ' 
+        dtpTime.CustomFormat = "hh:mm tt"
+        dtpTime.Font = New Font("Segoe UI", 10F)
+        dtpTime.Format = DateTimePickerFormat.Custom
+        dtpTime.Location = New Point(281, 511)
+        dtpTime.Margin = New Padding(4)
+        dtpTime.Name = "dtpTime"
+        dtpTime.ShowUpDown = True
+        dtpTime.Size = New Size(478, 34)
+        dtpTime.TabIndex = 18
+        ' 
+        ' dtpDate
+        ' 
+        dtpDate.Format = DateTimePickerFormat.Short
+        dtpDate.Location = New Point(281, 448)
+        dtpDate.Name = "dtpDate"
+        dtpDate.Size = New Size(199, 35)
+        dtpDate.TabIndex = 8
         ' 
         ' cmbService
         ' 
@@ -127,28 +152,28 @@ Partial Class FrmNewAppointment
         cmbService.Size = New Size(196, 38)
         cmbService.TabIndex = 17
         ' 
-        ' cmbPet
+        ' cmbPetName
         ' 
-        cmbPet.FormattingEnabled = True
-        cmbPet.Location = New Point(284, 107)
-        cmbPet.Name = "cmbPet"
-        cmbPet.Size = New Size(196, 38)
-        cmbPet.TabIndex = 16
+        cmbPetName.FormattingEnabled = True
+        cmbPetName.Location = New Point(284, 107)
+        cmbPetName.Name = "cmbPetName"
+        cmbPetName.Size = New Size(196, 38)
+        cmbPetName.TabIndex = 16
         ' 
-        ' cmbGender
+        ' cmbServiceType
         ' 
-        cmbGender.FormattingEnabled = True
-        cmbGender.Location = New Point(284, 176)
-        cmbGender.Name = "cmbGender"
-        cmbGender.Size = New Size(196, 38)
-        cmbGender.TabIndex = 15
+        cmbServiceType.FormattingEnabled = True
+        cmbServiceType.Location = New Point(284, 176)
+        cmbServiceType.Name = "cmbServiceType"
+        cmbServiceType.Size = New Size(196, 38)
+        cmbServiceType.TabIndex = 15
         ' 
         ' btnCancel
         ' 
         btnCancel.BackColor = Color.FromArgb(CByte(244), CByte(220), CByte(204))
         btnCancel.Font = New Font("Lucida Sans Unicode", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnCancel.ForeColor = Color.SaddleBrown
-        btnCancel.Location = New Point(431, 477)
+        btnCancel.Location = New Point(431, 619)
         btnCancel.Margin = New Padding(4)
         btnCancel.Name = "btnCancel"
         btnCancel.Size = New Size(225, 68)
@@ -161,7 +186,7 @@ Partial Class FrmNewAppointment
         btnBookAppointment.BackColor = Color.SaddleBrown
         btnBookAppointment.Font = New Font("Lucida Sans Unicode", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnBookAppointment.ForeColor = Color.WhiteSmoke
-        btnBookAppointment.Location = New Point(178, 477)
+        btnBookAppointment.Location = New Point(178, 619)
         btnBookAppointment.Margin = New Padding(4)
         btnBookAppointment.Name = "btnBookAppointment"
         btnBookAppointment.Size = New Size(225, 68)
@@ -174,7 +199,7 @@ Partial Class FrmNewAppointment
         lblTime.AutoSize = True
         lblTime.Font = New Font("Lucida Sans Unicode", 11F)
         lblTime.ForeColor = Color.SaddleBrown
-        lblTime.Location = New Point(88, 375)
+        lblTime.Location = New Point(88, 517)
         lblTime.Margin = New Padding(4, 0, 4, 0)
         lblTime.Name = "lblTime"
         lblTime.Size = New Size(65, 27)
@@ -186,7 +211,7 @@ Partial Class FrmNewAppointment
         lblDate.AutoSize = True
         lblDate.Font = New Font("Lucida Sans Unicode", 11F)
         lblDate.ForeColor = Color.SaddleBrown
-        lblDate.Location = New Point(88, 312)
+        lblDate.Location = New Point(88, 454)
         lblDate.Margin = New Padding(4, 0, 4, 0)
         lblDate.Name = "lblDate"
         lblDate.Size = New Size(60, 27)
@@ -245,7 +270,7 @@ Partial Class FrmNewAppointment
         ' 
         AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(887, 770)
+        ClientSize = New Size(887, 839)
         Controls.Add(pnlHeader)
         Controls.Add(pnlAddPet)
         Name = "FrmNewAppointment"
@@ -263,8 +288,8 @@ Partial Class FrmNewAppointment
     Friend WithEvents lblMyAppointment As Label
     Friend WithEvents pnlAddPet As Panel
     Friend WithEvents cmbService As ComboBox
-    Friend WithEvents cmbPet As ComboBox
-    Friend WithEvents cmbGender As ComboBox
+    Friend WithEvents cmbPetName As ComboBox
+    Friend WithEvents cmbServiceType As ComboBox
     Friend WithEvents btnCancel As Button
     Friend WithEvents btnBookAppointment As Button
     Friend WithEvents lblTime As Label
@@ -273,6 +298,8 @@ Partial Class FrmNewAppointment
     Friend WithEvents lblServiceType As Label
     Friend WithEvents lblPetName As Label
     Friend WithEvents lblNewAppoinment As Label
-    Friend WithEvents dtpAppointmentDate As DateTimePicker
-    Friend WithEvents dtpBookingTime As DateTimePicker
+    Friend WithEvents dtpDate As DateTimePicker
+    Friend WithEvents dtpTime As DateTimePicker
+    Friend WithEvents txtDescription As TextBox
+    Friend WithEvents Label1 As Label
 End Class

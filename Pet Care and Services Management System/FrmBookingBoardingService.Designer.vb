@@ -27,27 +27,29 @@ Partial Class FrmBookingBoardingService
         PictureBox2 = New PictureBox()
         lblMyAppointment = New Label()
         pnlAddPet = New Panel()
-        txtPrice = New TextBox()
+        dtpEndDate = New DateTimePicker()
+        lblEndDate = New Label()
+        Label3 = New Label()
+        lblRM = New Label()
+        txtTotal = New TextBox()
+        Label2 = New Label()
+        txtRoomType = New TextBox()
+        Label1 = New Label()
+        txtPricePerDay = New TextBox()
         lblPrice = New Label()
-        TextBox1 = New TextBox()
-        dtpBookingTime = New DateTimePicker()
-        dtpAppointmentDate = New DateTimePicker()
-        cmbPet = New ComboBox()
-        cmbGender = New ComboBox()
+        txtRoomDescription = New TextBox()
+        dtpTime = New DateTimePicker()
+        dtpStartDate = New DateTimePicker()
+        cmbPetName = New ComboBox()
+        cmbRoom = New ComboBox()
         btnCancel = New Button()
         btnBookBoarding = New Button()
         lblTime = New Label()
-        lblDate = New Label()
+        lblStartDate = New Label()
         lblService = New Label()
         lblRoom = New Label()
         lblPetName = New Label()
         lblBookBoarding = New Label()
-        Label1 = New Label()
-        TextBox2 = New TextBox()
-        Label2 = New Label()
-        txtTotal = New TextBox()
-        lblRM = New Label()
-        Label3 = New Label()
         pnlHeader.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         pnlAddPet.SuspendLayout()
@@ -55,7 +57,7 @@ Partial Class FrmBookingBoardingService
         ' 
         ' pnlHeader
         ' 
-        pnlHeader.BackColor = Color.FromArgb(CByte(55), CByte(32), CByte(20))
+        pnlHeader.BackColor = Color.FromArgb(CByte(55), CByte(32), CByte(10))
         pnlHeader.Controls.Add(PictureBox2)
         pnlHeader.Controls.Add(lblMyAppointment)
         pnlHeader.Dock = DockStyle.Top
@@ -88,104 +90,190 @@ Partial Class FrmBookingBoardingService
         ' pnlAddPet
         ' 
         pnlAddPet.BackColor = Color.FromArgb(CByte(232), CByte(216), CByte(194))
+        pnlAddPet.Controls.Add(dtpEndDate)
+        pnlAddPet.Controls.Add(lblEndDate)
         pnlAddPet.Controls.Add(Label3)
         pnlAddPet.Controls.Add(lblRM)
         pnlAddPet.Controls.Add(txtTotal)
         pnlAddPet.Controls.Add(Label2)
-        pnlAddPet.Controls.Add(TextBox2)
+        pnlAddPet.Controls.Add(txtRoomType)
         pnlAddPet.Controls.Add(Label1)
-        pnlAddPet.Controls.Add(txtPrice)
+        pnlAddPet.Controls.Add(txtPricePerDay)
         pnlAddPet.Controls.Add(lblPrice)
-        pnlAddPet.Controls.Add(TextBox1)
-        pnlAddPet.Controls.Add(dtpBookingTime)
-        pnlAddPet.Controls.Add(dtpAppointmentDate)
-        pnlAddPet.Controls.Add(cmbPet)
-        pnlAddPet.Controls.Add(cmbGender)
+        pnlAddPet.Controls.Add(txtRoomDescription)
+        pnlAddPet.Controls.Add(dtpTime)
+        pnlAddPet.Controls.Add(dtpStartDate)
+        pnlAddPet.Controls.Add(cmbPetName)
+        pnlAddPet.Controls.Add(cmbRoom)
         pnlAddPet.Controls.Add(btnCancel)
         pnlAddPet.Controls.Add(btnBookBoarding)
         pnlAddPet.Controls.Add(lblTime)
-        pnlAddPet.Controls.Add(lblDate)
+        pnlAddPet.Controls.Add(lblStartDate)
         pnlAddPet.Controls.Add(lblService)
         pnlAddPet.Controls.Add(lblRoom)
         pnlAddPet.Controls.Add(lblPetName)
         pnlAddPet.Controls.Add(lblBookBoarding)
-        pnlAddPet.Location = New Point(13, 60)
+        pnlAddPet.Location = New Point(15, 88)
         pnlAddPet.Margin = New Padding(4)
         pnlAddPet.Name = "pnlAddPet"
-        pnlAddPet.Size = New Size(920, 933)
+        pnlAddPet.Size = New Size(920, 992)
         pnlAddPet.TabIndex = 23
         ' 
-        ' txtPrice
+        ' dtpEndDate
         ' 
-        txtPrice.Location = New Point(384, 654)
-        txtPrice.Name = "txtPrice"
-        txtPrice.ReadOnly = True
-        txtPrice.Size = New Size(196, 35)
-        txtPrice.TabIndex = 21
+        dtpEndDate.Format = DateTimePickerFormat.Short
+        dtpEndDate.Location = New Point(332, 576)
+        dtpEndDate.Name = "dtpEndDate"
+        dtpEndDate.Size = New Size(199, 35)
+        dtpEndDate.TabIndex = 29
+        ' 
+        ' lblEndDate
+        ' 
+        lblEndDate.AutoSize = True
+        lblEndDate.Font = New Font("Lucida Sans Unicode", 11F)
+        lblEndDate.ForeColor = Color.SaddleBrown
+        lblEndDate.Location = New Point(88, 582)
+        lblEndDate.Margin = New Padding(4, 0, 4, 0)
+        lblEndDate.Name = "lblEndDate"
+        lblEndDate.Size = New Size(60, 27)
+        lblEndDate.TabIndex = 28
+        lblEndDate.Text = "Date"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Lucida Sans Unicode", 11F)
+        Label3.ForeColor = Color.SaddleBrown
+        Label3.Location = New Point(332, 788)
+        Label3.Margin = New Padding(4, 0, 4, 0)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(45, 27)
+        Label3.TabIndex = 27
+        Label3.Text = "RM"
+        ' 
+        ' lblRM
+        ' 
+        lblRM.AutoSize = True
+        lblRM.Font = New Font("Lucida Sans Unicode", 11F)
+        lblRM.ForeColor = Color.SaddleBrown
+        lblRM.Location = New Point(332, 725)
+        lblRM.Margin = New Padding(4, 0, 4, 0)
+        lblRM.Name = "lblRM"
+        lblRM.Size = New Size(45, 27)
+        lblRM.TabIndex = 26
+        lblRM.Text = "RM"
+        ' 
+        ' txtTotal
+        ' 
+        txtTotal.Location = New Point(384, 786)
+        txtTotal.Name = "txtTotal"
+        txtTotal.ReadOnly = True
+        txtTotal.Size = New Size(196, 35)
+        txtTotal.TabIndex = 25
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Lucida Sans Unicode", 11F)
+        Label2.ForeColor = Color.SaddleBrown
+        Label2.Location = New Point(88, 791)
+        Label2.Margin = New Padding(4, 0, 4, 0)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(66, 27)
+        Label2.TabIndex = 24
+        Label2.Text = "Total"
+        ' 
+        ' txtRoomType
+        ' 
+        txtRoomType.Location = New Point(332, 240)
+        txtRoomType.Name = "txtRoomType"
+        txtRoomType.ReadOnly = True
+        txtRoomType.Size = New Size(196, 35)
+        txtRoomType.TabIndex = 23
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Lucida Sans Unicode", 11F)
+        Label1.ForeColor = Color.SaddleBrown
+        Label1.Location = New Point(88, 245)
+        Label1.Margin = New Padding(4, 0, 4, 0)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(134, 27)
+        Label1.TabIndex = 22
+        Label1.Text = "Room Type"
+        ' 
+        ' txtPricePerDay
+        ' 
+        txtPricePerDay.Location = New Point(384, 720)
+        txtPricePerDay.Name = "txtPricePerDay"
+        txtPricePerDay.ReadOnly = True
+        txtPricePerDay.Size = New Size(196, 35)
+        txtPricePerDay.TabIndex = 21
         ' 
         ' lblPrice
         ' 
         lblPrice.AutoSize = True
         lblPrice.Font = New Font("Lucida Sans Unicode", 11F)
         lblPrice.ForeColor = Color.SaddleBrown
-        lblPrice.Location = New Point(88, 654)
+        lblPrice.Location = New Point(88, 720)
         lblPrice.Margin = New Padding(4, 0, 4, 0)
         lblPrice.Name = "lblPrice"
         lblPrice.Size = New Size(128, 27)
         lblPrice.TabIndex = 20
         lblPrice.Text = "Price / Day"
         ' 
-        ' TextBox1
+        ' txtRoomDescription
         ' 
-        TextBox1.Location = New Point(332, 305)
-        TextBox1.Multiline = True
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(358, 172)
-        TextBox1.TabIndex = 19
+        txtRoomDescription.Location = New Point(332, 305)
+        txtRoomDescription.Multiline = True
+        txtRoomDescription.Name = "txtRoomDescription"
+        txtRoomDescription.Size = New Size(358, 172)
+        txtRoomDescription.TabIndex = 19
         ' 
-        ' dtpBookingTime
+        ' dtpTime
         ' 
-        dtpBookingTime.CustomFormat = "hh:mm tt"
-        dtpBookingTime.Font = New Font("Segoe UI", 10F)
-        dtpBookingTime.Format = DateTimePickerFormat.Custom
-        dtpBookingTime.Location = New Point(332, 583)
-        dtpBookingTime.Margin = New Padding(4)
-        dtpBookingTime.Name = "dtpBookingTime"
-        dtpBookingTime.ShowUpDown = True
-        dtpBookingTime.Size = New Size(478, 34)
-        dtpBookingTime.TabIndex = 18
+        dtpTime.CustomFormat = "hh:mm tt"
+        dtpTime.Font = New Font("Segoe UI", 10F)
+        dtpTime.Format = DateTimePickerFormat.Custom
+        dtpTime.Location = New Point(332, 649)
+        dtpTime.Margin = New Padding(4)
+        dtpTime.Name = "dtpTime"
+        dtpTime.ShowUpDown = True
+        dtpTime.Size = New Size(478, 34)
+        dtpTime.TabIndex = 18
         ' 
-        ' dtpAppointmentDate
+        ' dtpStartDate
         ' 
-        dtpAppointmentDate.Format = DateTimePickerFormat.Short
-        dtpAppointmentDate.Location = New Point(332, 516)
-        dtpAppointmentDate.Name = "dtpAppointmentDate"
-        dtpAppointmentDate.Size = New Size(199, 35)
-        dtpAppointmentDate.TabIndex = 8
+        dtpStartDate.Format = DateTimePickerFormat.Short
+        dtpStartDate.Location = New Point(332, 508)
+        dtpStartDate.Name = "dtpStartDate"
+        dtpStartDate.Size = New Size(199, 35)
+        dtpStartDate.TabIndex = 8
         ' 
-        ' cmbPet
+        ' cmbPetName
         ' 
-        cmbPet.FormattingEnabled = True
-        cmbPet.Items.AddRange(New Object() {"Male", "Female", "Others"})
-        cmbPet.Location = New Point(332, 107)
-        cmbPet.Name = "cmbPet"
-        cmbPet.Size = New Size(196, 38)
-        cmbPet.TabIndex = 16
+        cmbPetName.FormattingEnabled = True
+        cmbPetName.Items.AddRange(New Object() {"Male", "Female", "Others"})
+        cmbPetName.Location = New Point(332, 107)
+        cmbPetName.Name = "cmbPetName"
+        cmbPetName.Size = New Size(196, 38)
+        cmbPetName.TabIndex = 16
         ' 
-        ' cmbGender
+        ' cmbRoom
         ' 
-        cmbGender.FormattingEnabled = True
-        cmbGender.Location = New Point(332, 176)
-        cmbGender.Name = "cmbGender"
-        cmbGender.Size = New Size(196, 38)
-        cmbGender.TabIndex = 15
+        cmbRoom.FormattingEnabled = True
+        cmbRoom.Location = New Point(332, 176)
+        cmbRoom.Name = "cmbRoom"
+        cmbRoom.Size = New Size(196, 38)
+        cmbRoom.TabIndex = 15
         ' 
         ' btnCancel
         ' 
         btnCancel.BackColor = Color.FromArgb(CByte(244), CByte(220), CByte(204))
         btnCancel.Font = New Font("Lucida Sans Unicode", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnCancel.ForeColor = Color.SaddleBrown
-        btnCancel.Location = New Point(465, 817)
+        btnCancel.Location = New Point(465, 883)
         btnCancel.Margin = New Padding(4)
         btnCancel.Name = "btnCancel"
         btnCancel.Size = New Size(225, 68)
@@ -198,7 +286,7 @@ Partial Class FrmBookingBoardingService
         btnBookBoarding.BackColor = Color.SaddleBrown
         btnBookBoarding.Font = New Font("Lucida Sans Unicode", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnBookBoarding.ForeColor = Color.WhiteSmoke
-        btnBookBoarding.Location = New Point(212, 817)
+        btnBookBoarding.Location = New Point(212, 883)
         btnBookBoarding.Margin = New Padding(4)
         btnBookBoarding.Name = "btnBookBoarding"
         btnBookBoarding.Size = New Size(225, 68)
@@ -211,24 +299,24 @@ Partial Class FrmBookingBoardingService
         lblTime.AutoSize = True
         lblTime.Font = New Font("Lucida Sans Unicode", 11F)
         lblTime.ForeColor = Color.SaddleBrown
-        lblTime.Location = New Point(88, 590)
+        lblTime.Location = New Point(88, 656)
         lblTime.Margin = New Padding(4, 0, 4, 0)
         lblTime.Name = "lblTime"
         lblTime.Size = New Size(65, 27)
         lblTime.TabIndex = 11
         lblTime.Text = "Time"
         ' 
-        ' lblDate
+        ' lblStartDate
         ' 
-        lblDate.AutoSize = True
-        lblDate.Font = New Font("Lucida Sans Unicode", 11F)
-        lblDate.ForeColor = Color.SaddleBrown
-        lblDate.Location = New Point(88, 522)
-        lblDate.Margin = New Padding(4, 0, 4, 0)
-        lblDate.Name = "lblDate"
-        lblDate.Size = New Size(60, 27)
-        lblDate.TabIndex = 9
-        lblDate.Text = "Date"
+        lblStartDate.AutoSize = True
+        lblStartDate.Font = New Font("Lucida Sans Unicode", 11F)
+        lblStartDate.ForeColor = Color.SaddleBrown
+        lblStartDate.Location = New Point(88, 514)
+        lblStartDate.Margin = New Padding(4, 0, 4, 0)
+        lblStartDate.Name = "lblStartDate"
+        lblStartDate.Size = New Size(60, 27)
+        lblStartDate.TabIndex = 9
+        lblStartDate.Text = "Date"
         ' 
         ' lblService
         ' 
@@ -271,82 +359,19 @@ Partial Class FrmBookingBoardingService
         lblBookBoarding.AutoSize = True
         lblBookBoarding.Font = New Font("Lucida Sans Unicode", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblBookBoarding.ForeColor = Color.SaddleBrown
-        lblBookBoarding.Location = New Point(14, 15)
+        lblBookBoarding.Location = New Point(13, 31)
         lblBookBoarding.Margin = New Padding(4, 0, 4, 0)
         lblBookBoarding.Name = "lblBookBoarding"
         lblBookBoarding.Size = New Size(424, 44)
         lblBookBoarding.TabIndex = 0
         lblBookBoarding.Text = "Book Boarding Service"
         ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Lucida Sans Unicode", 11F)
-        Label1.ForeColor = Color.SaddleBrown
-        Label1.Location = New Point(88, 245)
-        Label1.Margin = New Padding(4, 0, 4, 0)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(134, 27)
-        Label1.TabIndex = 22
-        Label1.Text = "Room Type"
-        ' 
-        ' TextBox2
-        ' 
-        TextBox2.Location = New Point(332, 240)
-        TextBox2.Name = "TextBox2"
-        TextBox2.ReadOnly = True
-        TextBox2.Size = New Size(196, 35)
-        TextBox2.TabIndex = 23
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.Font = New Font("Lucida Sans Unicode", 11F)
-        Label2.ForeColor = Color.SaddleBrown
-        Label2.Location = New Point(88, 725)
-        Label2.Margin = New Padding(4, 0, 4, 0)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(66, 27)
-        Label2.TabIndex = 24
-        Label2.Text = "Total"
-        ' 
-        ' txtTotal
-        ' 
-        txtTotal.Location = New Point(384, 720)
-        txtTotal.Name = "txtTotal"
-        txtTotal.ReadOnly = True
-        txtTotal.Size = New Size(196, 35)
-        txtTotal.TabIndex = 25
-        ' 
-        ' lblRM
-        ' 
-        lblRM.AutoSize = True
-        lblRM.Font = New Font("Lucida Sans Unicode", 11F)
-        lblRM.ForeColor = Color.SaddleBrown
-        lblRM.Location = New Point(332, 659)
-        lblRM.Margin = New Padding(4, 0, 4, 0)
-        lblRM.Name = "lblRM"
-        lblRM.Size = New Size(45, 27)
-        lblRM.TabIndex = 26
-        lblRM.Text = "RM"
-        ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.Font = New Font("Lucida Sans Unicode", 11F)
-        Label3.ForeColor = Color.SaddleBrown
-        Label3.Location = New Point(332, 722)
-        Label3.Margin = New Padding(4, 0, 4, 0)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(45, 27)
-        Label3.TabIndex = 27
-        Label3.Text = "RM"
-        ' 
         ' FrmBookingBoardingService
         ' 
         AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(948, 1006)
+        BackColor = Color.Bisque
+        ClientSize = New Size(948, 1093)
         Controls.Add(pnlHeader)
         Controls.Add(pnlAddPet)
         Name = "FrmBookingBoardingService"
@@ -363,19 +388,19 @@ Partial Class FrmBookingBoardingService
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents lblMyAppointment As Label
     Friend WithEvents pnlAddPet As Panel
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtRoomType As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtPrice As TextBox
+    Friend WithEvents txtPricePerDay As TextBox
     Friend WithEvents lblPrice As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents dtpBookingTime As DateTimePicker
-    Friend WithEvents dtpAppointmentDate As DateTimePicker
-    Friend WithEvents cmbPet As ComboBox
-    Friend WithEvents cmbGender As ComboBox
+    Friend WithEvents txtRoomDescription As TextBox
+    Friend WithEvents dtpTime As DateTimePicker
+    Friend WithEvents dtpStartDate As DateTimePicker
+    Friend WithEvents cmbPetName As ComboBox
+    Friend WithEvents cmbRoom As ComboBox
     Friend WithEvents btnCancel As Button
     Friend WithEvents btnBookBoarding As Button
     Friend WithEvents lblTime As Label
-    Friend WithEvents lblDate As Label
+    Friend WithEvents lblStartDate As Label
     Friend WithEvents lblService As Label
     Friend WithEvents lblRoom As Label
     Friend WithEvents lblPetName As Label
@@ -384,4 +409,6 @@ Partial Class FrmBookingBoardingService
     Friend WithEvents lblRM As Label
     Friend WithEvents txtTotal As TextBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents dtpEndDate As DateTimePicker
+    Friend WithEvents lblEndDate As Label
 End Class

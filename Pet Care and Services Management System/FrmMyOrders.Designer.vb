@@ -25,38 +25,33 @@ Partial Class FrmMyOrders
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMyOrders))
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         pnlProduct = New Panel()
+        btnDashboard = New Button()
+        Refreshbtn = New Button()
         pnlHeader = New Panel()
         PictureBox2 = New PictureBox()
         Label1 = New Label()
         Button1 = New Button()
+        dgvOrders = New DataGridView()
         Button3 = New Button()
         btnGoBackDashboard = New Button()
-        dgvProduct = New DataGridView()
         btnAddProduct = New Button()
         btnRefresh = New Button()
         txtSearch = New TextBox()
-        Button2 = New Button()
-        Button4 = New Button()
-        colOrderID = New DataGridViewTextBoxColumn()
-        colDate = New DataGridViewTextBoxColumn()
-        colTotal = New DataGridViewTextBoxColumn()
-        colStatus = New DataGridViewTextBoxColumn()
-        ViewDetails = New DataGridViewTextBoxColumn()
         pnlProduct.SuspendLayout()
         pnlHeader.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
-        CType(dgvProduct, ComponentModel.ISupportInitialize).BeginInit()
+        CType(dgvOrders, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' pnlProduct
         ' 
         pnlProduct.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         pnlProduct.BackColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
-        pnlProduct.Controls.Add(Button2)
-        pnlProduct.Controls.Add(Button4)
+        pnlProduct.Controls.Add(btnDashboard)
+        pnlProduct.Controls.Add(Refreshbtn)
         pnlProduct.Controls.Add(pnlHeader)
         pnlProduct.Controls.Add(Button1)
-        pnlProduct.Controls.Add(dgvProduct)
+        pnlProduct.Controls.Add(dgvOrders)
         pnlProduct.Controls.Add(Button3)
         pnlProduct.Controls.Add(btnGoBackDashboard)
         pnlProduct.Controls.Add(btnAddProduct)
@@ -68,6 +63,38 @@ Partial Class FrmMyOrders
         pnlProduct.Padding = New Padding(30)
         pnlProduct.Size = New Size(1104, 1155)
         pnlProduct.TabIndex = 5
+        ' 
+        ' btnDashboard
+        ' 
+        btnDashboard.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnDashboard.BackColor = Color.SaddleBrown
+        btnDashboard.FlatAppearance.BorderSize = 0
+        btnDashboard.FlatStyle = FlatStyle.Flat
+        btnDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        btnDashboard.ForeColor = Color.WhiteSmoke
+        btnDashboard.Location = New Point(846, 103)
+        btnDashboard.Margin = New Padding(4)
+        btnDashboard.Name = "btnDashboard"
+        btnDashboard.Size = New Size(218, 57)
+        btnDashboard.TabIndex = 19
+        btnDashboard.Text = "Dashboard"
+        btnDashboard.UseVisualStyleBackColor = False
+        ' 
+        ' Refreshbtn
+        ' 
+        Refreshbtn.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        Refreshbtn.BackColor = Color.Sienna
+        Refreshbtn.FlatAppearance.BorderSize = 0
+        Refreshbtn.FlatStyle = FlatStyle.Flat
+        Refreshbtn.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        Refreshbtn.ForeColor = Color.WhiteSmoke
+        Refreshbtn.Location = New Point(627, 103)
+        Refreshbtn.Margin = New Padding(4)
+        Refreshbtn.Name = "Refreshbtn"
+        Refreshbtn.Size = New Size(195, 57)
+        Refreshbtn.TabIndex = 18
+        Refreshbtn.Text = "Refresh"
+        Refreshbtn.UseVisualStyleBackColor = False
         ' 
         ' pnlHeader
         ' 
@@ -116,6 +143,34 @@ Partial Class FrmMyOrders
         Button1.Text = "Dashboard"
         Button1.UseVisualStyleBackColor = False
         ' 
+        ' dgvOrders
+        ' 
+        dgvOrders.AllowUserToAddRows = False
+        dgvOrders.AllowUserToDeleteRows = False
+        dgvOrders.AllowUserToResizeRows = False
+        dgvOrders.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        dgvOrders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgvOrders.BackgroundColor = Color.FromArgb(CByte(250), CByte(247), CByte(240))
+        dgvOrders.BorderStyle = BorderStyle.None
+        dgvOrders.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
+        dgvOrders.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
+        dgvOrders.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        dgvOrders.ColumnHeadersHeight = 42
+        dgvOrders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        dgvOrders.GridColor = Color.FromArgb(CByte(225), CByte(211), CByte(192))
+        dgvOrders.Location = New Point(30, 185)
+        dgvOrders.Margin = New Padding(4)
+        dgvOrders.MultiSelect = False
+        dgvOrders.Name = "dgvOrders"
+        dgvOrders.ReadOnly = True
+        dgvOrders.RightToLeft = RightToLeft.No
+        dgvOrders.RowHeadersVisible = False
+        dgvOrders.RowHeadersWidth = 62
+        dgvOrders.RowTemplate.Height = 70
+        dgvOrders.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        dgvOrders.Size = New Size(1034, 853)
+        dgvOrders.TabIndex = 7
+        ' 
         ' Button3
         ' 
         Button3.Anchor = AnchorStyles.Top Or AnchorStyles.Right
@@ -147,35 +202,6 @@ Partial Class FrmMyOrders
         btnGoBackDashboard.TabIndex = 13
         btnGoBackDashboard.Text = "Dashboard"
         btnGoBackDashboard.UseVisualStyleBackColor = False
-        ' 
-        ' dgvProduct
-        ' 
-        dgvProduct.AllowUserToAddRows = False
-        dgvProduct.AllowUserToDeleteRows = False
-        dgvProduct.AllowUserToResizeRows = False
-        dgvProduct.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        dgvProduct.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-        dgvProduct.BackgroundColor = Color.FromArgb(CByte(250), CByte(247), CByte(240))
-        dgvProduct.BorderStyle = BorderStyle.None
-        dgvProduct.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
-        dgvProduct.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
-        dgvProduct.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        dgvProduct.ColumnHeadersHeight = 42
-        dgvProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        dgvProduct.Columns.AddRange(New DataGridViewColumn() {colOrderID, colDate, colTotal, colStatus, ViewDetails})
-        dgvProduct.GridColor = Color.FromArgb(CByte(225), CByte(211), CByte(192))
-        dgvProduct.Location = New Point(30, 185)
-        dgvProduct.Margin = New Padding(4)
-        dgvProduct.MultiSelect = False
-        dgvProduct.Name = "dgvProduct"
-        dgvProduct.ReadOnly = True
-        dgvProduct.RightToLeft = RightToLeft.No
-        dgvProduct.RowHeadersVisible = False
-        dgvProduct.RowHeadersWidth = 62
-        dgvProduct.RowTemplate.Height = 70
-        dgvProduct.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        dgvProduct.Size = New Size(1034, 853)
-        dgvProduct.TabIndex = 7
         ' 
         ' btnAddProduct
         ' 
@@ -222,78 +248,6 @@ Partial Class FrmMyOrders
         txtSearch.TabIndex = 1
         txtSearch.Text = "Search order..."
         ' 
-        ' Button2
-        ' 
-        Button2.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        Button2.BackColor = Color.SaddleBrown
-        Button2.FlatAppearance.BorderSize = 0
-        Button2.FlatStyle = FlatStyle.Flat
-        Button2.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
-        Button2.ForeColor = Color.WhiteSmoke
-        Button2.Location = New Point(846, 103)
-        Button2.Margin = New Padding(4)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(218, 57)
-        Button2.TabIndex = 19
-        Button2.Text = "Dashboard"
-        Button2.UseVisualStyleBackColor = False
-        ' 
-        ' Button4
-        ' 
-        Button4.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        Button4.BackColor = Color.Sienna
-        Button4.FlatAppearance.BorderSize = 0
-        Button4.FlatStyle = FlatStyle.Flat
-        Button4.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
-        Button4.ForeColor = Color.WhiteSmoke
-        Button4.Location = New Point(627, 103)
-        Button4.Margin = New Padding(4)
-        Button4.Name = "Button4"
-        Button4.Size = New Size(195, 57)
-        Button4.TabIndex = 18
-        Button4.Text = "Refresh"
-        Button4.UseVisualStyleBackColor = False
-        ' 
-        ' colOrderID
-        ' 
-        colOrderID.FillWeight = 97.9212F
-        colOrderID.HeaderText = "Order ID"
-        colOrderID.MinimumWidth = 6
-        colOrderID.Name = "colOrderID"
-        colOrderID.ReadOnly = True
-        ' 
-        ' colDate
-        ' 
-        colDate.FillWeight = 146.8818F
-        colDate.HeaderText = "Date"
-        colDate.MinimumWidth = 6
-        colDate.Name = "colDate"
-        colDate.ReadOnly = True
-        ' 
-        ' colTotal
-        ' 
-        colTotal.FillWeight = 75.9943161F
-        colTotal.HeaderText = "Total"
-        colTotal.MinimumWidth = 6
-        colTotal.Name = "colTotal"
-        colTotal.ReadOnly = True
-        ' 
-        ' colStatus
-        ' 
-        colStatus.FillWeight = 91.80114F
-        colStatus.HeaderText = "Status"
-        colStatus.MinimumWidth = 6
-        colStatus.Name = "colStatus"
-        colStatus.ReadOnly = True
-        ' 
-        ' ViewDetails
-        ' 
-        ViewDetails.FillWeight = 122.401512F
-        ViewDetails.HeaderText = "View Details"
-        ViewDetails.MinimumWidth = 8
-        ViewDetails.Name = "ViewDetails"
-        ViewDetails.ReadOnly = True
-        ' 
         ' FrmMyOrders
         ' 
         AutoScaleDimensions = New SizeF(12F, 30F)
@@ -301,13 +255,14 @@ Partial Class FrmMyOrders
         ClientSize = New Size(1106, 1065)
         Controls.Add(pnlProduct)
         Name = "FrmMyOrders"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "FrmMyOrders"
         pnlProduct.ResumeLayout(False)
         pnlProduct.PerformLayout()
         pnlHeader.ResumeLayout(False)
         pnlHeader.PerformLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
-        CType(dgvProduct, ComponentModel.ISupportInitialize).EndInit()
+        CType(dgvOrders, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -316,17 +271,12 @@ Partial Class FrmMyOrders
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
-    Friend WithEvents dgvProduct As DataGridView
+    Friend WithEvents dgvOrders As DataGridView
     Friend WithEvents Button3 As Button
     Friend WithEvents btnGoBackDashboard As Button
     Friend WithEvents btnAddProduct As Button
     Friend WithEvents btnRefresh As Button
     Friend WithEvents txtSearch As TextBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents colOrderID As DataGridViewTextBoxColumn
-    Friend WithEvents colDate As DataGridViewTextBoxColumn
-    Friend WithEvents colTotal As DataGridViewTextBoxColumn
-    Friend WithEvents colStatus As DataGridViewTextBoxColumn
-    Friend WithEvents ViewDetails As DataGridViewTextBoxColumn
+    Friend WithEvents btnDashboard As Button
+    Friend WithEvents Refreshbtn As Button
 End Class

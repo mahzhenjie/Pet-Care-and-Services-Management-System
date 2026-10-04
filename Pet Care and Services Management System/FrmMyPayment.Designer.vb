@@ -31,21 +31,15 @@ Partial Class FrmMyPayment
         PictureBox2 = New PictureBox()
         lblTitle = New Label()
         Button1 = New Button()
-        dgvProduct = New DataGridView()
+        dgvPayments = New DataGridView()
         Button3 = New Button()
         btnGoBackDashboard = New Button()
         btnAddProduct = New Button()
         btnRefresh = New Button()
-        colPaymentID = New DataGridViewTextBoxColumn()
-        colDate = New DataGridViewTextBoxColumn()
-        colAmount = New DataGridViewTextBoxColumn()
-        colMethod = New DataGridViewTextBoxColumn()
-        colType = New DataGridViewTextBoxColumn()
-        colStatus = New DataGridViewTextBoxColumn()
         pnlProduct.SuspendLayout()
         pnlHeader.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
-        CType(dgvProduct, ComponentModel.ISupportInitialize).BeginInit()
+        CType(dgvPayments, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' pnlProduct
@@ -55,12 +49,11 @@ Partial Class FrmMyPayment
         pnlProduct.Controls.Add(Button4)
         pnlProduct.Controls.Add(pnlHeader)
         pnlProduct.Controls.Add(Button1)
-        pnlProduct.Controls.Add(dgvProduct)
+        pnlProduct.Controls.Add(dgvPayments)
         pnlProduct.Controls.Add(Button3)
         pnlProduct.Controls.Add(btnGoBackDashboard)
         pnlProduct.Controls.Add(btnAddProduct)
         pnlProduct.Controls.Add(btnRefresh)
-        pnlProduct.Dock = DockStyle.Fill
         pnlProduct.Location = New Point(0, 0)
         pnlProduct.Margin = New Padding(4)
         pnlProduct.Name = "pnlProduct"
@@ -107,7 +100,7 @@ Partial Class FrmMyPayment
         pnlHeader.Controls.Add(lblTitle)
         pnlHeader.Location = New Point(0, 0)
         pnlHeader.Name = "pnlHeader"
-        pnlHeader.Size = New Size(1675, 70)
+        pnlHeader.Size = New Size(1037, 70)
         pnlHeader.TabIndex = 17
         ' 
         ' PictureBox2
@@ -147,34 +140,33 @@ Partial Class FrmMyPayment
         Button1.Text = "Dashboard"
         Button1.UseVisualStyleBackColor = False
         ' 
-        ' dgvProduct
+        ' dgvPayments
         ' 
-        dgvProduct.AllowUserToAddRows = False
-        dgvProduct.AllowUserToDeleteRows = False
-        dgvProduct.AllowUserToResizeRows = False
-        dgvProduct.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        dgvProduct.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-        dgvProduct.BackgroundColor = Color.FromArgb(CByte(250), CByte(247), CByte(240))
-        dgvProduct.BorderStyle = BorderStyle.None
-        dgvProduct.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
-        dgvProduct.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
-        dgvProduct.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        dgvProduct.ColumnHeadersHeight = 42
-        dgvProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        dgvProduct.Columns.AddRange(New DataGridViewColumn() {colPaymentID, colDate, colAmount, colMethod, colType, colStatus})
-        dgvProduct.GridColor = Color.FromArgb(CByte(225), CByte(211), CByte(192))
-        dgvProduct.Location = New Point(34, 93)
-        dgvProduct.Margin = New Padding(4)
-        dgvProduct.MultiSelect = False
-        dgvProduct.Name = "dgvProduct"
-        dgvProduct.ReadOnly = True
-        dgvProduct.RightToLeft = RightToLeft.No
-        dgvProduct.RowHeadersVisible = False
-        dgvProduct.RowHeadersWidth = 62
-        dgvProduct.RowTemplate.Height = 70
-        dgvProduct.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        dgvProduct.Size = New Size(972, 532)
-        dgvProduct.TabIndex = 7
+        dgvPayments.AllowUserToAddRows = False
+        dgvPayments.AllowUserToDeleteRows = False
+        dgvPayments.AllowUserToResizeRows = False
+        dgvPayments.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        dgvPayments.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgvPayments.BackgroundColor = Color.FromArgb(CByte(250), CByte(247), CByte(240))
+        dgvPayments.BorderStyle = BorderStyle.None
+        dgvPayments.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
+        dgvPayments.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
+        dgvPayments.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        dgvPayments.ColumnHeadersHeight = 42
+        dgvPayments.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        dgvPayments.GridColor = Color.FromArgb(CByte(225), CByte(211), CByte(192))
+        dgvPayments.Location = New Point(34, 93)
+        dgvPayments.Margin = New Padding(4)
+        dgvPayments.MultiSelect = False
+        dgvPayments.Name = "dgvPayments"
+        dgvPayments.ReadOnly = True
+        dgvPayments.RightToLeft = RightToLeft.No
+        dgvPayments.RowHeadersVisible = False
+        dgvPayments.RowHeadersWidth = 62
+        dgvPayments.RowTemplate.Height = 70
+        dgvPayments.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        dgvPayments.Size = New Size(972, 532)
+        dgvPayments.TabIndex = 7
         ' 
         ' Button3
         ' 
@@ -240,53 +232,6 @@ Partial Class FrmMyPayment
         btnRefresh.Text = "Refresh"
         btnRefresh.UseVisualStyleBackColor = False
         ' 
-        ' colPaymentID
-        ' 
-        colPaymentID.FillWeight = 97.9212F
-        colPaymentID.HeaderText = "Payment ID"
-        colPaymentID.MinimumWidth = 6
-        colPaymentID.Name = "colPaymentID"
-        colPaymentID.ReadOnly = True
-        ' 
-        ' colDate
-        ' 
-        colDate.FillWeight = 146.8818F
-        colDate.HeaderText = "Date"
-        colDate.MinimumWidth = 6
-        colDate.Name = "colDate"
-        colDate.ReadOnly = True
-        ' 
-        ' colAmount
-        ' 
-        colAmount.FillWeight = 75.9943161F
-        colAmount.HeaderText = "Amount"
-        colAmount.MinimumWidth = 6
-        colAmount.Name = "colAmount"
-        colAmount.ReadOnly = True
-        ' 
-        ' colMethod
-        ' 
-        colMethod.FillWeight = 91.80114F
-        colMethod.HeaderText = "Method"
-        colMethod.MinimumWidth = 6
-        colMethod.Name = "colMethod"
-        colMethod.ReadOnly = True
-        ' 
-        ' colType
-        ' 
-        colType.FillWeight = 122.401512F
-        colType.HeaderText = "Type"
-        colType.MinimumWidth = 8
-        colType.Name = "colType"
-        colType.ReadOnly = True
-        ' 
-        ' colStatus
-        ' 
-        colStatus.HeaderText = "Status"
-        colStatus.MinimumWidth = 8
-        colStatus.Name = "colStatus"
-        colStatus.ReadOnly = True
-        ' 
         ' FrmMyPayment
         ' 
         AutoScaleDimensions = New SizeF(12F, 30F)
@@ -299,7 +244,7 @@ Partial Class FrmMyPayment
         pnlHeader.ResumeLayout(False)
         pnlHeader.PerformLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
-        CType(dgvProduct, ComponentModel.ISupportInitialize).EndInit()
+        CType(dgvPayments, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -310,15 +255,9 @@ Partial Class FrmMyPayment
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents lblTitle As Label
     Friend WithEvents Button1 As Button
-    Friend WithEvents dgvProduct As DataGridView
+    Friend WithEvents dgvPayments As DataGridView
     Friend WithEvents Button3 As Button
     Friend WithEvents btnGoBackDashboard As Button
     Friend WithEvents btnAddProduct As Button
     Friend WithEvents btnRefresh As Button
-    Friend WithEvents colPaymentID As DataGridViewTextBoxColumn
-    Friend WithEvents colDate As DataGridViewTextBoxColumn
-    Friend WithEvents colAmount As DataGridViewTextBoxColumn
-    Friend WithEvents colMethod As DataGridViewTextBoxColumn
-    Friend WithEvents colType As DataGridViewTextBoxColumn
-    Friend WithEvents colStatus As DataGridViewTextBoxColumn
 End Class

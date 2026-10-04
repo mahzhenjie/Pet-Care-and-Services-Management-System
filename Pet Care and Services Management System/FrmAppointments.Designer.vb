@@ -25,39 +25,32 @@ Partial Class FrmAppointments
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAppointments))
         Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Panel1 = New Panel()
+        btnDashboard = New Button()
+        btnAddAppointment = New Button()
+        Refreshbtn = New Button()
         pnlHeader = New Panel()
         PictureBox2 = New PictureBox()
         lblMyAppointments = New Label()
         btnGoBackDashboard = New Button()
-        dgvPets = New DataGridView()
+        dgvAppointments = New DataGridView()
         btnAddPet = New Button()
         btnRefresh = New Button()
         txtSearch = New TextBox()
-        btnBackToDashboard = New Button()
-        btnAddAppointment = New Button()
-        Button3 = New Button()
-        colCancel = New DataGridViewButtonColumn()
-        colStatus = New DataGridViewTextBoxColumn()
-        colType = New DataGridViewTextBoxColumn()
-        colService = New DataGridViewTextBoxColumn()
-        colPet = New DataGridViewTextBoxColumn()
-        colTime = New DataGridViewTextBoxColumn()
-        colDate = New DataGridViewTextBoxColumn()
         Panel1.SuspendLayout()
         pnlHeader.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
-        CType(dgvPets, ComponentModel.ISupportInitialize).BeginInit()
+        CType(dgvAppointments, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
         ' 
         Panel1.BackColor = Color.FromArgb(CByte(255), CByte(243), CByte(222))
-        Panel1.Controls.Add(btnBackToDashboard)
+        Panel1.Controls.Add(btnDashboard)
         Panel1.Controls.Add(btnAddAppointment)
-        Panel1.Controls.Add(Button3)
+        Panel1.Controls.Add(Refreshbtn)
         Panel1.Controls.Add(pnlHeader)
         Panel1.Controls.Add(btnGoBackDashboard)
-        Panel1.Controls.Add(dgvPets)
+        Panel1.Controls.Add(dgvAppointments)
         Panel1.Controls.Add(btnAddPet)
         Panel1.Controls.Add(btnRefresh)
         Panel1.Controls.Add(txtSearch)
@@ -65,6 +58,54 @@ Partial Class FrmAppointments
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(1716, 1008)
         Panel1.TabIndex = 16
+        ' 
+        ' btnDashboard
+        ' 
+        btnDashboard.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnDashboard.BackColor = Color.SaddleBrown
+        btnDashboard.FlatAppearance.BorderSize = 0
+        btnDashboard.FlatStyle = FlatStyle.Flat
+        btnDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        btnDashboard.ForeColor = Color.WhiteSmoke
+        btnDashboard.Location = New Point(867, 77)
+        btnDashboard.Margin = New Padding(4)
+        btnDashboard.Name = "btnDashboard"
+        btnDashboard.Size = New Size(218, 57)
+        btnDashboard.TabIndex = 18
+        btnDashboard.Text = "Dashboard"
+        btnDashboard.UseVisualStyleBackColor = False
+        ' 
+        ' btnAddAppointment
+        ' 
+        btnAddAppointment.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnAddAppointment.BackColor = Color.FromArgb(CByte(96), CByte(52), CByte(16))
+        btnAddAppointment.FlatAppearance.BorderSize = 0
+        btnAddAppointment.FlatStyle = FlatStyle.Flat
+        btnAddAppointment.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        btnAddAppointment.ForeColor = Color.WhiteSmoke
+        btnAddAppointment.Location = New Point(1391, 77)
+        btnAddAppointment.Margin = New Padding(4)
+        btnAddAppointment.Name = "btnAddAppointment"
+        btnAddAppointment.Size = New Size(240, 57)
+        btnAddAppointment.TabIndex = 17
+        btnAddAppointment.Text = "+ Add Appoinment"
+        btnAddAppointment.UseVisualStyleBackColor = False
+        ' 
+        ' Refreshbtn
+        ' 
+        Refreshbtn.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        Refreshbtn.BackColor = Color.Sienna
+        Refreshbtn.FlatAppearance.BorderSize = 0
+        Refreshbtn.FlatStyle = FlatStyle.Flat
+        Refreshbtn.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        Refreshbtn.ForeColor = Color.WhiteSmoke
+        Refreshbtn.Location = New Point(1141, 77)
+        Refreshbtn.Margin = New Padding(4)
+        Refreshbtn.Name = "Refreshbtn"
+        Refreshbtn.Size = New Size(195, 57)
+        Refreshbtn.TabIndex = 16
+        Refreshbtn.Text = "Refresh"
+        Refreshbtn.UseVisualStyleBackColor = False
         ' 
         ' pnlHeader
         ' 
@@ -114,34 +155,33 @@ Partial Class FrmAppointments
         btnGoBackDashboard.Text = "Dashboard"
         btnGoBackDashboard.UseVisualStyleBackColor = False
         ' 
-        ' dgvPets
+        ' dgvAppointments
         ' 
-        dgvPets.AllowUserToAddRows = False
-        dgvPets.AllowUserToDeleteRows = False
-        dgvPets.AllowUserToResizeRows = False
-        dgvPets.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        dgvPets.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-        dgvPets.BackgroundColor = Color.FromArgb(CByte(250), CByte(247), CByte(240))
-        dgvPets.BorderStyle = BorderStyle.None
-        dgvPets.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
-        dgvPets.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
-        dgvPets.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        dgvPets.ColumnHeadersHeight = 42
-        dgvPets.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        dgvPets.Columns.AddRange(New DataGridViewColumn() {colDate, colTime, colPet, colService, colType, colStatus, colCancel})
-        dgvPets.GridColor = Color.FromArgb(CByte(225), CByte(211), CByte(192))
-        dgvPets.Location = New Point(34, 154)
-        dgvPets.Margin = New Padding(4)
-        dgvPets.MultiSelect = False
-        dgvPets.Name = "dgvPets"
-        dgvPets.ReadOnly = True
-        dgvPets.RightToLeft = RightToLeft.No
-        dgvPets.RowHeadersVisible = False
-        dgvPets.RowHeadersWidth = 62
-        dgvPets.RowTemplate.Height = 38
-        dgvPets.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        dgvPets.Size = New Size(1646, 840)
-        dgvPets.TabIndex = 13
+        dgvAppointments.AllowUserToAddRows = False
+        dgvAppointments.AllowUserToDeleteRows = False
+        dgvAppointments.AllowUserToResizeRows = False
+        dgvAppointments.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        dgvAppointments.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgvAppointments.BackgroundColor = Color.FromArgb(CByte(250), CByte(247), CByte(240))
+        dgvAppointments.BorderStyle = BorderStyle.None
+        dgvAppointments.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
+        dgvAppointments.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
+        dgvAppointments.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        dgvAppointments.ColumnHeadersHeight = 42
+        dgvAppointments.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        dgvAppointments.GridColor = Color.FromArgb(CByte(225), CByte(211), CByte(192))
+        dgvAppointments.Location = New Point(34, 154)
+        dgvAppointments.Margin = New Padding(4)
+        dgvAppointments.MultiSelect = False
+        dgvAppointments.Name = "dgvAppointments"
+        dgvAppointments.ReadOnly = True
+        dgvAppointments.RightToLeft = RightToLeft.No
+        dgvAppointments.RowHeadersVisible = False
+        dgvAppointments.RowHeadersWidth = 62
+        dgvAppointments.RowTemplate.Height = 38
+        dgvAppointments.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        dgvAppointments.Size = New Size(1646, 840)
+        dgvAppointments.TabIndex = 13
         ' 
         ' btnAddPet
         ' 
@@ -187,114 +227,7 @@ Partial Class FrmAppointments
         txtSearch.Name = "txtSearch"
         txtSearch.Size = New Size(782, 46)
         txtSearch.TabIndex = 10
-        txtSearch.Text = "Search booking..."
-        ' 
-        ' btnBackToDashboard
-        ' 
-        btnBackToDashboard.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        btnBackToDashboard.BackColor = Color.SaddleBrown
-        btnBackToDashboard.FlatAppearance.BorderSize = 0
-        btnBackToDashboard.FlatStyle = FlatStyle.Flat
-        btnBackToDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
-        btnBackToDashboard.ForeColor = Color.WhiteSmoke
-        btnBackToDashboard.Location = New Point(867, 77)
-        btnBackToDashboard.Margin = New Padding(4)
-        btnBackToDashboard.Name = "btnBackToDashboard"
-        btnBackToDashboard.Size = New Size(218, 57)
-        btnBackToDashboard.TabIndex = 18
-        btnBackToDashboard.Text = "Dashboard"
-        btnBackToDashboard.UseVisualStyleBackColor = False
-        ' 
-        ' btnAddAppointment
-        ' 
-        btnAddAppointment.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        btnAddAppointment.BackColor = Color.FromArgb(CByte(96), CByte(52), CByte(16))
-        btnAddAppointment.FlatAppearance.BorderSize = 0
-        btnAddAppointment.FlatStyle = FlatStyle.Flat
-        btnAddAppointment.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
-        btnAddAppointment.ForeColor = Color.WhiteSmoke
-        btnAddAppointment.Location = New Point(1391, 77)
-        btnAddAppointment.Margin = New Padding(4)
-        btnAddAppointment.Name = "btnAddAppointment"
-        btnAddAppointment.Size = New Size(240, 57)
-        btnAddAppointment.TabIndex = 17
-        btnAddAppointment.Text = "+ Add Appoinment"
-        btnAddAppointment.UseVisualStyleBackColor = False
-        ' 
-        ' Button3
-        ' 
-        Button3.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        Button3.BackColor = Color.Sienna
-        Button3.FlatAppearance.BorderSize = 0
-        Button3.FlatStyle = FlatStyle.Flat
-        Button3.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
-        Button3.ForeColor = Color.WhiteSmoke
-        Button3.Location = New Point(1141, 77)
-        Button3.Margin = New Padding(4)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(195, 57)
-        Button3.TabIndex = 16
-        Button3.Text = "Refresh"
-        Button3.UseVisualStyleBackColor = False
-        ' 
-        ' colCancel
-        ' 
-        colCancel.FillWeight = 70F
-        colCancel.HeaderText = "Cancel Appointment"
-        colCancel.MinimumWidth = 2
-        colCancel.Name = "colCancel"
-        colCancel.ReadOnly = True
-        colCancel.Resizable = DataGridViewTriState.True
-        colCancel.SortMode = DataGridViewColumnSortMode.Automatic
-        colCancel.Text = ""
-        colCancel.UseColumnTextForButtonValue = True
-        ' 
-        ' colStatus
-        ' 
-        colStatus.HeaderText = "Status"
-        colStatus.MinimumWidth = 8
-        colStatus.Name = "colStatus"
-        colStatus.ReadOnly = True
-        ' 
-        ' colType
-        ' 
-        colType.FillWeight = 105F
-        colType.HeaderText = "Type"
-        colType.MinimumWidth = 6
-        colType.Name = "colType"
-        colType.ReadOnly = True
-        ' 
-        ' colService
-        ' 
-        colService.FillWeight = 120F
-        colService.HeaderText = "Service"
-        colService.MinimumWidth = 6
-        colService.Name = "colService"
-        colService.ReadOnly = True
-        ' 
-        ' colPet
-        ' 
-        colPet.FillWeight = 120F
-        colPet.HeaderText = "Pet"
-        colPet.MinimumWidth = 6
-        colPet.Name = "colPet"
-        colPet.ReadOnly = True
-        ' 
-        ' colTime
-        ' 
-        colTime.FillWeight = 85F
-        colTime.HeaderText = "Time"
-        colTime.MinimumWidth = 6
-        colTime.Name = "colTime"
-        colTime.ReadOnly = True
-        ' 
-        ' colDate
-        ' 
-        colDate.FillWeight = 75F
-        colDate.HeaderText = "Date"
-        colDate.MinimumWidth = 6
-        colDate.Name = "colDate"
-        colDate.ReadOnly = True
+        txtSearch.Text = "Search appointment..."
         ' 
         ' FrmAppointments
         ' 
@@ -309,7 +242,7 @@ Partial Class FrmAppointments
         pnlHeader.ResumeLayout(False)
         pnlHeader.PerformLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
-        CType(dgvPets, ComponentModel.ISupportInitialize).EndInit()
+        CType(dgvAppointments, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -318,18 +251,11 @@ Partial Class FrmAppointments
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents lblMyAppointments As Label
     Friend WithEvents btnGoBackDashboard As Button
-    Friend WithEvents dgvPets As DataGridView
+    Friend WithEvents dgvAppointments As DataGridView
     Friend WithEvents btnAddPet As Button
     Friend WithEvents btnRefresh As Button
     Friend WithEvents txtSearch As TextBox
-    Friend WithEvents btnBackToDashboard As Button
+    Friend WithEvents btnDashboard As Button
     Friend WithEvents btnAddAppointment As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents colDate As DataGridViewTextBoxColumn
-    Friend WithEvents colTime As DataGridViewTextBoxColumn
-    Friend WithEvents colPet As DataGridViewTextBoxColumn
-    Friend WithEvents colService As DataGridViewTextBoxColumn
-    Friend WithEvents colType As DataGridViewTextBoxColumn
-    Friend WithEvents colStatus As DataGridViewTextBoxColumn
-    Friend WithEvents colCancel As DataGridViewButtonColumn
+    Friend WithEvents Refreshbtn As Button
 End Class

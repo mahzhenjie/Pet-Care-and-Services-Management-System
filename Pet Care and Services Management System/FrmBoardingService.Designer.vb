@@ -24,8 +24,11 @@ Partial Class FrmBoardingService
     Private Sub InitializeComponent()
         pnlMain = New Panel()
         pnlContent = New Panel()
-        flpServices = New FlowLayoutPanel()
+        flpRooms = New FlowLayoutPanel()
         pnlToolbar = New Panel()
+        btnDashboard = New Button()
+        btnAddBooking = New Button()
+        Refreshbtn = New Button()
         btnGoBackDashboard = New Button()
         btnAddBoardingService = New Button()
         btnRefresh = New Button()
@@ -34,9 +37,6 @@ Partial Class FrmBoardingService
         pnlHeader = New Panel()
         lblSubtitle = New Label()
         lblTitle = New Label()
-        Button1 = New Button()
-        btnBooking = New Button()
-        Button3 = New Button()
         pnlMain.SuspendLayout()
         pnlContent.SuspendLayout()
         pnlToolbar.SuspendLayout()
@@ -59,7 +59,7 @@ Partial Class FrmBoardingService
         ' pnlContent
         ' 
         pnlContent.BackColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
-        pnlContent.Controls.Add(flpServices)
+        pnlContent.Controls.Add(flpRooms)
         pnlContent.Dock = DockStyle.Fill
         pnlContent.Location = New Point(20, 175)
         pnlContent.Name = "pnlContent"
@@ -67,23 +67,23 @@ Partial Class FrmBoardingService
         pnlContent.Size = New Size(1170, 731)
         pnlContent.TabIndex = 2
         ' 
-        ' flpServices
+        ' flpRooms
         ' 
-        flpServices.AutoScroll = True
-        flpServices.BackColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
-        flpServices.Dock = DockStyle.Fill
-        flpServices.Location = New Point(0, 15)
-        flpServices.Name = "flpServices"
-        flpServices.Padding = New Padding(5)
-        flpServices.Size = New Size(1170, 716)
-        flpServices.TabIndex = 0
+        flpRooms.AutoScroll = True
+        flpRooms.BackColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
+        flpRooms.Dock = DockStyle.Fill
+        flpRooms.Location = New Point(0, 15)
+        flpRooms.Name = "flpRooms"
+        flpRooms.Padding = New Padding(5)
+        flpRooms.Size = New Size(1170, 716)
+        flpRooms.TabIndex = 0
         ' 
         ' pnlToolbar
         ' 
         pnlToolbar.BackColor = Color.FromArgb(CByte(232), CByte(216), CByte(194))
-        pnlToolbar.Controls.Add(Button1)
-        pnlToolbar.Controls.Add(btnBooking)
-        pnlToolbar.Controls.Add(Button3)
+        pnlToolbar.Controls.Add(btnDashboard)
+        pnlToolbar.Controls.Add(btnAddBooking)
+        pnlToolbar.Controls.Add(Refreshbtn)
         pnlToolbar.Controls.Add(btnGoBackDashboard)
         pnlToolbar.Controls.Add(btnAddBoardingService)
         pnlToolbar.Controls.Add(btnRefresh)
@@ -94,6 +94,51 @@ Partial Class FrmBoardingService
         pnlToolbar.Name = "pnlToolbar"
         pnlToolbar.Size = New Size(1170, 70)
         pnlToolbar.TabIndex = 1
+        ' 
+        ' btnDashboard
+        ' 
+        btnDashboard.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnDashboard.BackColor = Color.SaddleBrown
+        btnDashboard.FlatAppearance.BorderSize = 0
+        btnDashboard.FlatStyle = FlatStyle.Flat
+        btnDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        btnDashboard.ForeColor = Color.WhiteSmoke
+        btnDashboard.Location = New Point(957, 17)
+        btnDashboard.Name = "btnDashboard"
+        btnDashboard.Size = New Size(195, 40)
+        btnDashboard.TabIndex = 5
+        btnDashboard.Text = "Dashboard"
+        btnDashboard.UseVisualStyleBackColor = False
+        ' 
+        ' btnAddBooking
+        ' 
+        btnAddBooking.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnAddBooking.BackColor = Color.FromArgb(CByte(96), CByte(52), CByte(16))
+        btnAddBooking.FlatAppearance.BorderSize = 0
+        btnAddBooking.FlatStyle = FlatStyle.Flat
+        btnAddBooking.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        btnAddBooking.ForeColor = Color.WhiteSmoke
+        btnAddBooking.Location = New Point(752, 17)
+        btnAddBooking.Name = "btnAddBooking"
+        btnAddBooking.Size = New Size(190, 40)
+        btnAddBooking.TabIndex = 6
+        btnAddBooking.Text = "+ Add Booking"
+        btnAddBooking.UseVisualStyleBackColor = False
+        ' 
+        ' Refreshbtn
+        ' 
+        Refreshbtn.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        Refreshbtn.BackColor = Color.Sienna
+        Refreshbtn.FlatAppearance.BorderSize = 0
+        Refreshbtn.FlatStyle = FlatStyle.Flat
+        Refreshbtn.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        Refreshbtn.ForeColor = Color.WhiteSmoke
+        Refreshbtn.Location = New Point(540, 17)
+        Refreshbtn.Name = "Refreshbtn"
+        Refreshbtn.Size = New Size(202, 40)
+        Refreshbtn.TabIndex = 7
+        Refreshbtn.Text = "Refresh"
+        Refreshbtn.UseVisualStyleBackColor = False
         ' 
         ' btnGoBackDashboard
         ' 
@@ -194,51 +239,6 @@ Partial Class FrmBoardingService
         lblTitle.TabIndex = 1
         lblTitle.Text = "Boarding Services"
         ' 
-        ' Button1
-        ' 
-        Button1.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        Button1.BackColor = Color.SaddleBrown
-        Button1.FlatAppearance.BorderSize = 0
-        Button1.FlatStyle = FlatStyle.Flat
-        Button1.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
-        Button1.ForeColor = Color.WhiteSmoke
-        Button1.Location = New Point(957, 17)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(195, 40)
-        Button1.TabIndex = 5
-        Button1.Text = "Back to Dashboard"
-        Button1.UseVisualStyleBackColor = False
-        ' 
-        ' btnBooking
-        ' 
-        btnBooking.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        btnBooking.BackColor = Color.FromArgb(CByte(96), CByte(52), CByte(16))
-        btnBooking.FlatAppearance.BorderSize = 0
-        btnBooking.FlatStyle = FlatStyle.Flat
-        btnBooking.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
-        btnBooking.ForeColor = Color.WhiteSmoke
-        btnBooking.Location = New Point(752, 17)
-        btnBooking.Name = "btnBooking"
-        btnBooking.Size = New Size(190, 40)
-        btnBooking.TabIndex = 6
-        btnBooking.Text = "+ Add Booking"
-        btnBooking.UseVisualStyleBackColor = False
-        ' 
-        ' Button3
-        ' 
-        Button3.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        Button3.BackColor = Color.Sienna
-        Button3.FlatAppearance.BorderSize = 0
-        Button3.FlatStyle = FlatStyle.Flat
-        Button3.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
-        Button3.ForeColor = Color.WhiteSmoke
-        Button3.Location = New Point(540, 17)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(202, 40)
-        Button3.TabIndex = 7
-        Button3.Text = "Refresh"
-        Button3.UseVisualStyleBackColor = False
-        ' 
         ' FrmBoardingService
         ' 
         AutoScaleDimensions = New SizeF(12F, 30F)
@@ -258,7 +258,7 @@ Partial Class FrmBoardingService
 
     Friend WithEvents pnlMain As Panel
     Friend WithEvents pnlContent As Panel
-    Friend WithEvents flpServices As FlowLayoutPanel
+    Friend WithEvents flpRooms As FlowLayoutPanel
     Friend WithEvents pnlToolbar As Panel
     Friend WithEvents btnGoBackDashboard As Button
     Friend WithEvents btnAddBoardingService As Button
@@ -268,7 +268,7 @@ Partial Class FrmBoardingService
     Friend WithEvents pnlHeader As Panel
     Friend WithEvents lblSubtitle As Label
     Friend WithEvents lblTitle As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents btnBooking As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btnDashboard As Button
+    Friend WithEvents btnAddBooking As Button
+    Friend WithEvents Refreshbtn As Button
 End Class

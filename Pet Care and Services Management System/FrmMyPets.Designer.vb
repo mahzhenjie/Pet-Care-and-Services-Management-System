@@ -24,16 +24,8 @@ Partial Class FrmMyPets
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMyPets))
-        btnGoBackDashboard = New Button()
+        btnDashboard = New Button()
         dgvPets = New DataGridView()
-        colPetID = New DataGridViewTextBoxColumn()
-        colPetName = New DataGridViewTextBoxColumn()
-        colGender = New DataGridViewTextBoxColumn()
-        colBreed = New DataGridViewTextBoxColumn()
-        colWeight = New DataGridViewTextBoxColumn()
-        Temperament = New DataGridViewTextBoxColumn()
-        colEdit = New DataGridViewButtonColumn()
-        colDelete = New DataGridViewButtonColumn()
         btnAddPet = New Button()
         btnRefresh = New Button()
         txtSearch = New TextBox()
@@ -47,21 +39,21 @@ Partial Class FrmMyPets
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' btnGoBackDashboard
+        ' btnDashboard
         ' 
-        btnGoBackDashboard.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        btnGoBackDashboard.BackColor = Color.SaddleBrown
-        btnGoBackDashboard.FlatAppearance.BorderSize = 0
-        btnGoBackDashboard.FlatStyle = FlatStyle.Flat
-        btnGoBackDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
-        btnGoBackDashboard.ForeColor = Color.WhiteSmoke
-        btnGoBackDashboard.Location = New Point(895, 77)
-        btnGoBackDashboard.Margin = New Padding(4)
-        btnGoBackDashboard.Name = "btnGoBackDashboard"
-        btnGoBackDashboard.Size = New Size(218, 57)
-        btnGoBackDashboard.TabIndex = 14
-        btnGoBackDashboard.Text = "Dashboard"
-        btnGoBackDashboard.UseVisualStyleBackColor = False
+        btnDashboard.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnDashboard.BackColor = Color.SaddleBrown
+        btnDashboard.FlatAppearance.BorderSize = 0
+        btnDashboard.FlatStyle = FlatStyle.Flat
+        btnDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
+        btnDashboard.ForeColor = Color.WhiteSmoke
+        btnDashboard.Location = New Point(895, 77)
+        btnDashboard.Margin = New Padding(4)
+        btnDashboard.Name = "btnDashboard"
+        btnDashboard.Size = New Size(218, 57)
+        btnDashboard.TabIndex = 14
+        btnDashboard.Text = "Dashboard"
+        btnDashboard.UseVisualStyleBackColor = False
         ' 
         ' dgvPets
         ' 
@@ -77,7 +69,6 @@ Partial Class FrmMyPets
         dgvPets.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         dgvPets.ColumnHeadersHeight = 42
         dgvPets.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        dgvPets.Columns.AddRange(New DataGridViewColumn() {colPetID, colPetName, colGender, colBreed, colWeight, Temperament, colEdit, colDelete})
         dgvPets.GridColor = Color.FromArgb(CByte(225), CByte(211), CByte(192))
         dgvPets.Location = New Point(34, 151)
         dgvPets.Margin = New Padding(4)
@@ -91,77 +82,6 @@ Partial Class FrmMyPets
         dgvPets.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         dgvPets.Size = New Size(1649, 824)
         dgvPets.TabIndex = 13
-        ' 
-        ' colPetID
-        ' 
-        colPetID.FillWeight = 75F
-        colPetID.HeaderText = "Pet ID"
-        colPetID.MinimumWidth = 6
-        colPetID.Name = "colPetID"
-        colPetID.ReadOnly = True
-        ' 
-        ' colPetName
-        ' 
-        colPetName.FillWeight = 85F
-        colPetName.HeaderText = "Pet Name"
-        colPetName.MinimumWidth = 6
-        colPetName.Name = "colPetName"
-        colPetName.ReadOnly = True
-        ' 
-        ' colGender
-        ' 
-        colGender.FillWeight = 120F
-        colGender.HeaderText = "Gender"
-        colGender.MinimumWidth = 6
-        colGender.Name = "colGender"
-        colGender.ReadOnly = True
-        ' 
-        ' colBreed
-        ' 
-        colBreed.FillWeight = 120F
-        colBreed.HeaderText = "Breed"
-        colBreed.MinimumWidth = 6
-        colBreed.Name = "colBreed"
-        colBreed.ReadOnly = True
-        ' 
-        ' colWeight
-        ' 
-        colWeight.FillWeight = 105F
-        colWeight.HeaderText = "Weight"
-        colWeight.MinimumWidth = 6
-        colWeight.Name = "colWeight"
-        colWeight.ReadOnly = True
-        ' 
-        ' Temperament
-        ' 
-        Temperament.HeaderText = "Temperament"
-        Temperament.MinimumWidth = 8
-        Temperament.Name = "Temperament"
-        Temperament.ReadOnly = True
-        ' 
-        ' colEdit
-        ' 
-        colEdit.FillWeight = 70F
-        colEdit.HeaderText = "Edit"
-        colEdit.MinimumWidth = 6
-        colEdit.Name = "colEdit"
-        colEdit.ReadOnly = True
-        colEdit.Resizable = DataGridViewTriState.True
-        colEdit.SortMode = DataGridViewColumnSortMode.Automatic
-        colEdit.Text = "Edit"
-        colEdit.UseColumnTextForButtonValue = True
-        ' 
-        ' colDelete
-        ' 
-        colDelete.FillWeight = 75F
-        colDelete.HeaderText = "Delete"
-        colDelete.MinimumWidth = 6
-        colDelete.Name = "colDelete"
-        colDelete.ReadOnly = True
-        colDelete.Resizable = DataGridViewTriState.True
-        colDelete.SortMode = DataGridViewColumnSortMode.Automatic
-        colDelete.Text = "Delete"
-        colDelete.UseColumnTextForButtonValue = True
         ' 
         ' btnAddPet
         ' 
@@ -207,13 +127,13 @@ Partial Class FrmMyPets
         txtSearch.Name = "txtSearch"
         txtSearch.Size = New Size(782, 46)
         txtSearch.TabIndex = 10
-        txtSearch.Text = "Search booking..."
+        txtSearch.Text = "Search Pet Name..."
         ' 
         ' Panel1
         ' 
         Panel1.BackColor = Color.FromArgb(CByte(255), CByte(243), CByte(222))
         Panel1.Controls.Add(pnlHeader)
-        Panel1.Controls.Add(btnGoBackDashboard)
+        Panel1.Controls.Add(btnDashboard)
         Panel1.Controls.Add(dgvPets)
         Panel1.Controls.Add(btnAddPet)
         Panel1.Controls.Add(btnRefresh)
@@ -274,7 +194,7 @@ Partial Class FrmMyPets
         ResumeLayout(False)
     End Sub
 
-    Friend WithEvents btnGoBackDashboard As Button
+    Friend WithEvents btnDashboard As Button
     Friend WithEvents dgvPets As DataGridView
     Friend WithEvents btnAddPet As Button
     Friend WithEvents btnRefresh As Button
@@ -283,12 +203,4 @@ Partial Class FrmMyPets
     Friend WithEvents pnlHeader As Panel
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents colPetID As DataGridViewTextBoxColumn
-    Friend WithEvents colPetName As DataGridViewTextBoxColumn
-    Friend WithEvents colGender As DataGridViewTextBoxColumn
-    Friend WithEvents colBreed As DataGridViewTextBoxColumn
-    Friend WithEvents colWeight As DataGridViewTextBoxColumn
-    Friend WithEvents Temperament As DataGridViewTextBoxColumn
-    Friend WithEvents colEdit As DataGridViewButtonColumn
-    Friend WithEvents colDelete As DataGridViewButtonColumn
 End Class
