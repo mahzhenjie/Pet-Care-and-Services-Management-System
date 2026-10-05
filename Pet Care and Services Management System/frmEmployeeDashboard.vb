@@ -123,8 +123,6 @@ Public Class frmEmployeeDashboard
 
             ' COLLAPSE SIDEBAR
             pnlSidebar.Width = 70
-            pnlTopBar.Location = New Point(70, 0)
-            pnlTopBar.Width = Me.ClientSize.Width - 70
 
             ' HIDE SIDEBAR TEXT
             lblSidebarTitle.Visible = False
@@ -169,7 +167,6 @@ Public Class frmEmployeeDashboard
             btnGroomingServices.Location = New Point(8, 475)
             btnGroomingServices.Size = New Size(54, 40)
             btnGroomingServices.Text = ""
-
 
             ' BOARDING ROOMS
             btnBoardingRooms.Location = New Point(8, 596)
@@ -224,8 +221,6 @@ Public Class frmEmployeeDashboard
 
             ' EXPAND SIDEBAR
             pnlSidebar.Width = 280
-            pnlTopBar.Location = New Point(280, 0)
-            pnlTopBar.Width = Me.ClientSize.Width - 280
 
             ' SHOW SIDEBAR TEXT
             lblSidebarTitle.Visible = True
@@ -271,24 +266,23 @@ Public Class frmEmployeeDashboard
             btnGroomingServices.Size = New Size(210, 40)
             btnGroomingServices.Text = "Grooming Services"
 
-
             ' BOARDING ROOMS
-            btnBoardingRooms.Location = New Point(57, 596)
+            btnBoardingRooms.Location = New Point(57, 547)
             btnBoardingRooms.Size = New Size(210, 40)
             btnBoardingRooms.Text = "Boarding Rooms"
 
             ' BOARDING VIDEOS
-            btnBoardingVideos.Location = New Point(57, 642)
+            btnBoardingVideos.Location = New Point(57, 593)
             btnBoardingVideos.Size = New Size(210, 40)
             btnBoardingVideos.Text = "Boarding Videos"
 
             ' PRODUCTS
-            btnProducts.Location = New Point(57, 720)
+            btnProducts.Location = New Point(57, 671)
             btnProducts.Size = New Size(210, 40)
             btnProducts.Text = "Products"
 
             ' MEMBERSHIP
-            btnMembership.Location = New Point(57, 766)
+            btnMembership.Location = New Point(57, 717)
             btnMembership.Size = New Size(210, 40)
             btnMembership.Text = "Membership"
 
@@ -352,7 +346,6 @@ Public Class frmEmployeeDashboard
         Me.Hide()
     End Sub
 
-
     ' BOARDING ROOMS
     Private Sub btnBoardingRooms_Click(sender As Object, e As EventArgs) Handles btnBoardingRooms.Click
         frmBoardingRoom.Show()
@@ -385,11 +378,81 @@ Public Class frmEmployeeDashboard
         End If
     End Sub
 
+    ' FILE - LOGOUT
+    Private Sub LogoutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogoutToolStripMenuItem.Click
+        If MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            frmLogin.Show()
+            Me.Hide()
+        End If
+    End Sub
+
+    ' FILE - EXIT
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        If MessageBox.Show("Are you sure you want to exit the application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            Application.Exit()
+        End If
+    End Sub
+
+    ' MANAGEMENT - CUSTOMERS
+    Private Sub CustomersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CustomersToolStripMenuItem.Click
+        frmCustomer.Show()
+        Me.Hide()
+    End Sub
+
+    ' MANAGEMENT - PETS
+    Private Sub PetsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PetsToolStripMenuItem.Click
+        frmPet.Show()
+        Me.Hide()
+    End Sub
+
+    ' MANAGEMENT - BOOKINGS
+    Private Sub BookingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BookingsToolStripMenuItem.Click
+        frmBooking.Show()
+        Me.Hide()
+    End Sub
+
+    ' MANAGEMENT - ORDERS
+    Private Sub OrdersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrdersToolStripMenuItem.Click
+        frmOrder.Show()
+        Me.Hide()
+    End Sub
+
+    ' MANAGEMENT - PAYMENTS
+    Private Sub PaymentsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PaymentsToolStripMenuItem.Click
+        frmPayment.Show()
+        Me.Hide()
+    End Sub
+
+    ' SERVICES - GROOMING SERVICES
+    Private Sub GroomingServicesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GroomingServicesToolStripMenuItem.Click
+        frmGrommingServices.Show()
+        Me.Hide()
+    End Sub
+
+    ' VIEW - DASHBOARD
+    Private Sub DashboardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DashboardToolStripMenuItem.Click
+        Me.Show()
+        LoadDashboardData()
+        LoadRecentAppointments()
+    End Sub
+
+    ' VIEW - REFRESH
+    Private Sub RefreshToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RefreshToolStripMenuItem.Click
+        LoadDashboardData()
+        LoadRecentAppointments()
+    End Sub
+
     ' ABOUT
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
         Using aboutForm As New frmAbout()
             aboutForm.ShowDialog()
         End Using
+    End Sub
+
+    ' USER GUIDE
+    Private Sub UserGuideToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UserGuideToolStripMenuItem.Click
+        frmUserGuide.Show()
+        Me.Hide()
     End Sub
 
 End Class

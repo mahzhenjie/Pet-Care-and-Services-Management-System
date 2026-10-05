@@ -115,7 +115,6 @@ Partial Class frmEmployeeDashboard
         PaymentsToolStripMenuItem = New ToolStripMenuItem()
         ServicesToolStripMenuItem = New ToolStripMenuItem()
         GroomingServicesToolStripMenuItem = New ToolStripMenuItem()
-        BoardingServicesToolStripMenuItem = New ToolStripMenuItem()
         ViewToolStripMenuItem = New ToolStripMenuItem()
         DashboardToolStripMenuItem = New ToolStripMenuItem()
         RefreshToolStripMenuItem = New ToolStripMenuItem()
@@ -208,10 +207,10 @@ Partial Class frmEmployeeDashboard
         ' tlpSummaryCards
         ' 
         tlpSummaryCards.ColumnCount = 4
-        tlpSummaryCards.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
-        tlpSummaryCards.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
-        tlpSummaryCards.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
-        tlpSummaryCards.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
+        tlpSummaryCards.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25.0F))
+        tlpSummaryCards.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25.0F))
+        tlpSummaryCards.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25.0F))
+        tlpSummaryCards.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25.0F))
         tlpSummaryCards.Controls.Add(pnlAppointments, 2, 0)
         tlpSummaryCards.Controls.Add(pnlCustomers, 0, 0)
         tlpSummaryCards.Controls.Add(pnlPets, 1, 0)
@@ -220,7 +219,7 @@ Partial Class frmEmployeeDashboard
         tlpSummaryCards.Location = New Point(0, 0)
         tlpSummaryCards.Name = "tlpSummaryCards"
         tlpSummaryCards.RowCount = 1
-        tlpSummaryCards.RowStyles.Add(New RowStyle(SizeType.Percent, 100F))
+        tlpSummaryCards.RowStyles.Add(New RowStyle(SizeType.Percent, 100.0F))
         tlpSummaryCards.Size = New Size(1072, 163)
         tlpSummaryCards.TabIndex = 16
         ' 
@@ -270,7 +269,7 @@ Partial Class frmEmployeeDashboard
         ' lblAppointmentTitle
         ' 
         lblAppointmentTitle.AutoSize = True
-        lblAppointmentTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblAppointmentTitle.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblAppointmentTitle.ForeColor = Color.DarkKhaki
         lblAppointmentTitle.Location = New Point(96, 16)
         lblAppointmentTitle.Name = "lblAppointmentTitle"
@@ -325,7 +324,7 @@ Partial Class frmEmployeeDashboard
         ' lblCustomerTitle
         ' 
         lblCustomerTitle.AutoSize = True
-        lblCustomerTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblCustomerTitle.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblCustomerTitle.ForeColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
         lblCustomerTitle.Location = New Point(109, 19)
         lblCustomerTitle.Name = "lblCustomerTitle"
@@ -379,7 +378,7 @@ Partial Class frmEmployeeDashboard
         ' lblPetTitle
         ' 
         lblPetTitle.AutoSize = True
-        lblPetTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblPetTitle.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblPetTitle.ForeColor = Color.RoyalBlue
         lblPetTitle.Location = New Point(104, 14)
         lblPetTitle.Name = "lblPetTitle"
@@ -433,7 +432,7 @@ Partial Class frmEmployeeDashboard
         ' lblOrderTitle
         ' 
         lblOrderTitle.AutoSize = True
-        lblOrderTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblOrderTitle.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblOrderTitle.ForeColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
         lblOrderTitle.Location = New Point(104, 14)
         lblOrderTitle.Name = "lblOrderTitle"
@@ -719,7 +718,7 @@ Partial Class frmEmployeeDashboard
         btnNotification.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         btnNotification.FlatAppearance.BorderSize = 0
         btnNotification.FlatStyle = FlatStyle.Flat
-        btnNotification.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnNotification.Font = New Font("Segoe UI", 18.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnNotification.Location = New Point(803, 42)
         btnNotification.Name = "btnNotification"
         btnNotification.Size = New Size(54, 45)
@@ -740,7 +739,7 @@ Partial Class frmEmployeeDashboard
         ' lblDashboardTitle
         ' 
         lblDashboardTitle.AutoSize = True
-        lblDashboardTitle.Font = New Font("Georgia", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblDashboardTitle.Font = New Font("Georgia", 24.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblDashboardTitle.Location = New Point(63, 50)
         lblDashboardTitle.Name = "lblDashboardTitle"
         lblDashboardTitle.Size = New Size(559, 46)
@@ -1111,7 +1110,7 @@ Partial Class frmEmployeeDashboard
         ' lblSidebarTitle
         ' 
         lblSidebarTitle.AutoSize = True
-        lblSidebarTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblSidebarTitle.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblSidebarTitle.ForeColor = Color.White
         lblSidebarTitle.Location = New Point(99, 39)
         lblSidebarTitle.Name = "lblSidebarTitle"
@@ -1140,13 +1139,13 @@ Partial Class frmEmployeeDashboard
         ' LogoutToolStripMenuItem
         ' 
         LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        LogoutToolStripMenuItem.Size = New Size(139, 26)
+        LogoutToolStripMenuItem.Size = New Size(224, 26)
         LogoutToolStripMenuItem.Text = "Logout"
         ' 
         ' ExitToolStripMenuItem
         ' 
         ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        ExitToolStripMenuItem.Size = New Size(139, 26)
+        ExitToolStripMenuItem.Size = New Size(224, 26)
         ExitToolStripMenuItem.Text = "Exit"
         ' 
         ' ManagementToolStripMenuItem
@@ -1159,36 +1158,36 @@ Partial Class frmEmployeeDashboard
         ' CustomersToolStripMenuItem
         ' 
         CustomersToolStripMenuItem.Name = "CustomersToolStripMenuItem"
-        CustomersToolStripMenuItem.Size = New Size(161, 26)
+        CustomersToolStripMenuItem.Size = New Size(224, 26)
         CustomersToolStripMenuItem.Text = "Customers"
         ' 
         ' PetsToolStripMenuItem
         ' 
         PetsToolStripMenuItem.Name = "PetsToolStripMenuItem"
-        PetsToolStripMenuItem.Size = New Size(161, 26)
+        PetsToolStripMenuItem.Size = New Size(224, 26)
         PetsToolStripMenuItem.Text = "Pets"
         ' 
         ' BookingsToolStripMenuItem
         ' 
         BookingsToolStripMenuItem.Name = "BookingsToolStripMenuItem"
-        BookingsToolStripMenuItem.Size = New Size(161, 26)
+        BookingsToolStripMenuItem.Size = New Size(224, 26)
         BookingsToolStripMenuItem.Text = "Bookings"
         ' 
         ' OrdersToolStripMenuItem
         ' 
         OrdersToolStripMenuItem.Name = "OrdersToolStripMenuItem"
-        OrdersToolStripMenuItem.Size = New Size(161, 26)
+        OrdersToolStripMenuItem.Size = New Size(224, 26)
         OrdersToolStripMenuItem.Text = "Orders"
         ' 
         ' PaymentsToolStripMenuItem
         ' 
         PaymentsToolStripMenuItem.Name = "PaymentsToolStripMenuItem"
-        PaymentsToolStripMenuItem.Size = New Size(161, 26)
+        PaymentsToolStripMenuItem.Size = New Size(224, 26)
         PaymentsToolStripMenuItem.Text = "Payments"
         ' 
         ' ServicesToolStripMenuItem
         ' 
-        ServicesToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {GroomingServicesToolStripMenuItem, BoardingServicesToolStripMenuItem})
+        ServicesToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {GroomingServicesToolStripMenuItem})
         ServicesToolStripMenuItem.Name = "ServicesToolStripMenuItem"
         ServicesToolStripMenuItem.Size = New Size(76, 24)
         ServicesToolStripMenuItem.Text = "Services"
@@ -1196,14 +1195,8 @@ Partial Class frmEmployeeDashboard
         ' GroomingServicesToolStripMenuItem
         ' 
         GroomingServicesToolStripMenuItem.Name = "GroomingServicesToolStripMenuItem"
-        GroomingServicesToolStripMenuItem.Size = New Size(216, 26)
+        GroomingServicesToolStripMenuItem.Size = New Size(224, 26)
         GroomingServicesToolStripMenuItem.Text = "Grooming Services"
-        ' 
-        ' BoardingServicesToolStripMenuItem
-        ' 
-        BoardingServicesToolStripMenuItem.Name = "BoardingServicesToolStripMenuItem"
-        BoardingServicesToolStripMenuItem.Size = New Size(216, 26)
-        BoardingServicesToolStripMenuItem.Text = "Boarding Services"
         ' 
         ' ViewToolStripMenuItem
         ' 
@@ -1215,13 +1208,13 @@ Partial Class frmEmployeeDashboard
         ' DashboardToolStripMenuItem
         ' 
         DashboardToolStripMenuItem.Name = "DashboardToolStripMenuItem"
-        DashboardToolStripMenuItem.Size = New Size(165, 26)
+        DashboardToolStripMenuItem.Size = New Size(224, 26)
         DashboardToolStripMenuItem.Text = "Dashboard"
         ' 
         ' RefreshToolStripMenuItem
         ' 
         RefreshToolStripMenuItem.Name = "RefreshToolStripMenuItem"
-        RefreshToolStripMenuItem.Size = New Size(165, 26)
+        RefreshToolStripMenuItem.Size = New Size(224, 26)
         RefreshToolStripMenuItem.Text = "Refresh"
         ' 
         ' HelpToolStripMenuItem
@@ -1234,13 +1227,13 @@ Partial Class frmEmployeeDashboard
         ' AboutToolStripMenuItem
         ' 
         AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        AboutToolStripMenuItem.Size = New Size(164, 26)
+        AboutToolStripMenuItem.Size = New Size(224, 26)
         AboutToolStripMenuItem.Text = "About "
         ' 
         ' UserGuideToolStripMenuItem
         ' 
         UserGuideToolStripMenuItem.Name = "UserGuideToolStripMenuItem"
-        UserGuideToolStripMenuItem.Size = New Size(164, 26)
+        UserGuideToolStripMenuItem.Size = New Size(224, 26)
         UserGuideToolStripMenuItem.Text = "User Guide"
         ' 
         ' frmEmployeeDashboard
@@ -1399,7 +1392,6 @@ Partial Class frmEmployeeDashboard
     Friend WithEvents PaymentsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ServicesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GroomingServicesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents BoardingServicesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DashboardToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RefreshToolStripMenuItem As ToolStripMenuItem

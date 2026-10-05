@@ -72,6 +72,7 @@ Partial Class frmCustomerDashboard
         picPaw = New PictureBox()
         lblDashboardTitle = New Label()
         pnlSidebar = New Panel()
+        lblShopAndMembership = New Label()
         lblSidebarSubtitle = New Label()
         lblSidebarTitle = New Label()
         lblServices = New Label()
@@ -103,7 +104,26 @@ Partial Class frmCustomerDashboard
         Label1 = New Label()
         MenuStrip1 = New MenuStrip()
         FileToolStripMenuItem = New ToolStripMenuItem()
-        lblShopAndMembership = New Label()
+        LogoutToolStripMenuItem = New ToolStripMenuItem()
+        ExitToolStripMenuItem = New ToolStripMenuItem()
+        MyAccountToolStripMenuItem = New ToolStripMenuItem()
+        MyProfileToolStripMenuItem = New ToolStripMenuItem()
+        MyPetsToolStripMenuItem = New ToolStripMenuItem()
+        MyPetsToolStripMenuItem1 = New ToolStripMenuItem()
+        BookingsToolStripMenuItem = New ToolStripMenuItem()
+        MyAppointmentsToolStripMenuItem = New ToolStripMenuItem()
+        OrdersToolStripMenuItem = New ToolStripMenuItem()
+        MyOrdersToolStripMenuItem = New ToolStripMenuItem()
+        PaymentsToolStripMenuItem = New ToolStripMenuItem()
+        MyPaymentsToolStripMenuItem = New ToolStripMenuItem()
+        ServicesToolStripMenuItem = New ToolStripMenuItem()
+        GroomingServicesToolStripMenuItem = New ToolStripMenuItem()
+        ViewToolStripMenuItem = New ToolStripMenuItem()
+        DashboardToolStripMenuItem = New ToolStripMenuItem()
+        RefreshToolStripMenuItem = New ToolStripMenuItem()
+        HelpToolStripMenuItem = New ToolStripMenuItem()
+        AboutToolStripMenuItem = New ToolStripMenuItem()
+        UserGuideToolStripMenuItem = New ToolStripMenuItem()
         pnlMain.SuspendLayout()
         pnlSummaryCards.SuspendLayout()
         tlpSummaryCards.SuspendLayout()
@@ -148,7 +168,7 @@ Partial Class frmCustomerDashboard
         lblDescription.ForeColor = Color.FromArgb(CByte(61), CByte(40), CByte(27))
         lblDescription.Location = New Point(7, 87)
         lblDescription.Name = "lblDescription"
-        lblDescription.Size = New Size(381, 74)
+        lblDescription.Size = New Size(315, 60)
         lblDescription.TabIndex = 6
         lblDescription.Text = "Manage your pet care services " & vbCrLf & "easily and efficiently."
         ' 
@@ -224,7 +244,7 @@ Partial Class frmCustomerDashboard
         lblPetSubtitle.ForeColor = SystemColors.ControlText
         lblPetSubtitle.Location = New Point(106, 103)
         lblPetSubtitle.Name = "lblPetSubtitle"
-        lblPetSubtitle.Size = New Size(86, 25)
+        lblPetSubtitle.Size = New Size(72, 20)
         lblPetSubtitle.TabIndex = 10
         lblPetSubtitle.Text = "Total Pets"
         ' 
@@ -235,7 +255,7 @@ Partial Class frmCustomerDashboard
         lblPetCount.ForeColor = SystemColors.ControlText
         lblPetCount.Location = New Point(106, 58)
         lblPetCount.Name = "lblPetCount"
-        lblPetCount.Size = New Size(38, 45)
+        lblPetCount.Size = New Size(32, 38)
         lblPetCount.TabIndex = 9
         lblPetCount.Text = "0"
         ' 
@@ -246,7 +266,7 @@ Partial Class frmCustomerDashboard
         lblPetTitle.ForeColor = Color.RoyalBlue
         lblPetTitle.Location = New Point(128, 3)
         lblPetTitle.Name = "lblPetTitle"
-        lblPetTitle.Size = New Size(61, 32)
+        lblPetTitle.Size = New Size(51, 28)
         lblPetTitle.TabIndex = 8
         lblPetTitle.Text = "Pets"
         ' 
@@ -280,7 +300,7 @@ Partial Class frmCustomerDashboard
         lblAppointmentSubtitle.ForeColor = SystemColors.ControlText
         lblAppointmentSubtitle.Location = New Point(104, 103)
         lblAppointmentSubtitle.Name = "lblAppointmentSubtitle"
-        lblAppointmentSubtitle.Size = New Size(190, 25)
+        lblAppointmentSubtitle.Size = New Size(156, 20)
         lblAppointmentSubtitle.TabIndex = 10
         lblAppointmentSubtitle.Text = "Today's Appointments"
         ' 
@@ -291,7 +311,7 @@ Partial Class frmCustomerDashboard
         lblAppointmentCount.ForeColor = SystemColors.ControlText
         lblAppointmentCount.Location = New Point(96, 58)
         lblAppointmentCount.Name = "lblAppointmentCount"
-        lblAppointmentCount.Size = New Size(38, 45)
+        lblAppointmentCount.Size = New Size(32, 38)
         lblAppointmentCount.TabIndex = 9
         lblAppointmentCount.Text = "0"
         ' 
@@ -302,7 +322,7 @@ Partial Class frmCustomerDashboard
         lblAppointmentTitle.ForeColor = Color.DarkKhaki
         lblAppointmentTitle.Location = New Point(76, 3)
         lblAppointmentTitle.Name = "lblAppointmentTitle"
-        lblAppointmentTitle.Size = New Size(177, 32)
+        lblAppointmentTitle.Size = New Size(146, 28)
         lblAppointmentTitle.TabIndex = 8
         lblAppointmentTitle.Text = "Appointments"
         ' 
@@ -336,7 +356,7 @@ Partial Class frmCustomerDashboard
         lblOrderSubtitle.ForeColor = SystemColors.ControlText
         lblOrderSubtitle.Location = New Point(104, 103)
         lblOrderSubtitle.Name = "lblOrderSubtitle"
-        lblOrderSubtitle.Size = New Size(135, 25)
+        lblOrderSubtitle.Size = New Size(110, 20)
         lblOrderSubtitle.TabIndex = 10
         lblOrderSubtitle.Text = "Pending Orders"
         ' 
@@ -347,7 +367,7 @@ Partial Class frmCustomerDashboard
         lblOrderCount.ForeColor = SystemColors.ControlText
         lblOrderCount.Location = New Point(107, 58)
         lblOrderCount.Name = "lblOrderCount"
-        lblOrderCount.Size = New Size(38, 45)
+        lblOrderCount.Size = New Size(32, 38)
         lblOrderCount.TabIndex = 9
         lblOrderCount.Text = "0"
         ' 
@@ -358,7 +378,7 @@ Partial Class frmCustomerDashboard
         lblOrderTitle.ForeColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
         lblOrderTitle.Location = New Point(84, 3)
         lblOrderTitle.Name = "lblOrderTitle"
-        lblOrderTitle.Size = New Size(91, 32)
+        lblOrderTitle.Size = New Size(75, 28)
         lblOrderTitle.TabIndex = 8
         lblOrderTitle.Text = "Orders"
         ' 
@@ -481,7 +501,7 @@ Partial Class frmCustomerDashboard
         lblQuickActions.ForeColor = SystemColors.ControlText
         lblQuickActions.Location = New Point(5, 11)
         lblQuickActions.Name = "lblQuickActions"
-        lblQuickActions.Size = New Size(245, 38)
+        lblQuickActions.Size = New Size(202, 31)
         lblQuickActions.TabIndex = 0
         lblQuickActions.Text = "⚡ Quick Actions"
         ' 
@@ -521,7 +541,7 @@ Partial Class frmCustomerDashboard
         lblRecentTitle.ForeColor = SystemColors.ControlText
         lblRecentTitle.Location = New Point(17, 11)
         lblRecentTitle.Name = "lblRecentTitle"
-        lblRecentTitle.Size = New Size(387, 38)
+        lblRecentTitle.Size = New Size(319, 31)
         lblRecentTitle.TabIndex = 0
         lblRecentTitle.Text = "📅Upcoming Appointments"
         ' 
@@ -559,7 +579,7 @@ Partial Class frmCustomerDashboard
         lblWelcomeBack.ForeColor = Color.FromArgb(CByte(61), CByte(40), CByte(27))
         lblWelcomeBack.Location = New Point(3, 9)
         lblWelcomeBack.Name = "lblWelcomeBack"
-        lblWelcomeBack.Size = New Size(486, 70)
+        lblWelcomeBack.Size = New Size(404, 59)
         lblWelcomeBack.TabIndex = 7
         lblWelcomeBack.Text = "Welcome back! 👋"
         ' 
@@ -606,7 +626,7 @@ Partial Class frmCustomerDashboard
         lblCustomer.ForeColor = Color.FromArgb(CByte(61), CByte(40), CByte(27))
         lblCustomer.Location = New Point(943, 65)
         lblCustomer.Name = "lblCustomer"
-        lblCustomer.Size = New Size(143, 38)
+        lblCustomer.Size = New Size(117, 31)
         lblCustomer.TabIndex = 9
         lblCustomer.Text = "Customer"
         ' 
@@ -619,7 +639,7 @@ Partial Class frmCustomerDashboard
         Label5.ForeColor = Color.FromArgb(CByte(107), CByte(98), CByte(91))
         Label5.Location = New Point(943, 42)
         Label5.Name = "Label5"
-        Label5.Size = New Size(104, 30)
+        Label5.Size = New Size(84, 23)
         Label5.TabIndex = 7
         Label5.Text = "Welcome,"
         ' 
@@ -656,7 +676,7 @@ Partial Class frmCustomerDashboard
         lblEmployee.ForeColor = Color.FromArgb(CByte(61), CByte(40), CByte(27))
         lblEmployee.Location = New Point(1799, 65)
         lblEmployee.Name = "lblEmployee"
-        lblEmployee.Size = New Size(145, 38)
+        lblEmployee.Size = New Size(118, 31)
         lblEmployee.TabIndex = 6
         lblEmployee.Text = "Employee"
         lblEmployee.Visible = False
@@ -683,7 +703,7 @@ Partial Class frmCustomerDashboard
         lblWelcome.ForeColor = Color.FromArgb(CByte(107), CByte(98), CByte(91))
         lblWelcome.Location = New Point(1799, 42)
         lblWelcome.Name = "lblWelcome"
-        lblWelcome.Size = New Size(104, 30)
+        lblWelcome.Size = New Size(84, 23)
         lblWelcome.TabIndex = 5
         lblWelcome.Text = "Welcome,"
         lblWelcome.Visible = False
@@ -730,7 +750,7 @@ Partial Class frmCustomerDashboard
         lblDashboardTitle.ForeColor = SystemColors.ControlText
         lblDashboardTitle.Location = New Point(63, 50)
         lblDashboardTitle.Name = "lblDashboardTitle"
-        lblDashboardTitle.Size = New Size(675, 56)
+        lblDashboardTitle.Size = New Size(564, 46)
         lblDashboardTitle.TabIndex = 1
         lblDashboardTitle.Text = "CUSTOMER DASHBOARD"
         ' 
@@ -772,6 +792,17 @@ Partial Class frmCustomerDashboard
         pnlSidebar.Size = New Size(280, 901)
         pnlSidebar.TabIndex = 0
         ' 
+        ' lblShopAndMembership
+        ' 
+        lblShopAndMembership.AutoSize = True
+        lblShopAndMembership.Font = New Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblShopAndMembership.ForeColor = Color.FromArgb(CByte(221), CByte(184), CByte(146))
+        lblShopAndMembership.Location = New Point(11, 636)
+        lblShopAndMembership.Name = "lblShopAndMembership"
+        lblShopAndMembership.Size = New Size(163, 17)
+        lblShopAndMembership.TabIndex = 32
+        lblShopAndMembership.Text = "SHOP AND MEMBERSHIP"
+        ' 
         ' lblSidebarSubtitle
         ' 
         lblSidebarSubtitle.AutoSize = True
@@ -779,7 +810,7 @@ Partial Class frmCustomerDashboard
         lblSidebarSubtitle.ForeColor = Color.FromArgb(CByte(245), CByte(230), CByte(209))
         lblSidebarSubtitle.Location = New Point(99, 104)
         lblSidebarSubtitle.Name = "lblSidebarSubtitle"
-        lblSidebarSubtitle.Size = New Size(202, 25)
+        lblSidebarSubtitle.Size = New Size(168, 20)
         lblSidebarSubtitle.TabIndex = 31
         lblSidebarSubtitle.Text = "MANAGEMENT SYSTEM"
         lblSidebarSubtitle.TextAlign = ContentAlignment.MiddleCenter
@@ -791,7 +822,7 @@ Partial Class frmCustomerDashboard
         lblSidebarTitle.ForeColor = Color.White
         lblSidebarTitle.Location = New Point(99, 40)
         lblSidebarTitle.Name = "lblSidebarTitle"
-        lblSidebarTitle.Size = New Size(182, 64)
+        lblSidebarTitle.Size = New Size(151, 56)
         lblSidebarTitle.TabIndex = 30
         lblSidebarTitle.Text = "PET CARE " & vbCrLf & "AND SERVICES"
         lblSidebarTitle.TextAlign = ContentAlignment.MiddleLeft
@@ -803,7 +834,7 @@ Partial Class frmCustomerDashboard
         lblServices.ForeColor = Color.FromArgb(CByte(221), CByte(184), CByte(146))
         lblServices.Location = New Point(12, 450)
         lblServices.Name = "lblServices"
-        lblServices.Size = New Size(82, 21)
+        lblServices.Size = New Size(65, 17)
         lblServices.TabIndex = 29
         lblServices.Text = "SERVICES"
         ' 
@@ -814,7 +845,7 @@ Partial Class frmCustomerDashboard
         lblManagement.ForeColor = Color.FromArgb(CByte(221), CByte(184), CByte(146))
         lblManagement.Location = New Point(19, 194)
         lblManagement.Name = "lblManagement"
-        lblManagement.Size = New Size(126, 21)
+        lblManagement.Size = New Size(101, 17)
         lblManagement.TabIndex = 28
         lblManagement.Text = "MANAGEMENT"
         ' 
@@ -1124,7 +1155,7 @@ Partial Class frmCustomerDashboard
         Label1.ForeColor = Color.White
         Label1.Location = New Point(99, 39)
         Label1.Name = "Label1"
-        Label1.Size = New Size(182, 64)
+        Label1.Size = New Size(151, 56)
         Label1.TabIndex = 1
         Label1.Text = "PET CARE" & vbCrLf & "AND SERVICES"
         Label1.Visible = False
@@ -1132,29 +1163,147 @@ Partial Class frmCustomerDashboard
         ' MenuStrip1
         ' 
         MenuStrip1.ImageScalingSize = New Size(20, 20)
-        MenuStrip1.Items.AddRange(New ToolStripItem() {FileToolStripMenuItem})
+        MenuStrip1.Items.AddRange(New ToolStripItem() {FileToolStripMenuItem, MyAccountToolStripMenuItem, MyPetsToolStripMenuItem, BookingsToolStripMenuItem, OrdersToolStripMenuItem, PaymentsToolStripMenuItem, ServicesToolStripMenuItem, ViewToolStripMenuItem, HelpToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(1382, 38)
+        MenuStrip1.Size = New Size(1382, 28)
         MenuStrip1.TabIndex = 1
         MenuStrip1.Text = "MenuStrip1"
         ' 
         ' FileToolStripMenuItem
         ' 
+        FileToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {LogoutToolStripMenuItem, ExitToolStripMenuItem})
         FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        FileToolStripMenuItem.Size = New Size(60, 34)
+        FileToolStripMenuItem.Size = New Size(46, 24)
         FileToolStripMenuItem.Text = "File"
         ' 
-        ' lblShopAndMembership
+        ' LogoutToolStripMenuItem
         ' 
-        lblShopAndMembership.AutoSize = True
-        lblShopAndMembership.Font = New Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblShopAndMembership.ForeColor = Color.FromArgb(CByte(221), CByte(184), CByte(146))
-        lblShopAndMembership.Location = New Point(11, 636)
-        lblShopAndMembership.Name = "lblShopAndMembership"
-        lblShopAndMembership.Size = New Size(201, 21)
-        lblShopAndMembership.TabIndex = 32
-        lblShopAndMembership.Text = "SHOP AND MEMBERSHIP"
+        LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
+        LogoutToolStripMenuItem.Size = New Size(224, 26)
+        LogoutToolStripMenuItem.Text = "Logout"
+        ' 
+        ' ExitToolStripMenuItem
+        ' 
+        ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        ExitToolStripMenuItem.Size = New Size(224, 26)
+        ExitToolStripMenuItem.Text = "Exit"
+        ' 
+        ' MyAccountToolStripMenuItem
+        ' 
+        MyAccountToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {MyProfileToolStripMenuItem})
+        MyAccountToolStripMenuItem.Name = "MyAccountToolStripMenuItem"
+        MyAccountToolStripMenuItem.Size = New Size(101, 24)
+        MyAccountToolStripMenuItem.Text = "My Account"
+        ' 
+        ' MyProfileToolStripMenuItem
+        ' 
+        MyProfileToolStripMenuItem.Name = "MyProfileToolStripMenuItem"
+        MyProfileToolStripMenuItem.Size = New Size(224, 26)
+        MyProfileToolStripMenuItem.Text = "My Profile"
+        ' 
+        ' MyPetsToolStripMenuItem
+        ' 
+        MyPetsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {MyPetsToolStripMenuItem1})
+        MyPetsToolStripMenuItem.Name = "MyPetsToolStripMenuItem"
+        MyPetsToolStripMenuItem.Size = New Size(73, 24)
+        MyPetsToolStripMenuItem.Text = "My Pets"
+        ' 
+        ' MyPetsToolStripMenuItem1
+        ' 
+        MyPetsToolStripMenuItem1.Name = "MyPetsToolStripMenuItem1"
+        MyPetsToolStripMenuItem1.Size = New Size(224, 26)
+        MyPetsToolStripMenuItem1.Text = "My Pets"
+        ' 
+        ' BookingsToolStripMenuItem
+        ' 
+        BookingsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {MyAppointmentsToolStripMenuItem})
+        BookingsToolStripMenuItem.Name = "BookingsToolStripMenuItem"
+        BookingsToolStripMenuItem.Size = New Size(84, 24)
+        BookingsToolStripMenuItem.Text = "Bookings"
+        ' 
+        ' MyAppointmentsToolStripMenuItem
+        ' 
+        MyAppointmentsToolStripMenuItem.Name = "MyAppointmentsToolStripMenuItem"
+        MyAppointmentsToolStripMenuItem.Size = New Size(224, 26)
+        MyAppointmentsToolStripMenuItem.Text = "My Appointments"
+        ' 
+        ' OrdersToolStripMenuItem
+        ' 
+        OrdersToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {MyOrdersToolStripMenuItem})
+        OrdersToolStripMenuItem.Name = "OrdersToolStripMenuItem"
+        OrdersToolStripMenuItem.Size = New Size(67, 24)
+        OrdersToolStripMenuItem.Text = "Orders"
+        ' 
+        ' MyOrdersToolStripMenuItem
+        ' 
+        MyOrdersToolStripMenuItem.Name = "MyOrdersToolStripMenuItem"
+        MyOrdersToolStripMenuItem.Size = New Size(224, 26)
+        MyOrdersToolStripMenuItem.Text = "My Orders"
+        ' 
+        ' PaymentsToolStripMenuItem
+        ' 
+        PaymentsToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {MyPaymentsToolStripMenuItem})
+        PaymentsToolStripMenuItem.Name = "PaymentsToolStripMenuItem"
+        PaymentsToolStripMenuItem.Size = New Size(85, 24)
+        PaymentsToolStripMenuItem.Text = "Payments"
+        ' 
+        ' MyPaymentsToolStripMenuItem
+        ' 
+        MyPaymentsToolStripMenuItem.Name = "MyPaymentsToolStripMenuItem"
+        MyPaymentsToolStripMenuItem.Size = New Size(224, 26)
+        MyPaymentsToolStripMenuItem.Text = "My Payments"
+        ' 
+        ' ServicesToolStripMenuItem
+        ' 
+        ServicesToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {GroomingServicesToolStripMenuItem})
+        ServicesToolStripMenuItem.Name = "ServicesToolStripMenuItem"
+        ServicesToolStripMenuItem.Size = New Size(76, 24)
+        ServicesToolStripMenuItem.Text = "Services"
+        ' 
+        ' GroomingServicesToolStripMenuItem
+        ' 
+        GroomingServicesToolStripMenuItem.Name = "GroomingServicesToolStripMenuItem"
+        GroomingServicesToolStripMenuItem.Size = New Size(224, 26)
+        GroomingServicesToolStripMenuItem.Text = "Grooming Services"
+        ' 
+        ' ViewToolStripMenuItem
+        ' 
+        ViewToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {DashboardToolStripMenuItem, RefreshToolStripMenuItem})
+        ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
+        ViewToolStripMenuItem.Size = New Size(55, 24)
+        ViewToolStripMenuItem.Text = "View"
+        ' 
+        ' DashboardToolStripMenuItem
+        ' 
+        DashboardToolStripMenuItem.Name = "DashboardToolStripMenuItem"
+        DashboardToolStripMenuItem.Size = New Size(224, 26)
+        DashboardToolStripMenuItem.Text = "Dashboard"
+        ' 
+        ' RefreshToolStripMenuItem
+        ' 
+        RefreshToolStripMenuItem.Name = "RefreshToolStripMenuItem"
+        RefreshToolStripMenuItem.Size = New Size(224, 26)
+        RefreshToolStripMenuItem.Text = "Refresh"
+        ' 
+        ' HelpToolStripMenuItem
+        ' 
+        HelpToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {AboutToolStripMenuItem, UserGuideToolStripMenuItem})
+        HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
+        HelpToolStripMenuItem.Size = New Size(55, 24)
+        HelpToolStripMenuItem.Text = "Help"
+        ' 
+        ' AboutToolStripMenuItem
+        ' 
+        AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        AboutToolStripMenuItem.Size = New Size(224, 26)
+        AboutToolStripMenuItem.Text = "About "
+        ' 
+        ' UserGuideToolStripMenuItem
+        ' 
+        UserGuideToolStripMenuItem.Name = "UserGuideToolStripMenuItem"
+        UserGuideToolStripMenuItem.Size = New Size(224, 26)
+        UserGuideToolStripMenuItem.Text = "User Guide"
         ' 
         ' frmCustomerDashboard
         ' 
@@ -1299,4 +1448,24 @@ Partial Class frmCustomerDashboard
     Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox14 As PictureBox
     Friend WithEvents lblShopAndMembership As Label
+    Friend WithEvents LogoutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MyAccountToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MyProfileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MyPetsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MyPetsToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents BookingsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MyAppointmentsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OrdersToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MyOrdersToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PaymentsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MyPaymentsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ServicesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GroomingServicesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DashboardToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RefreshToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UserGuideToolStripMenuItem As ToolStripMenuItem
 End Class

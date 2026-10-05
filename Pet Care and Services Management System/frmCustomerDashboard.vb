@@ -120,12 +120,6 @@ Public Class frmCustomerDashboard
         frm.ShowDialog()
     End Sub
 
-    ' BOARDING SERVICES
-    Private Sub btnBoardingServices_Click(sender As Object, e As EventArgs) Handles btnBoardingServices.Click
-        Dim frm As New FrmBoardingService()
-        frm.ShowDialog()
-    End Sub
-
     ' PAYMENTS
     Private Sub btnPayments_Click(sender As Object, e As EventArgs) Handles btnPayments.Click
         Dim frm As New FrmMyPayment()
@@ -205,26 +199,19 @@ Public Class frmCustomerDashboard
 
     ' LOGOUT
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
-        Dim result As DialogResult
-        result = MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
-        If result = DialogResult.Yes Then
+        If MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             CurrentUserID = 0
             CurrentUserName = ""
             CurrentUserRole = ""
 
-            Dim loginForm As New frmLogin()
             Me.Close()
-            loginForm.Show()
+            frmLogin.Show()
         End If
     End Sub
 
     ' DASHBOARD
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
-        MessageBox.Show("You are already on the Customer Dashboard.",
-                        "Dashboard",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information)
+        MessageBox.Show("You are already on the Customer Dashboard.", "Dashboard", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
     ' COLLAPSE / EXPAND SIDEBAR
@@ -234,8 +221,6 @@ Public Class frmCustomerDashboard
 
             ' COLLAPSE SIDEBAR
             pnlSidebar.Width = 70
-            pnlTopBar.Location = New Point(70, 0)
-            pnlTopBar.Width = Me.ClientSize.Width - 70
 
             ' HIDE SIDEBAR TEXT
             lblSidebarTitle.Visible = False
@@ -243,13 +228,14 @@ Public Class frmCustomerDashboard
             picLogo.Visible = False
             lblManagement.Visible = False
             lblServices.Visible = False
+            lblShopAndMembership.Visible = False
 
             ' DASHBOARD
             btnDashboard.Location = New Point(8, 141)
             btnDashboard.Size = New Size(54, 45)
             btnDashboard.Text = "⌂"
 
-            ' CUSTOMERS
+            ' PROFILE
             btnProfile.Location = New Point(8, 217)
             btnProfile.Size = New Size(54, 40)
             btnProfile.Text = ""
@@ -259,7 +245,7 @@ Public Class frmCustomerDashboard
             btnPet.Size = New Size(54, 40)
             btnPet.Text = ""
 
-            ' BOOKINGS
+            ' APPOINTMENTS
             btnAppointments.Location = New Point(8, 309)
             btnAppointments.Size = New Size(54, 40)
             btnAppointments.Text = ""
@@ -278,11 +264,6 @@ Public Class frmCustomerDashboard
             btnGroomingServices.Location = New Point(8, 475)
             btnGroomingServices.Size = New Size(54, 40)
             btnGroomingServices.Text = ""
-
-            ' BOARDING SERVICES
-            btnBoardingServices.Location = New Point(8, 521)
-            btnBoardingServices.Size = New Size(54, 40)
-            btnBoardingServices.Text = ""
 
             ' BOARDING VIDEOS
             btnBoardingVideos.Location = New Point(8, 642)
@@ -332,8 +313,6 @@ Public Class frmCustomerDashboard
 
             ' EXPAND SIDEBAR
             pnlSidebar.Width = 280
-            pnlTopBar.Location = New Point(280, 0)
-            pnlTopBar.Width = Me.ClientSize.Width - 280
 
             ' SHOW SIDEBAR TEXT
             lblSidebarTitle.Visible = True
@@ -341,13 +320,14 @@ Public Class frmCustomerDashboard
             picLogo.Visible = True
             lblManagement.Visible = True
             lblServices.Visible = True
+            lblShopAndMembership.Visible = True
 
             ' DASHBOARD
             btnDashboard.Location = New Point(11, 141)
             btnDashboard.Size = New Size(220, 45)
             btnDashboard.Text = "Dashboard"
 
-            ' CUSTOMERS
+            ' PROFILE
             btnProfile.Location = New Point(57, 217)
             btnProfile.Size = New Size(210, 40)
             btnProfile.Text = "Profile"
@@ -357,7 +337,7 @@ Public Class frmCustomerDashboard
             btnPet.Size = New Size(210, 40)
             btnPet.Text = "Pets"
 
-            ' BOOKINGS
+            ' APPOINTMENTS
             btnAppointments.Location = New Point(57, 309)
             btnAppointments.Size = New Size(210, 40)
             btnAppointments.Text = "Appointments"
@@ -373,32 +353,27 @@ Public Class frmCustomerDashboard
             btnPayments.Text = "Payments"
 
             ' GROOMING SERVICES
-            btnGroomingServices.Location = New Point(57, 486)
+            btnGroomingServices.Location = New Point(57, 475)
             btnGroomingServices.Size = New Size(210, 40)
             btnGroomingServices.Text = "Grooming Services"
 
-            ' BOARDING SERVICES
-            btnBoardingServices.Location = New Point(57, 532)
-            btnBoardingServices.Size = New Size(210, 40)
-            btnBoardingServices.Text = "Boarding Services"
-
             ' BOARDING VIDEOS
-            btnBoardingVideos.Location = New Point(57, 578)
+            btnBoardingVideos.Location = New Point(57, 642)
             btnBoardingVideos.Size = New Size(210, 40)
             btnBoardingVideos.Text = "Boarding Videos"
 
             ' PRODUCTS
-            btnProduct.Location = New Point(57, 673)
+            btnProduct.Location = New Point(57, 720)
             btnProduct.Size = New Size(210, 40)
             btnProduct.Text = "Products"
 
             ' MEMBERSHIP
-            btnMembership.Location = New Point(57, 719)
+            btnMembership.Location = New Point(57, 766)
             btnMembership.Size = New Size(210, 40)
             btnMembership.Text = "Membership"
 
             ' LOGOUT
-            btnLogout.Location = New Point(19, 801)
+            btnLogout.Location = New Point(19, 848)
             btnLogout.Size = New Size(212, 41)
             btnLogout.Text = "Logout"
 
@@ -413,9 +388,73 @@ Public Class frmCustomerDashboard
             pnlRecentAppointments.Width = 748
 
             sidebarCollapsed = False
-
         End If
+    End Sub
 
+    ' MENU - LOGOUT
+    Private Sub LogoutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogoutToolStripMenuItem.Click
+        btnLogout.PerformClick()
+    End Sub
+
+    ' MENU - EXIT
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        If MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            Application.Exit()
+        End If
+    End Sub
+
+    ' MENU - MY PROFILE
+    Private Sub MyProfileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MyProfileToolStripMenuItem.Click
+        btnProfile.PerformClick()
+    End Sub
+
+    ' MENU - MY PETS
+    Private Sub MyPetsToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles MyPetsToolStripMenuItem1.Click
+        btnPet.PerformClick()
+    End Sub
+
+    ' MENU - MY APPOINTMENTS
+    Private Sub MyAppointmentsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MyAppointmentsToolStripMenuItem.Click
+        btnAppointments.PerformClick()
+    End Sub
+
+    ' MENU - MY ORDERS
+    Private Sub MyOrdersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MyOrdersToolStripMenuItem.Click
+        btnOrders.PerformClick()
+    End Sub
+
+    ' MENU - MY PAYMENTS
+    Private Sub MyPaymentsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MyPaymentsToolStripMenuItem.Click
+        btnPayments.PerformClick()
+    End Sub
+
+    ' MENU - GROOMING SERVICES
+    Private Sub GroomingServicesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GroomingServicesToolStripMenuItem.Click
+        btnGroomingServices.PerformClick()
+    End Sub
+
+    ' MENU - DASHBOARD
+    Private Sub DashboardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DashboardToolStripMenuItem.Click
+        btnDashboard.PerformClick()
+    End Sub
+
+    ' MENU - REFRESH
+    Private Sub RefreshToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RefreshToolStripMenuItem.Click
+        RefreshDashboard()
+    End Sub
+
+    ' MENU - ABOUT
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        Using aboutForm As New frmAbout()
+            aboutForm.ShowDialog()
+        End Using
+    End Sub
+
+    ' MENU - USER GUIDE
+    Private Sub UserGuideToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UserGuideToolStripMenuItem.Click
+        Using userGuideForm As New frmUserGuide()
+            userGuideForm.ShowDialog()
+        End Using
     End Sub
 
 End Class

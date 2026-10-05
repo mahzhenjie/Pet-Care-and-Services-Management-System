@@ -6,6 +6,7 @@ Partial Class frmAbout
 
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAbout))
         pnlAbout = New Panel()
         btnClose = New Button()
         lblTechnology = New Label()
@@ -132,8 +133,9 @@ Partial Class frmAbout
         ' 
         ' picLogo
         ' 
-        picLogo.BackColor = Color.WhiteSmoke
+        picLogo.BackColor = Color.FromArgb(CByte(235), CByte(218), CByte(191))
         picLogo.BorderStyle = BorderStyle.FixedSingle
+        picLogo.Image = CType(resources.GetObject("picLogo.Image"), Image)
         picLogo.Location = New Point(309, 47)
         picLogo.Margin = New Padding(3, 4, 3, 4)
         picLogo.Name = "picLogo"
