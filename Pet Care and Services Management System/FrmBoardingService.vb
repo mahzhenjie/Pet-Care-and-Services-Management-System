@@ -174,10 +174,7 @@ Public Class FrmBoardingService
     End Sub
 
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
+        frmCustomerDashboard.Show()
         Me.Close()
-    End Sub
-
-    Private Sub flpRooms_Paint(sender As Object, e As PaintEventArgs) Handles flpRooms.Paint
-
     End Sub
 End Class

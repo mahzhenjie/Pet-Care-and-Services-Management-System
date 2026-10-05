@@ -455,4 +455,27 @@ Public Class frmEmployeeDashboard
         Me.Hide()
     End Sub
 
+    ' QUICK ACTION - NEW APPOINTMENT
+    Private Sub btnNewAppointmnet_Click(sender As Object, e As EventArgs) Handles btnNewAppointmnet.Click
+        frmBooking.Show()
+        Me.Hide()
+    End Sub
+
+    ' QUICK ACTION - ADD CUSTOMER
+    Private Sub btnAddCustomer_Click(sender As Object, e As EventArgs) Handles btnAddCustomer.Click
+        frmCustomer.Show()
+        Me.Hide()
+    End Sub
+
+    ' QUICK ACTION - ADD PET
+    Private Sub btnAddPet_Click(sender As Object, e As EventArgs) Handles btnAddPet.Click
+        frmPet.Show()
+        Me.Hide()
+    End Sub
+
+    ' QUICK ACTION - ADD SERVICE
+    Private Sub btnAddService_Click(sender As Object, e As EventArgs) Handles btnAddService.Click
+        frmGrommingServices.Show()
+        Me.Hide()
+    End Sub
 End Class

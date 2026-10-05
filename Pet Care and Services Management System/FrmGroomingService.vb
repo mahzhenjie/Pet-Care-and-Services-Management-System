@@ -156,6 +156,7 @@ Public Class FrmGroomingService
     End Sub
 
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
+        frmCustomerDashboard.Show()
         Me.Close()
     End Sub
 

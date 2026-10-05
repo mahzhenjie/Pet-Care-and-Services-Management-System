@@ -181,7 +181,7 @@ Public Class frmCustomerDashboard
     ' QUICK ACTION - ADD PET
     Private Sub btnAddPet_Click(sender As Object, e As EventArgs) Handles btnAddPet.Click
         Try
-            Using petForm As New frmAddPet()
+            Using petForm As New FrmAddMyPet()
                 petForm.ShowDialog()
             End Using
 
@@ -190,11 +190,6 @@ Public Class frmCustomerDashboard
         Catch ex As Exception
             MessageBox.Show("Unable to open Add Pet." & Environment.NewLine & Environment.NewLine & ex.Message, "Navigation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-    End Sub
-
-    ' QUICK ACTION - ADD SERVICE
-    Private Sub btnAddService_Click(sender As Object, e As EventArgs) Handles btnAddService.Click
-        MessageBox.Show("Add Service button is working.", "Testing", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
     ' LOGOUT
@@ -457,4 +452,20 @@ Public Class frmCustomerDashboard
         End Using
     End Sub
 
+    ' BOOK GROOMING SERVICE
+    Private Sub btnBookGrooming_Click(sender As Object, e As EventArgs) Handles btnBookGrooming.Click
+        FrmGroomingService.Show()
+        Me.Hide()
+    End Sub
+
+    ' BOOK BOARDING ROOM
+    Private Sub btnBookBoardingRoom_Click(sender As Object, e As EventArgs) Handles btnBookBoardingRoom.Click
+        FrmBoardingService.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnBoardingServices_Click(sender As Object, e As EventArgs) Handles btnBoardingServices.Click
+        FrmBoardingService.Show()
+        Me.Hide()
+    End Sub
 End Class

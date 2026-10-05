@@ -43,12 +43,12 @@ Partial Class frmCustomerDashboard
         lblOrderCount = New Label()
         lblOrderTitle = New Label()
         pnlQuickActions = New Panel()
-        Button1 = New Button()
+        btnBookBoardingRoom = New Button()
         PictureBox14 = New PictureBox()
         PictureBox15 = New PictureBox()
         PictureBox13 = New PictureBox()
         PictureBox16 = New PictureBox()
-        btnAddService = New Button()
+        btnBookGrooming = New Button()
         btnAddPet = New Button()
         btnNewAppointmnet = New Button()
         lblQuickActions = New Label()
@@ -63,7 +63,6 @@ Partial Class frmCustomerDashboard
         lblCustomer = New Label()
         Label5 = New Label()
         PictureBox12 = New PictureBox()
-        btnDropdown = New Button()
         lblEmployee = New Label()
         btnMenu = New Button()
         lblWelcome = New Label()
@@ -387,12 +386,12 @@ Partial Class frmCustomerDashboard
         pnlQuickActions.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         pnlQuickActions.BackColor = Color.Cornsilk
         pnlQuickActions.BorderStyle = BorderStyle.FixedSingle
-        pnlQuickActions.Controls.Add(Button1)
+        pnlQuickActions.Controls.Add(btnBookBoardingRoom)
         pnlQuickActions.Controls.Add(PictureBox14)
         pnlQuickActions.Controls.Add(PictureBox15)
         pnlQuickActions.Controls.Add(PictureBox13)
         pnlQuickActions.Controls.Add(PictureBox16)
-        pnlQuickActions.Controls.Add(btnAddService)
+        pnlQuickActions.Controls.Add(btnBookGrooming)
         pnlQuickActions.Controls.Add(btnAddPet)
         pnlQuickActions.Controls.Add(btnNewAppointmnet)
         pnlQuickActions.Controls.Add(lblQuickActions)
@@ -401,18 +400,18 @@ Partial Class frmCustomerDashboard
         pnlQuickActions.Size = New Size(298, 394)
         pnlQuickActions.TabIndex = 18
         ' 
-        ' Button1
+        ' btnBookBoardingRoom
         ' 
-        Button1.BackColor = Color.FromArgb(CByte(248), CByte(240), CByte(248))
-        Button1.FlatStyle = FlatStyle.Flat
-        Button1.Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button1.ForeColor = SystemColors.ControlText
-        Button1.Location = New Point(61, 305)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(221, 44)
-        Button1.TabIndex = 10
-        Button1.Text = "＋ Book Boarding"
-        Button1.UseVisualStyleBackColor = False
+        btnBookBoardingRoom.BackColor = Color.FromArgb(CByte(248), CByte(240), CByte(248))
+        btnBookBoardingRoom.FlatStyle = FlatStyle.Flat
+        btnBookBoardingRoom.Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnBookBoardingRoom.ForeColor = SystemColors.ControlText
+        btnBookBoardingRoom.Location = New Point(61, 305)
+        btnBookBoardingRoom.Name = "btnBookBoardingRoom"
+        btnBookBoardingRoom.Size = New Size(221, 44)
+        btnBookBoardingRoom.TabIndex = 10
+        btnBookBoardingRoom.Text = "＋ Book Boarding"
+        btnBookBoardingRoom.UseVisualStyleBackColor = False
         ' 
         ' PictureBox14
         ' 
@@ -454,18 +453,18 @@ Partial Class frmCustomerDashboard
         PictureBox16.TabIndex = 5
         PictureBox16.TabStop = False
         ' 
-        ' btnAddService
+        ' btnBookGrooming
         ' 
-        btnAddService.BackColor = Color.FromArgb(CByte(248), CByte(240), CByte(248))
-        btnAddService.FlatStyle = FlatStyle.Flat
-        btnAddService.Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnAddService.ForeColor = SystemColors.ControlText
-        btnAddService.Location = New Point(61, 233)
-        btnAddService.Name = "btnAddService"
-        btnAddService.Size = New Size(221, 44)
-        btnAddService.TabIndex = 4
-        btnAddService.Text = "＋ Book Grooming"
-        btnAddService.UseVisualStyleBackColor = False
+        btnBookGrooming.BackColor = Color.FromArgb(CByte(248), CByte(240), CByte(248))
+        btnBookGrooming.FlatStyle = FlatStyle.Flat
+        btnBookGrooming.Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnBookGrooming.ForeColor = SystemColors.ControlText
+        btnBookGrooming.Location = New Point(61, 233)
+        btnBookGrooming.Name = "btnBookGrooming"
+        btnBookGrooming.Size = New Size(221, 44)
+        btnBookGrooming.TabIndex = 4
+        btnBookGrooming.Text = "＋ Book Grooming"
+        btnBookGrooming.UseVisualStyleBackColor = False
         ' 
         ' btnAddPet
         ' 
@@ -589,7 +588,6 @@ Partial Class frmCustomerDashboard
         pnlTopBar.Controls.Add(lblCustomer)
         pnlTopBar.Controls.Add(Label5)
         pnlTopBar.Controls.Add(PictureBox12)
-        pnlTopBar.Controls.Add(btnDropdown)
         pnlTopBar.Controls.Add(lblEmployee)
         pnlTopBar.Controls.Add(btnMenu)
         pnlTopBar.Controls.Add(lblWelcome)
@@ -653,19 +651,6 @@ Partial Class frmCustomerDashboard
         PictureBox12.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox12.TabIndex = 8
         PictureBox12.TabStop = False
-        ' 
-        ' btnDropdown
-        ' 
-        btnDropdown.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        btnDropdown.FlatAppearance.BorderSize = 0
-        btnDropdown.FlatStyle = FlatStyle.Flat
-        btnDropdown.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        btnDropdown.Location = New Point(1053, 61)
-        btnDropdown.Name = "btnDropdown"
-        btnDropdown.Size = New Size(35, 35)
-        btnDropdown.TabIndex = 5
-        btnDropdown.Text = "˅"
-        btnDropdown.UseVisualStyleBackColor = True
         ' 
         ' lblEmployee
         ' 
@@ -1180,13 +1165,13 @@ Partial Class frmCustomerDashboard
         ' LogoutToolStripMenuItem
         ' 
         LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        LogoutToolStripMenuItem.Size = New Size(224, 26)
+        LogoutToolStripMenuItem.Size = New Size(139, 26)
         LogoutToolStripMenuItem.Text = "Logout"
         ' 
         ' ExitToolStripMenuItem
         ' 
         ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        ExitToolStripMenuItem.Size = New Size(224, 26)
+        ExitToolStripMenuItem.Size = New Size(139, 26)
         ExitToolStripMenuItem.Text = "Exit"
         ' 
         ' MyAccountToolStripMenuItem
@@ -1199,7 +1184,7 @@ Partial Class frmCustomerDashboard
         ' MyProfileToolStripMenuItem
         ' 
         MyProfileToolStripMenuItem.Name = "MyProfileToolStripMenuItem"
-        MyProfileToolStripMenuItem.Size = New Size(224, 26)
+        MyProfileToolStripMenuItem.Size = New Size(159, 26)
         MyProfileToolStripMenuItem.Text = "My Profile"
         ' 
         ' MyPetsToolStripMenuItem
@@ -1212,7 +1197,7 @@ Partial Class frmCustomerDashboard
         ' MyPetsToolStripMenuItem1
         ' 
         MyPetsToolStripMenuItem1.Name = "MyPetsToolStripMenuItem1"
-        MyPetsToolStripMenuItem1.Size = New Size(224, 26)
+        MyPetsToolStripMenuItem1.Size = New Size(142, 26)
         MyPetsToolStripMenuItem1.Text = "My Pets"
         ' 
         ' BookingsToolStripMenuItem
@@ -1225,7 +1210,7 @@ Partial Class frmCustomerDashboard
         ' MyAppointmentsToolStripMenuItem
         ' 
         MyAppointmentsToolStripMenuItem.Name = "MyAppointmentsToolStripMenuItem"
-        MyAppointmentsToolStripMenuItem.Size = New Size(224, 26)
+        MyAppointmentsToolStripMenuItem.Size = New Size(210, 26)
         MyAppointmentsToolStripMenuItem.Text = "My Appointments"
         ' 
         ' OrdersToolStripMenuItem
@@ -1238,7 +1223,7 @@ Partial Class frmCustomerDashboard
         ' MyOrdersToolStripMenuItem
         ' 
         MyOrdersToolStripMenuItem.Name = "MyOrdersToolStripMenuItem"
-        MyOrdersToolStripMenuItem.Size = New Size(224, 26)
+        MyOrdersToolStripMenuItem.Size = New Size(160, 26)
         MyOrdersToolStripMenuItem.Text = "My Orders"
         ' 
         ' PaymentsToolStripMenuItem
@@ -1251,7 +1236,7 @@ Partial Class frmCustomerDashboard
         ' MyPaymentsToolStripMenuItem
         ' 
         MyPaymentsToolStripMenuItem.Name = "MyPaymentsToolStripMenuItem"
-        MyPaymentsToolStripMenuItem.Size = New Size(224, 26)
+        MyPaymentsToolStripMenuItem.Size = New Size(178, 26)
         MyPaymentsToolStripMenuItem.Text = "My Payments"
         ' 
         ' ServicesToolStripMenuItem
@@ -1264,7 +1249,7 @@ Partial Class frmCustomerDashboard
         ' GroomingServicesToolStripMenuItem
         ' 
         GroomingServicesToolStripMenuItem.Name = "GroomingServicesToolStripMenuItem"
-        GroomingServicesToolStripMenuItem.Size = New Size(224, 26)
+        GroomingServicesToolStripMenuItem.Size = New Size(216, 26)
         GroomingServicesToolStripMenuItem.Text = "Grooming Services"
         ' 
         ' ViewToolStripMenuItem
@@ -1277,13 +1262,13 @@ Partial Class frmCustomerDashboard
         ' DashboardToolStripMenuItem
         ' 
         DashboardToolStripMenuItem.Name = "DashboardToolStripMenuItem"
-        DashboardToolStripMenuItem.Size = New Size(224, 26)
+        DashboardToolStripMenuItem.Size = New Size(165, 26)
         DashboardToolStripMenuItem.Text = "Dashboard"
         ' 
         ' RefreshToolStripMenuItem
         ' 
         RefreshToolStripMenuItem.Name = "RefreshToolStripMenuItem"
-        RefreshToolStripMenuItem.Size = New Size(224, 26)
+        RefreshToolStripMenuItem.Size = New Size(165, 26)
         RefreshToolStripMenuItem.Text = "Refresh"
         ' 
         ' HelpToolStripMenuItem
@@ -1296,13 +1281,13 @@ Partial Class frmCustomerDashboard
         ' AboutToolStripMenuItem
         ' 
         AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        AboutToolStripMenuItem.Size = New Size(224, 26)
+        AboutToolStripMenuItem.Size = New Size(164, 26)
         AboutToolStripMenuItem.Text = "About "
         ' 
         ' UserGuideToolStripMenuItem
         ' 
         UserGuideToolStripMenuItem.Name = "UserGuideToolStripMenuItem"
-        UserGuideToolStripMenuItem.Size = New Size(224, 26)
+        UserGuideToolStripMenuItem.Size = New Size(164, 26)
         UserGuideToolStripMenuItem.Text = "User Guide"
         ' 
         ' frmCustomerDashboard
@@ -1399,7 +1384,6 @@ Partial Class frmCustomerDashboard
     Friend WithEvents lblManagement As Label
     Friend WithEvents lblServices As Label
     Friend WithEvents pnlTopBar As Panel
-    Friend WithEvents btnDropdown As Button
     Friend WithEvents lblEmployee As Label
     Friend WithEvents btnMenu As Button
     Friend WithEvents lblWelcome As Label
@@ -1435,7 +1419,7 @@ Partial Class frmCustomerDashboard
     Friend WithEvents PictureBox15 As PictureBox
     Friend WithEvents PictureBox13 As PictureBox
     Friend WithEvents PictureBox16 As PictureBox
-    Friend WithEvents btnAddService As Button
+    Friend WithEvents btnBookGrooming As Button
     Friend WithEvents btnAddPet As Button
     Friend WithEvents btnNewAppointmnet As Button
     Friend WithEvents lblQuickActions As Label
@@ -1445,7 +1429,7 @@ Partial Class frmCustomerDashboard
     Friend WithEvents lblSidebarTitle As Label
     Friend WithEvents lblSidebarSubtitle As Label
     Friend WithEvents lblDescription As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnBookBoardingRoom As Button
     Friend WithEvents PictureBox14 As PictureBox
     Friend WithEvents lblShopAndMembership As Label
     Friend WithEvents LogoutToolStripMenuItem As ToolStripMenuItem

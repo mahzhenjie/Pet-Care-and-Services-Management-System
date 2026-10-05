@@ -65,7 +65,6 @@ Partial Class frmEmployeeDashboard
         picPets2 = New PictureBox()
         lblWelcomeBack = New Label()
         pnlTopBar = New Panel()
-        btnDropdown = New Button()
         lblEmployee = New Label()
         btnMenu = New Button()
         lblWelcome = New Label()
@@ -637,7 +636,6 @@ Partial Class frmEmployeeDashboard
         ' 
         ' pnlTopBar
         ' 
-        pnlTopBar.Controls.Add(btnDropdown)
         pnlTopBar.Controls.Add(lblEmployee)
         pnlTopBar.Controls.Add(btnMenu)
         pnlTopBar.Controls.Add(lblWelcome)
@@ -650,19 +648,6 @@ Partial Class frmEmployeeDashboard
         pnlTopBar.Name = "pnlTopBar"
         pnlTopBar.Size = New Size(1102, 124)
         pnlTopBar.TabIndex = 4
-        ' 
-        ' btnDropdown
-        ' 
-        btnDropdown.Anchor = AnchorStyles.Top Or AnchorStyles.Right
-        btnDropdown.FlatAppearance.BorderSize = 0
-        btnDropdown.FlatStyle = FlatStyle.Flat
-        btnDropdown.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        btnDropdown.Location = New Point(1053, 61)
-        btnDropdown.Name = "btnDropdown"
-        btnDropdown.Size = New Size(35, 35)
-        btnDropdown.TabIndex = 5
-        btnDropdown.Text = "˅"
-        btnDropdown.UseVisualStyleBackColor = True
         ' 
         ' lblEmployee
         ' 
@@ -1139,13 +1124,13 @@ Partial Class frmEmployeeDashboard
         ' LogoutToolStripMenuItem
         ' 
         LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        LogoutToolStripMenuItem.Size = New Size(224, 26)
+        LogoutToolStripMenuItem.Size = New Size(139, 26)
         LogoutToolStripMenuItem.Text = "Logout"
         ' 
         ' ExitToolStripMenuItem
         ' 
         ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        ExitToolStripMenuItem.Size = New Size(224, 26)
+        ExitToolStripMenuItem.Size = New Size(139, 26)
         ExitToolStripMenuItem.Text = "Exit"
         ' 
         ' ManagementToolStripMenuItem
@@ -1158,31 +1143,31 @@ Partial Class frmEmployeeDashboard
         ' CustomersToolStripMenuItem
         ' 
         CustomersToolStripMenuItem.Name = "CustomersToolStripMenuItem"
-        CustomersToolStripMenuItem.Size = New Size(224, 26)
+        CustomersToolStripMenuItem.Size = New Size(161, 26)
         CustomersToolStripMenuItem.Text = "Customers"
         ' 
         ' PetsToolStripMenuItem
         ' 
         PetsToolStripMenuItem.Name = "PetsToolStripMenuItem"
-        PetsToolStripMenuItem.Size = New Size(224, 26)
+        PetsToolStripMenuItem.Size = New Size(161, 26)
         PetsToolStripMenuItem.Text = "Pets"
         ' 
         ' BookingsToolStripMenuItem
         ' 
         BookingsToolStripMenuItem.Name = "BookingsToolStripMenuItem"
-        BookingsToolStripMenuItem.Size = New Size(224, 26)
+        BookingsToolStripMenuItem.Size = New Size(161, 26)
         BookingsToolStripMenuItem.Text = "Bookings"
         ' 
         ' OrdersToolStripMenuItem
         ' 
         OrdersToolStripMenuItem.Name = "OrdersToolStripMenuItem"
-        OrdersToolStripMenuItem.Size = New Size(224, 26)
+        OrdersToolStripMenuItem.Size = New Size(161, 26)
         OrdersToolStripMenuItem.Text = "Orders"
         ' 
         ' PaymentsToolStripMenuItem
         ' 
         PaymentsToolStripMenuItem.Name = "PaymentsToolStripMenuItem"
-        PaymentsToolStripMenuItem.Size = New Size(224, 26)
+        PaymentsToolStripMenuItem.Size = New Size(161, 26)
         PaymentsToolStripMenuItem.Text = "Payments"
         ' 
         ' ServicesToolStripMenuItem
@@ -1195,7 +1180,7 @@ Partial Class frmEmployeeDashboard
         ' GroomingServicesToolStripMenuItem
         ' 
         GroomingServicesToolStripMenuItem.Name = "GroomingServicesToolStripMenuItem"
-        GroomingServicesToolStripMenuItem.Size = New Size(224, 26)
+        GroomingServicesToolStripMenuItem.Size = New Size(216, 26)
         GroomingServicesToolStripMenuItem.Text = "Grooming Services"
         ' 
         ' ViewToolStripMenuItem
@@ -1208,13 +1193,13 @@ Partial Class frmEmployeeDashboard
         ' DashboardToolStripMenuItem
         ' 
         DashboardToolStripMenuItem.Name = "DashboardToolStripMenuItem"
-        DashboardToolStripMenuItem.Size = New Size(224, 26)
+        DashboardToolStripMenuItem.Size = New Size(165, 26)
         DashboardToolStripMenuItem.Text = "Dashboard"
         ' 
         ' RefreshToolStripMenuItem
         ' 
         RefreshToolStripMenuItem.Name = "RefreshToolStripMenuItem"
-        RefreshToolStripMenuItem.Size = New Size(224, 26)
+        RefreshToolStripMenuItem.Size = New Size(165, 26)
         RefreshToolStripMenuItem.Text = "Refresh"
         ' 
         ' HelpToolStripMenuItem
@@ -1227,13 +1212,13 @@ Partial Class frmEmployeeDashboard
         ' AboutToolStripMenuItem
         ' 
         AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        AboutToolStripMenuItem.Size = New Size(224, 26)
+        AboutToolStripMenuItem.Size = New Size(164, 26)
         AboutToolStripMenuItem.Text = "About "
         ' 
         ' UserGuideToolStripMenuItem
         ' 
         UserGuideToolStripMenuItem.Name = "UserGuideToolStripMenuItem"
-        UserGuideToolStripMenuItem.Size = New Size(224, 26)
+        UserGuideToolStripMenuItem.Size = New Size(164, 26)
         UserGuideToolStripMenuItem.Text = "User Guide"
         ' 
         ' frmEmployeeDashboard
@@ -1327,7 +1312,6 @@ Partial Class frmEmployeeDashboard
     Friend WithEvents lblWelcome As Label
     Friend WithEvents picEmployee As PictureBox
     Friend WithEvents btnNotification As Button
-    Friend WithEvents btnDropdown As Button
     Friend WithEvents pnlWelcome As Panel
     Friend WithEvents lblWelcomeBack As Label
     Friend WithEvents picPets2 As PictureBox
