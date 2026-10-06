@@ -54,16 +54,18 @@ Partial Class FrmNewAppointment
         pnlHeader.Controls.Add(lblMyAppointment)
         pnlHeader.Dock = DockStyle.Top
         pnlHeader.Location = New Point(0, 0)
+        pnlHeader.Margin = New Padding(2, 2, 2, 2)
         pnlHeader.Name = "pnlHeader"
-        pnlHeader.Size = New Size(887, 70)
+        pnlHeader.Size = New Size(591, 56)
         pnlHeader.TabIndex = 18
         ' 
         ' PictureBox2
         ' 
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(3, 9)
+        PictureBox2.Location = New Point(2, 11)
+        PictureBox2.Margin = New Padding(2, 2, 2, 2)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(91, 53)
+        PictureBox2.Size = New Size(61, 35)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox2.TabIndex = 2
         PictureBox2.TabStop = False
@@ -73,9 +75,10 @@ Partial Class FrmNewAppointment
         lblMyAppointment.AutoSize = True
         lblMyAppointment.Font = New Font("Georgia", 22F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblMyAppointment.ForeColor = Color.FromArgb(CByte(255), CByte(243), CByte(222))
-        lblMyAppointment.Location = New Point(88, 11)
+        lblMyAppointment.Location = New Point(59, 7)
+        lblMyAppointment.Margin = New Padding(2, 0, 2, 0)
         lblMyAppointment.Name = "lblMyAppointment"
-        lblMyAppointment.Size = New Size(472, 51)
+        lblMyAppointment.Size = New Size(397, 43)
         lblMyAppointment.TabIndex = 0
         lblMyAppointment.Text = "MY APPOINTMENT"
         ' 
@@ -97,19 +100,19 @@ Partial Class FrmNewAppointment
         pnlAddPet.Controls.Add(lblServiceType)
         pnlAddPet.Controls.Add(lblPetName)
         pnlAddPet.Controls.Add(lblNewAppoinment)
-        pnlAddPet.Location = New Point(24, 92)
-        pnlAddPet.Margin = New Padding(4)
+        pnlAddPet.Location = New Point(16, 61)
         pnlAddPet.Name = "pnlAddPet"
-        pnlAddPet.Size = New Size(840, 723)
+        pnlAddPet.Size = New Size(560, 482)
         pnlAddPet.TabIndex = 17
         ' 
         ' txtDescription
         ' 
-        txtDescription.Location = New Point(281, 314)
+        txtDescription.Location = New Point(187, 209)
+        txtDescription.Margin = New Padding(2, 2, 2, 2)
         txtDescription.Multiline = True
         txtDescription.Name = "txtDescription"
         txtDescription.ReadOnly = True
-        txtDescription.Size = New Size(473, 101)
+        txtDescription.Size = New Size(317, 69)
         txtDescription.TabIndex = 20
         ' 
         ' Label1
@@ -117,10 +120,9 @@ Partial Class FrmNewAppointment
         Label1.AutoSize = True
         Label1.Font = New Font("Lucida Sans Unicode", 11F)
         Label1.ForeColor = Color.SaddleBrown
-        Label1.Location = New Point(88, 314)
-        Label1.Margin = New Padding(4, 0, 4, 0)
+        Label1.Location = New Point(59, 209)
         Label1.Name = "Label1"
-        Label1.Size = New Size(133, 27)
+        Label1.Size = New Size(118, 23)
         Label1.TabIndex = 19
         Label1.Text = "Description"
         ' 
@@ -129,43 +131,46 @@ Partial Class FrmNewAppointment
         dtpTime.CustomFormat = "hh:mm tt"
         dtpTime.Font = New Font("Segoe UI", 10F)
         dtpTime.Format = DateTimePickerFormat.Custom
-        dtpTime.Location = New Point(281, 511)
-        dtpTime.Margin = New Padding(4)
+        dtpTime.Location = New Point(187, 341)
         dtpTime.Name = "dtpTime"
         dtpTime.ShowUpDown = True
-        dtpTime.Size = New Size(478, 34)
+        dtpTime.Size = New Size(320, 30)
         dtpTime.TabIndex = 18
         ' 
         ' dtpDate
         ' 
         dtpDate.Format = DateTimePickerFormat.Short
-        dtpDate.Location = New Point(281, 448)
+        dtpDate.Location = New Point(187, 299)
+        dtpDate.Margin = New Padding(2, 2, 2, 2)
         dtpDate.Name = "dtpDate"
-        dtpDate.Size = New Size(199, 35)
+        dtpDate.Size = New Size(134, 27)
         dtpDate.TabIndex = 8
         ' 
         ' cmbService
         ' 
         cmbService.FormattingEnabled = True
-        cmbService.Location = New Point(284, 242)
+        cmbService.Location = New Point(189, 161)
+        cmbService.Margin = New Padding(2, 2, 2, 2)
         cmbService.Name = "cmbService"
-        cmbService.Size = New Size(196, 38)
+        cmbService.Size = New Size(132, 28)
         cmbService.TabIndex = 17
         ' 
         ' cmbPetName
         ' 
         cmbPetName.FormattingEnabled = True
-        cmbPetName.Location = New Point(284, 107)
+        cmbPetName.Location = New Point(189, 71)
+        cmbPetName.Margin = New Padding(2, 2, 2, 2)
         cmbPetName.Name = "cmbPetName"
-        cmbPetName.Size = New Size(196, 38)
+        cmbPetName.Size = New Size(132, 28)
         cmbPetName.TabIndex = 16
         ' 
         ' cmbServiceType
         ' 
         cmbServiceType.FormattingEnabled = True
-        cmbServiceType.Location = New Point(284, 176)
+        cmbServiceType.Location = New Point(189, 117)
+        cmbServiceType.Margin = New Padding(2, 2, 2, 2)
         cmbServiceType.Name = "cmbServiceType"
-        cmbServiceType.Size = New Size(196, 38)
+        cmbServiceType.Size = New Size(132, 28)
         cmbServiceType.TabIndex = 15
         ' 
         ' btnCancel
@@ -173,10 +178,9 @@ Partial Class FrmNewAppointment
         btnCancel.BackColor = Color.FromArgb(CByte(244), CByte(220), CByte(204))
         btnCancel.Font = New Font("Lucida Sans Unicode", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnCancel.ForeColor = Color.SaddleBrown
-        btnCancel.Location = New Point(431, 619)
-        btnCancel.Margin = New Padding(4)
+        btnCancel.Location = New Point(287, 413)
         btnCancel.Name = "btnCancel"
-        btnCancel.Size = New Size(225, 68)
+        btnCancel.Size = New Size(150, 45)
         btnCancel.TabIndex = 14
         btnCancel.Text = "Cancel"
         btnCancel.UseVisualStyleBackColor = False
@@ -186,10 +190,9 @@ Partial Class FrmNewAppointment
         btnBookAppointment.BackColor = Color.SaddleBrown
         btnBookAppointment.Font = New Font("Lucida Sans Unicode", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnBookAppointment.ForeColor = Color.WhiteSmoke
-        btnBookAppointment.Location = New Point(178, 619)
-        btnBookAppointment.Margin = New Padding(4)
+        btnBookAppointment.Location = New Point(119, 413)
         btnBookAppointment.Name = "btnBookAppointment"
-        btnBookAppointment.Size = New Size(225, 68)
+        btnBookAppointment.Size = New Size(150, 45)
         btnBookAppointment.TabIndex = 13
         btnBookAppointment.Text = "Book Appointment"
         btnBookAppointment.UseVisualStyleBackColor = False
@@ -199,10 +202,9 @@ Partial Class FrmNewAppointment
         lblTime.AutoSize = True
         lblTime.Font = New Font("Lucida Sans Unicode", 11F)
         lblTime.ForeColor = Color.SaddleBrown
-        lblTime.Location = New Point(88, 517)
-        lblTime.Margin = New Padding(4, 0, 4, 0)
+        lblTime.Location = New Point(59, 345)
         lblTime.Name = "lblTime"
-        lblTime.Size = New Size(65, 27)
+        lblTime.Size = New Size(57, 23)
         lblTime.TabIndex = 11
         lblTime.Text = "Time"
         ' 
@@ -211,10 +213,9 @@ Partial Class FrmNewAppointment
         lblDate.AutoSize = True
         lblDate.Font = New Font("Lucida Sans Unicode", 11F)
         lblDate.ForeColor = Color.SaddleBrown
-        lblDate.Location = New Point(88, 454)
-        lblDate.Margin = New Padding(4, 0, 4, 0)
+        lblDate.Location = New Point(59, 303)
         lblDate.Name = "lblDate"
-        lblDate.Size = New Size(60, 27)
+        lblDate.Size = New Size(53, 23)
         lblDate.TabIndex = 9
         lblDate.Text = "Date"
         ' 
@@ -223,10 +224,9 @@ Partial Class FrmNewAppointment
         lblService.AutoSize = True
         lblService.Font = New Font("Lucida Sans Unicode", 11F)
         lblService.ForeColor = Color.SaddleBrown
-        lblService.Location = New Point(88, 247)
-        lblService.Margin = New Padding(4, 0, 4, 0)
+        lblService.Location = New Point(59, 165)
         lblService.Name = "lblService"
-        lblService.Size = New Size(85, 27)
+        lblService.Size = New Size(76, 23)
         lblService.TabIndex = 7
         lblService.Text = "Service"
         ' 
@@ -235,10 +235,9 @@ Partial Class FrmNewAppointment
         lblServiceType.AutoSize = True
         lblServiceType.Font = New Font("Lucida Sans Unicode", 11F)
         lblServiceType.ForeColor = Color.SaddleBrown
-        lblServiceType.Location = New Point(88, 181)
-        lblServiceType.Margin = New Padding(4, 0, 4, 0)
+        lblServiceType.Location = New Point(59, 121)
         lblServiceType.Name = "lblServiceType"
-        lblServiceType.Size = New Size(144, 27)
+        lblServiceType.Size = New Size(127, 23)
         lblServiceType.TabIndex = 5
         lblServiceType.Text = "Service Type"
         ' 
@@ -247,10 +246,9 @@ Partial Class FrmNewAppointment
         lblPetName.AutoSize = True
         lblPetName.Font = New Font("Lucida Sans Unicode", 11F)
         lblPetName.ForeColor = Color.SaddleBrown
-        lblPetName.Location = New Point(88, 112)
-        lblPetName.Margin = New Padding(4, 0, 4, 0)
+        lblPetName.Location = New Point(59, 75)
         lblPetName.Name = "lblPetName"
-        lblPetName.Size = New Size(112, 27)
+        lblPetName.Size = New Size(99, 23)
         lblPetName.TabIndex = 3
         lblPetName.Text = "Pet Name"
         ' 
@@ -259,22 +257,22 @@ Partial Class FrmNewAppointment
         lblNewAppoinment.AutoSize = True
         lblNewAppoinment.Font = New Font("Lucida Sans Unicode", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblNewAppoinment.ForeColor = Color.SaddleBrown
-        lblNewAppoinment.Location = New Point(14, 15)
-        lblNewAppoinment.Margin = New Padding(4, 0, 4, 0)
+        lblNewAppoinment.Location = New Point(9, 10)
         lblNewAppoinment.Name = "lblNewAppoinment"
-        lblNewAppoinment.Size = New Size(333, 44)
+        lblNewAppoinment.Size = New Size(282, 37)
         lblNewAppoinment.TabIndex = 0
         lblNewAppoinment.Text = "New Appoinment"
         ' 
         ' FrmNewAppointment
         ' 
-        AutoScaleDimensions = New SizeF(12F, 30F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(887, 839)
+        ClientSize = New Size(591, 559)
         Controls.Add(pnlHeader)
         Controls.Add(pnlAddPet)
+        Margin = New Padding(2, 2, 2, 2)
         Name = "FrmNewAppointment"
-        Text = "FrmNewAppointment"
+        Text = "Add New Appointment"
         pnlHeader.ResumeLayout(False)
         pnlHeader.PerformLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()

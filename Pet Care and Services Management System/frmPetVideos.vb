@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.IO
 
 Public Class frmPetVideos
 
@@ -18,10 +19,10 @@ Public Class frmPetVideos
             Using conn As New MySqlConnection(connectionString)
                 conn.Open()
 
-                Dim query As String = "SELECT v.VideoID, v.BoardingBookingID, p.PetName, v.VideoURL, v.UploadDate, v.Description " &
+                Dim query As String = "SELECT v.VideoID, v.RoomID, p.PetName, v.VideoURL, v.VideoImage, v.UploadDate, v.Description " &
                                       "FROM PetVideos v " &
-                                      "INNER JOIN BoardingBookings b ON v.BoardingBookingID = b.BoardingBookingID " &
-                                      "INNER JOIN Pets p ON b.PetID = p.PetID " &
+                                      "LEFT JOIN BoardingBookings b ON v.RoomID = b.RoomID " &
+                                      "LEFT JOIN Pets p ON b.PetID = p.PetID " &
                                       "ORDER BY v.VideoID"
 
                 Using cmd As New MySqlCommand(query, conn)
@@ -63,6 +64,17 @@ Public Class frmPetVideos
         picVideo.Size = New Size(298, 180)
         picVideo.SizeMode = PictureBoxSizeMode.Zoom
         picVideo.TabStop = False
+
+        ' LOAD VIDEO IMAGE FROM DATABASE
+        If Not IsDBNull(reader("VideoImage")) Then
+            Dim imageBytes() As Byte = DirectCast(reader("VideoImage"), Byte())
+
+            Using ms As New MemoryStream(imageBytes)
+                Using tempImage As Image = Image.FromStream(ms)
+                    picVideo.Image = New Bitmap(tempImage)
+                End Using
+            End Using
+        End If
 
         Dim lblPetName As New Label()
         lblPetName.AutoEllipsis = True
@@ -153,10 +165,10 @@ Public Class frmPetVideos
             Using conn As New MySqlConnection(connectionString)
                 conn.Open()
 
-                Dim query As String = "SELECT v.VideoID, v.BoardingBookingID, p.PetName, v.VideoURL, v.UploadDate, v.Description " &
+                Dim query As String = "SELECT v.VideoID, v.RoomID, p.PetName, v.VideoURL, v.VideoImage, v.UploadDate, v.Description " &
                                       "FROM PetVideos v " &
-                                      "INNER JOIN BoardingBookings b ON v.BoardingBookingID = b.BoardingBookingID " &
-                                      "INNER JOIN Pets p ON b.PetID = p.PetID " &
+                                      "LEFT JOIN BoardingBookings b ON v.RoomID = b.RoomID " &
+                                      "LEFT JOIN Pets p ON b.PetID = p.PetID " &
                                       "WHERE p.PetName LIKE @Search OR v.Description LIKE @Search " &
                                       "ORDER BY v.VideoID"
 

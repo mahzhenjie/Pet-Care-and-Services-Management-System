@@ -42,8 +42,10 @@ Public Class FrmBoardingVideos
         Using connection As New MySqlConnection(connectionString)
             Using command As New MySqlCommand(query, connection)
                 command.Parameters.AddWithValue("@CustomerID", GlobalVariables.LoggedInCustomerID)
+
                 Try
                     connection.Open()
+
                     Dim adapter As New MySqlDataAdapter(command)
                     Dim dtPets As New DataTable()
                     adapter.Fill(dtPets)
@@ -51,7 +53,8 @@ Public Class FrmBoardingVideos
                     cmbPetName.DataSource = dtPets
                     cmbPetName.DisplayMember = "PetName"
                     cmbPetName.ValueMember = "PetID"
-                    cmbPetName.SelectedIndex = -1 ' Keep blank initially
+                    cmbPetName.SelectedIndex = -1
+
                 Catch ex As Exception
                     MessageBox.Show("Error loading pets: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End Try
@@ -69,28 +72,36 @@ Public Class FrmBoardingVideos
         End If
 
         Dim selectedPetId As Integer
-        If Not Integer.TryParse(cmbPetName.SelectedValue.ToString(), selectedPetId) Then Return
 
-        ' Retrieve the latest VideoURL for the selected pet by joining videos and boardingbookings
+        If Not Integer.TryParse(cmbPetName.SelectedValue.ToString(), selectedPetId) Then
+            Return
+        End If
+
+        ' Retrieve the latest VideoURL for the selected pet by joining videos, bookings and rooms
         Dim query As String = "
-            SELECT v.VideoURL 
+            SELECT v.VideoURL
             FROM petvideos v
-            INNER JOIN boardingbookings bb ON v.BoardingBookingID = bb.BoardingBookingID
-            WHERE bb.PetID = @PetID 
-            ORDER BY v.UploadDate DESC LIMIT 1"
+            INNER JOIN boardingbookings bb ON v.RoomID = bb.RoomID
+            WHERE bb.PetID = @PetID
+            ORDER BY v.UploadDate DESC
+            LIMIT 1"
 
         Using connection As New MySqlConnection(connectionString)
             Using command As New MySqlCommand(query, connection)
                 command.Parameters.AddWithValue("@PetID", selectedPetId)
+
                 Try
                     connection.Open()
+
                     Dim url As Object = command.ExecuteScalar()
+
                     If url IsNot Nothing AndAlso Not DBNull.Value.Equals(url) Then
                         txtCameraURL.Text = url.ToString()
                     Else
                         txtCameraURL.Text = ""
                         MessageBox.Show("No active camera stream found for this pet.", "No Video", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
+
                 Catch ex As Exception
                     MessageBox.Show("Error retrieving camera URL: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End Try
@@ -114,7 +125,7 @@ Public Class FrmBoardingVideos
             ' FromType.FromLocation tells VLC this is a network stream/URL
             Dim media As New Media(_libVLC, streamUrl, FromType.FromLocation)
 
-            ' Add options for IP cameras to reduce delay (optional but recommended for CCTV)
+            ' Add options for IP cameras to reduce delay
             media.AddOption(":network-caching=300")
             media.AddOption(":clock-jitter=0")
             media.AddOption(":clock-synchro=0")
@@ -130,7 +141,7 @@ Public Class FrmBoardingVideos
     ' FORM CLOSING (CLEANUP MEMORY LEAKS)
     ' -----------------------------------------------------------
     Private Sub FrmBoardingVideos_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        ' IMPORTANT: You must dispose of VLC resources when closing the form, 
+        ' IMPORTANT: You must dispose of VLC resources when closing the form,
         ' otherwise the video thread remains open in the background and crashes the app.
         If _mediaPlayer IsNot Nothing Then
             If _mediaPlayer.IsPlaying Then _mediaPlayer.Stop()

@@ -56,10 +56,9 @@ Partial Class FrmMyOrderDetail
         pnlProduct.Controls.Add(btnRefresh)
         pnlProduct.Dock = DockStyle.Fill
         pnlProduct.Location = New Point(0, 0)
-        pnlProduct.Margin = New Padding(4)
         pnlProduct.Name = "pnlProduct"
-        pnlProduct.Padding = New Padding(30)
-        pnlProduct.Size = New Size(1049, 663)
+        pnlProduct.Padding = New Padding(20, 20, 20, 20)
+        pnlProduct.Size = New Size(699, 442)
         pnlProduct.TabIndex = 6
         ' 
         ' btnDashboard
@@ -70,10 +69,9 @@ Partial Class FrmMyOrderDetail
         btnDashboard.FlatStyle = FlatStyle.Flat
         btnDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnDashboard.ForeColor = Color.WhiteSmoke
-        btnDashboard.Location = New Point(1702, 133)
-        btnDashboard.Margin = New Padding(4)
+        btnDashboard.Location = New Point(1135, 89)
         btnDashboard.Name = "btnDashboard"
-        btnDashboard.Size = New Size(218, 57)
+        btnDashboard.Size = New Size(145, 38)
         btnDashboard.TabIndex = 19
         btnDashboard.Text = "Dashboard"
         btnDashboard.UseVisualStyleBackColor = False
@@ -86,10 +84,9 @@ Partial Class FrmMyOrderDetail
         Refreshbtn.FlatStyle = FlatStyle.Flat
         Refreshbtn.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         Refreshbtn.ForeColor = Color.WhiteSmoke
-        Refreshbtn.Location = New Point(1483, 133)
-        Refreshbtn.Margin = New Padding(4)
+        Refreshbtn.Location = New Point(989, 89)
         Refreshbtn.Name = "Refreshbtn"
-        Refreshbtn.Size = New Size(195, 57)
+        Refreshbtn.Size = New Size(130, 38)
         Refreshbtn.TabIndex = 18
         Refreshbtn.Text = "Refresh"
         Refreshbtn.UseVisualStyleBackColor = False
@@ -100,16 +97,18 @@ Partial Class FrmMyOrderDetail
         pnlHeader.Controls.Add(PictureBox2)
         pnlHeader.Controls.Add(Label1)
         pnlHeader.Location = New Point(0, 0)
+        pnlHeader.Margin = New Padding(2, 2, 2, 2)
         pnlHeader.Name = "pnlHeader"
-        pnlHeader.Size = New Size(1675, 70)
+        pnlHeader.Size = New Size(1117, 47)
         pnlHeader.TabIndex = 17
         ' 
         ' PictureBox2
         ' 
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(3, 9)
+        PictureBox2.Location = New Point(2, 6)
+        PictureBox2.Margin = New Padding(2, 2, 2, 2)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(91, 53)
+        PictureBox2.Size = New Size(61, 35)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox2.TabIndex = 2
         PictureBox2.TabStop = False
@@ -119,9 +118,10 @@ Partial Class FrmMyOrderDetail
         Label1.AutoSize = True
         Label1.Font = New Font("Georgia", 22F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.FromArgb(CByte(255), CByte(243), CByte(222))
-        Label1.Location = New Point(95, 9)
+        Label1.Location = New Point(63, 6)
+        Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(390, 51)
+        Label1.Size = New Size(329, 43)
         Label1.TabIndex = 0
         Label1.Text = "ORDER DETAIL"
         ' 
@@ -133,10 +133,9 @@ Partial Class FrmMyOrderDetail
         Button1.FlatStyle = FlatStyle.Flat
         Button1.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         Button1.ForeColor = Color.WhiteSmoke
-        Button1.Location = New Point(2666, 176)
-        Button1.Margin = New Padding(4)
+        Button1.Location = New Point(1777, 117)
         Button1.Name = "Button1"
-        Button1.Size = New Size(218, 57)
+        Button1.Size = New Size(145, 38)
         Button1.TabIndex = 16
         Button1.Text = "Dashboard"
         Button1.UseVisualStyleBackColor = False
@@ -156,8 +155,7 @@ Partial Class FrmMyOrderDetail
         dgvOrderDetails.ColumnHeadersHeight = 42
         dgvOrderDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         dgvOrderDetails.GridColor = Color.FromArgb(CByte(225), CByte(211), CByte(192))
-        dgvOrderDetails.Location = New Point(30, 92)
-        dgvOrderDetails.Margin = New Padding(4)
+        dgvOrderDetails.Location = New Point(20, 61)
         dgvOrderDetails.MultiSelect = False
         dgvOrderDetails.Name = "dgvOrderDetails"
         dgvOrderDetails.ReadOnly = True
@@ -166,7 +164,7 @@ Partial Class FrmMyOrderDetail
         dgvOrderDetails.RowHeadersWidth = 62
         dgvOrderDetails.RowTemplate.Height = 70
         dgvOrderDetails.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        dgvOrderDetails.Size = New Size(985, 537)
+        dgvOrderDetails.Size = New Size(657, 358)
         dgvOrderDetails.TabIndex = 7
         ' 
         ' Button3
@@ -177,10 +175,9 @@ Partial Class FrmMyOrderDetail
         Button3.FlatStyle = FlatStyle.Flat
         Button3.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         Button3.ForeColor = Color.WhiteSmoke
-        Button3.Location = New Point(2906, 176)
-        Button3.Margin = New Padding(4)
+        Button3.Location = New Point(1937, 117)
         Button3.Name = "Button3"
-        Button3.Size = New Size(195, 57)
+        Button3.Size = New Size(130, 38)
         Button3.TabIndex = 14
         Button3.Text = "Refresh"
         Button3.UseVisualStyleBackColor = False
@@ -193,10 +190,9 @@ Partial Class FrmMyOrderDetail
         btnGoBackDashboard.FlatStyle = FlatStyle.Flat
         btnGoBackDashboard.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnGoBackDashboard.ForeColor = Color.WhiteSmoke
-        btnGoBackDashboard.Location = New Point(4133, 213)
-        btnGoBackDashboard.Margin = New Padding(4)
+        btnGoBackDashboard.Location = New Point(2755, 142)
         btnGoBackDashboard.Name = "btnGoBackDashboard"
-        btnGoBackDashboard.Size = New Size(218, 57)
+        btnGoBackDashboard.Size = New Size(145, 38)
         btnGoBackDashboard.TabIndex = 13
         btnGoBackDashboard.Text = "Dashboard"
         btnGoBackDashboard.UseVisualStyleBackColor = False
@@ -209,10 +205,9 @@ Partial Class FrmMyOrderDetail
         btnAddProduct.FlatStyle = FlatStyle.Flat
         btnAddProduct.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnAddProduct.ForeColor = Color.WhiteSmoke
-        btnAddProduct.Location = New Point(4590, 213)
-        btnAddProduct.Margin = New Padding(4)
+        btnAddProduct.Location = New Point(3060, 142)
         btnAddProduct.Name = "btnAddProduct"
-        btnAddProduct.Size = New Size(240, 57)
+        btnAddProduct.Size = New Size(160, 38)
         btnAddProduct.TabIndex = 6
         btnAddProduct.Text = "+ Add Product"
         btnAddProduct.UseVisualStyleBackColor = False
@@ -225,23 +220,23 @@ Partial Class FrmMyOrderDetail
         btnRefresh.FlatStyle = FlatStyle.Flat
         btnRefresh.Font = New Font("Segoe UI", 9.5F, FontStyle.Bold)
         btnRefresh.ForeColor = Color.WhiteSmoke
-        btnRefresh.Location = New Point(4373, 213)
-        btnRefresh.Margin = New Padding(4)
+        btnRefresh.Location = New Point(2915, 142)
         btnRefresh.Name = "btnRefresh"
-        btnRefresh.Size = New Size(195, 57)
+        btnRefresh.Size = New Size(130, 38)
         btnRefresh.TabIndex = 3
         btnRefresh.Text = "Refresh"
         btnRefresh.UseVisualStyleBackColor = False
         ' 
         ' FrmMyOrderDetail
         ' 
-        AutoScaleDimensions = New SizeF(12F, 30F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1049, 663)
+        ClientSize = New Size(699, 442)
         Controls.Add(pnlProduct)
+        Margin = New Padding(2, 2, 2, 2)
         Name = "FrmMyOrderDetail"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "FrmMyOrderDetail"
+        Text = "My Order Detail"
         pnlProduct.ResumeLayout(False)
         pnlHeader.ResumeLayout(False)
         pnlHeader.PerformLayout()

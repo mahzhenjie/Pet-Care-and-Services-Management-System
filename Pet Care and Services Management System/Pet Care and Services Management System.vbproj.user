@@ -2,6 +2,9 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="frmAddBooking.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FrmAddMyPet.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -45,9 +48,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmAddCustomers.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="frmAddGroomingBooking.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmAddGroomingService.vb">
@@ -171,9 +171,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmVideoView.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="ThemeColor.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

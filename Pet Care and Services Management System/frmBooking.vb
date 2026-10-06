@@ -85,7 +85,7 @@ Public Class frmBooking
 
     ' ADD GROOMING BOOKING
     Private Sub btnAddGroomingBooking_Click(sender As Object, e As EventArgs) Handles btnAddGroomingBooking.Click
-        Dim frm As New frmAddGroomingBooking()
+        Dim frm As New frmAddBooking()
         frm.ShowDialog()
         LoadGroomingBookingData()
     End Sub

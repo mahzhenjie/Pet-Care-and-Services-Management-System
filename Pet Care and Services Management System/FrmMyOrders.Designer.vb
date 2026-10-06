@@ -102,7 +102,7 @@ Partial Class FrmMyOrders
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Georgia", 20.0F, FontStyle.Bold)
+        Label1.Font = New Font("Georgia", 20F, FontStyle.Bold)
         Label1.ForeColor = Color.FromArgb(CByte(255), CByte(243), CByte(222))
         Label1.Location = New Point(78, 14)
         Label1.Name = "Label1"
@@ -141,7 +141,7 @@ Partial Class FrmMyOrders
         ' 
         txtSearch.BackColor = Color.White
         txtSearch.BorderStyle = BorderStyle.FixedSingle
-        txtSearch.Font = New Font("Segoe UI", 10.0F)
+        txtSearch.Font = New Font("Segoe UI", 10F)
         txtSearch.ForeColor = Color.FromArgb(CByte(107), CByte(98), CByte(91))
         txtSearch.Location = New Point(20, 104)
         txtSearch.Name = "txtSearch"
@@ -151,7 +151,7 @@ Partial Class FrmMyOrders
         ' 
         ' FrmMyOrders
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(235), CByte(221), CByte(202))
         ClientSize = New Size(1160, 800)
@@ -159,7 +159,7 @@ Partial Class FrmMyOrders
         MinimumSize = New Size(1050, 700)
         Name = "FrmMyOrders"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "FrmMyOrders"
+        Text = "My Orders"
         pnlProduct.ResumeLayout(False)
         pnlProduct.PerformLayout()
         pnlHeader.ResumeLayout(False)

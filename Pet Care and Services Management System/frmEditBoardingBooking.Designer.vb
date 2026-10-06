@@ -2,6 +2,17 @@
 Partial Class frmEditBoardingBooking
     Inherits System.Windows.Forms.Form
 
+    <System.Diagnostics.DebuggerNonUserCode()>
+    Protected Overrides Sub Dispose(disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
     Private components As System.ComponentModel.IContainer
 
     <System.Diagnostics.DebuggerStepThrough()>
@@ -26,9 +37,12 @@ Partial Class frmEditBoardingBooking
         Me.SuspendLayout()
 
         '
-        'pnlEditBoardingBooking
+        ' pnlEditBoardingBooking
         '
         Me.pnlEditBoardingBooking.BackColor = System.Drawing.Color.FromArgb(CByte(235), CByte(218), CByte(191))
+        Me.pnlEditBoardingBooking.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlEditBoardingBooking.Controls.Add(Me.btnCancel)
+        Me.pnlEditBoardingBooking.Controls.Add(Me.btnSave)
         Me.pnlEditBoardingBooking.Controls.Add(Me.txtStatus)
         Me.pnlEditBoardingBooking.Controls.Add(Me.lblStatus)
         Me.pnlEditBoardingBooking.Controls.Add(Me.dtpEndDate)
@@ -42,199 +56,200 @@ Partial Class frmEditBoardingBooking
         Me.pnlEditBoardingBooking.Controls.Add(Me.txtBookingID)
         Me.pnlEditBoardingBooking.Controls.Add(Me.lblBookingID)
         Me.pnlEditBoardingBooking.Controls.Add(Me.lblTitle)
-        Me.pnlEditBoardingBooking.Controls.Add(Me.btnSave)
-        Me.pnlEditBoardingBooking.Controls.Add(Me.btnCancel)
-        Me.pnlEditBoardingBooking.Location = New System.Drawing.Point(12, 15)
+        Me.pnlEditBoardingBooking.Location = New System.Drawing.Point(20, 20)
         Me.pnlEditBoardingBooking.Name = "pnlEditBoardingBooking"
-        Me.pnlEditBoardingBooking.Size = New System.Drawing.Size(720, 520)
+        Me.pnlEditBoardingBooking.Size = New System.Drawing.Size(560, 700)
         Me.pnlEditBoardingBooking.TabIndex = 0
 
         '
-        'txtStatus
+        ' txtStatus
         '
-        Me.txtStatus.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CByte(0))
-        Me.txtStatus.Location = New System.Drawing.Point(185, 315)
+        Me.txtStatus.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.txtStatus.Location = New System.Drawing.Point(190, 460)
         Me.txtStatus.Name = "txtStatus"
-        Me.txtStatus.Size = New System.Drawing.Size(180, 27)
+        Me.txtStatus.Size = New System.Drawing.Size(320, 30)
         Me.txtStatus.TabIndex = 11
 
         '
-        'lblStatus
+        ' lblStatus
         '
         Me.lblStatus.AutoSize = True
-        Me.lblStatus.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CByte(0))
-        Me.lblStatus.ForeColor = System.Drawing.Color.SaddleBrown
-        Me.lblStatus.Location = New System.Drawing.Point(35, 320)
+        Me.lblStatus.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.lblStatus.ForeColor = System.Drawing.Color.FromArgb(CByte(148), CByte(72), CByte(23))
+        Me.lblStatus.Location = New System.Drawing.Point(37, 465)
         Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(52, 16)
+        Me.lblStatus.Size = New System.Drawing.Size(60, 23)
         Me.lblStatus.TabIndex = 10
         Me.lblStatus.Text = "Status"
 
         '
-        'dtpEndDate
+        ' dtpEndDate
         '
-        Me.dtpEndDate.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CByte(0))
+        Me.dtpEndDate.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short
-        Me.dtpEndDate.Location = New System.Drawing.Point(185, 270)
+        Me.dtpEndDate.Location = New System.Drawing.Point(190, 405)
         Me.dtpEndDate.Name = "dtpEndDate"
-        Me.dtpEndDate.Size = New System.Drawing.Size(180, 27)
+        Me.dtpEndDate.Size = New System.Drawing.Size(320, 30)
         Me.dtpEndDate.TabIndex = 9
 
         '
-        'lblEndDate
+        ' lblEndDate
         '
         Me.lblEndDate.AutoSize = True
-        Me.lblEndDate.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CByte(0))
-        Me.lblEndDate.ForeColor = System.Drawing.Color.SaddleBrown
-        Me.lblEndDate.Location = New System.Drawing.Point(35, 275)
+        Me.lblEndDate.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.lblEndDate.ForeColor = System.Drawing.Color.FromArgb(CByte(148), CByte(72), CByte(23))
+        Me.lblEndDate.Location = New System.Drawing.Point(37, 410)
         Me.lblEndDate.Name = "lblEndDate"
-        Me.lblEndDate.Size = New System.Drawing.Size(67, 16)
+        Me.lblEndDate.Size = New System.Drawing.Size(80, 23)
         Me.lblEndDate.TabIndex = 8
         Me.lblEndDate.Text = "End Date"
 
         '
-        'dtpStartDate
+        ' dtpStartDate
         '
-        Me.dtpStartDate.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CByte(0))
+        Me.dtpStartDate.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short
-        Me.dtpStartDate.Location = New System.Drawing.Point(185, 225)
+        Me.dtpStartDate.Location = New System.Drawing.Point(190, 350)
         Me.dtpStartDate.Name = "dtpStartDate"
-        Me.dtpStartDate.Size = New System.Drawing.Size(180, 27)
+        Me.dtpStartDate.Size = New System.Drawing.Size(320, 30)
         Me.dtpStartDate.TabIndex = 7
 
         '
-        'lblStartDate
+        ' lblStartDate
         '
         Me.lblStartDate.AutoSize = True
-        Me.lblStartDate.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CByte(0))
-        Me.lblStartDate.ForeColor = System.Drawing.Color.SaddleBrown
-        Me.lblStartDate.Location = New System.Drawing.Point(35, 230)
+        Me.lblStartDate.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.lblStartDate.ForeColor = System.Drawing.Color.FromArgb(CByte(148), CByte(72), CByte(23))
+        Me.lblStartDate.Location = New System.Drawing.Point(37, 355)
         Me.lblStartDate.Name = "lblStartDate"
-        Me.lblStartDate.Size = New System.Drawing.Size(76, 16)
+        Me.lblStartDate.Size = New System.Drawing.Size(90, 23)
         Me.lblStartDate.TabIndex = 6
         Me.lblStartDate.Text = "Start Date"
 
         '
-        'cmbRoomID
+        ' cmbRoomID
         '
         Me.cmbRoomID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbRoomID.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CByte(0))
+        Me.cmbRoomID.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.cmbRoomID.FormattingEnabled = True
-        Me.cmbRoomID.Location = New System.Drawing.Point(185, 180)
+        Me.cmbRoomID.Location = New System.Drawing.Point(190, 295)
         Me.cmbRoomID.Name = "cmbRoomID"
-        Me.cmbRoomID.Size = New System.Drawing.Size(180, 24)
+        Me.cmbRoomID.Size = New System.Drawing.Size(320, 31)
         Me.cmbRoomID.TabIndex = 5
 
         '
-        'lblRoomID
+        ' lblRoomID
         '
         Me.lblRoomID.AutoSize = True
-        Me.lblRoomID.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CByte(0))
-        Me.lblRoomID.ForeColor = System.Drawing.Color.SaddleBrown
-        Me.lblRoomID.Location = New System.Drawing.Point(35, 185)
+        Me.lblRoomID.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.lblRoomID.ForeColor = System.Drawing.Color.FromArgb(CByte(148), CByte(72), CByte(23))
+        Me.lblRoomID.Location = New System.Drawing.Point(37, 300)
         Me.lblRoomID.Name = "lblRoomID"
-        Me.lblRoomID.Size = New System.Drawing.Size(66, 16)
+        Me.lblRoomID.Size = New System.Drawing.Size(75, 23)
         Me.lblRoomID.TabIndex = 4
         Me.lblRoomID.Text = "Room ID"
 
         '
-        'cmbPetID
+        ' cmbPetID
         '
         Me.cmbPetID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbPetID.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CByte(0))
+        Me.cmbPetID.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.cmbPetID.FormattingEnabled = True
-        Me.cmbPetID.Location = New System.Drawing.Point(185, 135)
+        Me.cmbPetID.Location = New System.Drawing.Point(190, 240)
         Me.cmbPetID.Name = "cmbPetID"
-        Me.cmbPetID.Size = New System.Drawing.Size(180, 24)
+        Me.cmbPetID.Size = New System.Drawing.Size(320, 31)
         Me.cmbPetID.TabIndex = 3
 
         '
-        'lblPetID
+        ' lblPetID
         '
         Me.lblPetID.AutoSize = True
-        Me.lblPetID.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CByte(0))
-        Me.lblPetID.ForeColor = System.Drawing.Color.SaddleBrown
-        Me.lblPetID.Location = New System.Drawing.Point(35, 140)
+        Me.lblPetID.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.lblPetID.ForeColor = System.Drawing.Color.FromArgb(CByte(148), CByte(72), CByte(23))
+        Me.lblPetID.Location = New System.Drawing.Point(37, 245)
         Me.lblPetID.Name = "lblPetID"
-        Me.lblPetID.Size = New System.Drawing.Size(52, 16)
+        Me.lblPetID.Size = New System.Drawing.Size(60, 23)
         Me.lblPetID.TabIndex = 2
         Me.lblPetID.Text = "Pet ID"
 
         '
-        'txtBookingID
+        ' txtBookingID
         '
         Me.txtBookingID.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.txtBookingID.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CByte(0))
-        Me.txtBookingID.Location = New System.Drawing.Point(185, 90)
+        Me.txtBookingID.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.txtBookingID.Location = New System.Drawing.Point(190, 185)
         Me.txtBookingID.Name = "txtBookingID"
         Me.txtBookingID.ReadOnly = True
-        Me.txtBookingID.Size = New System.Drawing.Size(180, 27)
+        Me.txtBookingID.Size = New System.Drawing.Size(320, 30)
         Me.txtBookingID.TabIndex = 1
 
         '
-        'lblBookingID
+        ' lblBookingID
         '
         Me.lblBookingID.AutoSize = True
-        Me.lblBookingID.Font = New System.Drawing.Font("Lucida Sans Unicode", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CByte(0))
-        Me.lblBookingID.ForeColor = System.Drawing.Color.SaddleBrown
-        Me.lblBookingID.Location = New System.Drawing.Point(35, 95)
+        Me.lblBookingID.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.lblBookingID.ForeColor = System.Drawing.Color.FromArgb(CByte(148), CByte(72), CByte(23))
+        Me.lblBookingID.Location = New System.Drawing.Point(37, 190)
         Me.lblBookingID.Name = "lblBookingID"
-        Me.lblBookingID.Size = New System.Drawing.Size(82, 16)
+        Me.lblBookingID.Size = New System.Drawing.Size(90, 23)
         Me.lblBookingID.TabIndex = 0
         Me.lblBookingID.Text = "Booking ID"
 
         '
-        'lblTitle
+        ' lblTitle
         '
         Me.lblTitle.AutoSize = True
-        Me.lblTitle.Font = New System.Drawing.Font("Lucida Sans Unicode", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CByte(0))
-        Me.lblTitle.ForeColor = System.Drawing.Color.SaddleBrown
-        Me.lblTitle.Location = New System.Drawing.Point(30, 25)
+        Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold)
+        Me.lblTitle.ForeColor = System.Drawing.Color.FromArgb(CByte(148), CByte(72), CByte(23))
+        Me.lblTitle.Location = New System.Drawing.Point(37, 30)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(295, 28)
-        Me.lblTitle.TabIndex = 1
+        Me.lblTitle.Size = New System.Drawing.Size(370, 46)
+        Me.lblTitle.TabIndex = 0
         Me.lblTitle.Text = "Edit Boarding Booking"
 
         '
-        'btnSave
+        ' btnSave
         '
-        Me.btnSave.BackColor = System.Drawing.Color.SaddleBrown
-        Me.btnSave.FlatAppearance.BorderSize = 0
+        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CByte(148), CByte(72), CByte(23))
+        Me.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnSave.FlatAppearance.BorderSize = 2
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSave.Font = New System.Drawing.Font("Lucida Sans Unicode", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CByte(0))
-        Me.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnSave.Location = New System.Drawing.Point(485, 435)
+        Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.btnSave.ForeColor = System.Drawing.Color.White
+        Me.btnSave.Location = New System.Drawing.Point(190, 550)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(150, 40)
+        Me.btnSave.Size = New System.Drawing.Size(145, 42)
         Me.btnSave.TabIndex = 12
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = False
 
         '
-        'btnCancel
+        ' btnCancel
         '
-        Me.btnCancel.BackColor = System.Drawing.Color.MistyRose
-        Me.btnCancel.FlatAppearance.BorderSize = 0
+        Me.btnCancel.BackColor = System.Drawing.Color.FromArgb(CByte(244), CByte(218), CByte(207))
+        Me.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnCancel.FlatAppearance.BorderSize = 2
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancel.Font = New System.Drawing.Font("Lucida Sans Unicode", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CByte(0))
-        Me.btnCancel.ForeColor = System.Drawing.Color.SaddleBrown
-        Me.btnCancel.Location = New System.Drawing.Point(305, 435)
+        Me.btnCancel.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.btnCancel.ForeColor = System.Drawing.Color.FromArgb(CByte(148), CByte(72), CByte(23))
+        Me.btnCancel.Location = New System.Drawing.Point(360, 550)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(150, 40)
+        Me.btnCancel.Size = New System.Drawing.Size(145, 42)
         Me.btnCancel.TabIndex = 13
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = False
 
         '
-        'frmEditBoardingBooking
+        ' frmEditBoardingBooking
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CByte(247), CByte(232), CByte(213))
-        Me.ClientSize = New System.Drawing.Size(744, 560)
+        Me.BackColor = System.Drawing.Color.FromArgb(CByte(240), CByte(240), CByte(240))
+        Me.ClientSize = New System.Drawing.Size(600, 740)
         Me.Controls.Add(Me.pnlEditBoardingBooking)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmEditBoardingBooking"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit Boarding Booking"

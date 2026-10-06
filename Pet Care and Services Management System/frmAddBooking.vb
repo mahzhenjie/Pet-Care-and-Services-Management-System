@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 
-Public Class frmAddGroomingBooking
+Public Class frmAddBooking
 
     ' DATABASE CONNECTION
     Private connectionString As String = "Server=localhost;Database=pet_care_and_services_management_system;Uid=root;Pwd=;"

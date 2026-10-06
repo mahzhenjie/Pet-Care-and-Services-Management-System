@@ -62,7 +62,7 @@ Partial Class FrmBookingBoardingService
         pnlHeader.Controls.Add(lblMyAppointment)
         pnlHeader.Dock = DockStyle.Top
         pnlHeader.Location = New Point(0, 0)
-        pnlHeader.Margin = New Padding(2, 2, 2, 2)
+        pnlHeader.Margin = New Padding(2)
         pnlHeader.Name = "pnlHeader"
         pnlHeader.Size = New Size(632, 54)
         pnlHeader.TabIndex = 24
@@ -71,7 +71,7 @@ Partial Class FrmBookingBoardingService
         ' 
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
         PictureBox2.Location = New Point(2, 6)
-        PictureBox2.Margin = New Padding(2, 2, 2, 2)
+        PictureBox2.Margin = New Padding(2)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(61, 35)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
@@ -124,8 +124,8 @@ Partial Class FrmBookingBoardingService
         ' dtpEndDate
         ' 
         dtpEndDate.Format = DateTimePickerFormat.Short
-        dtpEndDate.Location = New Point(221, 384)
-        dtpEndDate.Margin = New Padding(2, 2, 2, 2)
+        dtpEndDate.Location = New Point(262, 387)
+        dtpEndDate.Margin = New Padding(2)
         dtpEndDate.Name = "dtpEndDate"
         dtpEndDate.Size = New Size(134, 27)
         dtpEndDate.TabIndex = 29
@@ -146,7 +146,7 @@ Partial Class FrmBookingBoardingService
         Label3.AutoSize = True
         Label3.Font = New Font("Lucida Sans Unicode", 11F)
         Label3.ForeColor = Color.SaddleBrown
-        Label3.Location = New Point(221, 525)
+        Label3.Location = New Point(262, 528)
         Label3.Name = "Label3"
         Label3.Size = New Size(38, 23)
         Label3.TabIndex = 27
@@ -157,7 +157,7 @@ Partial Class FrmBookingBoardingService
         lblRM.AutoSize = True
         lblRM.Font = New Font("Lucida Sans Unicode", 11F)
         lblRM.ForeColor = Color.SaddleBrown
-        lblRM.Location = New Point(221, 483)
+        lblRM.Location = New Point(262, 486)
         lblRM.Name = "lblRM"
         lblRM.Size = New Size(38, 23)
         lblRM.TabIndex = 26
@@ -165,8 +165,8 @@ Partial Class FrmBookingBoardingService
         ' 
         ' txtTotal
         ' 
-        txtTotal.Location = New Point(256, 524)
-        txtTotal.Margin = New Padding(2, 2, 2, 2)
+        txtTotal.Location = New Point(297, 527)
+        txtTotal.Margin = New Padding(2)
         txtTotal.Name = "txtTotal"
         txtTotal.ReadOnly = True
         txtTotal.Size = New Size(132, 27)
@@ -185,8 +185,8 @@ Partial Class FrmBookingBoardingService
         ' 
         ' txtRoomType
         ' 
-        txtRoomType.Location = New Point(221, 160)
-        txtRoomType.Margin = New Padding(2, 2, 2, 2)
+        txtRoomType.Location = New Point(262, 163)
+        txtRoomType.Margin = New Padding(2)
         txtRoomType.Name = "txtRoomType"
         txtRoomType.ReadOnly = True
         txtRoomType.Size = New Size(132, 27)
@@ -205,8 +205,8 @@ Partial Class FrmBookingBoardingService
         ' 
         ' txtPricePerDay
         ' 
-        txtPricePerDay.Location = New Point(256, 480)
-        txtPricePerDay.Margin = New Padding(2, 2, 2, 2)
+        txtPricePerDay.Location = New Point(297, 483)
+        txtPricePerDay.Margin = New Padding(2)
         txtPricePerDay.Name = "txtPricePerDay"
         txtPricePerDay.ReadOnly = True
         txtPricePerDay.Size = New Size(132, 27)
@@ -225,8 +225,8 @@ Partial Class FrmBookingBoardingService
         ' 
         ' txtRoomDescription
         ' 
-        txtRoomDescription.Location = New Point(221, 203)
-        txtRoomDescription.Margin = New Padding(2, 2, 2, 2)
+        txtRoomDescription.Location = New Point(262, 206)
+        txtRoomDescription.Margin = New Padding(2)
         txtRoomDescription.Multiline = True
         txtRoomDescription.Name = "txtRoomDescription"
         txtRoomDescription.Size = New Size(240, 116)
@@ -237,7 +237,7 @@ Partial Class FrmBookingBoardingService
         dtpTime.CustomFormat = "hh:mm tt"
         dtpTime.Font = New Font("Segoe UI", 10F)
         dtpTime.Format = DateTimePickerFormat.Custom
-        dtpTime.Location = New Point(221, 433)
+        dtpTime.Location = New Point(262, 436)
         dtpTime.Name = "dtpTime"
         dtpTime.ShowUpDown = True
         dtpTime.Size = New Size(320, 30)
@@ -246,8 +246,8 @@ Partial Class FrmBookingBoardingService
         ' dtpStartDate
         ' 
         dtpStartDate.Format = DateTimePickerFormat.Short
-        dtpStartDate.Location = New Point(221, 339)
-        dtpStartDate.Margin = New Padding(2, 2, 2, 2)
+        dtpStartDate.Location = New Point(262, 342)
+        dtpStartDate.Margin = New Padding(2)
         dtpStartDate.Name = "dtpStartDate"
         dtpStartDate.Size = New Size(134, 27)
         dtpStartDate.TabIndex = 8
@@ -256,8 +256,8 @@ Partial Class FrmBookingBoardingService
         ' 
         cmbPetName.FormattingEnabled = True
         cmbPetName.Items.AddRange(New Object() {"Male", "Female", "Others"})
-        cmbPetName.Location = New Point(221, 71)
-        cmbPetName.Margin = New Padding(2, 2, 2, 2)
+        cmbPetName.Location = New Point(262, 74)
+        cmbPetName.Margin = New Padding(2)
         cmbPetName.Name = "cmbPetName"
         cmbPetName.Size = New Size(132, 28)
         cmbPetName.TabIndex = 16
@@ -265,8 +265,8 @@ Partial Class FrmBookingBoardingService
         ' cmbRoom
         ' 
         cmbRoom.FormattingEnabled = True
-        cmbRoom.Location = New Point(221, 117)
-        cmbRoom.Margin = New Padding(2, 2, 2, 2)
+        cmbRoom.Location = New Point(262, 120)
+        cmbRoom.Margin = New Padding(2)
         cmbRoom.Name = "cmbRoom"
         cmbRoom.Size = New Size(132, 28)
         cmbRoom.TabIndex = 15
@@ -369,9 +369,9 @@ Partial Class FrmBookingBoardingService
         ClientSize = New Size(632, 729)
         Controls.Add(pnlHeader)
         Controls.Add(pnlAddPet)
-        Margin = New Padding(2, 2, 2, 2)
+        Margin = New Padding(2)
         Name = "FrmBookingBoardingService"
-        Text = "FrmBookingBoardingService"
+        Text = "Booking Boarding Service"
         pnlHeader.ResumeLayout(False)
         pnlHeader.PerformLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()

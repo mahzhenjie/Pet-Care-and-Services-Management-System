@@ -348,27 +348,27 @@ Public Class frmCustomerDashboard
             btnPayments.Text = "Payments"
 
             ' GROOMING SERVICES
-            btnGroomingServices.Location = New Point(57, 475)
+            btnGroomingServices.Location = New Point(57, 486)
             btnGroomingServices.Size = New Size(210, 40)
             btnGroomingServices.Text = "Grooming Services"
 
             ' BOARDING VIDEOS
-            btnBoardingVideos.Location = New Point(57, 642)
+            btnBoardingVideos.Location = New Point(57, 578)
             btnBoardingVideos.Size = New Size(210, 40)
             btnBoardingVideos.Text = "Boarding Videos"
 
             ' PRODUCTS
-            btnProduct.Location = New Point(57, 720)
+            btnProduct.Location = New Point(57, 673)
             btnProduct.Size = New Size(210, 40)
             btnProduct.Text = "Products"
 
             ' MEMBERSHIP
-            btnMembership.Location = New Point(57, 766)
+            btnMembership.Location = New Point(57, 719)
             btnMembership.Size = New Size(210, 40)
             btnMembership.Text = "Membership"
 
             ' LOGOUT
-            btnLogout.Location = New Point(19, 848)
+            btnLogout.Location = New Point(19, 801)
             btnLogout.Size = New Size(212, 41)
             btnLogout.Text = "Logout"
 
